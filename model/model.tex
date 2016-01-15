@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage[utf8]{inputenc}  
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+\usepackage[a4paper, margin={3cm, 3cm}]{geometry}
+
+\usepackage{mathenv}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{layout}
+
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\usepackage{listings} % Pour ajouter du code
+\usepackage{xcolor}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{30pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{20pt} % Some vertical space between the author block and abstract
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+% TITLE
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Modélisation projet ECMA}} % Subtitle
+
+\author{\textsc{Dufour Maxime, Jay Emmanuel} % Author
+\\{\textit{ENSTA ParisTech - CNAM}}} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\vspace{200pt}
+
+\maketitle % Print the title section
+
+\section{Exercice 1 : Modélisation du problème en ignorant la connexité}
+
+\subsection{Q1 : Modélisation du problème}
+
+\paragraph{Variables :}
+Les variables de ce problème sont les $x_{i,j}$ qui sont des variables binaires qui valent 1 si la maille $(i,j)$ est retenue
+
+\paragraph{Fonction objectif :}
+Nous cherchons à maximiser la surface retenue donc :
+$$
+  \max \sum_{(i,j)\in M} x_{i,j}
+$$
+
+\paragraph{Contrainte :}
+Sous la contrainte \textit{fractionnaire} :
+\begin{equation}  
+  \frac{\sum_{(i,j)\in M} H_{i,j}^p C_{i,j}^p x_{i,j}}{\sum_{(i,j)\in M} C_{i,j}^p x_{i,j}}
+  + \frac{\sum_{(i,j)\in M} H_{i,j}^a C_{i,j}^a x_{i,j}}{\sum_{(i,j)\in M} C_{i,j}^a x_{i,j}} \geq 2
+\label{c1}
+\end{equation}  
+
+\subsection{Q2 : Linéarisation de la contrainte fractionnaire}
+\paragraph*{}
+L'idée est de séparer la contrainte fractionnaire en deux parties que l'on va poser égales à des variables réelles (contraintes quadratiques) : 
+\begin{equation}  
+  \frac{\sum_{(i,j)\in M} H_{i,j}^p C_{i,j}^p x_{i,j}}{\sum_{(i,j)\in M} C_{i,j}^p x_{i,j}} = \alpha^p
+\label{alphapq}
+\end{equation}
+et
+\begin{equation}  
+  \frac{\sum_{(i,j)\in M} H_{i,j}^a C_{i,j}^a x_{i,j}}{\sum_{(i,j)\in M} C_{i,j}^a x_{i,j}} = \alpha^a
+\label{alphaaq}
+\end{equation} 
+ce qui nous permet d'écrire la contrainte fractionnaire \eqref{c1} comme cela :
+\begin{equation}  
+  \alpha^p + \alpha^a \geq 2
+\label{c1l}
+\end{equation}  
+
+\paragraph*{}
+Nous devons donc maintenant linéariser \eqref{alphapq} et \eqref{alphaaq}. On utilise pour cela la linéarisation simple entre un booléen et une variable entière. Soit $k \in {a,p}$. On peut écrire les équations \eqref{alphapq} et \eqref{alphaaq}, en multipliant par le dénominateur, comme : 
+$$
+  \sum_{(i,j)\in M} H_{i,j}^k C_{i,j}^k x_{i,j} = \alpha^k * \sum_{(i,j)\in M} C_{i,j}^k x_{i,j}
+$$
+et donc 
+$$
+  \sum_{(i,j)\in M} H_{i,j}^k C_{i,j}^k x_{i,j} = \sum_{(i,j)\in M} C_{i,j}^k \alpha^k * x_{i,j} 
+$$
+Et le travail revient donc à linéariser les couples de variables $ \alpha^k * x_{i,j} $. Pour cela, nous introduisons un nouveau jeu de variables $y_{i,j}^k$ pour $k \in {a,p}$ et $(i,j)\in M$ qui vont représenter $ \alpha^k * x_{i,j} $.
+
+\paragraph*{}
+Soit $k \in {a,p}$ et $(i,j)\in M$, alors on ajoute les contraintes suivantes :
+$$ 
+  y_{i,j}^k \leq u^k * x_{i,j} 
+$$
+$$
+  y_{i,j}^k \leq \alpha^k 
+$$
+$$
+  y_{i,j}^k \geq (x_{i,j}-1)*u^k + \alpha^k 
+$$
+$$
+  y_{i,j}^k \geq 0 
+$$
+Avec $u^k$ une borne supérieure que l'on définit dans les données.
+
+\paragraph*{}
+La contrainte fractionnaire \eqref{c1} se linéarise donc, en ajoutant les variables $\alpha^k$ et $y_{i,j}^k$ en : 
+$$
+  \sum_{(i,j)\in M} H_{i,j}^k C_{i,j}^k x_{i,j} = \sum_{(i,j)\in M} C_{i,j}^k y_{i,j}^k 
+$$
+$$ 
+  y_{i,j}^k \leq u^k * x_{i,j} 
+$$
+$$
+  y_{i,j}^k \leq \alpha^k 
+$$
+$$
+  y_{i,j}^k \geq (x_{i,j}-1)*u^k + \alpha^k 
+$$
+$$
+  y_{i,j}^k \geq 0 
+$$
+Avec la contrainte supplémentaire \eqref{c1l} :
+$$ 
+  \alpha^p + \alpha^a \geq 2
+$$
+
+\section{Exercice 2 : Modélisation de la connexité}
+\paragraph*{}
+Pour modéliser cette contrainte de connexité, nous avons besoin d'introduire des contraintes qui vont indiquer une distance à une origine que le programme déterminera. Nous allons donc introduire des variables booléennes $s_{i,j}^k$ avec $k$ étant la ``distance'' à l'origine. Nous devons donc introduire plusieurs contraintes :
+
+\paragraph*{Sélection de l'origine.}
+Nous devons avoir une seule variable $s_{i,j}^0$ qui correspond à l'origine :
+$$ 
+  \sum_{(i,j)\in M} s_{i,j}^0 = 1
+$$
+
+\paragraph*{Chaque maille retenue doit avoir une distance à l'origine.} Cette contrainte correspond à la contrainte de connexité
+$$ 
+  \sum_{k = 0}^{k_{max}} s_{i,j}^k = x_{i,j}  \qquad \forall (i,j) \in M
+$$ 
+
+\paragraph*{La distance d'une maille est conditionnée par celle de ses voisins.} Pour avoir une distance k, nous avons besoin qu'un des voisins de la maille ait une distance $k-1$
+$$ 
+  s_{i,j}^k \leq s_{i-1,j}^{k-1} + s_{i,j-1}^{k-1} + s_{i+1,j}^{k-1} + s_{i,j+1}^{k-1} \qquad \forall k \in [|0,k_{max}|]
+$$ 
+
+\paragraph*{$k_{max}$ :} Nous avons à déterminer la valeur maximum que ce k peut prendre. Nous pouvons considérer $n*m$ en premier abord.
+
+
+
+\end{document}
+
