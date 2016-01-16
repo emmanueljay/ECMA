@@ -1,5 +1,5 @@
 PROJECT(ecma)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.12)
 
 ## Architecture set up
 IF(UNIX)
@@ -77,9 +77,11 @@ find_package( Cplex )
 
 IF(UNIX)
   IF(APPLE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    add_compile_options(-stdlib=libc++)
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
   ELSE(APPLE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
+    add_compile_options(-pipe -pthread -fPIC)
   ENDIF(APPLE)
 ENDIF(UNIX)
 
