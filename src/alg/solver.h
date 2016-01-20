@@ -1,6 +1,8 @@
 #ifndef SOLVER_H
 #define SOLVER_H
 
+#include "bo/data.h"
+
 #include <string>
 
 // General solver class
@@ -10,9 +12,10 @@ protected:
   std::string description_;
 
   bool found_;
+  const Data& data_;
 
 public:
-  // Solver(Context* context) : context_(context), found_(false) {};
+  Solver(const Data& data) : data_(data) {};
   ~Solver() {} ;
 
   // The principal methode to define
@@ -34,7 +37,7 @@ public:
  */
 class StupidSolver : public Solver {
 public:
-  StupidSolver() {
+  StupidSolver(const Data& data): Solver(data) {
       name("Stupid Solver");
       description("First version of a solver that need to find an admissible sol");
     }

@@ -8,6 +8,8 @@
 
 #include "CMakeParams.h"
 #include "alg/solver.h"
+#include "bo/data.h"
+#include "input/instance_reader.h"
 
 #include <glog/logging.h>
 
@@ -49,7 +51,12 @@ int main(int argc, char* argv[])
     << ECMA_VERSION_PATCH;
 
   LOG(INFO)
-    << "Empty ECMA Project";
-    
+    << "Reading Data";
+
+  Data data;
+  ecma::reader::read_instance(data, "../instances/projet_5_8_1.dat");
+  StupidSolver stupid_solver(data);
+  stupid_solver.solve();
+
   return 0;
 }
