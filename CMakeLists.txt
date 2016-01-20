@@ -302,11 +302,10 @@ file(GLOB ECMA_SRC_FILES
 set (PROJECT_LIB_NAME ${PROJECT_NAME})
 
 # Create and link the library to the sources files
-add_library(${PROJECT_LIB_NAME} SHARED ${ECMA_SRC_FILES})
+add_library(${PROJECT_LIB_NAME} STATIC ${ECMA_SRC_FILES})
 
 # Link glog to the library
 target_link_libraries(${PROJECT_LIB_NAME} libgflags libglog)
-
 
 # Set properties (optional)
 set_target_properties(${PROJECT_LIB_NAME} 
