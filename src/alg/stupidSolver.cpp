@@ -2,6 +2,8 @@
 
 #include <glog/logging.h>
 
+#include <ilcplex/ilocplex.h>
+#include <ilcp/cp.h>
 
 bool StupidSolver::solve() {
   LOG(INFO) << name_ << " :: " << description_; 

@@ -67,18 +67,16 @@ include_directories("${PROJECT_BINARY_DIR}")
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_extensions/)
 find_package( Cplex )
 
-# IF(CPLEX_FOUND)
-#   SET(CPLEX_INCLUDE_DIRS ${CPLEX_INCLUDE_DIR})
-#   SET(CPLEX_LIBRARIES ${CPLEX_LIBRARY};)
-#   IF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-#     SET(CPLEX_LIBRARIES "${CPLEX_LIBRARIES};m;pthread")
-#   ENDIF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-# ENDIF(CPLEX_FOUND)
+message("CPLEX_INCLUDE_DIRS = ${CPLEX_INCLUDE_DIRS}")
+message("CPLEX_LIBRARIES = ${CPLEX_LIBRARIES}")
+
+# Add include directories
+include_directories(${CPLEX_INCLUDE_DIRS})
 
 IF(UNIX)
   IF(APPLE)
     add_compile_options(-stdlib=libc++)
-    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
   ELSE(APPLE)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
     add_compile_options(-pipe -pthread -fPIC)
@@ -305,7 +303,7 @@ set (PROJECT_LIB_NAME ${PROJECT_NAME})
 add_library(${PROJECT_LIB_NAME} STATIC ${ECMA_SRC_FILES})
 
 # Link glog to the library
-target_link_libraries(${PROJECT_LIB_NAME} libgflags libglog)
+target_link_libraries(${PROJECT_LIB_NAME} libgflags libglog ${CPLEX_LIBRARIES})
 
 # Set properties (optional)
 set_target_properties(${PROJECT_LIB_NAME} 
