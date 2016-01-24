@@ -18,9 +18,8 @@
 
 
 /** FLAGS */
-DEFINE_bool(big_menu, true, "Include 'advanced' options in the menu listing");
-DEFINE_string(languages, "english,french,german",
-             "comma-separated list of languages to offer in the 'lang' menu");
+DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // constraint ... ");
+DEFINE_string(instance, "", "Path to instance to solve");
 // DEFINE_bool(h, false, "Show help");
 // DECLARE_bool(help);
 // DECLARE_bool(helpshort);
@@ -83,13 +82,39 @@ int main(int argc, char* argv[])
   //   << ECMA_VERSION_MINOR << "."
   //   << ECMA_VERSION_PATCH;
 
-  LOG(INFO)
-    << "Reading Data";
+  if (FLAGS_instance == "") {
+    LOG(ERROR) << "You have to pass an instance through the --instance flag";
+    LOG(FATAL) << "Wrong Parameters";
+  }
+  else {
+    LOG(INFO) << "Reading Data from instance : " << FLAGS_instance;
+    Data data;
+    ecma::reader::read_instance(data, FLAGS_instance);
 
-  Data data;
-  ecma::reader::read_instance(data, "../instances/projet_5_8_1.dat");
-  StupidSolver stupid_solver(data);
-  stupid_solver.solve();
+    // Solving this instance using "Solver"
+    if (FLAGS_solver == "stupid") {
+      // Solve via Stupid Solver
+      LOG(INFO) << "Solving using Stupid Solver";
+      StupidSolver stupid_solver(data);
+      stupid_solver.solve();
+    }
+    else if (FLAGS_solver == "frontal") {
+      // Solve via Frontal Solver
+      LOG(INFO) << "Solving using Frontal Solver (CPLEX)";
+      FrontalSolver frontal_solver(data);
+      frontal_solver.solve();
+    }
+    else if (FLAGS_solver == "constraint") {
+      // Solve via Constraint Solver
+      LOG(INFO) << "Solving using Constraint Solver (CP)";
+      ConstraintSolver constaint_solver(data);
+      constaint_solver.solve();
+    }
+    else {
+      LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
+    }
 
+  }
   return 0;
+
 }

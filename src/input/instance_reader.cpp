@@ -29,7 +29,7 @@ int getIntElement(ifstream& file) {
   int inttmp;
   file >> chartmp >> chartmp;
   file >> inttmp >> chartmp;      
-  LOG(INFO) << inttmp << endl;
+  VLOG(3) << inttmp << endl;
   return inttmp;
 }
 
@@ -38,7 +38,7 @@ double getDoubleElement(ifstream& file) {
   double dbltmp;
   file >> chartmp >> chartmp >> chartmp;
   file >> dbltmp >> chartmp;      
-  LOG(INFO) << dbltmp << endl;
+  VLOG(3) << dbltmp << endl;
   return dbltmp;
 }
 
@@ -50,11 +50,11 @@ void getDoubleArray(ifstream& file, vector<double>& vect, int size) {
   for (int i = 0; i < size; ++i)
   {
     file >> dbltmp >> chartmp;
-    LOG(INFO) << dbltmp << "\t";
+    VLOG(3) << dbltmp << "\t";
     vect.push_back(dbltmp);
   }
   file >> chartmp;
-  LOG(INFO) << endl; 
+  VLOG(3) << endl; 
   return;
 }
 
@@ -62,21 +62,21 @@ void getDoubleMatrix(ifstream& file, vector<vector<double> >& mat, int n, int m)
   char chartmp;
   double dbltmp;
   file >> chartmp >> chartmp >> chartmp >> chartmp;
-  LOG(INFO) << "Displaying Matrix :" << endl;
+  VLOG(3) << "Displaying Matrix :" << endl;
   for (int i = 0; i < n; ++i) {
     file >> chartmp;
     mat.push_back(vector<double>());
     for (int j = 0; j < m; ++j)
     {
       file >> dbltmp >> chartmp;
-      LOG(INFO) << dbltmp << "\t";
+      VLOG(3) << dbltmp << "\t";
       mat[i].push_back(dbltmp);
     }
     file >> chartmp;
-    LOG(INFO) << endl;      
+    VLOG(3) << endl;      
   }
   file >> chartmp;
-  LOG(INFO) << endl; 
+  VLOG(3) << endl; 
   return;
 }
 
