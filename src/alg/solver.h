@@ -33,7 +33,7 @@ public:
 };
 
 /**
- * First Solver : the one that only give an admissible solution
+ * First Solver : does nothing just a first instantiation of an empty solver
  */
 class StupidSolver : public Solver {
 public:
@@ -43,13 +43,35 @@ public:
     }
   ~StupidSolver() {} ;
 
-  /** 
-   * Find the times where an operation is needed, and affect it to a driver 
-   * in a shift 
-   **/
   bool solve();
 };
 
+/**
+ * Second Solver : solve using Cplex
+ */
+class FrontalSolver : public Solver {
+public:
+  FrontalSolver(const Data& data): Solver(data) {
+      name("Frontal Solver");
+      description("Solve using Cplex");
+    }
+  ~FrontalSolver() {} ;
 
+  bool solve();
+};
+
+/**
+ * Third Solver : solve using a constraint programming solver
+ */
+class ConstraintSolver : public Solver {
+public:
+  ConstraintSolver(const Data& data): Solver(data) {
+      name("Constraint Solver");
+      description("Solve using constraint programming");
+    }
+  ~ConstraintSolver() {} ;
+
+  bool solve();
+};
 #endif // SOLVER_H
  
