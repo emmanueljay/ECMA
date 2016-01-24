@@ -2,8 +2,11 @@
 
 #include <glog/logging.h>
 
-//#include <ilcplex/ilocplex.h>
-//#include <ilcp/cp.h>
+// Define std before
+using namespace std;
+
+#include <ilcplex/ilocplex.h>
+#include <ilcp/cp.h>
 
 bool FrontalSolver::solve() {
   LOG(INFO) << name_ << " :: " << description_; 
