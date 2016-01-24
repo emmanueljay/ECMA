@@ -75,11 +75,11 @@ include_directories(${CPLEX_INCLUDE_DIRS})
 
 IF(UNIX)
   IF(APPLE)
-    add_compile_options(-stdlib=libc++)
+    add_compile_options(-stdlib=libc++ -DILOUSESTL)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
   ELSE(APPLE)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
-    add_compile_options(-pipe -pthread -fPIC)
+    add_compile_options(-pipe -pthread -fPIC -DILOUSESTL)
   ENDIF(APPLE)
 ENDIF(UNIX)
 
