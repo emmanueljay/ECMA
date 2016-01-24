@@ -75,7 +75,8 @@ include_directories(${CPLEX_INCLUDE_DIRS})
 
 IF(UNIX)
   IF(APPLE)
-    add_compile_options(-stdlib=libc++)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++")
+    # add_compile_options(-stdlib=libstdc++)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
   ELSE(APPLE)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
@@ -101,15 +102,29 @@ find_package(Threads REQUIRED)
 # Enable ExternalProject CMake module
 include(ExternalProject)
 
-# Download and install GoogleTest
-ExternalProject_Add(
-    gflags
-    GIT_REPOSITORY https://github.com/gflags/gflags.git
-    PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gflags
-    INSTALL_COMMAND "" # Disable install step
-    UPDATE_COMMAND "" # Disable Update step
-    PATCH_COMMAND "" # Disable Patch step
-)
+# Download and install Google Flags
+IF(UNIX)
+  IF(APPLE)
+    ExternalProject_Add(
+      gflags
+      GIT_REPOSITORY https://github.com/gflags/gflags.git
+      PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gflags
+      INSTALL_COMMAND "" # Disable install step
+      UPDATE_COMMAND "" # Disable Update step
+      PATCH_COMMAND "" # Disable Patch step
+      CMAKE_ARGS "-DCMAKE_CXX_FLAGS='${CMAKE_CXX_FLAGS} -stdlib=libstdc++'"
+    )
+  ELSE(APPLE)
+    ExternalProject_Add(
+      gflags
+      GIT_REPOSITORY https://github.com/gflags/gflags.git
+      PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gflags
+      INSTALL_COMMAND "" # Disable install step
+      UPDATE_COMMAND "" # Disable Update step
+      PATCH_COMMAND "" # Disable Patch step
+    )
+  ENDIF(APPLE)
+ENDIF(UNIX)
 
 # Create a libgflags target to be used as a dependency by test programs
 add_library(libgflags IMPORTED STATIC GLOBAL)
@@ -135,16 +150,32 @@ include_directories("${binary_dir}/include")
 # # add library path for google-glog
 # set(CMAKE_LIBRARY_PATH "${google-glog_BINARY_DIR}" ${CMAKE_LIBRARY_PATH})
 
-# Download and install GoogleTest
-ExternalProject_Add(
-    glog
-    GIT_REPOSITORY https://github.com/google/glog.git
-    PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glog
-    # Disable install step
-    INSTALL_COMMAND ""
-    UPDATE_COMMAND "" # Disable Update step
-    PATCH_COMMAND "" # Disable Patch step
-)
+# Download and install Google Logger
+IF(UNIX)
+  IF(APPLE)
+    ExternalProject_Add(
+      glog
+      GIT_REPOSITORY https://github.com/google/glog.git
+      PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glog
+      # Disable install step
+      INSTALL_COMMAND ""
+      UPDATE_COMMAND "" # Disable Update step
+      PATCH_COMMAND "" # Disable Patch step
+      CMAKE_ARGS "-DCMAKE_CXX_FLAGS='${CMAKE_CXX_FLAGS} -stdlib=libstdc++'"
+      CMAKE_ARGS "-DHAVE_UNORDERED_MAP=false"
+    )
+  ELSE(APPLE)
+    ExternalProject_Add(
+      glog
+      GIT_REPOSITORY https://github.com/google/glog.git
+      PREFIX ${CMAKE_CURRENT_BINARY_DIR}/glog
+      # Disable install step
+      INSTALL_COMMAND ""
+      UPDATE_COMMAND "" # Disable Update step
+      PATCH_COMMAND "" # Disable Patch step
+    )
+  ENDIF(APPLE)
+ENDIF(UNIX)
 
 # Create a libglog target to be used as a dependency by test programs
 add_library(libglog IMPORTED STATIC GLOBAL)
@@ -266,15 +297,8 @@ set(CMAKE_LIBRARY_PATH "${googletest_BINARY_DIR}" ${CMAKE_LIBRARY_PATH})
 
 #### Use flags for c++11 and fix for maxOS
 
-IF(UNIX)
-  IF(APPLE)
-    add_compile_options(-DILOUSESTL)
-    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
-  ELSE(APPLE)
-    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
-    add_compile_options(-DILOUSESTL)
-  ENDIF(APPLE)
-ENDIF(UNIX)
+## OPTION FOR CPLEX
+add_compile_options(-DIL_STD)
 
 # try enable c++11
 # g++ and clang++ need flags to enable c++11
@@ -284,11 +308,6 @@ if (HAS_CPP11)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 endif()
 
-# use libc++ on Mac OS X
-# by default clang++ will use libstdc++ w/o c++11 support
-if (APPLE)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
-endif ()
 
 # Includes directory of sources to be able to find .h and .tpp of the project,
 include_directories("${PROJECT_SOURCE_DIR}/src")
