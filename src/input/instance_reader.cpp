@@ -88,7 +88,7 @@ void getDoubleMatrix(ifstream& file, vector<vector<double> >& mat, int n, int m)
 // ESPACE POUR DEFINIR LES FONCTIONS EXPORTEES  //
 //////////////////////////////////////////////////
 bool read_instance(Data& data, string file_name) {
-  ifstream fichier(file_name);
+  ifstream fichier(file_name.c_str());
   if(fichier) {
     data.n = getIntElement(fichier);
     data.m = getIntElement(fichier);

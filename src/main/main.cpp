@@ -35,8 +35,8 @@ int main(int argc, char* argv[])
   gflags::SetUsageMessage(usage);
   
   // VERSION MESSAGE
-  gflags::SetVersionString(std::to_string(ECMA_VERSION_MAJOR) + "." + std::to_string(ECMA_VERSION_MINOR) + "."
-    + std::to_string(ECMA_VERSION_PATCH) + " -- Build type : " + CMAKE_BUILD_TYPE);
+  // gflags::SetVersionString(std::to_string(ECMA_VERSION_MAJOR) + "." + std::to_string(ECMA_VERSION_MINOR) + "."
+  //   + std::to_string(ECMA_VERSION_PATCH) + " -- Build type : " + CMAKE_BUILD_TYPE);
 
   // Parsing flags
   gflags::ParseCommandLineFlags(&argc, &argv, true); // NoHelp
