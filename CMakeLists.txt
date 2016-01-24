@@ -75,11 +75,11 @@ include_directories(${CPLEX_INCLUDE_DIRS})
 
 IF(UNIX)
   IF(APPLE)
-    add_compile_options(-stdlib=libc++ -DILOUSESTL)
+    add_compile_options(-stdlib=libc++)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
   ELSE(APPLE)
     # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
-    add_compile_options(-pipe -pthread -fPIC -DILOUSESTL)
+    add_compile_options(-pipe -pthread -fPIC)
   ENDIF(APPLE)
 ENDIF(UNIX)
 
@@ -264,6 +264,16 @@ set(CMAKE_LIBRARY_PATH "${googletest_BINARY_DIR}" ${CMAKE_LIBRARY_PATH})
 # set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 #### Use flags for c++11 and fix for maxOS
+
+IF(UNIX)
+  IF(APPLE)
+    add_compile_options(-DILOUSESTL)
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libstdc++") #-stdlib=libc++")
+  ELSE(APPLE)
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -pthread -fPIC")
+    add_compile_options(-DILOUSESTL)
+  ENDIF(APPLE)
+ENDIF(UNIX)
 
 # try enable c++11
 # g++ and clang++ need flags to enable c++11
