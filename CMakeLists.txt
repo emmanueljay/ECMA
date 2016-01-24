@@ -148,6 +148,7 @@ ExternalProject_Add(
 
 # Create a libglog target to be used as a dependency by test programs
 add_library(libglog IMPORTED STATIC GLOBAL)
+add_dependencies(glog gflags)
 add_dependencies(libglog gflags glog)
 
 # Set glog properties
