@@ -21,8 +21,6 @@
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // constraint ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
 // DEFINE_bool(h, false, "Show help");
-// DECLARE_bool(help);
-// DECLARE_bool(helpshort);
 
 int main(int argc, char* argv[])
 {
@@ -43,44 +41,11 @@ int main(int argc, char* argv[])
   // Parsing flags
   gflags::ParseCommandLineFlags(&argc, &argv, true); // NoHelp
 
-  // if (FLAGS_help || FLAGS_h) {
-  //   FLAGS_help = false;
-  //   FLAGS_helpshort = true;
-  // }
-
-  // gflags::HandleCommandLineHelpFlags();
-
   // Initialize Google's logging library.
   FLAGS_stderrthreshold = 0;
   FLAGS_log_dir = "../logs";
   google::InitGoogleLogging(argv[0]);
 
-  /** Log Examples */
-
-  // // Debug log
-  // VLOG(1) << "I'm printed when you run the program with --v=1 or higher";
-  // VLOG(2) << "I'm printed when you run the program with --v=2 or higher";
-  // VLOG(3) << "I'm printed when you run the program with --v=3 or higher";
-
-  // // Common log
-  // LOG(INFO)
-  //   << "Using CMake Build in " << CMAKE_BUILD_TYPE
-  //   << " mode -- Rasta IRP Version : "
-  //   << ECMA_VERSION_MAJOR << "."
-  //   << ECMA_VERSION_MINOR << "."
-  //   << ECMA_VERSION_PATCH;
-  // LOG(ERROR)
-  //   << "Using CMake Build in " << CMAKE_BUILD_TYPE
-  //   << " mode -- Rasta IRP Version : "
-  //   << ECMA_VERSION_MAJOR << "."
-  //   << ECMA_VERSION_MINOR << "."
-  //   << ECMA_VERSION_PATCH;
-  // LOG(WARNING)
-  //   << "Using CMake Build in " << CMAKE_BUILD_TYPE
-  //   << " mode -- Rasta IRP Version : "
-  //   << ECMA_VERSION_MAJOR << "."
-  //   << ECMA_VERSION_MINOR << "."
-  //   << ECMA_VERSION_PATCH;
 
   if (FLAGS_instance == "") {
     LOG(ERROR) << "You have to pass an instance through the --instance flag";
