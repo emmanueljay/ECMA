@@ -339,7 +339,7 @@ if (BUILD_ECMA_TESTS)
     Tests 
     src/test/tests_examples.cpp)
     ## Add other test file here if you want
-  target_link_libraries(Tests ${PROJECT_LIB_NAME} gtest_main)
+  target_link_libraries(Tests ${PROJECT_LIB_NAME} gtest_main libgflags libglog)
 endif()
 
 ################################################################################
