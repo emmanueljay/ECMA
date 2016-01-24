@@ -4,7 +4,6 @@
 
 // Define std before
 using namespace std;
-
 #include <ilcplex/ilocplex.h>
 #include <ilcp/cp.h>
 

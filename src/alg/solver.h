@@ -2,6 +2,7 @@
 #define SOLVER_H
 
 #include "bo/data.h"
+#include "bo/solution.h"
 
 #include <string>
 
@@ -13,9 +14,10 @@ protected:
 
   bool found_;
   const Data& data_;
+  Solution sol_;
 
 public:
-  Solver(const Data& data) : data_(data) {};
+  Solver(const Data& data) : data_(data), sol_(data) {};
   ~Solver() {} ;
 
   // The principal methode to define
