@@ -62,18 +62,21 @@ int main(int argc, char* argv[])
       LOG(INFO) << "Solving using Stupid Solver";
       StupidSolver stupid_solver(data);
       stupid_solver.solve();
+      stupid_solver.print_sol();
     }
     else if (FLAGS_solver == "frontal") {
       // Solve via Frontal Solver
       LOG(INFO) << "Solving using Frontal Solver (CPLEX)";
       FrontalSolver frontal_solver(data);
       frontal_solver.solve();
+      frontal_solver.print_sol();
     }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
       LOG(INFO) << "Solving using Constraint Solver (CP)";
       ConstraintSolver constaint_solver(data);
       constaint_solver.solve();
+      constaint_solver.print_sol();
     }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";

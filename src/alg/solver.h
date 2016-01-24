@@ -1,3 +1,5 @@
+/** @file */
+
 #ifndef SOLVER_H
 #define SOLVER_H
 
@@ -32,6 +34,8 @@ public:
 
   bool found() const {return found_;}
   void found(bool found) {found_ = found;}
+
+  void print_sol();
 };
 
 /**
@@ -69,7 +73,7 @@ class ConstraintSolver : public Solver {
 public:
   ConstraintSolver(const Data& data): Solver(data) {
       name("Constraint Solver");
-      description("Solve using constraint programming");
+      description("Solve using constraint programming of Cplex");
     }
   ~ConstraintSolver() {} ;
 
