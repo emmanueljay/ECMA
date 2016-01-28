@@ -10,17 +10,19 @@
 #include "alg/solver.h"
 #include "bo/data.h"
 #include "input/instance_reader.h"
+#include "utils/helpers.h"
 
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
 #include <string>
-
+#include <cstdlib>
 
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // constraint ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
 // DEFINE_bool(h, false, "Show help");
+
 
 int main(int argc, char* argv[])
 {
@@ -35,8 +37,8 @@ int main(int argc, char* argv[])
   gflags::SetUsageMessage(usage);
   
   // VERSION MESSAGE
-  // gflags::SetVersionString(std::to_string(ECMA_VERSION_MAJOR) + "." + std::to_string(ECMA_VERSION_MINOR) + "."
-  //   + std::to_string(ECMA_VERSION_PATCH) + " -- Build type : " + CMAKE_BUILD_TYPE);
+  gflags::SetVersionString(ecma::helpers::to_string(ECMA_VERSION_MAJOR) + "." + ecma::helpers::to_string(ECMA_VERSION_MINOR) + "."
+    + ecma::helpers::to_string(ECMA_VERSION_PATCH) + " -- Build type : " + CMAKE_BUILD_TYPE);
 
   // Parsing flags
   gflags::ParseCommandLineFlags(&argc, &argv, true); // NoHelp
