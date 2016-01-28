@@ -35,25 +35,16 @@ bool FrontalSolver::solve() {
 
   //Variables
   LOG(INFO) << "Creating variables";
-  BoolVarMatrix x(env,std::max(n,m)); 
-  NumVarMatrix y(env,std::max(n,m));
-  NumVarMatrix z(env,std::max(n,m));
+  BoolVarMatrix x(env); 
+  NumVarMatrix y(env);
+  NumVarMatrix z(env);
 
-  //WARNING la je sais pas quoi faire j'arrive pas a faire des model.add sur les variables direct
-  //ca compile pas si je fais le model.add(x) mais ca compile si je fais les deux boucles imbriquées en dessous
-  //ça compile avec les deux boucles mais ça segfault
-
-  //model.add(x);
-  //model.add(y);
-  //model.add(z);
-
-  // for (int i = 0; i < n ; ++i) {
-  //  for (int j = 0; j < m ; ++i) {
-  //    model.add(x[i][j]);
-  //    model.add(y[i][j]);
-  //    model.add(z[i][j]);
-  //    }
-  //  }
+  LOG(INFO) << "Creating variables";
+   for (int i = 0; i < m ; ++i) {
+     x.add(IloBoolVarArray(env,n));
+     y.add(IloNumVarArray(env,n));
+     z.add(IloNumVarArray(env,n));
+   }
 
   IloNumVar ha_var(env);
   model.add(ha_var);
@@ -64,8 +55,8 @@ bool FrontalSolver::solve() {
   LOG(INFO) << "Processing objective function";
   IloExpr objective(env,0);
 
-  for (int i = 0; i < n ; ++i) {
-    for (int j = 0; j < m ; ++i) {
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
       objective += x[i][j];
     }
   }
@@ -78,23 +69,36 @@ bool FrontalSolver::solve() {
   IloExpr sum_Cz(env,0);
   IloExpr sum_HCAx(env,0);
 
-  for (int i = 0; i < n ; ++i) {
-    for (int j = 0; j < m ; ++i) {
+  
+  LOG(INFO) << "Printing";
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
+      cout << i << " " << j << " " << Cp[i][j] << endl;
+    }
+  }
 
-      sum_Cy += Cp[i][j]*y[i][j];
-      sum_Cz += Ca[i][j]*z[i][j];
-      sum_HCPx += Hp[i][j]*Cp[i][j]*x[i][j];
-      sum_HCAx += Ha[i][j]*Ca[i][j]*x[i][j];
+  //ca plante ici le y est mal définit je ne sais pas pkoi
+  LOG(INFO) << "Adding constraints";
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
+
+      LOG(INFO) << i << " " << j << " " << Cp[i][j] << endl;
+      sum_Cy += y[i][j]*Cp[i][j];
+      sum_Cz += z[i][j]*Ca[i][j];
+      sum_HCPx += x[i][j]*Hp[i][j]*Cp[i][j];
+      sum_HCAx += x[i][j]*Ha[i][j]*Ca[i][j];
 
     }
   }
+
+  LOG(INFO) << "Adding constraints";
   //Selection of an admissible area
   model.add(sum_Cy == sum_HCPx);
   model.add(sum_Cz == sum_HCAx);
   model.add(ha_var + hp_var >= 2);
 
-  for (int i = 0; i < n ; ++i) {
-    for (int j = 0; j < m ; ++i) {
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
 
       //Defining y
       model.add(y[i][j] <= Bp*x[i][j]);
