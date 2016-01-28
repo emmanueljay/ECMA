@@ -42,8 +42,8 @@ bool FrontalSolver::solve() {
   LOG(INFO) << "Creating variables";
    for (int i = 0; i < m ; ++i) {
      x.add(IloBoolVarArray(env,n));
-     y.add(IloNumVarArray(env,n));
-     z.add(IloNumVarArray(env,n));
+     y.add(IloNumVarArray(env,n,0,Bp));
+     z.add(IloNumVarArray(env,n,0,Ba));
    }
 
   IloNumVar ha_var(env);
