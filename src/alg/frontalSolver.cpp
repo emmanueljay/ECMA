@@ -126,5 +126,14 @@ bool FrontalSolver::solve() {
   env.out() << "Solution status = " << cplex.getStatus() << endl;
   env.out() << "Solution value  = " << cplex.getObjValue() << endl;
 
+  for (int i = 0; i < data_.m; ++i) {
+    for (int j = 0; j < data_.n; ++j) {   
+      env.out() << " x[" << i << "]["<<j<<"] = " << cplex.getValue(x[i][j]);
+      sol_.x[i][j] = cplex.getValue(x[i][j]);
+    }
+    env.out() << "\n";
+  } 
+  env.end();
+
   return false;
 }

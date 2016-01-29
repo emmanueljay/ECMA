@@ -80,6 +80,13 @@ int main(int argc, char* argv[])
       constaint_solver.solve();
       constaint_solver.print_sol();
     }
+    else if (FLAGS_solver == "annealing") {
+      // Solve via Annealing Solver
+      LOG(INFO) << "Solving using Annealing Solver (A)";
+      AnnealingSolver annealing_solver(data);
+      annealing_solver.solve();
+      annealing_solver.print_sol();
+    }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }
