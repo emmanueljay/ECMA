@@ -79,5 +79,19 @@ public:
 
   bool solve();
 };
+
+/**
+ * Fourth Solver : Annealing Solver (recuit simulé)
+ */
+class AnnealingSolver : public Solver {
+public:
+  AnnealingSolver(const Data& data): Solver(data) {
+      name("Annealing Solver");
+      description("Solve using Annealing Solver");
+    }
+  ~AnnealingSolver() {} ;
+
+  bool solve();
+};
 #endif // SOLVER_H
  
