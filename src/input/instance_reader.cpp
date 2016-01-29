@@ -92,8 +92,8 @@ bool read_instance(Data& data, string file_name) {
   if(fichier) {
     data.n = getIntElement(fichier);
     data.m = getIntElement(fichier);
-    data.Ba = getDoubleElement(fichier);
-    data.Bp = getDoubleElement(fichier);
+    data.Ba = 4.544933;
+    data.Bp = 1.413333;
     getDoubleMatrix(fichier, data.Ha, data.m, data.n);
     getDoubleMatrix(fichier, data.Ca, data.m, data.n);
     getDoubleMatrix(fichier, data.Hp, data.m, data.n);
