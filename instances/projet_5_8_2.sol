@@ -5,81 +5,86 @@
 <<< generate
 
 Tried aggregator 1 time.
-MIP Presolve eliminated 0 rows and 1 columns.
-Reduced MIP has 764 rows, 642 columns, and 3350 nonzeros.
-Reduced MIP has 560 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0,00 sec. (2,46 ticks)
-Found incumbent of value 1,000000 after 0,01 sec. (5,28 ticks)
-Probing fixed 0 vars, tightened 1 bounds.
-Probing time = 0,00 sec. (3,57 ticks)
+MIP Presolve eliminated 300 rows and 241 columns.
+MIP Presolve modified 50 coefficients.
+Reduced MIP has 479 rows, 402 columns, and 2074 nonzeros.
+Reduced MIP has 350 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (1,23 ticks)
+Probing fixed 0 vars, tightened 33 bounds.
+Probing time = 0,00 sec. (3,53 ticks)
 Tried aggregator 1 time.
-Reduced MIP has 764 rows, 642 columns, and 3350 nonzeros.
-Reduced MIP has 560 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0,00 sec. (1,64 ticks)
-Probing time = 0,00 sec. (2,53 ticks)
-Clique table members: 2292.
+MIP Presolve modified 125 coefficients.
+Reduced MIP has 479 rows, 402 columns, and 2074 nonzeros.
+Reduced MIP has 350 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (1,01 ticks)
+Probing time = 0,00 sec. (2,51 ticks)
+Clique table members: 1462.
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
 Parallel mode: deterministic, using up to 4 threads.
-Root relaxation solution time = 0,01 sec. (12,58 ticks)
+Root relaxation solution time = 0,01 sec. (6,85 ticks)
 
         Nodes                                         Cuts/
    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
 
-*     0+    0                            1,0000       40,0000      438     --- 
-      0     0       36,3843   247        1,0000       36,3843      438     --- 
-      0     0       34,9563   206        1,0000      Cuts: 30      489     --- 
-*     0+    0                            3,0000       34,9563      646     --- 
-      0     0       33,6013   152        3,0000     Cuts: 103      646     --- 
-      0     0       32,8990   160        3,0000      Cuts: 71      967  996,63%
-      0     0       32,6119   134        3,0000      Cuts: 71     1088  987,06%
-      0     0       32,3652   120        3,0000      Cuts: 46     1196  978,84%
-      0     0       32,1732   119        3,0000      Cuts: 50     1363  972,44%
-*     0+    0                           26,0000       32,1732     1363   23,74%
-      0     0       32,0110   106       26,0000      Cuts: 32     1471   23,12%
-*     0+    0                           27,0000       32,0110     1471   18,56%
-      0     0       31,7906   134       27,0000      Cuts: 46     1635   17,74%
-      0     0       31,3565   121       27,0000      Cuts: 47     1697   16,14%
-      0     0       30,9680   138       27,0000      Cuts: 44     1841   14,70%
-      0     0       30,6139   111       27,0000      Cuts: 36     1943   13,38%
-      0     0       30,2607   134       27,0000      Cuts: 54     2066   12,08%
-      0     0       30,1917   129       27,0000      Cuts: 36     2160   11,82%
-      0     0       30,1294   115       27,0000      Cuts: 28     2243   11,59%
-      0     0       30,0729   122       27,0000      Cuts: 42     2380   11,38%
-*     0+    0                           28,0000       30,0729     2466    7,40%
-      0     0       30,0474   127       28,0000      Cuts: 34     2466    7,31%
-      0     0       29,9569   144       28,0000      Cuts: 53     2808    6,99%
-      0     0       29,9554   143       28,0000      Cuts: 62     2948    6,98%
-      0     0       29,9548   110       28,0000       Cuts: 2     2960    6,98%
-      0     0       29,9548   117       28,0000      Cuts: 37     3044    6,98%
-      0     2       29,9548    84       28,0000       29,9548     3044    6,98%
-Elapsed time = 0,85 sec. (480,77 ticks, tree = 0,01 MB, solutions = 5)
+      0     0       23,1670   188                     23,1670      299         
+      0     0       22,6132   157                    Cuts: 70      404         
+      0     0       22,2257   110                   Cuts: 128      581         
+*     0+    0                            1,0000       22,2257      641     --- 
+      0     0       21,8122   105        1,0000     Cuts: 106      641     --- 
+      0     0       21,6728   119        1,0000      Cuts: 94      891     --- 
+      0     0       21,1834   135        1,0000      Cuts: 83     1369     --- 
+      0     0       20,6285    97        1,0000     Cuts: 140     1516     --- 
+      0     0       20,1419    99        1,0000      Cuts: 87     1596     --- 
+      0     0       19,5308    96        1,0000      Cuts: 46     1692     --- 
+      0     0       19,0946    91        1,0000      Cuts: 36     1766     --- 
+      0     0       18,5103    94        1,0000      Cuts: 40     1862     --- 
+      0     0       18,3061    81        1,0000      Cuts: 91     1889     --- 
+      0     0       17,9488    78        1,0000      Cuts: 67     1921     --- 
+      0     0       17,5488    76        1,0000      Cuts: 64     1969     --- 
+      0     0       16,7207    74        1,0000      Cuts: 65     2009     --- 
+      0     0       16,0425    73        1,0000      Cuts: 39     2052     --- 
+      0     0       15,6301    87        1,0000      Cuts: 60     2108     --- 
+      0     0       15,0942    87        1,0000      Cuts: 88     2137     --- 
+      0     0       14,6320    74        1,0000      Cuts: 66     2264     --- 
+*     0+    0                            2,0000       14,6320     2264  631,60%
+      0     0       14,2804    89        2,0000      Cuts: 85     2379  614,02%
+      0     0       13,6447    91        2,0000      Cuts: 45     2466  582,23%
+      0     0       13,0445    87        2,0000      Cuts: 51     2554  552,23%
+      0     0       12,3668    79        2,0000      Cuts: 52     2688  518,34%
+      0     0       11,8900    88        2,0000      Cuts: 79     2793  494,50%
+      0     0       11,7273    76        2,0000      Cuts: 32     2891  486,36%
+      0     0       11,7273    81        2,0000  ZeroHalf: 15     2923  486,36%
+      0     0       11,7273    73        2,0000       Cuts: 9     2959  486,36%
+      0     2       11,7273    73        2,0000       11,7273     2959  486,36%
+Elapsed time = 0,53 sec. (281,49 ticks, tree = 0,01 MB, solutions = 2)
+*    93+   39                            3,0000        9,3572    13676  211,91%
+*   195+   39                            4,0000        8,4594    19007  111,49%
 
-Implied bound cuts applied:  3
-Flow cuts applied:  3
-Mixed integer rounding cuts applied:  56
-Zero-half cuts applied:  13
-Gomory fractional cuts applied:  6
+Clique cuts applied:  1
+Flow cuts applied:  12
+Mixed integer rounding cuts applied:  67
+Zero-half cuts applied:  14
 
 Root node processing (before b&c):
-  Real time             =    0,85 sec. (480,27 ticks)
+  Real time             =    0,53 sec. (281,22 ticks)
 Parallel b&c, 4 threads:
-  Real time             =    0,15 sec. (151,97 ticks)
-  Sync time (average)   =    0,10 sec.
+  Real time             =    0,23 sec. (154,05 ticks)
+  Sync time (average)   =    0,03 sec.
   Wait time (average)   =    0,00 sec.
                           ------------
-Total (root+branch&cut) =    1,00 sec. (632,24 ticks)
+Total (root+branch&cut) =    0,76 sec. (435,27 ticks)
 
 <<< solve
 
 
-OBJECTIVE: 28
+OBJECTIVE: 4
 
-x[1][1] = 0 x[1][2] = 0 x[1][3] = 1 x[1][4] = 0 x[1][5] = 1 x[1][6] = 1 x[1][7] = 1 x[1][8] = 1 
-x[2][1] = 0 x[2][2] = 0 x[2][3] = 1 x[2][4] = 1 x[2][5] = 1 x[2][6] = 1 x[2][7] = 1 x[2][8] = 1 
-x[3][1] = 0 x[3][2] = 0 x[3][3] = 1 x[3][4] = 1 x[3][5] = 1 x[3][6] = 1 x[3][7] = 1 x[3][8] = 1 
-x[4][1] = 0 x[4][2] = 0 x[4][3] = 1 x[4][4] = 1 x[4][5] = 1 x[4][6] = 1 x[4][7] = 1 x[4][8] = 1 
-x[5][1] = 0 x[5][2] = 0 x[5][3] = 1 x[5][4] = 1 x[5][5] = 0 x[5][6] = 1 x[5][7] = 1 x[5][8] = 1 
+x[1][1] = 1 x[1][2] = 0 x[1][3] = 0 x[1][4] = 0 x[1][5] = 0 x[1][6] = 0 x[1][7] = 0 x[1][8] = 0 
+x[2][1] = 1 x[2][2] = 0 x[2][3] = 0 x[2][4] = 0 x[2][5] = 0 x[2][6] = 0 x[2][7] = 0 x[2][8] = 0 
+x[3][1] = 1 x[3][2] = 0 x[3][3] = 0 x[3][4] = 0 x[3][5] = 0 x[3][6] = 0 x[3][7] = 0 x[3][8] = 0 
+x[4][1] = 1 x[4][2] = 0 x[4][3] = 0 x[4][4] = 0 x[4][5] = 0 x[4][6] = 0 x[4][7] = 0 x[4][8] = 0 
+x[5][1] = 0 x[5][2] = 0 x[5][3] = 0 x[5][4] = 0 x[5][5] = 0 x[5][6] = 0 x[5][7] = 0 x[5][8] = 0 
 
 
 <<< post process
