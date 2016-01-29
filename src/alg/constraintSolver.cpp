@@ -86,21 +86,41 @@ bool ConstraintSolver::solve() {
     }
 
     VLOG(3) << "Constraint 4. Objective value";
-    // model.add(sum_x >= 5);
+    model.add(sum_x >= 1);
 
-    IloObjective objective = IloMaximize(env,sum_x);
-    model.add(objective);
+    // IloObjective objective = IloMaximize(env,sum_x);
+    // model.add(objective);
+
+    VLOG(1) << "Passing options :";
+    VLOG(2) << "Option 1: We start by selecting 1 instead of 0";
+    // IloValueSelector selector = IloSelectLargest(IloValue(env));
+    // IloIntValueChooser valueChooser(env, IloSelectLargest(IloValue(env)));
+
+   // IloSearchPhase[] phases = new IloSearchPhase[2];
+   // phases[0] = cp.searchPhase(x);
+   // phases[1] = cp.searchPhase(y);
+   // cp.solve(phases);
+
+    IloSearchPhaseArray phaseArray(env);
+    for (int i = 0; i < data_.m; ++i) {
+      phaseArray.add(IloSearchPhase(
+          env, x[i],IloIntVarChooser(env, IloSelectLargest(IloDomainSize(env))),
+          IloIntValueChooser(env, IloSelectLargest(IloValue(env)))));
+    }
 
     VLOG(1) << "Solving model using constraint programming";
     IloCP cp(model);
-    if (cp.solve()) {
+    if (cp.solve(phaseArray)) {
       VLOG(1) << "Solution found !";
+      int count = 0;
       for (int i = 0; i < data_.m; ++i)
       for (int j = 0; j < data_.n; ++j) {   
         VLOG(4) << "Value of x[" << i << "]["<<j<<"] = " << cp.getValue(x[i][j]);
         sol_.x[i][j] = cp.getValue(x[i][j]);
+        if(cp.getValue(x[i][j]) == 1) count++;
       }
       env.end();
+      LOG(INFO) << "Value of the solution found :" << count;
       return true;
     }
     else {
