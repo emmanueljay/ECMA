@@ -60,19 +60,28 @@ bool ConstraintSolver::solve() {
     for (int i = 0; i < data_.m; ++i)
     for (int j = 0; j < data_.n; ++j) {
       if (i==0) {
-        if (j==0)  model.add((x[i][j] == 0) ||  ((x[i+1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || ((x[i+1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || ((x[i+1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
+        if (j==0)  model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i][j+1] == 1)));
+        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i][j-1] == 1)));
+        else model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
       }
       else if (i==(data_.m-1)) {
-        if (j==0)  model.add((x[i][j] == 0) ||  ((x[i-1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || ((x[i-1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || ((x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
+        if (j==0)  model.add((x[i][j] == 0) || 
+          ((x[i-1][j] == 1) || (x[i][j+1] == 1)));
+        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+          ((x[i-1][j] == 1) || (x[i][j-1] == 1)));
+        else model.add((x[i][j] == 0) || 
+          ((x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
       }
       else {
-        if (j==0)  model.add((x[i][j] == 0) ||  ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));      
+        if (j==0)  model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j+1] == 1)));
+        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1)));
+        else model.add((x[i][j] == 0) || 
+          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));      
       }
     }
 
