@@ -17,6 +17,13 @@ Then, to build, you have to go inside build and launch cmake :
 
     cd ecma_project/build
     cmake .. -DCPLEX_ROOT_DIR={Path to your version of CPLEX (without the last "cplex")}
+
+for example, one can launch :
+
+    cmake .. -DCPLEX_ROOT_DIR=/Applications/CPLEX_Studio1261/
+    
+and then, compile :
+
     make
 
 and then, to launch a simulation you can for example launch from the build/ dir : 
