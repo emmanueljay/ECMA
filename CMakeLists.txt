@@ -67,8 +67,8 @@ include_directories("${PROJECT_BINARY_DIR}")
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_extensions/)
 find_package( Cplex )
 
-message("CPLEX_INCLUDE_DIRS = ${CPLEX_INCLUDE_DIRS}")
-message("CPLEX_LIBRARIES = ${CPLEX_LIBRARIES}")
+# message("CPLEX_INCLUDE_DIRS = ${CPLEX_INCLUDE_DIRS}")
+# message("CPLEX_LIBRARIES = ${CPLEX_LIBRARIES}")
 
 # Add include directories
 include_directories(${CPLEX_INCLUDE_DIRS})
@@ -83,6 +83,23 @@ IF(UNIX)
     add_compile_options(-pipe -pthread -fPIC)
   ENDIF(APPLE)
 ENDIF(UNIX)
+
+################################################################################
+#### OR-TOOL
+
+# option(USE_OR_TOOLS "Using the or-tool library" OFF)
+
+# if (USE_OR_TOOLS)
+
+#   set(OR_TOOLS_DIR "" CACHE STRING "Directory of or-tool")
+#   add_library(libortools IMPORTED STATIC GLOBAL)
+#   set_target_properties(libortools PROPERTIES
+#       "IMPORTED_LOCATION" "${OR_TOOLS_DIR}/lib/libortools.dylib"
+#       "INTERFACE_INCLUDE_DIRECTORIES" "${OR_TOOLS_DIR}/include"
+#   )  
+#   # include_directories("${binary_dir}/include")
+
+# endif()
 
 ################################################################################
 #### ADD LOGGER AND GOOGLE FLAGS
