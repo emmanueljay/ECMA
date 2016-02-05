@@ -67,7 +67,21 @@ public:
 };
 
 /**
- * Third Solver : solve using a constraint programming solver
+ * Third Solver : solve using a greedy algorithm
+ */
+class GreedySolver : public Solver {
+public:
+  GreedySolver(const Data& data): Solver(data) {
+      name("Greedy Solver");
+      description("Solve with a greedy algorithm");
+    }
+  ~GreedySolver() {} ;
+
+  bool solve();
+};
+
+/**
+ * Fourth Solver : solve using a constraint programming solver
  */
 class ConstraintSolver : public Solver {
 public:
@@ -81,7 +95,7 @@ public:
 };
 
 /**
- * Fourth Solver : Annealing Solver (recuit simulé)
+ * Fifth Solver : Annealing Solver (recuit simulé)
  */
 class AnnealingSolver : public Solver {
 public:

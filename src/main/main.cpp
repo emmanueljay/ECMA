@@ -75,6 +75,14 @@ int main(int argc, char* argv[])
       data.print();
       frontal_solver.print_sol();
     }
+    else if (FLAGS_solver == "greedy") {
+      // Solve via Greedy Solver
+      LOG(INFO) << "Solving using Greedy Solver (CPLEX)";
+      GreedySolver greedy_solver(data);
+      greedy_solver.solve();
+      data.print();
+      greedy_solver.print_sol();
+    }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
       LOG(INFO) << "Solving using Constraint Solver (CP)";
