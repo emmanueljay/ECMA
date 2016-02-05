@@ -19,6 +19,9 @@ public:
   std::vector<std::vector<double> > Ca;
   std::vector<std::vector<double> > Hp;
   std::vector<std::vector<double> > Cp;
+
+  /** Function that pretty print the content of data */
+  void print();
 };
 
 

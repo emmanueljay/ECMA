@@ -22,5 +22,27 @@ std::string to_string(int num) {
   return static_cast<std::ostringstream*>( &(std::ostringstream() << num) )->str();
 }
 
+void print_table(const std::vector<std::vector<double> >& table, double max) {
+  for (const std::vector<double>& line : table) {
+    std::string tmp("");
+    for (double elem : line) {
+      if (elem < 0.25 * max) {
+        tmp += ". ";
+      }
+      else if (elem < 0.5 * max) {
+        tmp += "- ";
+      }
+      else if (elem < 0.75 * max) {
+        tmp += "+ ";
+      }
+      else if (elem >= 0.75 * max) {
+        tmp += "* ";
+      }
+    }
+    LOG(INFO) << tmp;
+  }
+}
+
+
 } // namespace helpers
 } // namespace ecma

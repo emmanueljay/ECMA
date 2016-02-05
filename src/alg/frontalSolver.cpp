@@ -17,29 +17,29 @@ bool FrontalSolver::solve() {
   LOG(INFO) << name_ << " :: " << description_; 
 
   //Extracting data
-  LOG(INFO) << "Extracting data";
+  VLOG(1) << "Extracting data";
   int n = data_.n;
   int m = data_.m;
   double Ba = data_.Ba;
   double Bp = data_.Bp;
-  vector<vector<double> > Ha = data_.Ha;
-  vector<vector<double> > Ca = data_.Ca;
-  vector<vector<double> > Hp = data_.Hp;
-  vector<vector<double> > Cp = data_.Cp;
+  const vector<vector<double> >& Ha = data_.Ha;
+  const vector<vector<double> >& Ca = data_.Ca;
+  const vector<vector<double> >& Hp = data_.Hp;
+  const vector<vector<double> >& Cp = data_.Cp;
   
   //Environement
-  LOG(INFO) << "Creating environment";
+  VLOG(1) << "Creating environment";
   IloEnv env;
   IloModel model = IloModel (env);
   IloCplex cplex = IloCplex(model);
 
   //Variables
-  LOG(INFO) << "Creating variables";
+  VLOG(1) << "Creating variables";
   BoolVarMatrix x(env); 
   NumVarMatrix y(env);
   NumVarMatrix z(env);
 
-  LOG(INFO) << "Creating variables";
+  VLOG(1) << "Creating variables";
    for (int i = 0; i < m ; ++i) {
      x.add(IloBoolVarArray(env,n));
      y.add(IloNumVarArray(env,n,0,Bp));
@@ -52,7 +52,7 @@ bool FrontalSolver::solve() {
   model.add(hp_var);
 
   //Objective function
-  LOG(INFO) << "Processing objective function";
+  VLOG(1) << "Processing objective function";
   IloExpr objective(env,0);
 
   for (int i = 0; i < m ; ++i) {
@@ -63,26 +63,26 @@ bool FrontalSolver::solve() {
   model.add(IloMaximize(env, objective ));
 
   //Constraints
-  LOG(INFO) << "Adding constraints";
+  VLOG(1) << "Adding constraints";
   IloExpr sum_Cy(env,0);
   IloExpr sum_HCPx(env,0);
   IloExpr sum_Cz(env,0);
   IloExpr sum_HCAx(env,0);
 
   
-  LOG(INFO) << "Printing";
+  VLOG(1) << "Printing";
   for (int i = 0; i < m ; ++i) {
     for (int j = 0; j < n ; ++j) {
-      cout << i << " " << j << " " << Cp[i][j] << endl;
+      VLOG(5) << i << " " << j << " " << Cp[i][j] << endl;
     }
   }
 
   //ca plante ici le y est mal définit je ne sais pas pkoi
-  LOG(INFO) << "Adding constraints";
+  VLOG(1) << "Adding constraints";
   for (int i = 0; i < m ; ++i) {
     for (int j = 0; j < n ; ++j) {
 
-      LOG(INFO) << i << " " << j << " " << Cp[i][j] << endl;
+      VLOG(5) << i << " " << j << " " << Cp[i][j] << endl;
       sum_Cy += y[i][j]*Cp[i][j];
       sum_Cz += z[i][j]*Ca[i][j];
       sum_HCPx += x[i][j]*Hp[i][j]*Cp[i][j];
@@ -91,7 +91,7 @@ bool FrontalSolver::solve() {
     }
   }
 
-  LOG(INFO) << "Adding constraints";
+  VLOG(1) << "Adding constraints";
   //Selection of an admissible area
   model.add(sum_Cy == sum_HCPx);
   model.add(sum_Cz == sum_HCAx);
@@ -119,19 +119,17 @@ bool FrontalSolver::solve() {
   }
 
   //Solve
-  LOG(INFO) << "Resolution...";
+  VLOG(1) << "Resolution...";
   cplex.solve();
 
   //Output
-  env.out() << "Solution status = " << cplex.getStatus() << endl;
-  env.out() << "Solution value  = " << cplex.getObjValue() << endl;
+  VLOG(1) << "Solution status = " << cplex.getStatus() << endl;
+  VLOG(1) << "Solution value  = " << cplex.getObjValue() << endl;
 
   for (int i = 0; i < data_.m; ++i) {
     for (int j = 0; j < data_.n; ++j) {   
-      env.out() << " x[" << i << "]["<<j<<"] = " << cplex.getValue(x[i][j]);
       sol_.x[i][j] = cplex.getValue(x[i][j]);
     }
-    env.out() << "\n";
   } 
   env.end();
 
