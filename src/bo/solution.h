@@ -13,12 +13,13 @@
  */
 class Solution {
 public:
-  std::vector<std::vector<int> > x;
+  std::vector<std::vector<int> > x_;
+  const Data& data_;
   int cost_;
 
-  Solution(const Data& data) :x(data.m,std::vector<int>(data.n,0)) {};
+  Solution(const Data& data) :data_(data), x_(data.m,std::vector<int>(data.n,0)) {};
   int compute_cost();
-
+  double ratio();
 };
 
 

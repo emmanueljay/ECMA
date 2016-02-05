@@ -116,7 +116,7 @@ bool ConstraintSolver::solve() {
       for (int i = 0; i < data_.m; ++i)
       for (int j = 0; j < data_.n; ++j) {   
         VLOG(4) << "Value of x[" << i << "]["<<j<<"] = " << cp.getValue(x[i][j]);
-        sol_.x[i][j] = cp.getValue(x[i][j]);
+        sol_.x_[i][j] = cp.getValue(x[i][j]);
         if(cp.getValue(x[i][j]) == 1) count++;
       }
       env.end();

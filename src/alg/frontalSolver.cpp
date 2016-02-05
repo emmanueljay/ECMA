@@ -128,7 +128,7 @@ bool FrontalSolver::solve() {
 
   for (int i = 0; i < data_.m; ++i) {
     for (int j = 0; j < data_.n; ++j) {   
-      sol_.x[i][j] = cplex.getValue(x[i][j]);
+      sol_.x_[i][j] = cplex.getValue(x[i][j]);
     }
   } 
   env.end();
