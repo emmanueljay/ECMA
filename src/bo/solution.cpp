@@ -1,6 +1,7 @@
 /** @file */
 
 #include "bo/solution.h"
+#include "alg/bricks.h"
 
 #include <glog/logging.h>
 
@@ -39,4 +40,18 @@ double Solution::ratio() {
 
   VLOG(5) << "Ratio of solution is " << ratio;
   return ratio;
+}
+
+bool Solution::is_connex() {
+
+  int cost = compute_cost();
+  if (cost == 0) return true;
+
+  // Finding a position to 1
+  Point pt = ecma::alg_bricks::find_one(*this);
+
+  // Exploring around this point
+  int size = ecma::alg_bricks::explore_size_sol_bfs(*this, pt);
+
+  return (size == cost);
 }

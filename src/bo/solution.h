@@ -18,8 +18,10 @@ public:
   int cost_;
 
   Solution(const Data& data) :data_(data), x_(data.m,std::vector<int>(data.n,0)) {};
+  
   int compute_cost();
   double ratio();
+  bool is_connex();
 };
 
 

@@ -17,5 +17,7 @@ void Solver::print_sol() {
   }
   LOG(INFO) << "Cost of solution : " << sol_.compute_cost();
   LOG(INFO) << "Ratio of solution : " << sol_.ratio();
+  if (sol_.is_connex()) LOG(INFO) << "The solution is connexe";
+  else LOG(INFO) << "The solution is not connexe";
   return;
 }
