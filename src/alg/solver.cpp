@@ -12,7 +12,7 @@ void Solver::print_sol() {
   for (auto line : sol_.x) {
     std::string line_str("");
     for (int elem : line)
-      line_str += ecma::helpers::to_string(elem) + "\t";
+      line_str += ecma::helpers::to_string(elem) + " ";
     VLOG(1) << line_str;
   }
   return;

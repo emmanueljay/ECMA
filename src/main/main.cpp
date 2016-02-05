@@ -64,6 +64,7 @@ int main(int argc, char* argv[])
       LOG(INFO) << "Solving using Stupid Solver";
       StupidSolver stupid_solver(data);
       stupid_solver.solve();
+      data.print();
       stupid_solver.print_sol();
     }
     else if (FLAGS_solver == "frontal") {
@@ -71,6 +72,7 @@ int main(int argc, char* argv[])
       LOG(INFO) << "Solving using Frontal Solver (CPLEX)";
       FrontalSolver frontal_solver(data);
       frontal_solver.solve();
+      data.print();
       frontal_solver.print_sol();
     }
     else if (FLAGS_solver == "constraint") {
@@ -78,6 +80,7 @@ int main(int argc, char* argv[])
       LOG(INFO) << "Solving using Constraint Solver (CP)";
       ConstraintSolver constaint_solver(data);
       constaint_solver.solve();
+      data.print();
       constaint_solver.print_sol();
     }
     else if (FLAGS_solver == "annealing") {
@@ -85,6 +88,7 @@ int main(int argc, char* argv[])
       LOG(INFO) << "Solving using Annealing Solver (A)";
       AnnealingSolver annealing_solver(data);
       annealing_solver.solve();
+      data.print();
       annealing_solver.print_sol();
     }
     else {
