@@ -15,5 +15,6 @@ void Solver::print_sol() {
       line_str += ecma::helpers::to_string(elem) + " ";
     VLOG(1) << line_str;
   }
+  LOG(INFO) << "Cost of solution : " << sol_.compute_cost();
   return;
 }

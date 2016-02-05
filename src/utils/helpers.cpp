@@ -39,7 +39,7 @@ void print_table(const std::vector<std::vector<double> >& table, double max) {
         tmp += "* ";
       }
     }
-    LOG(INFO) << tmp;
+    VLOG(1) << tmp;
   }
 }
 

@@ -8,18 +8,18 @@
 
 void Data::print() {
 
-  LOG(INFO) << "Affichage des données :";
-  LOG(INFO) << "n = " << n;
-  LOG(INFO) << "m = " << m;
-  LOG(INFO) << "Ba = " << Ba;
-  LOG(INFO) << "Bp = " << Bp;
-  LOG(INFO) << "Affichage de Ha";
+  VLOG(1) << "Affichage des données :";
+  VLOG(1) << "n = " << n;
+  VLOG(1) << "m = " << m;
+  VLOG(1) << "Ba = " << Ba;
+  VLOG(1) << "Bp = " << Bp;
+  VLOG(1) << "Affichage de Ha";
   ecma::helpers::print_table(Ha, 1.0);
-  LOG(INFO) << "Affichage de Cp";
+  VLOG(1) << "Affichage de Cp";
   ecma::helpers::print_table(Cp, 1.0);
-  LOG(INFO) << "Affichage de Hp";
+  VLOG(1) << "Affichage de Hp";
   ecma::helpers::print_table(Hp, 1.0);
-  LOG(INFO) << "Affichage de Cp";
+  VLOG(1) << "Affichage de Cp";
   ecma::helpers::print_table(Cp, 1.0);
 
   return;

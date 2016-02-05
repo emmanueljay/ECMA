@@ -14,10 +14,10 @@
 class Solution {
 public:
   std::vector<std::vector<int> > x;
+  int cost_;
 
   Solution(const Data& data) :x(data.m,std::vector<int>(data.n,0)) {};
-
-  int cost();
+  int compute_cost();
 
 };
 
