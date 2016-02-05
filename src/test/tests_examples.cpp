@@ -44,7 +44,7 @@ TEST(Example, Fact0) {
   // FLAGS_stderrthreshold = 0;
   // FLAGS_log_dir = "../logs";
   // FLAGS_v = 3; // Level of logging for debug
-  google::InitGoogleLogging("Tests");
+  // google::InitGoogleLogging("Tests");
 
   EXPECT_EQ(1,1);
 }
