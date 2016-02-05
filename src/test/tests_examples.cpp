@@ -11,6 +11,7 @@
 
 #include <gtest/gtest.h>
 #include <glog/logging.h>
+#include <gflags/gflags.h>
 
 
 // Step 2. Use the TEST macro to define your tests.

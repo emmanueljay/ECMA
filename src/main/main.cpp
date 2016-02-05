@@ -19,7 +19,7 @@
 #include <cstdlib>
 
 /** FLAGS */
-DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // constraint ... ");
+DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
 // DEFINE_bool(h, false, "Show help");
 
