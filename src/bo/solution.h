@@ -16,6 +16,9 @@ public:
   std::vector<std::vector<int> > x;
 
   Solution(const Data& data) :x(data.m,std::vector<int>(data.n,0)) {};
+
+  int cost();
+
 };
 
 
