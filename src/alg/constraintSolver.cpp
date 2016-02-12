@@ -85,11 +85,11 @@ bool ConstraintSolver::solve() {
       }
     }
 
-    VLOG(3) << "Constraint 4. Objective value";
-    model.add(sum_x >= 1);
+    // VLOG(3) << "Constraint 4. Objective value";
+    // model.add(sum_x >= 1);
 
-    // IloObjective objective = IloMaximize(env,sum_x);
-    // model.add(objective);
+    IloObjective objective = IloMaximize(env,sum_x);
+    model.add(objective);
 
     VLOG(1) << "Passing options :";
     VLOG(2) << "Option 1: We start by selecting 1 instead of 0";
