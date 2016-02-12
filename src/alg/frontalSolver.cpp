@@ -9,6 +9,7 @@ using namespace std;
 #include <ilcp/cp.h>
 
 typedef IloArray<IloBoolVarArray> BoolVarMatrix;
+typedef IloArray<IloArray<IloBoolVarArray> > BoolVar3DMatrix;
 typedef IloArray<IloIntVarArray>  IntVarMatrix;
 typedef IloArray<IloNumVarArray>  NumVarMatrix;
 typedef IloArray<IloIntArray>     IntMatrix;
@@ -38,6 +39,7 @@ bool FrontalSolver::solve() {
   BoolVarMatrix x(env); 
   NumVarMatrix y(env);
   NumVarMatrix z(env);
+  BoolVar3DMatrix s(env);
 
   VLOG(1) << "Creating variables";
    for (int i = 0; i < m ; ++i) {
@@ -45,6 +47,14 @@ bool FrontalSolver::solve() {
      y.add(IloNumVarArray(env,n,0,Bp));
      z.add(IloNumVarArray(env,n,0,Ba));
    }
+
+   for (int h = 0; h < (n*m) ; ++h) {
+    s.add(BoolVarMatrix(env));
+    for (int i = 0; i < m ; ++i) {
+      s[h].add(IloBoolVarArray(env,n));
+    }
+   }
+
 
   IloNumVar ha_var(env);
   model.add(ha_var);
@@ -115,6 +125,7 @@ bool FrontalSolver::solve() {
       //Constraint on x
       if (Cp[i][j] == 0) 
         model.add(x[i][j]==0);
+
     }
   }
 
