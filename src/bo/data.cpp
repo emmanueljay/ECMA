@@ -1,9 +1,11 @@
 /** @file */
 
 #include "bo/data.h"
-#include "utils/helpers.h"
 
 #include <glog/logging.h>
+
+#include "utils/helpers.h"
+
 
 
 void Data::print() {

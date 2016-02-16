@@ -4,7 +4,6 @@
 
 #include <glog/logging.h>
 
-#include <set>
 #include <queue>
 #include <cassert>
 
@@ -19,27 +18,33 @@ namespace alg_bricks {
 
 namespace {
 
-  bool check_neighbour(const Solution& sol,
-                       std::set<Point>* visited_points,
-                       std::queue<Point>* to_visit,
-                       int i,
-                       int j) 
-  {
-    if ((i>=0) && (i<sol.data_.m) && (j>=0) && (j<sol.data_.n) && 
-        (sol.x_[i][j] == 1) && 
-        (visited_points->find(std::make_pair(i,j)) == visited_points->end())) {
-      to_visit->push(std::make_pair(i,j));
-      visited_points->insert(std::make_pair(i,j));
-      return true;
-    }
-    else{
-      return false;
-    }
+/** Used in the BFS of expore_siz_sol_bfs. Add the neighbour to the points to 
+ * visit, and add the point to the visited points 
+ **/
+bool check_neighbour(const Solution& sol,
+                     std::set<Point>* visited_points,
+                     std::queue<Point>* to_visit,
+                     int i,
+                     int j) 
+{
+  if ((i>=0) && (i<sol.data_.m) && (j>=0) && (j<sol.data_.n) && 
+      (sol.x_[i][j] == 1) && 
+      (visited_points->find(std::make_pair(i,j)) == visited_points->end())) {
+    to_visit->push(std::make_pair(i,j));
+    visited_points->insert(std::make_pair(i,j));
+    return true;
   }
+  else{
+    return false;
+  }
+}
 
 } // namespace
 
-// Code function here
+
+/*******************************************************************************
+ ********* BRICKS FUNCTIONS
+ ******************************************************************************/
 
 int explore_size_sol_bfs(const Solution& sol, Point pt) {
   // Assume that the initial Point is given
@@ -83,6 +88,33 @@ Point find_one(const Solution& sol) {
   }
   return(std::make_pair(-1,-1));
 }
+
+/** Used in find_border : Fill the set is the point is not selected is sol */
+bool add_point_if_not_in_sol(const Solution& sol, std::set<Point>* set_pts,
+                             int i, int j) {
+  if ((i>=0) && (i<sol.data_.m) && (j>=0) && (j<sol.data_.n) && 
+      (sol.x_[i][j] == 0)) { 
+    set_pts->insert(std::make_pair(i,j));
+    return true;
+  }
+  else 
+    return false;
+}
+
+std::set<Point> find_border(const Solution& sol) {
+  std::set<Point> border;
+  for (int i = 0; i < sol.data_.m; ++i)
+  for (int j = 0; j < sol.data_.n; ++j) {
+    if (sol.x_[i][j] == 1) {
+      add_point_if_not_in_sol(sol, &border, i-1, j);
+      add_point_if_not_in_sol(sol, &border, i, j-1);
+      add_point_if_not_in_sol(sol, &border, i+1, j);
+      add_point_if_not_in_sol(sol, &border, i, j+1);
+    }
+  } 
+  return border;
+}
+
 
 } // namespace alg_bricks
 } // namespace ecma
