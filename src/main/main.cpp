@@ -12,6 +12,9 @@
 #include "input/instance_reader.h"
 #include "utils/helpers.h"
 
+// Protocol Buffer file 
+#include "protoc/results_format.pb.h"
+
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
@@ -21,6 +24,10 @@
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
+
+// Protocol Buffer
+DEFINE_string(protobuf, "../res/results_protocol_buffer", "Path to instance to solve");
+
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -48,6 +55,27 @@ int main(int argc, char* argv[])
   FLAGS_log_dir = "../logs";
   google::InitGoogleLogging(argv[0]);
 
+
+  /**** Protocol Buffer management */
+  
+  // Verify that the version of the library that we linked against is
+  // compatible with the version of the headers we compiled against.
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  ecma_protoc::Results results;
+
+  {
+    // Read the existing address book.
+    std::fstream input_pb(FLAGS_protobuf, ios::in | ios::binary);
+    if (!input_pb) {
+      LOG(INFO) << FLAGS_protobuf << ": File not found.  Creating a new file.";
+    } else if (!results.ParseFromIstream(&input_pb)) {
+      LOG(ERROR) << "Failed to parse address book.";
+      return -1;
+    }
+  }
+
+  
 
   if (FLAGS_instance == "") {
     LOG(ERROR) << "You have to pass an instance through the --instance flag";
@@ -104,6 +132,21 @@ int main(int argc, char* argv[])
     }
 
   }
+
+
+  /*** Protocol buffer management */
+  {
+    // Write the new address book back to disk.
+    std::fstream output_pb(FLAGS_protobuf, ios::out | ios::trunc | ios::binary);
+    if (!results.SerializeToOstream(&output_pb)) {
+      LOG(ERROR) << "Failed to write address book.";
+      return -1;
+    }
+  }
+
+  // Optional:  Delete all global objects allocated by libprotobuf.
+  google::protobuf::ShutdownProtobufLibrary();
+
   return 0;
 
 }

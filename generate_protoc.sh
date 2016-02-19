@@ -1,0 +1,1 @@
+protoc -I=src/protoc --cpp_out=src/protoc src/protoc/results_format.proto

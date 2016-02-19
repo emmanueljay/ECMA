@@ -61,6 +61,19 @@ include_directories("${PROJECT_BINARY_DIR}")
 # include_directories(${Boost_INCLUDE_DIRS})
 
 ################################################################################
+#### PROTOCOL BUFFER
+
+find_package(PkgConfig REQUIRED)
+pkg_search_module(PROTOBUF REQUIRED protobuf)
+
+include_directories(${PROTOBUF_INCLUDE_DIRS})
+
+# target_link_libraries(testapp ${PROTOBUF_LIBRARIES})
+# target_include_directories(testapp PUBLIC ${PROTOBUF_INCLUDE_DIRS})
+# target_compile_options(testapp PUBLIC ${PROTOBUF_CFLAGS_OTHER})
+
+
+################################################################################
 #### CPLEX
   
 
@@ -350,7 +363,7 @@ set (PROJECT_LIB_NAME ${PROJECT_NAME})
 add_library(${PROJECT_LIB_NAME} STATIC ${ECMA_SRC_FILES})
 
 # Link glog to the library
-target_link_libraries(${PROJECT_LIB_NAME} libgflags libglog ${CPLEX_LIBRARIES})
+target_link_libraries(${PROJECT_LIB_NAME} libgflags libglog ${CPLEX_LIBRARIES} ${PROTOBUF_LIBRARIES})
 
 # Set properties (optional)
 set_target_properties(${PROJECT_LIB_NAME} 
