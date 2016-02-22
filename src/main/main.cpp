@@ -20,6 +20,7 @@
 
 #include <string>
 #include <cstdlib>
+#include <fstream>
 
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
@@ -66,7 +67,7 @@ int main(int argc, char* argv[])
 
   {
     // Read the existing address book.
-    std::fstream input_pb(FLAGS_protobuf, ios::in | ios::binary);
+    std::fstream input_pb(std::string(FLAGS_protobuf).c_str(), std::ios::in | std::ios::binary);
     if (!input_pb) {
       LOG(INFO) << FLAGS_protobuf << ": File not found.  Creating a new file.";
     } else if (!results.ParseFromIstream(&input_pb)) {
@@ -137,7 +138,7 @@ int main(int argc, char* argv[])
   /*** Protocol buffer management */
   {
     // Write the new address book back to disk.
-    std::fstream output_pb(FLAGS_protobuf, ios::out | ios::trunc | ios::binary);
+    std::fstream output_pb(std::string(FLAGS_protobuf).c_str(), std::ios::out | std::ios::trunc | std::ios::binary);
     if (!results.SerializeToOstream(&output_pb)) {
       LOG(ERROR) << "Failed to write address book.";
       return -1;

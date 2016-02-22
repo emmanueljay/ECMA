@@ -37,60 +37,60 @@ void protobuf_AddDesc_results_5fformat_2eproto();
 void protobuf_AssignDesc_results_5fformat_2eproto();
 void protobuf_ShutdownFile_results_5fformat_2eproto();
 
-class AddressBook;
-class Person;
-class Person_PhoneNumber;
+class Results;
+class Simu;
+class Simu_PhoneNumber;
 
-enum Person_PhoneType {
-  Person_PhoneType_MOBILE = 0,
-  Person_PhoneType_HOME = 1,
-  Person_PhoneType_WORK = 2,
-  Person_PhoneType_Person_PhoneType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  Person_PhoneType_Person_PhoneType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+enum Simu_PhoneType {
+  Simu_PhoneType_MOBILE = 0,
+  Simu_PhoneType_HOME = 1,
+  Simu_PhoneType_WORK = 2,
+  Simu_PhoneType_Simu_PhoneType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Simu_PhoneType_Simu_PhoneType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
-bool Person_PhoneType_IsValid(int value);
-const Person_PhoneType Person_PhoneType_PhoneType_MIN = Person_PhoneType_MOBILE;
-const Person_PhoneType Person_PhoneType_PhoneType_MAX = Person_PhoneType_WORK;
-const int Person_PhoneType_PhoneType_ARRAYSIZE = Person_PhoneType_PhoneType_MAX + 1;
+bool Simu_PhoneType_IsValid(int value);
+const Simu_PhoneType Simu_PhoneType_PhoneType_MIN = Simu_PhoneType_MOBILE;
+const Simu_PhoneType Simu_PhoneType_PhoneType_MAX = Simu_PhoneType_WORK;
+const int Simu_PhoneType_PhoneType_ARRAYSIZE = Simu_PhoneType_PhoneType_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Person_PhoneType_descriptor();
-inline const ::std::string& Person_PhoneType_Name(Person_PhoneType value) {
+const ::google::protobuf::EnumDescriptor* Simu_PhoneType_descriptor();
+inline const ::std::string& Simu_PhoneType_Name(Simu_PhoneType value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Person_PhoneType_descriptor(), value);
+    Simu_PhoneType_descriptor(), value);
 }
-inline bool Person_PhoneType_Parse(
-    const ::std::string& name, Person_PhoneType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Person_PhoneType>(
-    Person_PhoneType_descriptor(), name, value);
+inline bool Simu_PhoneType_Parse(
+    const ::std::string& name, Simu_PhoneType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Simu_PhoneType>(
+    Simu_PhoneType_descriptor(), name, value);
 }
 // ===================================================================
 
-class Person_PhoneNumber : public ::google::protobuf::Message {
+class Simu_PhoneNumber : public ::google::protobuf::Message {
  public:
-  Person_PhoneNumber();
-  virtual ~Person_PhoneNumber();
+  Simu_PhoneNumber();
+  virtual ~Simu_PhoneNumber();
 
-  Person_PhoneNumber(const Person_PhoneNumber& from);
+  Simu_PhoneNumber(const Simu_PhoneNumber& from);
 
-  inline Person_PhoneNumber& operator=(const Person_PhoneNumber& from) {
+  inline Simu_PhoneNumber& operator=(const Simu_PhoneNumber& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Person_PhoneNumber& default_instance();
+  static const Simu_PhoneNumber& default_instance();
 
-  void Swap(Person_PhoneNumber* other);
+  void Swap(Simu_PhoneNumber* other);
 
   // implements Message ----------------------------------------------
 
-  inline Person_PhoneNumber* New() const { return New(NULL); }
+  inline Simu_PhoneNumber* New() const { return New(NULL); }
 
-  Person_PhoneNumber* New(::google::protobuf::Arena* arena) const;
+  Simu_PhoneNumber* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const Person_PhoneNumber& from);
-  void MergeFrom(const Person_PhoneNumber& from);
+  void CopyFrom(const Simu_PhoneNumber& from);
+  void MergeFrom(const Simu_PhoneNumber& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -105,7 +105,7 @@ class Person_PhoneNumber : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(Person_PhoneNumber* other);
+  void InternalSwap(Simu_PhoneNumber* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -132,13 +132,13 @@ class Person_PhoneNumber : public ::google::protobuf::Message {
   ::std::string* release_number();
   void set_allocated_number(::std::string* number);
 
-  // optional .ecma_protoc.Person.PhoneType type = 2;
+  // optional .ecma_protoc.Simu.PhoneType type = 2;
   void clear_type();
   static const int kTypeFieldNumber = 2;
-  ::ecma_protoc::Person_PhoneType type() const;
-  void set_type(::ecma_protoc::Person_PhoneType value);
+  ::ecma_protoc::Simu_PhoneType type() const;
+  void set_type(::ecma_protoc::Simu_PhoneType value);
 
-  // @@protoc_insertion_point(class_scope:ecma_protoc.Person.PhoneNumber)
+  // @@protoc_insertion_point(class_scope:ecma_protoc.Simu.PhoneNumber)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -151,36 +151,36 @@ class Person_PhoneNumber : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_results_5fformat_2eproto();
 
   void InitAsDefaultInstance();
-  static Person_PhoneNumber* default_instance_;
+  static Simu_PhoneNumber* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class Person : public ::google::protobuf::Message {
+class Simu : public ::google::protobuf::Message {
  public:
-  Person();
-  virtual ~Person();
+  Simu();
+  virtual ~Simu();
 
-  Person(const Person& from);
+  Simu(const Simu& from);
 
-  inline Person& operator=(const Person& from) {
+  inline Simu& operator=(const Simu& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Person& default_instance();
+  static const Simu& default_instance();
 
-  void Swap(Person* other);
+  void Swap(Simu* other);
 
   // implements Message ----------------------------------------------
 
-  inline Person* New() const { return New(NULL); }
+  inline Simu* New() const { return New(NULL); }
 
-  Person* New(::google::protobuf::Arena* arena) const;
+  Simu* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const Person& from);
-  void MergeFrom(const Person& from);
+  void CopyFrom(const Simu& from);
+  void MergeFrom(const Simu& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -195,7 +195,7 @@ class Person : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(Person* other);
+  void InternalSwap(Simu* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -209,31 +209,31 @@ class Person : public ::google::protobuf::Message {
 
   // nested types ----------------------------------------------------
 
-  typedef Person_PhoneNumber PhoneNumber;
+  typedef Simu_PhoneNumber PhoneNumber;
 
-  typedef Person_PhoneType PhoneType;
-  static const PhoneType MOBILE = Person_PhoneType_MOBILE;
-  static const PhoneType HOME = Person_PhoneType_HOME;
-  static const PhoneType WORK = Person_PhoneType_WORK;
+  typedef Simu_PhoneType PhoneType;
+  static const PhoneType MOBILE = Simu_PhoneType_MOBILE;
+  static const PhoneType HOME = Simu_PhoneType_HOME;
+  static const PhoneType WORK = Simu_PhoneType_WORK;
   static inline bool PhoneType_IsValid(int value) {
-    return Person_PhoneType_IsValid(value);
+    return Simu_PhoneType_IsValid(value);
   }
   static const PhoneType PhoneType_MIN =
-    Person_PhoneType_PhoneType_MIN;
+    Simu_PhoneType_PhoneType_MIN;
   static const PhoneType PhoneType_MAX =
-    Person_PhoneType_PhoneType_MAX;
+    Simu_PhoneType_PhoneType_MAX;
   static const int PhoneType_ARRAYSIZE =
-    Person_PhoneType_PhoneType_ARRAYSIZE;
+    Simu_PhoneType_PhoneType_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
   PhoneType_descriptor() {
-    return Person_PhoneType_descriptor();
+    return Simu_PhoneType_descriptor();
   }
   static inline const ::std::string& PhoneType_Name(PhoneType value) {
-    return Person_PhoneType_Name(value);
+    return Simu_PhoneType_Name(value);
   }
   static inline bool PhoneType_Parse(const ::std::string& name,
       PhoneType* value) {
-    return Person_PhoneType_Parse(name, value);
+    return Simu_PhoneType_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -266,26 +266,26 @@ class Person : public ::google::protobuf::Message {
   ::std::string* release_email();
   void set_allocated_email(::std::string* email);
 
-  // repeated .ecma_protoc.Person.PhoneNumber phones = 4;
+  // repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
   int phones_size() const;
   void clear_phones();
   static const int kPhonesFieldNumber = 4;
-  const ::ecma_protoc::Person_PhoneNumber& phones(int index) const;
-  ::ecma_protoc::Person_PhoneNumber* mutable_phones(int index);
-  ::ecma_protoc::Person_PhoneNumber* add_phones();
-  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person_PhoneNumber >*
+  const ::ecma_protoc::Simu_PhoneNumber& phones(int index) const;
+  ::ecma_protoc::Simu_PhoneNumber* mutable_phones(int index);
+  ::ecma_protoc::Simu_PhoneNumber* add_phones();
+  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >*
       mutable_phones();
-  const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person_PhoneNumber >&
+  const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >&
       phones() const;
 
-  // @@protoc_insertion_point(class_scope:ecma_protoc.Person)
+  // @@protoc_insertion_point(class_scope:ecma_protoc.Simu)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr email_;
-  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person_PhoneNumber > phones_;
+  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber > phones_;
   ::google::protobuf::int32 id_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_results_5fformat_2eproto();
@@ -293,36 +293,36 @@ class Person : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_results_5fformat_2eproto();
 
   void InitAsDefaultInstance();
-  static Person* default_instance_;
+  static Simu* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class AddressBook : public ::google::protobuf::Message {
+class Results : public ::google::protobuf::Message {
  public:
-  AddressBook();
-  virtual ~AddressBook();
+  Results();
+  virtual ~Results();
 
-  AddressBook(const AddressBook& from);
+  Results(const Results& from);
 
-  inline AddressBook& operator=(const AddressBook& from) {
+  inline Results& operator=(const Results& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const AddressBook& default_instance();
+  static const Results& default_instance();
 
-  void Swap(AddressBook* other);
+  void Swap(Results* other);
 
   // implements Message ----------------------------------------------
 
-  inline AddressBook* New() const { return New(NULL); }
+  inline Results* New() const { return New(NULL); }
 
-  AddressBook* New(::google::protobuf::Arena* arena) const;
+  Results* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const AddressBook& from);
-  void MergeFrom(const AddressBook& from);
+  void CopyFrom(const Results& from);
+  void MergeFrom(const Results& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -337,7 +337,7 @@ class AddressBook : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(AddressBook* other);
+  void InternalSwap(Results* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -353,31 +353,31 @@ class AddressBook : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .ecma_protoc.Person people = 1;
-  int people_size() const;
-  void clear_people();
-  static const int kPeopleFieldNumber = 1;
-  const ::ecma_protoc::Person& people(int index) const;
-  ::ecma_protoc::Person* mutable_people(int index);
-  ::ecma_protoc::Person* add_people();
-  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person >*
-      mutable_people();
-  const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person >&
-      people() const;
+  // repeated .ecma_protoc.Simu simu = 1;
+  int simu_size() const;
+  void clear_simu();
+  static const int kSimuFieldNumber = 1;
+  const ::ecma_protoc::Simu& simu(int index) const;
+  ::ecma_protoc::Simu* mutable_simu(int index);
+  ::ecma_protoc::Simu* add_simu();
+  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu >*
+      mutable_simu();
+  const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu >&
+      simu() const;
 
-  // @@protoc_insertion_point(class_scope:ecma_protoc.AddressBook)
+  // @@protoc_insertion_point(class_scope:ecma_protoc.Results)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person > people_;
+  ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu > simu_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_results_5fformat_2eproto();
   friend void protobuf_AssignDesc_results_5fformat_2eproto();
   friend void protobuf_ShutdownFile_results_5fformat_2eproto();
 
   void InitAsDefaultInstance();
-  static AddressBook* default_instance_;
+  static Results* default_instance_;
 };
 // ===================================================================
 
@@ -385,231 +385,231 @@ class AddressBook : public ::google::protobuf::Message {
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
-// Person_PhoneNumber
+// Simu_PhoneNumber
 
 // optional string number = 1;
-inline void Person_PhoneNumber::clear_number() {
+inline void Simu_PhoneNumber::clear_number() {
   number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Person_PhoneNumber::number() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.PhoneNumber.number)
+inline const ::std::string& Simu_PhoneNumber::number() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.PhoneNumber.number)
   return number_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person_PhoneNumber::set_number(const ::std::string& value) {
+inline void Simu_PhoneNumber::set_number(const ::std::string& value) {
   
   number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Person.PhoneNumber.number)
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.PhoneNumber.number)
 }
-inline void Person_PhoneNumber::set_number(const char* value) {
+inline void Simu_PhoneNumber::set_number(const char* value) {
   
   number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Person.PhoneNumber.number)
+  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.PhoneNumber.number)
 }
-inline void Person_PhoneNumber::set_number(const char* value, size_t size) {
+inline void Simu_PhoneNumber::set_number(const char* value, size_t size) {
   
   number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Person.PhoneNumber.number)
+  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.PhoneNumber.number)
 }
-inline ::std::string* Person_PhoneNumber::mutable_number() {
+inline ::std::string* Simu_PhoneNumber::mutable_number() {
   
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Person.PhoneNumber.number)
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.PhoneNumber.number)
   return number_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Person_PhoneNumber::release_number() {
+inline ::std::string* Simu_PhoneNumber::release_number() {
   
   return number_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person_PhoneNumber::set_allocated_number(::std::string* number) {
+inline void Simu_PhoneNumber::set_allocated_number(::std::string* number) {
   if (number != NULL) {
     
   } else {
     
   }
   number_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), number);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Person.PhoneNumber.number)
+  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.PhoneNumber.number)
 }
 
-// optional .ecma_protoc.Person.PhoneType type = 2;
-inline void Person_PhoneNumber::clear_type() {
+// optional .ecma_protoc.Simu.PhoneType type = 2;
+inline void Simu_PhoneNumber::clear_type() {
   type_ = 0;
 }
-inline ::ecma_protoc::Person_PhoneType Person_PhoneNumber::type() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.PhoneNumber.type)
-  return static_cast< ::ecma_protoc::Person_PhoneType >(type_);
+inline ::ecma_protoc::Simu_PhoneType Simu_PhoneNumber::type() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.PhoneNumber.type)
+  return static_cast< ::ecma_protoc::Simu_PhoneType >(type_);
 }
-inline void Person_PhoneNumber::set_type(::ecma_protoc::Person_PhoneType value) {
+inline void Simu_PhoneNumber::set_type(::ecma_protoc::Simu_PhoneType value) {
   
   type_ = value;
-  // @@protoc_insertion_point(field_set:ecma_protoc.Person.PhoneNumber.type)
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.PhoneNumber.type)
 }
 
 // -------------------------------------------------------------------
 
-// Person
+// Simu
 
 // optional string name = 1;
-inline void Person::clear_name() {
+inline void Simu::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Person::name() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.name)
+inline const ::std::string& Simu::name() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.name)
   return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person::set_name(const ::std::string& value) {
+inline void Simu::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Person.name)
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.name)
 }
-inline void Person::set_name(const char* value) {
+inline void Simu::set_name(const char* value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Person.name)
+  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.name)
 }
-inline void Person::set_name(const char* value, size_t size) {
+inline void Simu::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Person.name)
+  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.name)
 }
-inline ::std::string* Person::mutable_name() {
+inline ::std::string* Simu::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Person.name)
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Person::release_name() {
+inline ::std::string* Simu::release_name() {
   
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person::set_allocated_name(::std::string* name) {
+inline void Simu::set_allocated_name(::std::string* name) {
   if (name != NULL) {
     
   } else {
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Person.name)
+  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.name)
 }
 
 // optional int32 id = 2;
-inline void Person::clear_id() {
+inline void Simu::clear_id() {
   id_ = 0;
 }
-inline ::google::protobuf::int32 Person::id() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.id)
+inline ::google::protobuf::int32 Simu::id() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.id)
   return id_;
 }
-inline void Person::set_id(::google::protobuf::int32 value) {
+inline void Simu::set_id(::google::protobuf::int32 value) {
   
   id_ = value;
-  // @@protoc_insertion_point(field_set:ecma_protoc.Person.id)
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.id)
 }
 
 // optional string email = 3;
-inline void Person::clear_email() {
+inline void Simu::clear_email() {
   email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Person::email() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.email)
+inline const ::std::string& Simu::email() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.email)
   return email_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person::set_email(const ::std::string& value) {
+inline void Simu::set_email(const ::std::string& value) {
   
   email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Person.email)
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.email)
 }
-inline void Person::set_email(const char* value) {
+inline void Simu::set_email(const char* value) {
   
   email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Person.email)
+  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.email)
 }
-inline void Person::set_email(const char* value, size_t size) {
+inline void Simu::set_email(const char* value, size_t size) {
   
   email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Person.email)
+  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.email)
 }
-inline ::std::string* Person::mutable_email() {
+inline ::std::string* Simu::mutable_email() {
   
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Person.email)
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.email)
   return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Person::release_email() {
+inline ::std::string* Simu::release_email() {
   
   return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Person::set_allocated_email(::std::string* email) {
+inline void Simu::set_allocated_email(::std::string* email) {
   if (email != NULL) {
     
   } else {
     
   }
   email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Person.email)
+  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.email)
 }
 
-// repeated .ecma_protoc.Person.PhoneNumber phones = 4;
-inline int Person::phones_size() const {
+// repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
+inline int Simu::phones_size() const {
   return phones_.size();
 }
-inline void Person::clear_phones() {
+inline void Simu::clear_phones() {
   phones_.Clear();
 }
-inline const ::ecma_protoc::Person_PhoneNumber& Person::phones(int index) const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Person.phones)
+inline const ::ecma_protoc::Simu_PhoneNumber& Simu::phones(int index) const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.phones)
   return phones_.Get(index);
 }
-inline ::ecma_protoc::Person_PhoneNumber* Person::mutable_phones(int index) {
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Person.phones)
+inline ::ecma_protoc::Simu_PhoneNumber* Simu::mutable_phones(int index) {
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.phones)
   return phones_.Mutable(index);
 }
-inline ::ecma_protoc::Person_PhoneNumber* Person::add_phones() {
-  // @@protoc_insertion_point(field_add:ecma_protoc.Person.phones)
+inline ::ecma_protoc::Simu_PhoneNumber* Simu::add_phones() {
+  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.phones)
   return phones_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person_PhoneNumber >*
-Person::mutable_phones() {
-  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Person.phones)
+inline ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >*
+Simu::mutable_phones() {
+  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.phones)
   return &phones_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person_PhoneNumber >&
-Person::phones() const {
-  // @@protoc_insertion_point(field_list:ecma_protoc.Person.phones)
+inline const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >&
+Simu::phones() const {
+  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.phones)
   return phones_;
 }
 
 // -------------------------------------------------------------------
 
-// AddressBook
+// Results
 
-// repeated .ecma_protoc.Person people = 1;
-inline int AddressBook::people_size() const {
-  return people_.size();
+// repeated .ecma_protoc.Simu simu = 1;
+inline int Results::simu_size() const {
+  return simu_.size();
 }
-inline void AddressBook::clear_people() {
-  people_.Clear();
+inline void Results::clear_simu() {
+  simu_.Clear();
 }
-inline const ::ecma_protoc::Person& AddressBook::people(int index) const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.AddressBook.people)
-  return people_.Get(index);
+inline const ::ecma_protoc::Simu& Results::simu(int index) const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Results.simu)
+  return simu_.Get(index);
 }
-inline ::ecma_protoc::Person* AddressBook::mutable_people(int index) {
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.AddressBook.people)
-  return people_.Mutable(index);
+inline ::ecma_protoc::Simu* Results::mutable_simu(int index) {
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Results.simu)
+  return simu_.Mutable(index);
 }
-inline ::ecma_protoc::Person* AddressBook::add_people() {
-  // @@protoc_insertion_point(field_add:ecma_protoc.AddressBook.people)
-  return people_.Add();
+inline ::ecma_protoc::Simu* Results::add_simu() {
+  // @@protoc_insertion_point(field_add:ecma_protoc.Results.simu)
+  return simu_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person >*
-AddressBook::mutable_people() {
-  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.AddressBook.people)
-  return &people_;
+inline ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu >*
+Results::mutable_simu() {
+  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Results.simu)
+  return &simu_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Person >&
-AddressBook::people() const {
-  // @@protoc_insertion_point(field_list:ecma_protoc.AddressBook.people)
-  return people_;
+inline const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu >&
+Results::simu() const {
+  // @@protoc_insertion_point(field_list:ecma_protoc.Results.simu)
+  return simu_;
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -626,10 +626,10 @@ AddressBook::people() const {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::ecma_protoc::Person_PhoneType> : ::google::protobuf::internal::true_type {};
+template <> struct is_proto_enum< ::ecma_protoc::Simu_PhoneType> : ::google::protobuf::internal::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ecma_protoc::Person_PhoneType>() {
-  return ::ecma_protoc::Person_PhoneType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ecma_protoc::Simu_PhoneType>() {
+  return ::ecma_protoc::Simu_PhoneType_descriptor();
 }
 
 }  // namespace protobuf

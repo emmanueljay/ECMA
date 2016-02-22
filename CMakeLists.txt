@@ -67,6 +67,9 @@ find_package(PkgConfig REQUIRED)
 pkg_search_module(PROTOBUF REQUIRED protobuf)
 
 include_directories(${PROTOBUF_INCLUDE_DIRS})
+link_directories(${PROTOBUF_LIBRARY_DIRS})
+
+#### set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${PROTOBUF_LIBRARY_DIRS}")
 
 # target_link_libraries(testapp ${PROTOBUF_LIBRARIES})
 # target_include_directories(testapp PUBLIC ${PROTOBUF_INCLUDE_DIRS})
@@ -194,6 +197,7 @@ IF(UNIX)
       CMAKE_ARGS "-DCMAKE_CXX_FLAGS='${CMAKE_CXX_FLAGS} -stdlib=libstdc++'"
       CMAKE_ARGS "-DHAVE_UNORDERED_MAP=false"
       CMAKE_ARGS "-Dgflags_DIR=${binary_dir}"
+      DEPENDS gflags
     )
   ELSE(APPLE)
     ExternalProject_Add(
@@ -204,6 +208,7 @@ IF(UNIX)
       INSTALL_COMMAND ""
       UPDATE_COMMAND "" # Disable Update step
       PATCH_COMMAND "" # Disable Patch step
+      DEPENDS gflags
     )
   ENDIF(APPLE)
 ENDIF(UNIX)
@@ -211,7 +216,7 @@ ENDIF(UNIX)
 # Create a libglog target to be used as a dependency by test programs
 add_library(libglog IMPORTED STATIC GLOBAL)
 # add_dependencies(glog gflags)
-add_dependencies(libglog libgflags glog)
+add_dependencies(libglog gflags glog)
 
 # Set glog properties
 ExternalProject_Get_Property(glog source_dir binary_dir)
@@ -382,14 +387,14 @@ target_link_libraries(${PROJECT_NAME}_launcher ${PROJECT_LIB_NAME})
 ################################################################################
 ### ECMA TESTS
 
-option(BUILD_ECMA_TESTS "Build all of ECMA tests." ON)
+option(BUILD_ECMA_TESTS "Build all of ECMA tests." OFF)
 
 if (BUILD_ECMA_TESTS)
   add_executable(
     Tests 
     src/test/tests_examples.cpp)
     ## Add other test file here if you want
-  target_link_libraries(Tests ${PROJECT_LIB_NAME} libgflags libglog gtest_main)
+  target_link_libraries(Tests ${PROJECT_LIB_NAME} gtest_main)
 endif()
 
 ################################################################################
