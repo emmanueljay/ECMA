@@ -181,7 +181,8 @@ IF(UNIX)
       CMAKE_ARGS "-DCMAKE_CXX_FLAGS='${CMAKE_CXX_FLAGS} -stdlib=libstdc++'"
       CMAKE_ARGS "-DHAVE_UNORDERED_MAP=false"
       CMAKE_ARGS "-Dgflags_DIR=${binary_dir}"
-    )
+      DEPENDS gflags
+   )
   ELSE(APPLE)
     ExternalProject_Add(
       glog
@@ -191,6 +192,7 @@ IF(UNIX)
       INSTALL_COMMAND ""
       UPDATE_COMMAND "" # Disable Update step
       PATCH_COMMAND "" # Disable Patch step
+      DEPENDS gflags
     )
   ENDIF(APPLE)
 ENDIF(UNIX)
@@ -198,7 +200,7 @@ ENDIF(UNIX)
 # Create a libglog target to be used as a dependency by test programs
 add_library(libglog IMPORTED STATIC GLOBAL)
 # add_dependencies(glog gflags)
-add_dependencies(libglog libgflags glog)
+add_dependencies(libglog gflags glog)
 
 # Set glog properties
 ExternalProject_Get_Property(glog source_dir binary_dir)
