@@ -193,6 +193,7 @@ IF(UNIX)
       PATCH_COMMAND "" # Disable Patch step
       CMAKE_ARGS "-DCMAKE_CXX_FLAGS='${CMAKE_CXX_FLAGS} -stdlib=libstdc++'"
       CMAKE_ARGS "-DHAVE_UNORDERED_MAP=false"
+      CMAKE_ARGS "-Dgflags_DIR=${binary_dir}"
     )
   ELSE(APPLE)
     ExternalProject_Add(
@@ -209,8 +210,8 @@ ENDIF(UNIX)
 
 # Create a libglog target to be used as a dependency by test programs
 add_library(libglog IMPORTED STATIC GLOBAL)
-add_dependencies(glog gflags)
-add_dependencies(libglog gflags glog)
+# add_dependencies(glog gflags)
+add_dependencies(libglog libgflags glog)
 
 # Set glog properties
 ExternalProject_Get_Property(glog source_dir binary_dir)
@@ -388,7 +389,7 @@ if (BUILD_ECMA_TESTS)
     Tests 
     src/test/tests_examples.cpp)
     ## Add other test file here if you want
-  target_link_libraries(Tests ${PROJECT_LIB_NAME} gtest_main libgflags libglog)
+  target_link_libraries(Tests ${PROJECT_LIB_NAME} libgflags libglog gtest_main)
 endif()
 
 ################################################################################
