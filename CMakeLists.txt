@@ -354,7 +354,8 @@ file(GLOB ECMA_SRC_FILES
   "src/bo/*.cpp"
   "src/input/*.cpp"
   "src/output/*.cpp"
-  "src/utils/*.cpp")
+  "src/utils/*.cpp"
+  "src/protoc/*.cc")
 
 ## Possibility of writting directly the parameter file !!! TODO
 # configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/utils/datadir.cpp.in
@@ -381,8 +382,7 @@ set_target_properties(${PROJECT_LIB_NAME}
 ### ECMA EXECUTABLE
 
 add_executable(${PROJECT_NAME}_launcher src/main/main.cpp)
-target_link_libraries(${PROJECT_NAME}_launcher ${PROJECT_LIB_NAME})
-
+target_link_libraries(${PROJECT_NAME}_launcher ${PROJECT_LIB_NAME} ${PROTOBUF_LIBRARIES})
 
 ################################################################################
 ### ECMA TESTS
