@@ -1,22 +1,25 @@
 /** @file */
 
 // Include Order
-// 1. .h file corresponding to this cpp file (if applicable)
-// 2. headers from the same component,
-// 3. headers from other components,
-// 4. system headers.
+// 1.  dir2/foo2.h.
+// 2.  C system files.
+// 3.  C++ system files.
+// 4.  Other libraries' .h files.
+// 5.  Your project's .h files.
+
 
 #include "CMakeParams.h"
-#include "alg/solver.h"
-#include "bo/data.h"
-#include "input/instance_reader.h"
-#include "utils/helpers.h"
+
+#include <string>
+#include <cstdlib>
 
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
-#include <string>
-#include <cstdlib>
+#include "alg/solver.h"
+#include "bo/data.h"
+#include "input/instance_reader.h"
+#include "utils/helpers.h"
 
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
@@ -61,7 +64,7 @@ int main(int argc, char* argv[])
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
       // Solve via Stupid Solver
-      LOG(INFO) << "Solving using Stupid Solver";
+      LOG(INFO) << "Solving using Stupid Solver (S)";
       StupidSolver stupid_solver(data);
       stupid_solver.solve();
       data.print();
@@ -77,7 +80,7 @@ int main(int argc, char* argv[])
     }
     else if (FLAGS_solver == "greedy") {
       // Solve via Greedy Solver
-      LOG(INFO) << "Solving using Greedy Solver (CPLEX)";
+      LOG(INFO) << "Solving using Greedy Solver (G)";
       GreedySolver greedy_solver(data);
       greedy_solver.solve();
       data.print();
@@ -93,8 +96,12 @@ int main(int argc, char* argv[])
     }
     else if (FLAGS_solver == "annealing") {
       // Solve via Annealing Solver
-      LOG(INFO) << "Solving using Annealing Solver (A)";
+      LOG(INFO) << "Solving using Annealing Solver (A), "
+        << " The initial condition is obtain via Greedy solver";
+      GreedySolver greedy_solver(data);
+      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
       AnnealingSolver annealing_solver(data);
+      annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
       data.print();
       annealing_solver.print_sol();

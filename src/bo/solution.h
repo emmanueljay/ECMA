@@ -19,6 +19,11 @@ public:
 
   Solution(const Data& data) :data_(data), x_(data.m,std::vector<int>(data.n,0)) {};
   
+  // This function assume that the data is the same
+  void fill_sol(const Solution & sol) {
+    x_ = sol.x_;
+  }
+
   int compute_cost();
   double ratio();
   bool is_connex();

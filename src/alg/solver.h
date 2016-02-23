@@ -35,6 +35,9 @@ public:
   bool found() const {return found_;}
   void found(bool found) {found_ = found;}
 
+  const Solution& sol() {return sol_;};
+  Solution* sol_ptr() {return &sol_;};
+
   void print_sol();
 };
 
