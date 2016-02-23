@@ -15,7 +15,6 @@ class Solution {
 public:
   std::vector<std::vector<int> > x_;
   const Data& data_;
-  int cost_;
 
   Solution(const Data& data) :data_(data), x_(data.m,std::vector<int>(data.n,0)) {};
   
@@ -24,9 +23,9 @@ public:
     x_ = sol.x_;
   }
 
-  int compute_cost();
-  double ratio();
-  bool is_connex();
+  int compute_cost() const;
+  double ratio() const;
+  bool is_connex() const;
 };
 
 

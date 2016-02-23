@@ -97,11 +97,11 @@ int main(int argc, char* argv[])
     else if (FLAGS_solver == "annealing") {
       // Solve via Annealing Solver
       LOG(INFO) << "Solving using Annealing Solver (A), "
-        << " The initial condition is obtain via Greedy solver";
-      GreedySolver greedy_solver(data);
-      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+        << " The initial condition is obtain via one 1";
+      // GreedySolver greedy_solver(data);
+      // if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
       AnnealingSolver annealing_solver(data);
-      annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
+      // annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
       data.print();
       annealing_solver.print_sol();

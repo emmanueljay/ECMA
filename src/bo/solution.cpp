@@ -6,18 +6,17 @@
 #include <glog/logging.h>
 
 
-int Solution::compute_cost() {
+int Solution::compute_cost() const {
   int sum = 0;
   for (const std::vector<int>& list : x_)
   for (int elem : list) 
     sum += elem;
   
-  cost_ = sum;
   VLOG(5) << "Cost of solution is " << sum;
   return sum;
 } 
 
-double Solution::ratio() {
+double Solution::ratio() const {
   double ratio = 0; // Final value
   double num_p = 0;   // Numerator P
   double denom_p = 0; // Denominateur P
@@ -42,7 +41,7 @@ double Solution::ratio() {
   return ratio;
 }
 
-bool Solution::is_connex() {
+bool Solution::is_connex() const{
 
   int cost = compute_cost();
   if (cost == 0) return true;
