@@ -13,6 +13,7 @@ typedef IloArray<IloArray<IloBoolVarArray> > BoolVar3DMatrix;
 typedef IloArray<IloIntVarArray>  IntVarMatrix;
 typedef IloArray<IloNumVarArray>  NumVarMatrix;
 typedef IloArray<IloIntArray>     IntMatrix;
+typedef IloArray<IloExprArray>     ExprMatrix;
 
 bool FrontalSolver::solve() {
   LOG(INFO) << name_ << " :: " << description_; 
@@ -73,22 +74,13 @@ bool FrontalSolver::solve() {
   model.add(IloMaximize(env, objective ));
 
   //Constraints
-  VLOG(1) << "Adding constraints";
+  VLOG(1) << "Creating constraint expressions";
   IloExpr sum_Cy(env,0);
   IloExpr sum_HCPx(env,0);
   IloExpr sum_Cz(env,0);
   IloExpr sum_HCAx(env,0);
 
-  
-  VLOG(1) << "Printing";
-  for (int i = 0; i < m ; ++i) {
-    for (int j = 0; j < n ; ++j) {
-      VLOG(5) << i << " " << j << " " << Cp[i][j] << endl;
-    }
-  }
-
-  //ca plante ici le y est mal définit je ne sais pas pkoi
-  VLOG(1) << "Adding constraints";
+  VLOG(1) << "Computing constraint expressions";
   for (int i = 0; i < m ; ++i) {
     for (int j = 0; j < n ; ++j) {
 
@@ -126,6 +118,54 @@ bool FrontalSolver::solve() {
       if (Cp[i][j] == 0) 
         model.add(x[i][j]==0);
 
+    }
+  }
+
+  VLOG(1) << "Handling connexity";
+  //Base of the connected area
+
+  VLOG(2) << "Connected area base";
+  IloExpr base_connected_area(env,0);
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
+      base_connected_area += s[0][i][j];
+    }
+  }
+  model.add(base_connected_area == 1);
+
+  VLOG(2) << "Linking x and s";
+  for (int i = 0; i < m ; ++i) {
+    for (int j = 0; j < n ; ++j) {
+      IloExpr expression(env,0);
+      for (int h = 0; h < (n*m) ; ++h) {
+        expression += s[h][i][j];
+      }
+      VLOG(4) << "Adding constraint linking x_ij and sum_s_ij";
+      model.add(x[i][j] == expression);
+    }
+  }
+
+
+ VLOG(2) << "Linking one case and its neighbour";
+for (int h = 1; h < (m*n); ++h) {
+  for (int i = 0; i < m; ++i) {
+      for (int j = 0; j < n; ++j) {
+        if (i==0) {
+          if (j==0)  model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j+1]);
+          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j-1]);
+          else model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);
+        }
+        else if (i==(data_.m-1)) {
+          if (j==0)  model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j+1]);
+          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j-1]);
+          else model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);
+        }
+        else {
+          if (j==0)  model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j+1]);
+          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j-1]);
+          else model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);      
+        }
+      }
     }
   }
 
