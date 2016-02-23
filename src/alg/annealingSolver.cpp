@@ -21,10 +21,11 @@
 
 
 DEFINE_int32(maxTime, 20, "AS::Maximal time in second to let the solver run");
+DEFINE_int32(ratio, 2, "AS::Ratio on how to chose removed points from added points");
 DEFINE_int32(variant, 0, "AS::Variant of the annealing solver");
-DEFINE_double(tempInit, 100.0, "AS::Initial temperature");
+DEFINE_double(tempInit, 10000.0, "AS::Initial temperature");
 DEFINE_double(lambda, 0.99, "AS::Lambda : for a decroissance of temp T <- T*lambda");
-DEFINE_int64(sizePalier, 10, "AS::Size of constant temperature pallier");
+DEFINE_int64(sizePalier, 20, "AS::Size of constant temperature pallier");
 
 namespace {
 
@@ -40,23 +41,31 @@ bool select_point(const Solution& sol, Point* point) {
     if (sol.x_[i][j] == 1) inside.insert(std::make_pair(i,j));
   }
 
-  // Randomly select a point in the two sets
-  int pt_id = rand() % (border.size() + inside.size());
+  // Chose if remove or add an element : 1 / ratio
   bool is_in_border;
+  is_in_border = (rand() % FLAGS_ratio) > 0;
+
+  int size = sol.compute_cost();
+  if (size == 1)
+    is_in_border = true;
+  else if (size == sol.data_.m*sol.data_.n)
+    is_in_border = false;
+
+  // Randomly select a point in the chosen set
+  int pt_id;
   std::set<Point>::iterator pt_it;
 
-  if (pt_id < border.size()) {
-    is_in_border = true;
+  if (is_in_border) {
+    pt_id = rand() % border.size();
     pt_it = border.begin();
   }
   else {
-    is_in_border = false;
-    pt_id -= border.size();
+    pt_id = rand() % inside.size();
     pt_it = inside.begin();
   }
   while (pt_id > 0) {
     pt_it++; pt_id--;
-  } 
+  }
 
   // Store the resulting point inside the transition point.
   *point = *pt_it;
@@ -73,7 +82,7 @@ double get_energy(const Solution& sol, int version = 0) {
       // First version of the implementation : using the cost of the solution
       energy = -sol.compute_cost();
       ratio = sol.ratio();
-      if (ratio < 2) energy += sol.data_.n*sol.data_.n* (1+2-ratio);
+      if (ratio < 2) energy += sol.data_.n*sol.data_.n*1000* (1+2-ratio);
       break;
     }
     case 1 : {
@@ -117,6 +126,7 @@ bool AnnealingSolver::solve() {
     cp_val = data_.Cp[i_init][j_init];
   }
   sol_.x_[i_init][j_init] = 1;
+  LOG(INFO) << "Starting from point " << i_init << "," << j_init;
 
   // At this point, the solution inside the current sol should be admissible
   // We create a temporary solution with the same data.
@@ -164,10 +174,9 @@ bool AnnealingSolver::solve() {
       else
         sol_.x_[pt.first][pt.second] = 1;
     else {
-      if (sol_.is_connex()) {
-        sol_.x_[pt.first][pt.second] = 0;
-      }
-      else {
+      sol_.x_[pt.first][pt.second] = 0;
+      if (not(sol_.is_connex())) {
+        sol_.x_[pt.first][pt.second] = 1;
         time(&current_time);
         diff = difftime(current_time, start_time);
         continue;
