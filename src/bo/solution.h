@@ -26,6 +26,8 @@ public:
   int compute_cost() const;
   double ratio() const;
   bool is_connex() const;
+
+  void print(int tag = 1) const;
 };
 
 

@@ -10,6 +10,7 @@
 
 #include "CMakeParams.h"
 
+#include <time.h>
 #include <string>
 #include <cstdlib>
 
@@ -57,58 +58,73 @@ int main(int argc, char* argv[])
     LOG(FATAL) << "Wrong Parameters";
   }
   else {
+    // Démarrage d'un chronomètre
+    time_t start_time;
+    time(&start_time);
+
     LOG(INFO) << "Reading Data from instance : " << FLAGS_instance;
     Data data;
     ecma::reader::read_instance(data, FLAGS_instance);
+    Solution sol(data);
+
+    double cost;
+    bool is_admissible;
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
       // Solve via Stupid Solver
-      LOG(INFO) << "Solving using Stupid Solver (S)";
       StupidSolver stupid_solver(data);
+      LOG(INFO) << stupid_solver.name() << " : " << stupid_solver.description();
       stupid_solver.solve();
-      data.print();
-      stupid_solver.print_sol();
+      sol.fill_sol(stupid_solver.sol());
     }
     else if (FLAGS_solver == "frontal") {
       // Solve via Frontal Solver
-      LOG(INFO) << "Solving using Frontal Solver (CPLEX)";
       FrontalSolver frontal_solver(data);
+      LOG(INFO) << frontal_solver.name() << " : " << frontal_solver.description();
       frontal_solver.solve();
-      data.print();
-      frontal_solver.print_sol();
+      sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "greedy") {
       // Solve via Greedy Solver
-      LOG(INFO) << "Solving using Greedy Solver (G)";
       GreedySolver greedy_solver(data);
+      LOG(INFO) << greedy_solver.name() << " : " << greedy_solver.description();
       greedy_solver.solve();
-      data.print();
-      greedy_solver.print_sol();
+      sol.fill_sol(greedy_solver.sol());
     }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
-      LOG(INFO) << "Solving using Constraint Solver (CP)";
       ConstraintSolver constaint_solver(data);
+      LOG(INFO) << constaint_solver.name() << " : " << constaint_solver.description();
       constaint_solver.solve();
-      data.print();
-      constaint_solver.print_sol();
+      sol.fill_sol(constaint_solver.sol());
     }
     else if (FLAGS_solver == "annealing") {
       // Solve via Annealing Solver
-      LOG(INFO) << "Solving using Annealing Solver (A), "
-        << " The initial condition is obtain via one 1";
       // GreedySolver greedy_solver(data);
       // if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
       AnnealingSolver annealing_solver(data);
+      LOG(INFO) << annealing_solver.name() << " : " << annealing_solver.description();
       // annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
-      data.print();
-      annealing_solver.print_sol();
+      sol.fill_sol(annealing_solver.sol());
     }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }
+
+    data.print();
+    cost = sol.compute_cost();
+    is_admissible = sol.ratio() >= 2 && sol.is_connex();
+    sol.print();
+
+    // Arrêt et exploitation du chronomètre
+    time_t end_time;
+    time(&end_time);
+    double diff = difftime(end_time, start_time);
+    LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
+
+
 
   }
   return 0;

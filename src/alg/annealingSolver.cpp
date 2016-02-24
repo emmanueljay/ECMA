@@ -21,7 +21,7 @@
 
 
 DEFINE_int32(maxTime, 20, "AS::Maximal time in second to let the solver run");
-DEFINE_int32(ratio, 2, "AS::Ratio on how to chose removed points from added points");
+DEFINE_int32(ratio, 15, "AS::Ratio on how to chose removed points from added points");
 DEFINE_int32(variant, 0, "AS::Variant of the annealing solver");
 DEFINE_double(tempInit, 10000.0, "AS::Initial temperature");
 DEFINE_double(lambda, 0.99, "AS::Lambda : for a decroissance of temp T <- T*lambda");
@@ -43,7 +43,7 @@ bool select_point(const Solution& sol, Point* point) {
 
   // Chose if remove or add an element : 1 / ratio
   bool is_in_border;
-  is_in_border = (rand() % FLAGS_ratio) > 0;
+  is_in_border = (rand() % FLAGS_ratio) > 10;
 
   int size = sol.compute_cost();
   if (size == 1)
@@ -117,6 +117,9 @@ bool AnnealingSolver::solve() {
   LOG(INFO) << "The simulation will run for " << FLAGS_maxTime << " seconds"
     << " (change with flag --maxTime=20)"; 
 
+  // Seed initialisation
+  srand (time(NULL));
+  
   // 0. (May be changed) Starting from a sol with one 1
   double cp_val = 0.0;
   int i_init,j_init;
@@ -152,7 +155,7 @@ bool AnnealingSolver::solve() {
   std::string status("");
 
   // Annealing Iterations
-  while (diff < FLAGS_maxTime && temperature > 0.0000000001) {
+  while (diff < FLAGS_maxTime && temperature > 0.0000001) {
     
     // 1. Select a point of the selected point, or the border. If the point is 
     // inside the convex selected point, the idea is to remove the point. If the
@@ -234,6 +237,9 @@ bool AnnealingSolver::solve() {
       VLOG(3) << status << " Temp : " << temperature << "\tE : "<< energy;
       status = "";         
     }
+
+    // 9. Optional print 
+    if (k % 80 == 0) sol_.print(4);
   }
   VLOG(3) << status;
 

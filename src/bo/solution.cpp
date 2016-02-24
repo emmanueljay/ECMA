@@ -1,9 +1,14 @@
 /** @file */
 
 #include "bo/solution.h"
-#include "alg/bricks.h"
+
+#include <string>
 
 #include <glog/logging.h>
+
+#include "alg/bricks.h"
+#include "utils/helpers.h"
+
 
 
 int Solution::compute_cost() const {
@@ -53,4 +58,20 @@ bool Solution::is_connex() const{
   int size = ecma::alg_bricks::explore_size_sol_bfs(*this, pt);
 
   return (size == cost);
+}
+
+
+void Solution::print(int tag) const{
+  VLOG(tag) << "Displaying solution";
+  for (auto line : x_) {
+    std::string line_str("");
+    for (int elem : line)
+      line_str += ecma::helpers::to_string(elem) + " ";
+    VLOG(tag) << line_str;
+  }
+  VLOG(tag) << "Cost of solution : " << compute_cost();
+  VLOG(tag) << "Ratio of solution : " << ratio();
+  if (is_connex()) VLOG(tag) << "The solution is connexe";
+  else VLOG(tag) << "The solution is not connexe";
+  return;
 }
