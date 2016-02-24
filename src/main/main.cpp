@@ -27,6 +27,7 @@
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
 DEFINE_string(synRes, "../res/synthetic_res_file.csv", "Path to the synthetic result file");
+DEFINE_string(logFile, "../logs", "Logging files");
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -51,7 +52,7 @@ int main(int argc, char* argv[])
 
   // Initialize Google's logging library.
   FLAGS_stderrthreshold = 0;
-  FLAGS_log_dir = "../logs";
+  FLAGS_log_dir = FLAGS_logFile;
   google::InitGoogleLogging(argv[0]);
 
 
