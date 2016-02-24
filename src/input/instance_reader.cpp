@@ -8,9 +8,10 @@
 
 #include "input/instance_reader.h"
 
-#include <glog/logging.h>
-
 #include <fstream>
+#include <string>
+
+#include <glog/logging.h>
 
 using namespace std;
 
@@ -90,6 +91,12 @@ void getDoubleMatrix(ifstream& file, vector<vector<double> >& mat, int n, int m)
 bool read_instance(Data& data, string file_name) {
   ifstream fichier(file_name.c_str());
   if(fichier) {
+    // Name parsing
+    string delimiter("projet_");
+    size_t pos = file_name.find(delimiter)+delimiter.length();
+    data.name = file_name.substr(pos, file_name.find(".dat")-pos);
+    
+    // File parsing
     data.n = getIntElement(fichier);
     data.m = getIntElement(fichier);
     data.Ba = 4.544933;

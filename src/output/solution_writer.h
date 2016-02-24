@@ -5,6 +5,8 @@
 
 #include <string>
 
+#include "bo/solution.h"
+
 /** SOLUTION_WRITER
  * Reading function for the instances
  */
@@ -15,6 +17,8 @@ namespace writer {
 void write_in_synthetic_res_file(double cost, std::string solver_name,
                                  std::string instance_name, double time_s,
                                  std::string file_name);
+
+void export_solution(const Solution& sol, std::string directory_path);
 
 } // namespace writer
 } // namespace ecma

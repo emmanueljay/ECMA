@@ -4,6 +4,7 @@
 #define DATA_H
 
 #include <vector>
+#include <string>
 
 /**
  * Class Data
@@ -11,6 +12,8 @@
  */
 class Data {
 public:
+  std::string name;
+
   int n;
   int m;
   double Ba;

@@ -28,6 +28,7 @@ DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy 
 DEFINE_string(instance, "", "Path to instance to solve");
 DEFINE_string(synRes, "../res/synthetic_res_file.csv", "Path to the synthetic result file");
 DEFINE_string(logFile, "../logs", "Logging files");
+DEFINE_string(solDir, "../solutions/", "Directory where to put solution files");
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -134,9 +135,11 @@ int main(int argc, char* argv[])
     is_admissible = sol.ratio() >= 2 && sol.is_connex();
     sol.print();
 
-    if (is_admissible)
+    if (is_admissible) {
       ecma::writer::write_in_synthetic_res_file(
           cost, description, FLAGS_instance, diff, FLAGS_synRes);
+      ecma::writer::export_solution(sol, FLAGS_solDir);
+    }
     else
       LOG(ERROR) << "The solution is not admissible";
   }
