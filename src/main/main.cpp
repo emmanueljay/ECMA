@@ -20,11 +20,13 @@
 #include "alg/solver.h"
 #include "bo/data.h"
 #include "input/instance_reader.h"
+#include "output/solution_writer.h"
 #include "utils/helpers.h"
 
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
+DEFINE_string(synRes, "../res/synthetic_res_file.csv", "Path to the synthetic result file");
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -69,33 +71,38 @@ int main(int argc, char* argv[])
 
     double cost;
     bool is_admissible;
+    std::string description;
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
       // Solve via Stupid Solver
       StupidSolver stupid_solver(data);
-      LOG(INFO) << stupid_solver.name() << " : " << stupid_solver.description();
+      description = stupid_solver.name() + " : " + stupid_solver.description(); 
+      LOG(INFO) << description;
       stupid_solver.solve();
       sol.fill_sol(stupid_solver.sol());
     }
     else if (FLAGS_solver == "frontal") {
       // Solve via Frontal Solver
       FrontalSolver frontal_solver(data);
-      LOG(INFO) << frontal_solver.name() << " : " << frontal_solver.description();
+      description = frontal_solver.name() + " : " + frontal_solver.description(); 
+      LOG(INFO) << description;
       frontal_solver.solve();
       sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "greedy") {
       // Solve via Greedy Solver
       GreedySolver greedy_solver(data);
-      LOG(INFO) << greedy_solver.name() << " : " << greedy_solver.description();
+      description = greedy_solver.name() + " : " + greedy_solver.description(); 
+      LOG(INFO) << description;
       greedy_solver.solve();
       sol.fill_sol(greedy_solver.sol());
     }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
       ConstraintSolver constaint_solver(data);
-      LOG(INFO) << constaint_solver.name() << " : " << constaint_solver.description();
+      description = constaint_solver.name() + " : " + constaint_solver.description(); 
+      LOG(INFO) << description;
       constaint_solver.solve();
       sol.fill_sol(constaint_solver.sol());
     }
@@ -104,7 +111,8 @@ int main(int argc, char* argv[])
       // GreedySolver greedy_solver(data);
       // if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
       AnnealingSolver annealing_solver(data);
-      LOG(INFO) << annealing_solver.name() << " : " << annealing_solver.description();
+      description = annealing_solver.name() + " : " + annealing_solver.description(); 
+      LOG(INFO) << description;
       // annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
@@ -113,19 +121,23 @@ int main(int argc, char* argv[])
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }
 
-    data.print();
-    cost = sol.compute_cost();
-    is_admissible = sol.ratio() >= 2 && sol.is_connex();
-    sol.print();
-
     // Arrêt et exploitation du chronomètre
     time_t end_time;
     time(&end_time);
     double diff = difftime(end_time, start_time);
     LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
 
+    // Data exportation
+    data.print();
+    cost = sol.compute_cost();
+    is_admissible = sol.ratio() >= 2 && sol.is_connex();
+    sol.print();
 
-
+    if (is_admissible)
+      ecma::writer::write_in_synthetic_res_file(
+          cost, description, FLAGS_instance, diff, FLAGS_synRes);
+    else
+      LOG(ERROR) << "The solution is not admissible";
   }
   return 0;
 
