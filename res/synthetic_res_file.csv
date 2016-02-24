@@ -90,3 +90,8 @@
 1456309795;instances/projet_5_8_7.dat;9;0;Solving using Annealing Solver : Solve using Annealing Solver;
 1456309796;instances/projet_5_8_8.dat;28;1;Solving using Annealing Solver : Solve using Annealing Solver;
 1456309797;instances/projet_5_8_9.dat;9;1;Solving using Annealing Solver : Solve using Annealing Solver;
+1456310087;../instances/projet_12_10_7.dat;18;1;Solving using Annealing Solver : Solve using Annealing Solver;
+1456310477;../instances/projet_5_8_1.dat;24;6;Solving using Frontal Solver : Solve using Cplex;
+1456310514;../instances/projet_5_8_2.dat;4;0;Solving using Annealing Solver : Solve using Annealing Solver;
+1456310605;../instances/projet_5_8_3.dat;30;59;Solving using Frontal Solver : Solve using Cplex;
+1456310780;../instances/projet_5_8_3.dat;30;1;Solving using Annealing Solver : Solve using Annealing Solver;
