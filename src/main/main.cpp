@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
     if (is_admissible) {
       ecma::writer::write_in_synthetic_res_file(
           cost, description, FLAGS_instance, diff, FLAGS_synRes);
-      ecma::writer::export_solution(sol, FLAGS_solDir);
+      ecma::writer::export_solution(sol, FLAGS_solDir, diff);
     }
     else
       LOG(ERROR) << "The solution is not admissible";

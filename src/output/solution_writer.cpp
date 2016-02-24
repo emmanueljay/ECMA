@@ -39,7 +39,7 @@ void write_in_synthetic_res_file(double cost, std::string solver_name,
   temp_file.close();
 }
 
-void export_solution(const Solution& sol, std::string directory_path) {
+void export_solution(const Solution& sol, std::string directory_path, double time_s) {
   if (not(sol.is_admissible())) return;
 
   ofstream temp_file;
@@ -47,6 +47,7 @@ void export_solution(const Solution& sol, std::string directory_path) {
   temp_file.open(file_name.c_str(), ios::trunc | ios::out);
   temp_file << "Solution file for instance " << sol.name_ << "\n";
   temp_file << "Cost of the solution " << sol.compute_cost() << "\n";
+  temp_file << "Time of the simulation " << time_s << " seconds \n";
   temp_file << "Ratio of the solution " << sol.ratio() << "\n";
   temp_file << "Detail of the solution :" << "\n";
   for (auto line : sol.x_) {
