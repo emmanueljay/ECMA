@@ -50,7 +50,7 @@ int explore_size_sol_bfs(const Solution& sol, Point pt) {
   // Assume that the initial Point is given
   assert(sol.x_[pt.first][pt.second] == 1); //, "You can't explore from a 0");
 
-  VLOG(4) << "Connexity::Exploring points arround " << pt.first << ","<< pt.second;
+  VLOG(5) << "Connexity::Exploring points arround " << pt.first << ","<< pt.second;
 
   // A Hash set to store the visited Points, queue for the Point to visit.
   std::set<Point> visited_points;
@@ -75,7 +75,7 @@ int explore_size_sol_bfs(const Solution& sol, Point pt) {
     check_neighbour(sol, &visited_points, &to_visit, tmp_pt.first, tmp_pt.second+1);
   }
 
-  VLOG(4) << "Connexity::We have explored " << size << " points";
+  VLOG(5) << "Connexity::We have explored " << size << " points";
   return size;
 }
 

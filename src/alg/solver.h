@@ -35,7 +35,8 @@ public:
   bool found() const {return found_;}
   void found(bool found) {found_ = found;}
 
-  void print_sol();
+  const Solution& sol() {return sol_;};
+  Solution* sol_ptr() {return &sol_;};
 };
 
 /**
@@ -44,7 +45,7 @@ public:
 class StupidSolver : public Solver {
 public:
   StupidSolver(const Data& data): Solver(data) {
-      name("Stupid Solver");
+      name("Solving using Stupid Solver");
       description("First version of a solver that need to find an admissible sol");
     }
   ~StupidSolver() {} ;
@@ -58,7 +59,7 @@ public:
 class FrontalSolver : public Solver {
 public:
   FrontalSolver(const Data& data): Solver(data) {
-      name("Frontal Solver");
+      name("Solving using Frontal Solver");
       description("Solve using Cplex");
     }
   ~FrontalSolver() {} ;
@@ -72,7 +73,7 @@ public:
 class GreedySolver : public Solver {
 public:
   GreedySolver(const Data& data): Solver(data) {
-      name("Greedy Solver");
+      name("Solving using Greedy Solver");
       description("Solve with a greedy algorithm");
     }
   ~GreedySolver() {} ;
@@ -86,7 +87,7 @@ public:
 class ConstraintSolver : public Solver {
 public:
   ConstraintSolver(const Data& data): Solver(data) {
-      name("Constraint Solver");
+      name("Solving using Constraint Solver");
       description("Solve using constraint programming of Cplex");
     }
   ~ConstraintSolver() {} ;
@@ -100,7 +101,7 @@ public:
 class AnnealingSolver : public Solver {
 public:
   AnnealingSolver(const Data& data): Solver(data) {
-      name("Annealing Solver");
+      name("Solving using Annealing Solver");
       description("Solve using Annealing Solver");
     }
   ~AnnealingSolver() {} ;

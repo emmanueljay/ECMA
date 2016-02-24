@@ -19,7 +19,8 @@ namespace alg_bricks {
 
 // Explore the solution starting from a point suposedly selected
 // assertion sol.x[i][j] == 1
-int explore_size_sol_bfs(const Solution& sol, Point pt) ;
+int explore_size_sol_bfs(const Solution& sol, Point pt);
+                  //     std::set<Point> to_reach = {"John", "Kelly", "Amanda", "Kim"}) ;
 
 // Find the coordinates of a 1 in the solution
 Point find_one(const Solution& sol);

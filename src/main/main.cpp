@@ -1,16 +1,21 @@
 /** @file */
 
 // Include Order
-// 1. .h file corresponding to this cpp file (if applicable)
-// 2. headers from the same component,
-// 3. headers from other components,
-// 4. system headers.
+// 1.  dir2/foo2.h.
+// 2.  C system files.
+// 3.  C++ system files.
+// 4.  Other libraries' .h files.
+// 5.  Your project's .h files.
+
 
 #include "CMakeParams.h"
-#include "alg/solver.h"
-#include "bo/data.h"
-#include "input/instance_reader.h"
-#include "utils/helpers.h"
+
+#include <time.h>
+#include <string>
+#include <cstdlib>
+#include <string>
+#include <cstdlib>
+#include <fstream>
 
 // Protocol Buffer file 
 #include "protoc/results_format.pb.h"
@@ -18,17 +23,21 @@
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
-#include <string>
-#include <cstdlib>
-#include <fstream>
+#include "alg/solver.h"
+#include "bo/data.h"
+#include "input/instance_reader.h"
+#include "output/solution_writer.h"
+#include "utils/helpers.h"
 
 /** FLAGS */
-DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
-DEFINE_string(instance, "", "Path to instance to solve");
-
 // Protocol Buffer
 DEFINE_string(protobuf, "../res/results_protocol_buffer", "Path to instance to solve");
-
+// Rest
+DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
+DEFINE_string(instance, "", "Path to instance to solve");
+DEFINE_string(synRes, "../res/synthetic_res_file.csv", "Path to the synthetic result file");
+DEFINE_string(logFile, "../logs", "Logging files");
+DEFINE_string(solDir, "../solutions/", "Directory where to put solution files");
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -53,7 +62,7 @@ int main(int argc, char* argv[])
 
   // Initialize Google's logging library.
   FLAGS_stderrthreshold = 0;
-  FLAGS_log_dir = "../logs";
+  FLAGS_log_dir = FLAGS_logFile;
   google::InitGoogleLogging(argv[0]);
 
 
@@ -83,55 +92,86 @@ int main(int argc, char* argv[])
     LOG(FATAL) << "Wrong Parameters";
   }
   else {
+    // Démarrage d'un chronomètre
+    time_t start_time;
+    time(&start_time);
+
     LOG(INFO) << "Reading Data from instance : " << FLAGS_instance;
     Data data;
     ecma::reader::read_instance(data, FLAGS_instance);
+    Solution sol(data);
+
+    double cost;
+    bool is_admissible;
+    std::string description;
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
       // Solve via Stupid Solver
-      LOG(INFO) << "Solving using Stupid Solver";
       StupidSolver stupid_solver(data);
+      description = stupid_solver.name() + " : " + stupid_solver.description(); 
+      LOG(INFO) << description;
       stupid_solver.solve();
-      data.print();
-      stupid_solver.print_sol();
+      sol.fill_sol(stupid_solver.sol());
     }
     else if (FLAGS_solver == "frontal") {
       // Solve via Frontal Solver
-      LOG(INFO) << "Solving using Frontal Solver (CPLEX)";
       FrontalSolver frontal_solver(data);
+      description = frontal_solver.name() + " : " + frontal_solver.description(); 
+      LOG(INFO) << description;
       frontal_solver.solve();
-      data.print();
-      frontal_solver.print_sol();
+      sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "greedy") {
       // Solve via Greedy Solver
-      LOG(INFO) << "Solving using Greedy Solver (CPLEX)";
       GreedySolver greedy_solver(data);
+      description = greedy_solver.name() + " : " + greedy_solver.description(); 
+      LOG(INFO) << description;
       greedy_solver.solve();
-      data.print();
-      greedy_solver.print_sol();
+      sol.fill_sol(greedy_solver.sol());
     }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
-      LOG(INFO) << "Solving using Constraint Solver (CP)";
       ConstraintSolver constaint_solver(data);
+      description = constaint_solver.name() + " : " + constaint_solver.description(); 
+      LOG(INFO) << description;
       constaint_solver.solve();
-      data.print();
-      constaint_solver.print_sol();
+      sol.fill_sol(constaint_solver.sol());
     }
     else if (FLAGS_solver == "annealing") {
       // Solve via Annealing Solver
-      LOG(INFO) << "Solving using Annealing Solver (A)";
+      // GreedySolver greedy_solver(data);
+      // if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
       AnnealingSolver annealing_solver(data);
+      description = annealing_solver.name() + " : " + annealing_solver.description(); 
+      LOG(INFO) << description;
+      // annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
-      data.print();
-      annealing_solver.print_sol();
+      sol.fill_sol(annealing_solver.sol());
     }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }
 
+    // Arrêt et exploitation du chronomètre
+    time_t end_time;
+    time(&end_time);
+    double diff = difftime(end_time, start_time);
+    LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
+
+    // Data exportation
+    data.print();
+    cost = sol.compute_cost();
+    is_admissible = sol.ratio() >= 2 && sol.is_connex();
+    sol.print();
+
+    if (is_admissible) {
+      ecma::writer::write_in_synthetic_res_file(
+          cost, description, FLAGS_instance, diff, FLAGS_synRes);
+      ecma::writer::export_solution(sol, FLAGS_solDir, diff);
+    }
+    else
+      LOG(ERROR) << "The solution is not admissible";
   }
 
 

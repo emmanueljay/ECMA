@@ -9,8 +9,7 @@
 
 
 void Data::print() {
-
-  VLOG(1) << "Affichage des données :";
+  VLOG(1) << "Affichage des données de l'instance " << name << " :";
   VLOG(1) << "n = " << n;
   VLOG(1) << "m = " << m;
   VLOG(1) << "Ba = " << Ba;
