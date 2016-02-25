@@ -24,10 +24,10 @@ namespace {
 const ::google::protobuf::Descriptor* Simu_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Simu_reflection_ = NULL;
-const ::google::protobuf::Descriptor* Simu_PhoneNumber_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* Simu_LinesSol_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  Simu_PhoneNumber_reflection_ = NULL;
-const ::google::protobuf::EnumDescriptor* Simu_PhoneType_descriptor_ = NULL;
+  Simu_LinesSol_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* Simu_Solver_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Results_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Results_reflection_ = NULL;
@@ -42,11 +42,13 @@ void protobuf_AssignDesc_results_5fformat_2eproto() {
       "results_format.proto");
   GOOGLE_CHECK(file != NULL);
   Simu_descriptor_ = file->message_type(0);
-  static const int Simu_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, email_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, phones_),
+  static const int Simu_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, instance_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, id_time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, solver_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, cost_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, x_),
   };
   Simu_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -59,23 +61,22 @@ void protobuf_AssignDesc_results_5fformat_2eproto() {
       sizeof(Simu),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, _is_default_instance_));
-  Simu_PhoneNumber_descriptor_ = Simu_descriptor_->nested_type(0);
-  static const int Simu_PhoneNumber_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_PhoneNumber, number_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_PhoneNumber, type_),
+  Simu_LinesSol_descriptor_ = Simu_descriptor_->nested_type(0);
+  static const int Simu_LinesSol_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, l_),
   };
-  Simu_PhoneNumber_reflection_ =
+  Simu_LinesSol_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      Simu_PhoneNumber_descriptor_,
-      Simu_PhoneNumber::default_instance_,
-      Simu_PhoneNumber_offsets_,
+      Simu_LinesSol_descriptor_,
+      Simu_LinesSol::default_instance_,
+      Simu_LinesSol_offsets_,
       -1,
       -1,
       -1,
-      sizeof(Simu_PhoneNumber),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_PhoneNumber, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_PhoneNumber, _is_default_instance_));
-  Simu_PhoneType_descriptor_ = Simu_descriptor_->enum_type(0);
+      sizeof(Simu_LinesSol),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, _is_default_instance_));
+  Simu_Solver_descriptor_ = Simu_descriptor_->enum_type(0);
   Results_descriptor_ = file->message_type(1);
   static const int Results_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Results, simu_),
@@ -106,7 +107,7 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Simu_descriptor_, &Simu::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Simu_PhoneNumber_descriptor_, &Simu_PhoneNumber::default_instance());
+      Simu_LinesSol_descriptor_, &Simu_LinesSol::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Results_descriptor_, &Results::default_instance());
 }
@@ -116,8 +117,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_results_5fformat_2eproto() {
   delete Simu::default_instance_;
   delete Simu_reflection_;
-  delete Simu_PhoneNumber::default_instance_;
-  delete Simu_PhoneNumber_reflection_;
+  delete Simu_LinesSol::default_instance_;
+  delete Simu_LinesSol_reflection_;
   delete Results::default_instance_;
   delete Results_reflection_;
 }
@@ -129,21 +130,22 @@ void protobuf_AddDesc_results_5fformat_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\024results_format.proto\022\013ecma_protoc\"\325\001\n\004"
-    "Simu\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005email\030"
-    "\003 \001(\t\022-\n\006phones\030\004 \003(\0132\035.ecma_protoc.Simu"
-    ".PhoneNumber\032H\n\013PhoneNumber\022\016\n\006number\030\001 "
-    "\001(\t\022)\n\004type\030\002 \001(\0162\033.ecma_protoc.Simu.Pho"
-    "neType\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020"
-    "\001\022\010\n\004WORK\020\002\"*\n\007Results\022\037\n\004simu\030\001 \003(\0132\021.e"
-    "cma_protoc.Simub\006proto3", 303);
+    "\n\024results_format.proto\022\013ecma_protoc\"\200\002\n\004"
+    "Simu\022\025\n\rinstance_name\030\001 \001(\t\022\017\n\007id_time\030\002"
+    " \001(\003\022(\n\006solver\030\003 \001(\0162\030.ecma_protoc.Simu."
+    "Solver\022\014\n\004cost\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022%\n\001x\030"
+    "\006 \003(\0132\032.ecma_protoc.Simu.LinesSol\032\025\n\010Lin"
+    "esSol\022\t\n\001l\030\001 \003(\010\"L\n\006Solver\022\n\n\006STUPID\020\000\022\013"
+    "\n\007FRONTAL\020\001\022\016\n\nCONSTRAINT\020\002\022\n\n\006GREEDY\020\003\022"
+    "\r\n\tANNEALING\020\004\"*\n\007Results\022\037\n\004simu\030\001 \003(\0132"
+    "\021.ecma_protoc.Simub\006proto3", 346);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "results_format.proto", &protobuf_RegisterTypes);
   Simu::default_instance_ = new Simu();
-  Simu_PhoneNumber::default_instance_ = new Simu_PhoneNumber();
+  Simu_LinesSol::default_instance_ = new Simu_LinesSol();
   Results::default_instance_ = new Results();
   Simu::default_instance_->InitAsDefaultInstance();
-  Simu_PhoneNumber::default_instance_->InitAsDefaultInstance();
+  Simu_LinesSol::default_instance_->InitAsDefaultInstance();
   Results::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_results_5fformat_2eproto);
 }
@@ -167,15 +169,17 @@ static void MergeFromFail(int line) {
 
 // ===================================================================
 
-const ::google::protobuf::EnumDescriptor* Simu_PhoneType_descriptor() {
+const ::google::protobuf::EnumDescriptor* Simu_Solver_descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return Simu_PhoneType_descriptor_;
+  return Simu_Solver_descriptor_;
 }
-bool Simu_PhoneType_IsValid(int value) {
+bool Simu_Solver_IsValid(int value) {
   switch(value) {
     case 0:
     case 1:
     case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -183,120 +187,101 @@ bool Simu_PhoneType_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Simu_PhoneType Simu::MOBILE;
-const Simu_PhoneType Simu::HOME;
-const Simu_PhoneType Simu::WORK;
-const Simu_PhoneType Simu::PhoneType_MIN;
-const Simu_PhoneType Simu::PhoneType_MAX;
-const int Simu::PhoneType_ARRAYSIZE;
+const Simu_Solver Simu::STUPID;
+const Simu_Solver Simu::FRONTAL;
+const Simu_Solver Simu::CONSTRAINT;
+const Simu_Solver Simu::GREEDY;
+const Simu_Solver Simu::ANNEALING;
+const Simu_Solver Simu::Solver_MIN;
+const Simu_Solver Simu::Solver_MAX;
+const int Simu::Solver_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Simu_PhoneNumber::kNumberFieldNumber;
-const int Simu_PhoneNumber::kTypeFieldNumber;
+const int Simu_LinesSol::kLFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Simu_PhoneNumber::Simu_PhoneNumber()
+Simu_LinesSol::Simu_LinesSol()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(constructor:ecma_protoc.Simu.LinesSol)
 }
 
-void Simu_PhoneNumber::InitAsDefaultInstance() {
+void Simu_LinesSol::InitAsDefaultInstance() {
   _is_default_instance_ = true;
 }
 
-Simu_PhoneNumber::Simu_PhoneNumber(const Simu_PhoneNumber& from)
+Simu_LinesSol::Simu_LinesSol(const Simu_LinesSol& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(copy_constructor:ecma_protoc.Simu.LinesSol)
 }
 
-void Simu_PhoneNumber::SharedCtor() {
+void Simu_LinesSol::SharedCtor() {
     _is_default_instance_ = false;
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  number_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
 }
 
-Simu_PhoneNumber::~Simu_PhoneNumber() {
-  // @@protoc_insertion_point(destructor:ecma_protoc.Simu.PhoneNumber)
+Simu_LinesSol::~Simu_LinesSol() {
+  // @@protoc_insertion_point(destructor:ecma_protoc.Simu.LinesSol)
   SharedDtor();
 }
 
-void Simu_PhoneNumber::SharedDtor() {
-  number_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Simu_LinesSol::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void Simu_PhoneNumber::SetCachedSize(int size) const {
+void Simu_LinesSol::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Simu_PhoneNumber::descriptor() {
+const ::google::protobuf::Descriptor* Simu_LinesSol::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return Simu_PhoneNumber_descriptor_;
+  return Simu_LinesSol_descriptor_;
 }
 
-const Simu_PhoneNumber& Simu_PhoneNumber::default_instance() {
+const Simu_LinesSol& Simu_LinesSol::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_results_5fformat_2eproto();
   return *default_instance_;
 }
 
-Simu_PhoneNumber* Simu_PhoneNumber::default_instance_ = NULL;
+Simu_LinesSol* Simu_LinesSol::default_instance_ = NULL;
 
-Simu_PhoneNumber* Simu_PhoneNumber::New(::google::protobuf::Arena* arena) const {
-  Simu_PhoneNumber* n = new Simu_PhoneNumber;
+Simu_LinesSol* Simu_LinesSol::New(::google::protobuf::Arena* arena) const {
+  Simu_LinesSol* n = new Simu_LinesSol;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void Simu_PhoneNumber::Clear() {
-  number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+void Simu_LinesSol::Clear() {
+  l_.Clear();
 }
 
-bool Simu_PhoneNumber::MergePartialFromCodedStream(
+bool Simu_LinesSol::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(parse_start:ecma_protoc.Simu.LinesSol)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string number = 1;
+      // repeated bool l = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_number()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->number().data(), this->number().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ecma_protoc.Simu.PhoneNumber.number"));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_type;
-        break;
-      }
-
-      // optional .ecma_protoc.Simu.PhoneType type = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_type:
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::ecma_protoc::Simu_PhoneType >(value));
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, this->mutable_l())));
+        } else if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 1, 10, input, this->mutable_l())));
         } else {
           goto handle_unusual;
         }
@@ -317,74 +302,66 @@ bool Simu_PhoneNumber::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(parse_success:ecma_protoc.Simu.LinesSol)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(parse_failure:ecma_protoc.Simu.LinesSol)
   return false;
 #undef DO_
 }
 
-void Simu_PhoneNumber::SerializeWithCachedSizes(
+void Simu_LinesSol::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ecma_protoc.Simu.PhoneNumber)
-  // optional string number = 1;
-  if (this->number().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->number().data(), this->number().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.PhoneNumber.number");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->number(), output);
+  // @@protoc_insertion_point(serialize_start:ecma_protoc.Simu.LinesSol)
+  // repeated bool l = 1;
+  if (this->l_size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteTag(1, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
+    output->WriteVarint32(_l_cached_byte_size_);
+  }
+  for (int i = 0; i < this->l_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteBoolNoTag(
+      this->l(i), output);
   }
 
-  // optional .ecma_protoc.Simu.PhoneType type = 2;
-  if (this->type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->type(), output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(serialize_end:ecma_protoc.Simu.LinesSol)
 }
 
-::google::protobuf::uint8* Simu_PhoneNumber::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Simu_LinesSol::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:ecma_protoc.Simu.PhoneNumber)
-  // optional string number = 1;
-  if (this->number().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->number().data(), this->number().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.PhoneNumber.number");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->number(), target);
+  // @@protoc_insertion_point(serialize_to_array_start:ecma_protoc.Simu.LinesSol)
+  // repeated bool l = 1;
+  if (this->l_size() > 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
+      1,
+      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
+      target);
+    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
+      _l_cached_byte_size_, target);
+  }
+  for (int i = 0; i < this->l_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteBoolNoTagToArray(this->l(i), target);
   }
 
-  // optional .ecma_protoc.Simu.PhoneType type = 2;
-  if (this->type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->type(), target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:ecma_protoc.Simu.PhoneNumber)
+  // @@protoc_insertion_point(serialize_to_array_end:ecma_protoc.Simu.LinesSol)
   return target;
 }
 
-int Simu_PhoneNumber::ByteSize() const {
+int Simu_LinesSol::ByteSize() const {
   int total_size = 0;
 
-  // optional string number = 1;
-  if (this->number().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->number());
-  }
-
-  // optional .ecma_protoc.Simu.PhoneType type = 2;
-  if (this->type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+  // repeated bool l = 1;
+  {
+    int data_size = 0;
+    data_size = 1 * this->l_size();
+    if (data_size > 0) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
+    }
+    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+    _l_cached_byte_size_ = data_size;
+    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    total_size += data_size;
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -393,10 +370,10 @@ int Simu_PhoneNumber::ByteSize() const {
   return total_size;
 }
 
-void Simu_PhoneNumber::MergeFrom(const ::google::protobuf::Message& from) {
+void Simu_LinesSol::MergeFrom(const ::google::protobuf::Message& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const Simu_PhoneNumber* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Simu_PhoneNumber>(
+  const Simu_LinesSol* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Simu_LinesSol>(
           &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -405,50 +382,43 @@ void Simu_PhoneNumber::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void Simu_PhoneNumber::MergeFrom(const Simu_PhoneNumber& from) {
+void Simu_LinesSol::MergeFrom(const Simu_LinesSol& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.number().size() > 0) {
-
-    number_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.number_);
-  }
-  if (from.type() != 0) {
-    set_type(from.type());
-  }
+  l_.MergeFrom(from.l_);
 }
 
-void Simu_PhoneNumber::CopyFrom(const ::google::protobuf::Message& from) {
+void Simu_LinesSol::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Simu_PhoneNumber::CopyFrom(const Simu_PhoneNumber& from) {
+void Simu_LinesSol::CopyFrom(const Simu_LinesSol& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Simu_PhoneNumber::IsInitialized() const {
+bool Simu_LinesSol::IsInitialized() const {
 
   return true;
 }
 
-void Simu_PhoneNumber::Swap(Simu_PhoneNumber* other) {
+void Simu_LinesSol::Swap(Simu_LinesSol* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Simu_PhoneNumber::InternalSwap(Simu_PhoneNumber* other) {
-  number_.Swap(&other->number_);
-  std::swap(type_, other->type_);
+void Simu_LinesSol::InternalSwap(Simu_LinesSol* other) {
+  l_.UnsafeArenaSwap(&other->l_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Simu_PhoneNumber::GetMetadata() const {
+::google::protobuf::Metadata Simu_LinesSol::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = Simu_PhoneNumber_descriptor_;
-  metadata.reflection = Simu_PhoneNumber_reflection_;
+  metadata.descriptor = Simu_LinesSol_descriptor_;
+  metadata.reflection = Simu_LinesSol_reflection_;
   return metadata;
 }
 
@@ -456,10 +426,12 @@ void Simu_PhoneNumber::InternalSwap(Simu_PhoneNumber* other) {
 // -------------------------------------------------------------------
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Simu::kNameFieldNumber;
-const int Simu::kIdFieldNumber;
-const int Simu::kEmailFieldNumber;
-const int Simu::kPhonesFieldNumber;
+const int Simu::kInstanceNameFieldNumber;
+const int Simu::kIdTimeFieldNumber;
+const int Simu::kSolverFieldNumber;
+const int Simu::kCostFieldNumber;
+const int Simu::kTimeFieldNumber;
+const int Simu::kXFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Simu::Simu()
@@ -484,9 +456,11 @@ void Simu::SharedCtor() {
     _is_default_instance_ = false;
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  id_ = 0;
-  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  instance_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_time_ = GOOGLE_LONGLONG(0);
+  solver_ = 0;
+  cost_ = 0;
+  time_ = 0;
 }
 
 Simu::~Simu() {
@@ -495,8 +469,7 @@ Simu::~Simu() {
 }
 
 void Simu::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  instance_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -527,10 +500,22 @@ Simu* Simu::New(::google::protobuf::Arena* arena) const {
 }
 
 void Simu::Clear() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  id_ = 0;
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  phones_.Clear();
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Simu*>(16)->f)
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(id_time_, cost_);
+  instance_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  time_ = 0;
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  x_.Clear();
 }
 
 bool Simu::MergePartialFromCodedStream(
@@ -543,66 +528,95 @@ bool Simu::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string name = 1;
+      // optional string instance_name = 1;
       case 1: {
         if (tag == 10) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
+                input, this->mutable_instance_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), this->name().length(),
+            this->instance_name().data(), this->instance_name().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ecma_protoc.Simu.name"));
+            "ecma_protoc.Simu.instance_name"));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_id;
+        if (input->ExpectTag(16)) goto parse_id_time;
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int64 id_time = 2;
       case 2: {
         if (tag == 16) {
-         parse_id:
+         parse_id_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &id_time_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_solver;
+        break;
+      }
+
+      // optional .ecma_protoc.Simu.Solver solver = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_solver:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_solver(static_cast< ::ecma_protoc::Simu_Solver >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_cost;
+        break;
+      }
+
+      // optional int32 cost = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_cost:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
+                 input, &cost_)));
 
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_email;
+        if (input->ExpectTag(40)) goto parse_time;
         break;
       }
 
-      // optional string email = 3;
-      case 3: {
-        if (tag == 26) {
-         parse_email:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_email()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->email().data(), this->email().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ecma_protoc.Simu.email"));
+      // optional int32 time = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &time_)));
+
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_phones;
+        if (input->ExpectTag(50)) goto parse_x;
         break;
       }
 
-      // repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
-      case 4: {
-        if (tag == 34) {
-         parse_phones:
+      // repeated .ecma_protoc.Simu.LinesSol x = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_x:
           DO_(input->IncrementRecursionDepth());
-         parse_loop_phones:
+         parse_loop_x:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
-                input, add_phones()));
+                input, add_x()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_loop_phones;
+        if (input->ExpectTag(50)) goto parse_loop_x;
         input->UnsafeDecrementRecursionDepth();
         if (input->ExpectAtEnd()) goto success;
         break;
@@ -632,35 +646,41 @@ failure:
 void Simu::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:ecma_protoc.Simu)
-  // optional string name = 1;
-  if (this->name().size() > 0) {
+  // optional string instance_name = 1;
+  if (this->instance_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), this->name().length(),
+      this->instance_name().data(), this->instance_name().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.name");
+      "ecma_protoc.Simu.instance_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
+      1, this->instance_name(), output);
   }
 
-  // optional int32 id = 2;
-  if (this->id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
+  // optional int64 id_time = 2;
+  if (this->id_time() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->id_time(), output);
   }
 
-  // optional string email = 3;
-  if (this->email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->email().data(), this->email().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.email");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->email(), output);
+  // optional .ecma_protoc.Simu.Solver solver = 3;
+  if (this->solver() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->solver(), output);
   }
 
-  // repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
-  for (unsigned int i = 0, n = this->phones_size(); i < n; i++) {
+  // optional int32 cost = 4;
+  if (this->cost() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->cost(), output);
+  }
+
+  // optional int32 time = 5;
+  if (this->time() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->time(), output);
+  }
+
+  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  for (unsigned int i = 0, n = this->x_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->phones(i), output);
+      6, this->x(i), output);
   }
 
   // @@protoc_insertion_point(serialize_end:ecma_protoc.Simu)
@@ -669,38 +689,43 @@ void Simu::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Simu::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ecma_protoc.Simu)
-  // optional string name = 1;
-  if (this->name().size() > 0) {
+  // optional string instance_name = 1;
+  if (this->instance_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), this->name().length(),
+      this->instance_name().data(), this->instance_name().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.name");
+      "ecma_protoc.Simu.instance_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+        1, this->instance_name(), target);
   }
 
-  // optional int32 id = 2;
-  if (this->id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
+  // optional int64 id_time = 2;
+  if (this->id_time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->id_time(), target);
   }
 
-  // optional string email = 3;
-  if (this->email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->email().data(), this->email().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ecma_protoc.Simu.email");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->email(), target);
+  // optional .ecma_protoc.Simu.Solver solver = 3;
+  if (this->solver() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->solver(), target);
   }
 
-  // repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
-  for (unsigned int i = 0, n = this->phones_size(); i < n; i++) {
+  // optional int32 cost = 4;
+  if (this->cost() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->cost(), target);
+  }
+
+  // optional int32 time = 5;
+  if (this->time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->time(), target);
+  }
+
+  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  for (unsigned int i = 0, n = this->x_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->phones(i), target);
+        6, this->x(i), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:ecma_protoc.Simu)
@@ -710,33 +735,46 @@ void Simu::SerializeWithCachedSizes(
 int Simu::ByteSize() const {
   int total_size = 0;
 
-  // optional string name = 1;
-  if (this->name().size() > 0) {
+  // optional string instance_name = 1;
+  if (this->instance_name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
+        this->instance_name());
   }
 
-  // optional int32 id = 2;
-  if (this->id() != 0) {
+  // optional int64 id_time = 2;
+  if (this->id_time() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->id_time());
+  }
+
+  // optional .ecma_protoc.Simu.Solver solver = 3;
+  if (this->solver() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->solver());
+  }
+
+  // optional int32 cost = 4;
+  if (this->cost() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
+        this->cost());
   }
 
-  // optional string email = 3;
-  if (this->email().size() > 0) {
+  // optional int32 time = 5;
+  if (this->time() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->email());
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->time());
   }
 
-  // repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
-  total_size += 1 * this->phones_size();
-  for (int i = 0; i < this->phones_size(); i++) {
+  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  total_size += 1 * this->x_size();
+  for (int i = 0; i < this->x_size(); i++) {
     total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->phones(i));
+        this->x(i));
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -759,17 +797,22 @@ void Simu::MergeFrom(const ::google::protobuf::Message& from) {
 
 void Simu::MergeFrom(const Simu& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  phones_.MergeFrom(from.phones_);
-  if (from.name().size() > 0) {
+  x_.MergeFrom(from.x_);
+  if (from.instance_name().size() > 0) {
 
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+    instance_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instance_name_);
   }
-  if (from.id() != 0) {
-    set_id(from.id());
+  if (from.id_time() != 0) {
+    set_id_time(from.id_time());
   }
-  if (from.email().size() > 0) {
-
-    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
+  if (from.solver() != 0) {
+    set_solver(from.solver());
+  }
+  if (from.cost() != 0) {
+    set_cost(from.cost());
+  }
+  if (from.time() != 0) {
+    set_time(from.time());
   }
 }
 
@@ -795,10 +838,12 @@ void Simu::Swap(Simu* other) {
   InternalSwap(other);
 }
 void Simu::InternalSwap(Simu* other) {
-  name_.Swap(&other->name_);
-  std::swap(id_, other->id_);
-  email_.Swap(&other->email_);
-  phones_.UnsafeArenaSwap(&other->phones_);
+  instance_name_.Swap(&other->instance_name_);
+  std::swap(id_time_, other->id_time_);
+  std::swap(solver_, other->solver_);
+  std::swap(cost_, other->cost_);
+  std::swap(time_, other->time_);
+  x_.UnsafeArenaSwap(&other->x_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -812,197 +857,169 @@ void Simu::InternalSwap(Simu* other) {
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Simu_PhoneNumber
+// Simu_LinesSol
 
-// optional string number = 1;
-void Simu_PhoneNumber::clear_number() {
-  number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// repeated bool l = 1;
+int Simu_LinesSol::l_size() const {
+  return l_.size();
 }
- const ::std::string& Simu_PhoneNumber::number() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.PhoneNumber.number)
-  return number_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Simu_LinesSol::clear_l() {
+  l_.Clear();
 }
- void Simu_PhoneNumber::set_number(const ::std::string& value) {
-  
-  number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.PhoneNumber.number)
+ bool Simu_LinesSol::l(int index) const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.LinesSol.l)
+  return l_.Get(index);
 }
- void Simu_PhoneNumber::set_number(const char* value) {
-  
-  number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.PhoneNumber.number)
+ void Simu_LinesSol::set_l(int index, bool value) {
+  l_.Set(index, value);
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.LinesSol.l)
 }
- void Simu_PhoneNumber::set_number(const char* value, size_t size) {
-  
-  number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.PhoneNumber.number)
+ void Simu_LinesSol::add_l(bool value) {
+  l_.Add(value);
+  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.LinesSol.l)
 }
- ::std::string* Simu_PhoneNumber::mutable_number() {
-  
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.PhoneNumber.number)
-  return number_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+ const ::google::protobuf::RepeatedField< bool >&
+Simu_LinesSol::l() const {
+  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.LinesSol.l)
+  return l_;
 }
- ::std::string* Simu_PhoneNumber::release_number() {
-  
-  return number_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void Simu_PhoneNumber::set_allocated_number(::std::string* number) {
-  if (number != NULL) {
-    
-  } else {
-    
-  }
-  number_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), number);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.PhoneNumber.number)
-}
-
-// optional .ecma_protoc.Simu.PhoneType type = 2;
-void Simu_PhoneNumber::clear_type() {
-  type_ = 0;
-}
- ::ecma_protoc::Simu_PhoneType Simu_PhoneNumber::type() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.PhoneNumber.type)
-  return static_cast< ::ecma_protoc::Simu_PhoneType >(type_);
-}
- void Simu_PhoneNumber::set_type(::ecma_protoc::Simu_PhoneType value) {
-  
-  type_ = value;
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.PhoneNumber.type)
+ ::google::protobuf::RepeatedField< bool >*
+Simu_LinesSol::mutable_l() {
+  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.LinesSol.l)
+  return &l_;
 }
 
 // -------------------------------------------------------------------
 
 // Simu
 
-// optional string name = 1;
-void Simu::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// optional string instance_name = 1;
+void Simu::clear_instance_name() {
+  instance_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& Simu::name() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.name)
-  return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+ const ::std::string& Simu::instance_name() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.instance_name)
+  return instance_name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Simu::set_name(const ::std::string& value) {
+ void Simu::set_instance_name(const ::std::string& value) {
   
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.name)
+  instance_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.instance_name)
 }
- void Simu::set_name(const char* value) {
+ void Simu::set_instance_name(const char* value) {
   
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.name)
+  instance_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.instance_name)
 }
- void Simu::set_name(const char* value, size_t size) {
+ void Simu::set_instance_name(const char* value, size_t size) {
   
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  instance_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.name)
+  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.instance_name)
 }
- ::std::string* Simu::mutable_name() {
+ ::std::string* Simu::mutable_instance_name() {
   
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.instance_name)
+  return instance_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* Simu::release_name() {
+ ::std::string* Simu::release_instance_name() {
   
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return instance_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Simu::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
+ void Simu::set_allocated_instance_name(::std::string* instance_name) {
+  if (instance_name != NULL) {
     
   } else {
     
   }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.name)
+  instance_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instance_name);
+  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.instance_name)
 }
 
-// optional int32 id = 2;
-void Simu::clear_id() {
-  id_ = 0;
+// optional int64 id_time = 2;
+void Simu::clear_id_time() {
+  id_time_ = GOOGLE_LONGLONG(0);
 }
- ::google::protobuf::int32 Simu::id() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.id)
-  return id_;
+ ::google::protobuf::int64 Simu::id_time() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.id_time)
+  return id_time_;
 }
- void Simu::set_id(::google::protobuf::int32 value) {
+ void Simu::set_id_time(::google::protobuf::int64 value) {
   
-  id_ = value;
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.id)
+  id_time_ = value;
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.id_time)
 }
 
-// optional string email = 3;
-void Simu::clear_email() {
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// optional .ecma_protoc.Simu.Solver solver = 3;
+void Simu::clear_solver() {
+  solver_ = 0;
 }
- const ::std::string& Simu::email() const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.email)
-  return email_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+ ::ecma_protoc::Simu_Solver Simu::solver() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.solver)
+  return static_cast< ::ecma_protoc::Simu_Solver >(solver_);
 }
- void Simu::set_email(const ::std::string& value) {
+ void Simu::set_solver(::ecma_protoc::Simu_Solver value) {
   
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.email)
-}
- void Simu::set_email(const char* value) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ecma_protoc.Simu.email)
-}
- void Simu::set_email(const char* value, size_t size) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ecma_protoc.Simu.email)
-}
- ::std::string* Simu::mutable_email() {
-  
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.email)
-  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* Simu::release_email() {
-  
-  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void Simu::set_allocated_email(::std::string* email) {
-  if (email != NULL) {
-    
-  } else {
-    
-  }
-  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:ecma_protoc.Simu.email)
+  solver_ = value;
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.solver)
 }
 
-// repeated .ecma_protoc.Simu.PhoneNumber phones = 4;
-int Simu::phones_size() const {
-  return phones_.size();
+// optional int32 cost = 4;
+void Simu::clear_cost() {
+  cost_ = 0;
 }
-void Simu::clear_phones() {
-  phones_.Clear();
+ ::google::protobuf::int32 Simu::cost() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.cost)
+  return cost_;
 }
-const ::ecma_protoc::Simu_PhoneNumber& Simu::phones(int index) const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.phones)
-  return phones_.Get(index);
+ void Simu::set_cost(::google::protobuf::int32 value) {
+  
+  cost_ = value;
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.cost)
 }
-::ecma_protoc::Simu_PhoneNumber* Simu::mutable_phones(int index) {
-  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.phones)
-  return phones_.Mutable(index);
+
+// optional int32 time = 5;
+void Simu::clear_time() {
+  time_ = 0;
 }
-::ecma_protoc::Simu_PhoneNumber* Simu::add_phones() {
-  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.phones)
-  return phones_.Add();
+ ::google::protobuf::int32 Simu::time() const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.time)
+  return time_;
 }
-::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >*
-Simu::mutable_phones() {
-  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.phones)
-  return &phones_;
+ void Simu::set_time(::google::protobuf::int32 value) {
+  
+  time_ = value;
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.time)
 }
-const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_PhoneNumber >&
-Simu::phones() const {
-  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.phones)
-  return phones_;
+
+// repeated .ecma_protoc.Simu.LinesSol x = 6;
+int Simu::x_size() const {
+  return x_.size();
+}
+void Simu::clear_x() {
+  x_.Clear();
+}
+const ::ecma_protoc::Simu_LinesSol& Simu::x(int index) const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.x)
+  return x_.Get(index);
+}
+::ecma_protoc::Simu_LinesSol* Simu::mutable_x(int index) {
+  // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.x)
+  return x_.Mutable(index);
+}
+::ecma_protoc::Simu_LinesSol* Simu::add_x() {
+  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.x)
+  return x_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LinesSol >*
+Simu::mutable_x() {
+  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.x)
+  return &x_;
+}
+const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LinesSol >&
+Simu::x() const {
+  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.x)
+  return x_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
