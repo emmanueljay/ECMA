@@ -24,9 +24,9 @@ namespace {
 const ::google::protobuf::Descriptor* Simu_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Simu_reflection_ = NULL;
-const ::google::protobuf::Descriptor* Simu_LinesSol_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* Simu_LineSol_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  Simu_LinesSol_reflection_ = NULL;
+  Simu_LineSol_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Simu_Solver_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Results_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
@@ -61,21 +61,21 @@ void protobuf_AssignDesc_results_5fformat_2eproto() {
       sizeof(Simu),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu, _is_default_instance_));
-  Simu_LinesSol_descriptor_ = Simu_descriptor_->nested_type(0);
-  static const int Simu_LinesSol_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, l_),
+  Simu_LineSol_descriptor_ = Simu_descriptor_->nested_type(0);
+  static const int Simu_LineSol_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LineSol, val_),
   };
-  Simu_LinesSol_reflection_ =
+  Simu_LineSol_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      Simu_LinesSol_descriptor_,
-      Simu_LinesSol::default_instance_,
-      Simu_LinesSol_offsets_,
+      Simu_LineSol_descriptor_,
+      Simu_LineSol::default_instance_,
+      Simu_LineSol_offsets_,
       -1,
       -1,
       -1,
-      sizeof(Simu_LinesSol),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LinesSol, _is_default_instance_));
+      sizeof(Simu_LineSol),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LineSol, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Simu_LineSol, _is_default_instance_));
   Simu_Solver_descriptor_ = Simu_descriptor_->enum_type(0);
   Results_descriptor_ = file->message_type(1);
   static const int Results_offsets_[1] = {
@@ -107,7 +107,7 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Simu_descriptor_, &Simu::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Simu_LinesSol_descriptor_, &Simu_LinesSol::default_instance());
+      Simu_LineSol_descriptor_, &Simu_LineSol::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Results_descriptor_, &Results::default_instance());
 }
@@ -117,8 +117,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_results_5fformat_2eproto() {
   delete Simu::default_instance_;
   delete Simu_reflection_;
-  delete Simu_LinesSol::default_instance_;
-  delete Simu_LinesSol_reflection_;
+  delete Simu_LineSol::default_instance_;
+  delete Simu_LineSol_reflection_;
   delete Results::default_instance_;
   delete Results_reflection_;
 }
@@ -130,22 +130,23 @@ void protobuf_AddDesc_results_5fformat_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\024results_format.proto\022\013ecma_protoc\"\200\002\n\004"
+    "\n\024results_format.proto\022\013ecma_protoc\"\226\002\n\004"
     "Simu\022\025\n\rinstance_name\030\001 \001(\t\022\017\n\007id_time\030\002"
     " \001(\003\022(\n\006solver\030\003 \001(\0162\030.ecma_protoc.Simu."
-    "Solver\022\014\n\004cost\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022%\n\001x\030"
-    "\006 \003(\0132\032.ecma_protoc.Simu.LinesSol\032\025\n\010Lin"
-    "esSol\022\t\n\001l\030\001 \003(\010\"L\n\006Solver\022\n\n\006STUPID\020\000\022\013"
+    "Solver\022\014\n\004cost\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022$\n\001x\030"
+    "\006 \003(\0132\031.ecma_protoc.Simu.LineSol\032\026\n\007Line"
+    "Sol\022\013\n\003val\030\001 \003(\010\"b\n\006Solver\022\n\n\006STUPID\020\000\022\013"
     "\n\007FRONTAL\020\001\022\016\n\nCONSTRAINT\020\002\022\n\n\006GREEDY\020\003\022"
-    "\r\n\tANNEALING\020\004\"*\n\007Results\022\037\n\004simu\030\001 \003(\0132"
-    "\021.ecma_protoc.Simub\006proto3", 346);
+    "\024\n\020GREEDYWCONNEXITY\020\004\022\r\n\tANNEALING\020\005\"*\n\007"
+    "Results\022\037\n\004simu\030\001 \003(\0132\021.ecma_protoc.Simu"
+    "b\006proto3", 368);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "results_format.proto", &protobuf_RegisterTypes);
   Simu::default_instance_ = new Simu();
-  Simu_LinesSol::default_instance_ = new Simu_LinesSol();
+  Simu_LineSol::default_instance_ = new Simu_LineSol();
   Results::default_instance_ = new Results();
   Simu::default_instance_->InitAsDefaultInstance();
-  Simu_LinesSol::default_instance_->InitAsDefaultInstance();
+  Simu_LineSol::default_instance_->InitAsDefaultInstance();
   Results::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_results_5fformat_2eproto);
 }
@@ -180,6 +181,7 @@ bool Simu_Solver_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;
@@ -191,97 +193,98 @@ const Simu_Solver Simu::STUPID;
 const Simu_Solver Simu::FRONTAL;
 const Simu_Solver Simu::CONSTRAINT;
 const Simu_Solver Simu::GREEDY;
+const Simu_Solver Simu::GREEDYWCONNEXITY;
 const Simu_Solver Simu::ANNEALING;
 const Simu_Solver Simu::Solver_MIN;
 const Simu_Solver Simu::Solver_MAX;
 const int Simu::Solver_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Simu_LinesSol::kLFieldNumber;
+const int Simu_LineSol::kValFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Simu_LinesSol::Simu_LinesSol()
+Simu_LineSol::Simu_LineSol()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(constructor:ecma_protoc.Simu.LineSol)
 }
 
-void Simu_LinesSol::InitAsDefaultInstance() {
+void Simu_LineSol::InitAsDefaultInstance() {
   _is_default_instance_ = true;
 }
 
-Simu_LinesSol::Simu_LinesSol(const Simu_LinesSol& from)
+Simu_LineSol::Simu_LineSol(const Simu_LineSol& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(copy_constructor:ecma_protoc.Simu.LineSol)
 }
 
-void Simu_LinesSol::SharedCtor() {
+void Simu_LineSol::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
 }
 
-Simu_LinesSol::~Simu_LinesSol() {
-  // @@protoc_insertion_point(destructor:ecma_protoc.Simu.LinesSol)
+Simu_LineSol::~Simu_LineSol() {
+  // @@protoc_insertion_point(destructor:ecma_protoc.Simu.LineSol)
   SharedDtor();
 }
 
-void Simu_LinesSol::SharedDtor() {
+void Simu_LineSol::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void Simu_LinesSol::SetCachedSize(int size) const {
+void Simu_LineSol::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Simu_LinesSol::descriptor() {
+const ::google::protobuf::Descriptor* Simu_LineSol::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return Simu_LinesSol_descriptor_;
+  return Simu_LineSol_descriptor_;
 }
 
-const Simu_LinesSol& Simu_LinesSol::default_instance() {
+const Simu_LineSol& Simu_LineSol::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_results_5fformat_2eproto();
   return *default_instance_;
 }
 
-Simu_LinesSol* Simu_LinesSol::default_instance_ = NULL;
+Simu_LineSol* Simu_LineSol::default_instance_ = NULL;
 
-Simu_LinesSol* Simu_LinesSol::New(::google::protobuf::Arena* arena) const {
-  Simu_LinesSol* n = new Simu_LinesSol;
+Simu_LineSol* Simu_LineSol::New(::google::protobuf::Arena* arena) const {
+  Simu_LineSol* n = new Simu_LineSol;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void Simu_LinesSol::Clear() {
-  l_.Clear();
+void Simu_LineSol::Clear() {
+  val_.Clear();
 }
 
-bool Simu_LinesSol::MergePartialFromCodedStream(
+bool Simu_LineSol::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(parse_start:ecma_protoc.Simu.LineSol)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated bool l = 1;
+      // repeated bool val = 1;
       case 1: {
         if (tag == 10) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, this->mutable_l())));
+                 input, this->mutable_val())));
         } else if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 1, 10, input, this->mutable_l())));
+                 1, 10, input, this->mutable_val())));
         } else {
           goto handle_unusual;
         }
@@ -302,64 +305,64 @@ bool Simu_LinesSol::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(parse_success:ecma_protoc.Simu.LineSol)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(parse_failure:ecma_protoc.Simu.LineSol)
   return false;
 #undef DO_
 }
 
-void Simu_LinesSol::SerializeWithCachedSizes(
+void Simu_LineSol::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ecma_protoc.Simu.LinesSol)
-  // repeated bool l = 1;
-  if (this->l_size() > 0) {
+  // @@protoc_insertion_point(serialize_start:ecma_protoc.Simu.LineSol)
+  // repeated bool val = 1;
+  if (this->val_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(1, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_l_cached_byte_size_);
+    output->WriteVarint32(_val_cached_byte_size_);
   }
-  for (int i = 0; i < this->l_size(); i++) {
+  for (int i = 0; i < this->val_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteBoolNoTag(
-      this->l(i), output);
+      this->val(i), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(serialize_end:ecma_protoc.Simu.LineSol)
 }
 
-::google::protobuf::uint8* Simu_LinesSol::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Simu_LineSol::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:ecma_protoc.Simu.LinesSol)
-  // repeated bool l = 1;
-  if (this->l_size() > 0) {
+  // @@protoc_insertion_point(serialize_to_array_start:ecma_protoc.Simu.LineSol)
+  // repeated bool val = 1;
+  if (this->val_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       1,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _l_cached_byte_size_, target);
+      _val_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->l_size(); i++) {
+  for (int i = 0; i < this->val_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteBoolNoTagToArray(this->l(i), target);
+      WriteBoolNoTagToArray(this->val(i), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:ecma_protoc.Simu.LinesSol)
+  // @@protoc_insertion_point(serialize_to_array_end:ecma_protoc.Simu.LineSol)
   return target;
 }
 
-int Simu_LinesSol::ByteSize() const {
+int Simu_LineSol::ByteSize() const {
   int total_size = 0;
 
-  // repeated bool l = 1;
+  // repeated bool val = 1;
   {
     int data_size = 0;
-    data_size = 1 * this->l_size();
+    data_size = 1 * this->val_size();
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _l_cached_byte_size_ = data_size;
+    _val_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -370,10 +373,10 @@ int Simu_LinesSol::ByteSize() const {
   return total_size;
 }
 
-void Simu_LinesSol::MergeFrom(const ::google::protobuf::Message& from) {
+void Simu_LineSol::MergeFrom(const ::google::protobuf::Message& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const Simu_LinesSol* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Simu_LinesSol>(
+  const Simu_LineSol* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Simu_LineSol>(
           &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -382,43 +385,43 @@ void Simu_LinesSol::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void Simu_LinesSol::MergeFrom(const Simu_LinesSol& from) {
+void Simu_LineSol::MergeFrom(const Simu_LineSol& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  l_.MergeFrom(from.l_);
+  val_.MergeFrom(from.val_);
 }
 
-void Simu_LinesSol::CopyFrom(const ::google::protobuf::Message& from) {
+void Simu_LineSol::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Simu_LinesSol::CopyFrom(const Simu_LinesSol& from) {
+void Simu_LineSol::CopyFrom(const Simu_LineSol& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Simu_LinesSol::IsInitialized() const {
+bool Simu_LineSol::IsInitialized() const {
 
   return true;
 }
 
-void Simu_LinesSol::Swap(Simu_LinesSol* other) {
+void Simu_LineSol::Swap(Simu_LineSol* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Simu_LinesSol::InternalSwap(Simu_LinesSol* other) {
-  l_.UnsafeArenaSwap(&other->l_);
+void Simu_LineSol::InternalSwap(Simu_LineSol* other) {
+  val_.UnsafeArenaSwap(&other->val_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Simu_LinesSol::GetMetadata() const {
+::google::protobuf::Metadata Simu_LineSol::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = Simu_LinesSol_descriptor_;
-  metadata.reflection = Simu_LinesSol_reflection_;
+  metadata.descriptor = Simu_LineSol_descriptor_;
+  metadata.reflection = Simu_LineSol_reflection_;
   return metadata;
 }
 
@@ -605,7 +608,7 @@ bool Simu::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .ecma_protoc.Simu.LinesSol x = 6;
+      // repeated .ecma_protoc.Simu.LineSol x = 6;
       case 6: {
         if (tag == 50) {
          parse_x:
@@ -677,7 +680,7 @@ void Simu::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->time(), output);
   }
 
-  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  // repeated .ecma_protoc.Simu.LineSol x = 6;
   for (unsigned int i = 0, n = this->x_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->x(i), output);
@@ -721,7 +724,7 @@ void Simu::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->time(), target);
   }
 
-  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  // repeated .ecma_protoc.Simu.LineSol x = 6;
   for (unsigned int i = 0, n = this->x_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -769,7 +772,7 @@ int Simu::ByteSize() const {
         this->time());
   }
 
-  // repeated .ecma_protoc.Simu.LinesSol x = 6;
+  // repeated .ecma_protoc.Simu.LineSol x = 6;
   total_size += 1 * this->x_size();
   for (int i = 0; i < this->x_size(); i++) {
     total_size +=
@@ -857,36 +860,36 @@ void Simu::InternalSwap(Simu* other) {
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Simu_LinesSol
+// Simu_LineSol
 
-// repeated bool l = 1;
-int Simu_LinesSol::l_size() const {
-  return l_.size();
+// repeated bool val = 1;
+int Simu_LineSol::val_size() const {
+  return val_.size();
 }
-void Simu_LinesSol::clear_l() {
-  l_.Clear();
+void Simu_LineSol::clear_val() {
+  val_.Clear();
 }
- bool Simu_LinesSol::l(int index) const {
-  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.LinesSol.l)
-  return l_.Get(index);
+ bool Simu_LineSol::val(int index) const {
+  // @@protoc_insertion_point(field_get:ecma_protoc.Simu.LineSol.val)
+  return val_.Get(index);
 }
- void Simu_LinesSol::set_l(int index, bool value) {
-  l_.Set(index, value);
-  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.LinesSol.l)
+ void Simu_LineSol::set_val(int index, bool value) {
+  val_.Set(index, value);
+  // @@protoc_insertion_point(field_set:ecma_protoc.Simu.LineSol.val)
 }
- void Simu_LinesSol::add_l(bool value) {
-  l_.Add(value);
-  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.LinesSol.l)
+ void Simu_LineSol::add_val(bool value) {
+  val_.Add(value);
+  // @@protoc_insertion_point(field_add:ecma_protoc.Simu.LineSol.val)
 }
  const ::google::protobuf::RepeatedField< bool >&
-Simu_LinesSol::l() const {
-  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.LinesSol.l)
-  return l_;
+Simu_LineSol::val() const {
+  // @@protoc_insertion_point(field_list:ecma_protoc.Simu.LineSol.val)
+  return val_;
 }
  ::google::protobuf::RepeatedField< bool >*
-Simu_LinesSol::mutable_l() {
-  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.LinesSol.l)
-  return &l_;
+Simu_LineSol::mutable_val() {
+  // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.LineSol.val)
+  return &val_;
 }
 
 // -------------------------------------------------------------------
@@ -992,31 +995,31 @@ void Simu::clear_time() {
   // @@protoc_insertion_point(field_set:ecma_protoc.Simu.time)
 }
 
-// repeated .ecma_protoc.Simu.LinesSol x = 6;
+// repeated .ecma_protoc.Simu.LineSol x = 6;
 int Simu::x_size() const {
   return x_.size();
 }
 void Simu::clear_x() {
   x_.Clear();
 }
-const ::ecma_protoc::Simu_LinesSol& Simu::x(int index) const {
+const ::ecma_protoc::Simu_LineSol& Simu::x(int index) const {
   // @@protoc_insertion_point(field_get:ecma_protoc.Simu.x)
   return x_.Get(index);
 }
-::ecma_protoc::Simu_LinesSol* Simu::mutable_x(int index) {
+::ecma_protoc::Simu_LineSol* Simu::mutable_x(int index) {
   // @@protoc_insertion_point(field_mutable:ecma_protoc.Simu.x)
   return x_.Mutable(index);
 }
-::ecma_protoc::Simu_LinesSol* Simu::add_x() {
+::ecma_protoc::Simu_LineSol* Simu::add_x() {
   // @@protoc_insertion_point(field_add:ecma_protoc.Simu.x)
   return x_.Add();
 }
-::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LinesSol >*
+::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LineSol >*
 Simu::mutable_x() {
   // @@protoc_insertion_point(field_mutable_list:ecma_protoc.Simu.x)
   return &x_;
 }
-const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LinesSol >&
+const ::google::protobuf::RepeatedPtrField< ::ecma_protoc::Simu_LineSol >&
 Simu::x() const {
   // @@protoc_insertion_point(field_list:ecma_protoc.Simu.x)
   return x_;

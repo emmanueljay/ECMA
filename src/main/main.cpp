@@ -19,12 +19,14 @@
 
 // Protocol Buffer file 
 #include "protoc/results_format.pb.h"
+#include "protoc/ecma_protobuf.h"
 
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
 #include "alg/solver.h"
 #include "bo/data.h"
+#include "bo/solution.h"
 #include "input/instance_reader.h"
 #include "output/solution_writer.h"
 #include "utils/helpers.h"
@@ -73,6 +75,7 @@ int main(int argc, char* argv[])
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ecma_protoc::Results results;
+  ecma_protoc::Simu_Solver solver_id;
 
   {
     // Read the existing address book.
@@ -85,7 +88,7 @@ int main(int argc, char* argv[])
     }
   }
 
-  
+  /*** Solver **/
 
   if (FLAGS_instance == "") {
     LOG(ERROR) << "You have to pass an instance through the --instance flag";
@@ -107,6 +110,7 @@ int main(int argc, char* argv[])
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
+      solver_id = ecma_protoc::Simu::STUPID;
       // Solve via Stupid Solver
       StupidSolver stupid_solver(data);
       description = stupid_solver.name() + " : " + stupid_solver.description(); 
@@ -115,6 +119,7 @@ int main(int argc, char* argv[])
       sol.fill_sol(stupid_solver.sol());
     }
     else if (FLAGS_solver == "frontal") {
+      solver_id = ecma_protoc::Simu::FRONTAL;
       // Solve via Frontal Solver
       FrontalSolver frontal_solver(data);
       description = frontal_solver.name() + " : " + frontal_solver.description(); 
@@ -123,6 +128,7 @@ int main(int argc, char* argv[])
       sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "greedy") {
+      solver_id = ecma_protoc::Simu::GREEDY;
       // Solve via Greedy Solver
       GreedySolver greedy_solver(data);
       description = greedy_solver.name() + " : " + greedy_solver.description(); 
@@ -131,6 +137,7 @@ int main(int argc, char* argv[])
       sol.fill_sol(greedy_solver.sol());
     }
     else if (FLAGS_solver == "greedyWconnexity") {
+      solver_id = ecma_protoc::Simu::GREEDYWCONNEXITY;
       // Solve via Greedy Solver Without connexity
       GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
       description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
@@ -139,6 +146,7 @@ int main(int argc, char* argv[])
       sol.fill_sol(greedy_solver_without_connexity.sol());
     }
     else if (FLAGS_solver == "constraint") {
+      solver_id = ecma_protoc::Simu::CONSTRAINT;
       // Solve via Constraint Solver
       ConstraintSolver constaint_solver(data);
       description = constaint_solver.name() + " : " + constaint_solver.description(); 
@@ -147,6 +155,7 @@ int main(int argc, char* argv[])
       sol.fill_sol(constaint_solver.sol());
     }
     else if (FLAGS_solver == "annealing") {
+      solver_id = ecma_protoc::Simu::ANNEALING;
       // Solve via Annealing Solver
       // GreedySolver greedy_solver(data);
       // if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
@@ -177,12 +186,12 @@ int main(int argc, char* argv[])
       ecma::writer::write_in_synthetic_res_file(
           cost, description, FLAGS_instance, diff, FLAGS_synRes);
       ecma::writer::export_solution(sol, FLAGS_solDir, diff);
+      ecma::protobuf::add_simulation(&results, sol, diff, solver_id);
     }
     else
       LOG(ERROR) << "The solution is not admissible";
   }
-
-
+ 
   /*** Protocol buffer management */
   {
     // Write the new address book back to disk.

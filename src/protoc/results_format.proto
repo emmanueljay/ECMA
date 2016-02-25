@@ -21,18 +21,19 @@ message Simu {
     FRONTAL = 1;
     CONSTRAINT = 2;
     GREEDY = 3;
-    ANNEALING = 4;
+    GREEDYWCONNEXITY = 4;
+    ANNEALING = 5;
   }
   Solver solver = 3;
 
   int32 cost = 4;
   int32 time = 5;
 
-  message LinesSol {
-    repeated bool l = 1;
+  message LineSol {
+    repeated bool val = 1;
   } 
 
-  repeated LinesSol x = 6;
+  repeated LineSol x = 6;
 }
 
 // Our address book file is just one of these.
