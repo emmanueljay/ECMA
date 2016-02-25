@@ -82,6 +82,20 @@ public:
 };
 
 /**
+ * Third Solver (Without connexity) : solve using a greedy algorithm
+ */
+class GreedySolverWithoutConnexity : public Solver {
+public:
+  GreedySolverWithoutConnexity(const Data& data): Solver(data) {
+      name("Solving using Greedy Solver without connexity");
+      description("Solve without connexity problem with a greedy algorithm");
+    }
+  ~GreedySolverWithoutConnexity() {} ;
+
+  bool solve();
+};
+
+/**
  * Fourth Solver : solve using a constraint programming solver
  */
 class ConstraintSolver : public Solver {
