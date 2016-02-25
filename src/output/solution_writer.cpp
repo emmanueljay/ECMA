@@ -34,8 +34,8 @@ void write_in_synthetic_res_file(double cost, std::string solver_name,
 
   ofstream temp_file;
   temp_file.open(file_name.c_str(), ios::app);
-  temp_file << date << ";" << instance_name << ";" << cost << ";" << time_s 
-            << ";" << solver_name << ";\n"; 
+  temp_file << date << "," << instance_name << "," << cost << "," << time_s 
+            << "," << solver_name << "\n"; 
   temp_file.close();
 }
 
