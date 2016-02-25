@@ -130,6 +130,14 @@ int main(int argc, char* argv[])
       greedy_solver.solve();
       sol.fill_sol(greedy_solver.sol());
     }
+    else if (FLAGS_solver == "greedyWconnexity") {
+      // Solve via Greedy Solver Without connexity
+      GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
+      description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
+      LOG(INFO) << description;
+      greedy_solver_without_connexity.solve();
+      sol.fill_sol(greedy_solver_without_connexity.sol());
+    }
     else if (FLAGS_solver == "constraint") {
       // Solve via Constraint Solver
       ConstraintSolver constaint_solver(data);
