@@ -9,7 +9,7 @@ typedef IloArray<IloIntVarArray>  IntVarMatrix;
 typedef IloArray<IloBoolVarArray> BoolVarMatrix;
 
 
-bool ConstraintSolver::solve() {
+bool ConstraintSolver::solve(int borne) {
   LOG(INFO) << "Using : " << name_ << " :: " << description_; 
   IloEnv env;
   try {
@@ -55,38 +55,38 @@ bool ConstraintSolver::solve() {
   
     model.add(sum_HCp*sum_Ca + sum_HCa*sum_Cp >= 2*sum_Cp*sum_Ca);
 
-    VLOG(3) << "Constraint 3. Connexity";
+    // VLOG(3) << "Constraint 3. Connexity";
 
-    for (int i = 0; i < data_.m; ++i)
-    for (int j = 0; j < data_.n; ++j) {
-      if (i==0) {
-        if (j==0)  model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
-      }
-      else if (i==(data_.m-1)) {
-        if (j==0)  model.add((x[i][j] == 0) || 
-          ((x[i-1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
-          ((x[i-1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || 
-          ((x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
-      }
-      else {
-        if (j==0)  model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j+1] == 1)));
-        else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1)));
-        else model.add((x[i][j] == 0) || 
-          ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));      
-      }
-    }
+    // for (int i = 0; i < data_.m; ++i)
+    // for (int j = 0; j < data_.n; ++j) {
+    //   if (i==0) {
+    //     if (j==0)  model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i][j+1] == 1)));
+    //     else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i][j-1] == 1)));
+    //     else model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
+    //   }
+    //   else if (i==(data_.m-1)) {
+    //     if (j==0)  model.add((x[i][j] == 0) || 
+    //       ((x[i-1][j] == 1) || (x[i][j+1] == 1)));
+    //     else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+    //       ((x[i-1][j] == 1) || (x[i][j-1] == 1)));
+    //     else model.add((x[i][j] == 0) || 
+    //       ((x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));
+    //   }
+    //   else {
+    //     if (j==0)  model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j+1] == 1)));
+    //     else if (j==(data_.n-1)) model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1)));
+    //     else model.add((x[i][j] == 0) || 
+    //       ((x[i+1][j] == 1) || (x[i-1][j] == 1) || (x[i][j-1] == 1) || (x[i][j+1] == 1)));      
+    //   }
+    // }
 
-    // VLOG(3) << "Constraint 4. Objective value";
-    // model.add(sum_x >= 1);
+    VLOG(3) << "Constraint 4. Objective value";
+    model.add(sum_x <= borne);
 
     IloObjective objective = IloMaximize(env,sum_x);
     model.add(objective);

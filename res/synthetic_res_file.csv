@@ -343,3 +343,18 @@
 1456940515,../instances/projet_25_30_6.dat,163,12,Solving using Annealing Solver : Solve using Annealing Solver
 1456940553,../instances/projet_25_30_10.dat,552,20,Solving using Annealing Solver : Solve using Annealing Solver
 1456940566,../instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456946227,../instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456946247,../instances/projet_5_8_1.dat,24,7,Solving using Frontal Solver : Solve using Cplex
+1456946273,../instances/projet_5_8_1.dat,24,8,Solving using Frontal Solver : Solve using Cplex
+1456946303,../instances/projet_5_8_2.dat,4,1,Solving using Frontal Solver : Solve using Cplex
+1456946320,../instances/projet_5_8_3.dat,30,13,Solving using Frontal Solver : Solve using Cplex
+1456946583,../instances/projet_5_8_1.dat,24,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946588,../instances/projet_5_8_2.dat,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946592,../instances/projet_5_8_3.dat,30,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946596,../instances/projet_5_8_5.dat,40,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946600,../instances/projet_5_8_6.dat,23,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946699,../instances/projet_12_10_2.dat,4,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946715,../instances/projet_12_10_3.dat,65,10,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947185,../instances/projet_5_8_1.dat,24,4,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947190,../instances/projet_5_8_2.dat,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947247,../instances/projet_12_10_4.dat,62,2,Solving using Annealing Solver : Solve using Annealing Solver

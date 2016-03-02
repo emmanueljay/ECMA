@@ -81,6 +81,15 @@ void getDoubleMatrix(ifstream& file, vector<vector<double> >& mat, int n, int m)
   return;
 }
 
+double getMax(const vector<vector<double> >& mat) {
+  double max = 0;
+  for (int i = 0; i < mat.size(); ++i)
+  for (int j = 0; j < mat[i].size(); ++j)
+  {
+    if (mat[i][j] > max) max = mat[i][j];
+  }
+  return max;
+}
 
 } // namespace
 
@@ -99,11 +108,11 @@ bool read_instance(Data& data, string file_name) {
     // File parsing
     data.n = getIntElement(fichier);
     data.m = getIntElement(fichier);
-    data.Ba = 4.544933;
-    data.Bp = 1.413333;
     getDoubleMatrix(fichier, data.Ha, data.m, data.n);
+    data.Ba = getMax(data.Ha);
     getDoubleMatrix(fichier, data.Ca, data.m, data.n);
     getDoubleMatrix(fichier, data.Hp, data.m, data.n);
+    data.Bp = getMax(data.Hp);
     getDoubleMatrix(fichier, data.Cp, data.m, data.n);
     return true;
   }

@@ -74,14 +74,14 @@ int main(int argc, char* argv[])
     double cost;
     bool is_admissible;
     std::string description;
-    int cost_born;
+    int borne;
 
     // Computation of the born in any cases.
     GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
     description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
     LOG(INFO) << description;
     greedy_solver_without_connexity.solve();
-    cost_born = greedy_solver_without_connexity.sol().compute_cost();    
+    borne = greedy_solver_without_connexity.sol().compute_cost();    
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
@@ -97,7 +97,20 @@ int main(int argc, char* argv[])
       FrontalSolver frontal_solver(data);
       description = frontal_solver.name() + " : " + frontal_solver.description(); 
       LOG(INFO) << description;
-      frontal_solver.solve();
+      frontal_solver.solve(borne);
+      sol.fill_sol(frontal_solver.sol());
+    }
+    else if (FLAGS_solver == "warmFrontal") {
+      // Solve via greedy Solver
+      GreedySolver greedy_solver(data);
+      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+      
+      // Solve via Frontal Solver
+      FrontalSolver frontal_solver(data);
+      description = frontal_solver.name() + " : " + frontal_solver.description(); 
+      LOG(INFO) << description;
+      frontal_solver.sol_ptr()->fill_sol(greedy_solver.sol());
+      frontal_solver.solve(borne,true);
       sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "greedy") {
@@ -121,7 +134,7 @@ int main(int argc, char* argv[])
       ConstraintSolver constaint_solver(data);
       description = constaint_solver.name() + " : " + constaint_solver.description(); 
       LOG(INFO) << description;
-      constaint_solver.solve();
+      constaint_solver.solve(borne);
       sol.fill_sol(constaint_solver.sol());
     }
     else if (FLAGS_solver == "annealing") {
@@ -135,17 +148,6 @@ int main(int argc, char* argv[])
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
     }
-    else if (FLAGS_solver == "mix") {
-      // Solve via Annealing Solver
-      GreedySolver greedy_solver(data);
-      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
-      AnnealingSolver annealing_solver(data);
-      description = annealing_solver.name() + " : " + annealing_solver.description(); 
-      LOG(INFO) << description;
-      annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
-      annealing_solver.solve();
-      sol.fill_sol(annealing_solver.sol());
-    }
     else if (FLAGS_solver == "annealing1") {
       AnnealingSolver annealing_solver(data);
       description = annealing_solver.name() + " : " + annealing_solver.description(); 
@@ -154,6 +156,17 @@ int main(int argc, char* argv[])
       for (int i = 0; i < sol_i->x_.size(); ++i)
       for (int j = 0; j < sol_i->x_[i].size(); ++j)    
         sol_i->x_[i][j] = 1;
+      annealing_solver.solve();
+      sol.fill_sol(annealing_solver.sol());
+    }
+    else if (FLAGS_solver == "mix") {
+      // Solve via Annealing Solver
+      GreedySolver greedy_solver(data);
+      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+      AnnealingSolver annealing_solver(data);
+      description = annealing_solver.name() + " : " + annealing_solver.description(); 
+      LOG(INFO) << description;
+      annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
     }
@@ -172,7 +185,7 @@ int main(int argc, char* argv[])
     is_admissible = sol.ratio() >= 2 && sol.is_connex();
     sol.print();
     LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
-    LOG(INFO) << "Borne :\t" << cost_born;
+    LOG(INFO) << "Borne :\t" << borne;
 
     if (is_admissible) {
       ecma::writer::write_in_synthetic_res_file(

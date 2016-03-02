@@ -64,7 +64,7 @@ public:
     }
   ~FrontalSolver() {} ;
 
-  bool solve();
+  bool solve(int borne_max, bool warmstart = false);
 };
 
 /**
@@ -106,7 +106,7 @@ public:
     }
   ~ConstraintSolver() {} ;
 
-  bool solve();
+  bool solve(int borne);
 };
 
 /**

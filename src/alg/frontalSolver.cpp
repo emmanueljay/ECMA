@@ -15,7 +15,7 @@ typedef IloArray<IloNumVarArray>  NumVarMatrix;
 typedef IloArray<IloIntArray>     IntMatrix;
 typedef IloArray<IloExprArray>     ExprMatrix;
 
-bool FrontalSolver::solve() {
+bool FrontalSolver::solve(int borne_max, bool warmstart) {
   LOG(INFO) << name_ << " :: " << description_; 
 
   //Extracting data
@@ -74,6 +74,9 @@ bool FrontalSolver::solve() {
   model.add(IloMaximize(env, objective ));
 
   //Constraints
+  VLOG(1) << "Maxmial born constraint";
+  model.add(objective <= borne_max);
+
   VLOG(1) << "Creating constraint expressions";
   IloExpr sum_Cy(env,0);
   IloExpr sum_HCPx(env,0);
@@ -168,6 +171,15 @@ for (int h = 1; h < (m*n); ++h) {
       }
     }
   }
+
+  // Warmstart
+  if (warmstart) {
+    // Setting Warmstart from solution
+    VLOG(1) << "Setting informations for warmstart";
+
+  }
+
+
 
   //Solve
   VLOG(1) << "Resolution...";
