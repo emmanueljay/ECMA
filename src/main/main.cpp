@@ -82,6 +82,7 @@ int main(int argc, char* argv[])
     LOG(INFO) << description;
     greedy_solver_without_connexity.solve();
     borne = greedy_solver_without_connexity.sol().compute_cost();    
+    LOG(INFO) << "Borne :\t" << borne;
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
@@ -100,7 +101,7 @@ int main(int argc, char* argv[])
       frontal_solver.solve(borne);
       sol.fill_sol(frontal_solver.sol());
     }
-    else if (FLAGS_solver == "warmFrontal") {
+    else if (FLAGS_solver == "warmGreedyFrontal") {
       // Solve via greedy Solver
       GreedySolver greedy_solver(data);
       if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
@@ -110,6 +111,18 @@ int main(int argc, char* argv[])
       description = frontal_solver.name() + " : " + frontal_solver.description(); 
       LOG(INFO) << description;
       frontal_solver.sol_ptr()->fill_sol(greedy_solver.sol());
+      frontal_solver.solve(borne,true);
+      sol.fill_sol(frontal_solver.sol());
+    }
+    else if (FLAGS_solver == "warmAnnealingFrontal") {
+      AnnealingSolver annealing_solver(data);
+      if (not(annealing_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+      
+      // Solve via Frontal Solver
+      FrontalSolver frontal_solver(data);
+      description = frontal_solver.name() + " : " + frontal_solver.description(); 
+      LOG(INFO) << description;
+      frontal_solver.sol_ptr()->fill_sol(annealing_solver.sol());
       frontal_solver.solve(borne,true);
       sol.fill_sol(frontal_solver.sol());
     }

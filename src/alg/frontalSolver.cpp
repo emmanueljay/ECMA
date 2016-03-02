@@ -19,7 +19,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   LOG(INFO) << name_ << " :: " << description_; 
 
   //Extracting data
-  VLOG(1) << "Extracting data";
+  VLOG(2) << "Extracting data";
   int n = data_.n;
   int m = data_.m;
   double Ba = data_.Ba;
@@ -30,19 +30,19 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   const vector<vector<double> >& Cp = data_.Cp;
   
   //Environement
-  VLOG(1) << "Creating environment";
+  VLOG(2) << "Creating environment";
   IloEnv env;
   IloModel model = IloModel (env);
   IloCplex cplex = IloCplex(model);
 
   //Variables
-  VLOG(1) << "Creating variables";
+  VLOG(2) << "Creating variables";
   BoolVarMatrix x(env); 
   NumVarMatrix y(env);
   NumVarMatrix z(env);
   BoolVar3DMatrix s(env);
 
-  VLOG(1) << "Creating variables";
+  VLOG(2) << "Creating variables";
    for (int i = 0; i < m ; ++i) {
      x.add(IloBoolVarArray(env,n));
      y.add(IloNumVarArray(env,n,0,Bp));
@@ -63,7 +63,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   model.add(hp_var);
 
   //Objective function
-  VLOG(1) << "Processing objective function";
+  VLOG(2) << "Processing objective function";
   IloExpr objective(env,0);
 
   for (int i = 0; i < m ; ++i) {
@@ -74,16 +74,16 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   model.add(IloMaximize(env, objective ));
 
   //Constraints
-  VLOG(1) << "Maxmial born constraint";
+  VLOG(2) << "Maxmial born constraint";
   model.add(objective <= borne_max);
 
-  VLOG(1) << "Creating constraint expressions";
+  VLOG(2) << "Creating constraint expressions";
   IloExpr sum_Cy(env,0);
   IloExpr sum_HCPx(env,0);
   IloExpr sum_Cz(env,0);
   IloExpr sum_HCAx(env,0);
 
-  VLOG(1) << "Computing constraint expressions";
+  VLOG(2) << "Computing constraint expressions";
   for (int i = 0; i < m ; ++i) {
     for (int j = 0; j < n ; ++j) {
 
@@ -96,7 +96,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
     }
   }
 
-  VLOG(1) << "Adding constraints";
+  VLOG(2) << "Adding constraints";
   //Selection of an admissible area
   model.add(sum_Cy == sum_HCPx);
   model.add(sum_Cz == sum_HCAx);
@@ -124,7 +124,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
     }
   }
 
-  VLOG(1) << "Handling connexity";
+  VLOG(2) << "Handling connexity";
   //Base of the connected area
 
   VLOG(2) << "Connected area base";
@@ -143,15 +143,15 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
       for (int h = 0; h < (n*m) ; ++h) {
         expression += s[h][i][j];
       }
-      VLOG(4) << "Adding constraint linking x_ij and sum_s_ij";
+      VLOG(5) << "Adding constraint linking x_ij and sum_s_ij";
       model.add(x[i][j] == expression);
     }
   }
 
 
- VLOG(2) << "Linking one case and its neighbour";
-for (int h = 1; h < (m*n); ++h) {
-  for (int i = 0; i < m; ++i) {
+  VLOG(2) << "Linking one case and its neighbour";
+  for (int h = 1; h < (m*n); ++h) {
+    for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
         if (i==0) {
           if (j==0)  model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j+1]);
@@ -175,19 +175,29 @@ for (int h = 1; h < (m*n); ++h) {
   // Warmstart
   if (warmstart) {
     // Setting Warmstart from solution
-    VLOG(1) << "Setting informations for warmstart";
-
+    VLOG(2) << "Setting informations for warmstart";
+    IloNumVarArray startVar(env);
+    IloNumArray startVal(env);
+    for (int i = 0; i < m; ++i)
+    for (int j = 0; j < n; ++j) {
+      startVar.add(x[i][j]);
+      startVal.add(sol_.x_[i][j]);
+    }
+    cplex.addMIPStart(startVar, startVal);
+    startVal.end();
+    startVar.end();
+    
   }
 
 
 
   //Solve
-  VLOG(1) << "Resolution...";
+  VLOG(2) << "Resolution...";
   cplex.solve();
 
   //Output
-  VLOG(1) << "Solution status = " << cplex.getStatus() << endl;
-  VLOG(1) << "Solution value  = " << cplex.getObjValue() << endl;
+  VLOG(2) << "Solution status = " << cplex.getStatus() << endl;
+  VLOG(2) << "Solution value  = " << cplex.getObjValue() << endl;
 
   for (int i = 0; i < data_.m; ++i) {
     for (int j = 0; j < data_.n; ++j) {   

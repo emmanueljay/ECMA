@@ -358,3 +358,14 @@
 1456947185,../instances/projet_5_8_1.dat,24,4,Solving using Constraint Solver : Solve using constraint programming of Cplex
 1456947190,../instances/projet_5_8_2.dat,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
 1456947247,../instances/projet_12_10_4.dat,62,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456949232,../instances/projet_5_8_1.dat,24,0,Solving using Frontal Solver : Solve using Cplex
+1456949240,../instances/projet_5_8_2.dat,4,0,Solving using Frontal Solver : Solve using Cplex
+1456949244,../instances/projet_5_8_3.dat,30,0,Solving using Frontal Solver : Solve using Cplex
+1456949250,../instances/projet_5_8_4.dat,18,0,Solving using Frontal Solver : Solve using Cplex
+1456949254,../instances/projet_5_8_5.dat,40,0,Solving using Frontal Solver : Solve using Cplex
+1456949263,../instances/projet_5_8_6.dat,23,0,Solving using Frontal Solver : Solve using Cplex
+1456949493,../instances/projet_5_8_7.dat,30,226,Solving using Frontal Solver : Solve using Cplex
+1456949542,../instances/projet_5_8_8.dat,28,0,Solving using Frontal Solver : Solve using Cplex
+1456949549,../instances/projet_5_8_9.dat,23,0,Solving using Frontal Solver : Solve using Cplex
+1456949553,../instances/projet_5_8_10.dat,40,0,Solving using Frontal Solver : Solve using Cplex
+1456949860,../instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
