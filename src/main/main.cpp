@@ -74,6 +74,14 @@ int main(int argc, char* argv[])
     double cost;
     bool is_admissible;
     std::string description;
+    int cost_born;
+
+    // Computation of the born in any cases.
+    GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
+    description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
+    LOG(INFO) << description;
+    greedy_solver_without_connexity.solve();
+    cost_born = greedy_solver_without_connexity.sol().compute_cost();    
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
@@ -127,6 +135,28 @@ int main(int argc, char* argv[])
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
     }
+    else if (FLAGS_solver == "mix") {
+      // Solve via Annealing Solver
+      GreedySolver greedy_solver(data);
+      if (not(greedy_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+      AnnealingSolver annealing_solver(data);
+      description = annealing_solver.name() + " : " + annealing_solver.description(); 
+      LOG(INFO) << description;
+      annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
+      annealing_solver.solve();
+      sol.fill_sol(annealing_solver.sol());
+    }
+    else if (FLAGS_solver == "annealing1") {
+      AnnealingSolver annealing_solver(data);
+      description = annealing_solver.name() + " : " + annealing_solver.description(); 
+      LOG(INFO) << description;
+      Solution* sol_i = annealing_solver.sol_ptr();
+      for (int i = 0; i < sol_i->x_.size(); ++i)
+      for (int j = 0; j < sol_i->x_[i].size(); ++j)    
+        sol_i->x_[i][j] = 1;
+      annealing_solver.solve();
+      sol.fill_sol(annealing_solver.sol());
+    }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }
@@ -135,13 +165,14 @@ int main(int argc, char* argv[])
     time_t end_time;
     time(&end_time);
     double diff = difftime(end_time, start_time);
-    LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
 
     // Data exportation
     data.print();
     cost = sol.compute_cost();
     is_admissible = sol.ratio() >= 2 && sol.is_connex();
     sol.print();
+    LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
+    LOG(INFO) << "Borne :\t" << cost_born;
 
     if (is_admissible) {
       ecma::writer::write_in_synthetic_res_file(
