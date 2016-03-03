@@ -5,75 +5,90 @@
 <<< generate
 
 Tried aggregator 1 time.
-MIP Presolve eliminated 300 rows and 241 columns.
-MIP Presolve modified 50 coefficients.
-Reduced MIP has 479 rows, 402 columns, and 2074 nonzeros.
-Reduced MIP has 350 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0,00 sec. (1,23 ticks)
-Probing fixed 0 vars, tightened 33 bounds.
-Probing time = 0,00 sec. (3,53 ticks)
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 80 coefficients.
+Reduced MIP has 764 rows, 642 columns, and 3389 nonzeros.
+Reduced MIP has 560 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (2,39 ticks)
+Probing fixed 0 vars, tightened 46 bounds.
+Probing time = 0,01 sec. (8,15 ticks)
 Tried aggregator 1 time.
-MIP Presolve modified 125 coefficients.
-Reduced MIP has 479 rows, 402 columns, and 2074 nonzeros.
-Reduced MIP has 350 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0,00 sec. (1,01 ticks)
-Probing time = 0,00 sec. (2,51 ticks)
-Clique table members: 1462.
+MIP Presolve modified 200 coefficients.
+Reduced MIP has 764 rows, 642 columns, and 3389 nonzeros.
+Reduced MIP has 560 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (1,62 ticks)
+Probing time = 0,00 sec. (3,23 ticks)
+Clique table members: 2292.
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
 Parallel mode: deterministic, using up to 4 threads.
-Root relaxation solution time = 0,01 sec. (6,85 ticks)
+Root relaxation solution time = 0,02 sec. (17,40 ticks)
 
         Nodes                                         Cuts/
    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
 
-      0     0       23,1670   188                     23,1670      299         
-      0     0       22,6132   157                    Cuts: 70      404         
-      0     0       22,2257   110                   Cuts: 128      581         
-*     0+    0                            1,0000       22,2257      641     --- 
-      0     0       21,8122   105        1,0000     Cuts: 106      641     --- 
-      0     0       21,6728   119        1,0000      Cuts: 94      891     --- 
-      0     0       21,1834   135        1,0000      Cuts: 83     1369     --- 
-      0     0       20,6285    97        1,0000     Cuts: 140     1516     --- 
-      0     0       20,1419    99        1,0000      Cuts: 87     1596     --- 
-      0     0       19,5308    96        1,0000      Cuts: 46     1692     --- 
-      0     0       19,0946    91        1,0000      Cuts: 36     1766     --- 
-      0     0       18,5103    94        1,0000      Cuts: 40     1862     --- 
-      0     0       18,3061    81        1,0000      Cuts: 91     1889     --- 
-      0     0       17,9488    78        1,0000      Cuts: 67     1921     --- 
-      0     0       17,5488    76        1,0000      Cuts: 64     1969     --- 
-      0     0       16,7207    74        1,0000      Cuts: 65     2009     --- 
-      0     0       16,0425    73        1,0000      Cuts: 39     2052     --- 
-      0     0       15,6301    87        1,0000      Cuts: 60     2108     --- 
-      0     0       15,0942    87        1,0000      Cuts: 88     2137     --- 
-      0     0       14,6320    74        1,0000      Cuts: 66     2264     --- 
-*     0+    0                            2,0000       14,6320     2264  631,60%
-      0     0       14,2804    89        2,0000      Cuts: 85     2379  614,02%
-      0     0       13,6447    91        2,0000      Cuts: 45     2466  582,23%
-      0     0       13,0445    87        2,0000      Cuts: 51     2554  552,23%
-      0     0       12,3668    79        2,0000      Cuts: 52     2688  518,34%
-      0     0       11,8900    88        2,0000      Cuts: 79     2793  494,50%
-      0     0       11,7273    76        2,0000      Cuts: 32     2891  486,36%
-      0     0       11,7273    81        2,0000  ZeroHalf: 15     2923  486,36%
-      0     0       11,7273    73        2,0000       Cuts: 9     2959  486,36%
-      0     2       11,7273    73        2,0000       11,7273     2959  486,36%
-Elapsed time = 0,53 sec. (281,49 ticks, tree = 0,01 MB, solutions = 2)
-*    93+   39                            3,0000        9,3572    13676  211,91%
-*   195+   39                            4,0000        8,4594    19007  111,49%
+      0     0       38,1651   301                     38,1651      490         
+      0     0       37,6539   228                    Cuts: 73      610         
+*     0+    0                            1,0000       37,6539      989     --- 
+      0     0       37,2479   208        1,0000     Cuts: 178      989     --- 
+      0     0       36,8036   185        1,0000     Cuts: 191     1233     --- 
+      0     0       36,3632   172        1,0000     Cuts: 215     1426     --- 
+      0     0       36,2091   199        1,0000     Cuts: 195     1637     --- 
+      0     0       35,8907   189        1,0000     Cuts: 184     1751     --- 
+      0     0       35,5742   177        1,0000     Cuts: 197     1885     --- 
+      0     0       35,2698   162        1,0000     Cuts: 175     1962     --- 
+      0     0       35,1477   180        1,0000     Cuts: 182     2094     --- 
+      0     0       34,5249   181        1,0000     Cuts: 238     2238     --- 
+      0     0       34,1093   186        1,0000     Cuts: 193     2422     --- 
+      0     0       33,5857   175        1,0000     Cuts: 291     2603     --- 
+      0     0       33,0537   178        1,0000     Cuts: 252     2854     --- 
+      0     0       32,2331   175        1,0000     Cuts: 291     3036     --- 
+*     0+    0                            2,0000       32,2331     3199     --- 
+      0     0       31,8498   192        2,0000     Cuts: 266     3199     --- 
+      0     0       31,1166   207        2,0000     Cuts: 227     3666     --- 
+      0     0       30,5426   177        2,0000     Cuts: 223     3870     --- 
+      0     0       29,7902   212        2,0000     Cuts: 258     4542     --- 
+      0     0       28,8726   201        2,0000     Cuts: 252     4889     --- 
+      0     0       28,0151   193        2,0000     Cuts: 207     5031     --- 
+      0     0       27,2070   191        2,0000     Cuts: 153     5192     --- 
+*     0+    0                            3,0000       27,2070     5192  806,90%
+      0     0       26,2014   180        3,0000     Cuts: 152     5297  773,38%
+      0     0       25,3137   179        3,0000     Cuts: 147     5459  743,79%
+      0     0       25,1166   165        3,0000     Cuts: 110     5527  737,22%
+      0     0       24,1351   164        3,0000     Cuts: 149     5675  704,50%
+      0     0       23,9717   162        3,0000     Cuts: 112     5772  699,06%
+      0     0       22,9294   171        3,0000     Cuts: 175     5973  664,31%
+      0     0       22,8264   169        3,0000     Cuts: 148     6174  660,88%
+      0     0       21,9755   155        3,0000     Cuts: 198     6292  632,52%
+      0     0       21,3112   146        3,0000     Cuts: 132     6403  610,37%
+      0     0       20,4404   145        3,0000     Cuts: 130     6573  581,35%
+      0     0       19,3029   141        3,0000     Cuts: 113     6651  543,43%
+      0     0       18,2199   126        3,0000     Cuts: 104     6804  507,33%
+      0     0       17,4256   128        3,0000     Cuts: 147     6875  480,85%
+      0     0       17,3869   102        3,0000     Cuts: 150     6960  479,56%
+      0     0       17,3869   176        3,0000      Cuts: 23     7127  479,56%
+      0     0       17,3869   116        3,0000       Cuts: 4     7145  479,56%
+      0     0       17,3869   105        3,0000  ZeroHalf: 16     7210  479,56%
+*     0+    0                            4,0000       17,3869     7210  334,67%
+      0     2       17,3869    94        4,0000       17,3869     7210  334,67%
+Elapsed time = 1,79 sec. (986,61 ticks, tree = 0,01 MB, solutions = 4)
+     18    20       13,3801   119        4,0000       16,3290    14258  308,23%
+     87    35       12,3837   231        4,0000       16,3290    30914  308,23%
+    421   168        5,2852    69        4,0000       13,1855    54855  229,64%
 
 Clique cuts applied:  1
-Flow cuts applied:  12
-Mixed integer rounding cuts applied:  67
-Zero-half cuts applied:  14
+Flow cuts applied:  26
+Mixed integer rounding cuts applied:  276
+Zero-half cuts applied:  18
 
 Root node processing (before b&c):
-  Real time             =    0,53 sec. (281,22 ticks)
+  Real time             =    1,78 sec. (980,41 ticks)
 Parallel b&c, 4 threads:
-  Real time             =    0,23 sec. (154,05 ticks)
-  Sync time (average)   =    0,03 sec.
+  Real time             =    1,52 sec. (946,92 ticks)
+  Sync time (average)   =    0,36 sec.
   Wait time (average)   =    0,00 sec.
                           ------------
-Total (root+branch&cut) =    0,76 sec. (435,27 ticks)
+Total (root+branch&cut) =    3,31 sec. (1927,33 ticks)
 
 <<< solve
 
