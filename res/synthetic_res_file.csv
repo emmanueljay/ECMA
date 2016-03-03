@@ -369,3 +369,116 @@
 1456949549,../instances/projet_5_8_9.dat,23,0,Solving using Frontal Solver : Solve using Cplex
 1456949553,../instances/projet_5_8_10.dat,40,0,Solving using Frontal Solver : Solve using Cplex
 1456949860,../instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456995180,../instances/projet_5_8_1.dat,24,0,Solving using Frontal Solver : Solve using Cplex
+1456995186,../instances/projet_5_8_2.dat,4,1,Solving using Frontal Solver : Solve using Cplex
+1456995189,../instances/projet_5_8_3.dat,30,1,Solving using Frontal Solver : Solve using Cplex
+1456995193,../instances/projet_5_8_4.dat,18,0,Solving using Frontal Solver : Solve using Cplex
+1456995200,../instances/projet_5_8_5.dat,40,0,Solving using Frontal Solver : Solve using Cplex
+1456995204,../instances/projet_5_8_6.dat,23,0,Solving using Frontal Solver : Solve using Cplex
+1456995231,../instances/projet_5_8_6.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995239,../instances/projet_5_8_1.dat,22,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995247,../instances/projet_5_8_1.dat,24,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995266,../instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456995268,../instances/projet_5_8_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995272,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995276,../instances/projet_5_8_4.dat,18,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995289,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456995300,../instances/projet_25_30_1.dat,97,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995314,../instances/projet_25_30_1.dat,97,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456995325,../instances/projet_25_30_1.dat,99,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995658,../instances/projet_25_30_1.dat,88,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995669,../instances/projet_25_30_1.dat,106,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456995915,../instances/projet_25_30_1.dat,31,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995926,../instances/projet_25_30_1.dat,40,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995945,../instances/projet_25_30_1.dat,35,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995978,../instances/projet_25_30_1.dat,95,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995996,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456996003,../instances/projet_25_30_1.dat,88,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996010,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996015,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996044,../instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456996057,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456996070,../instances/projet_25_30_1.dat,106,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456996078,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996589,../instances/projet_25_30_1.dat,112,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456996608,../instances/projet_25_30_1.dat,112,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996617,../instances/projet_25_30_1.dat,112,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996634,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996643,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996652,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996672,../instances/projet_25_30_4.dat,160,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456996683,../instances/projet_25_30_6.dat,138,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996755,../instances/projet_25_30_7.dat,158,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996800,../instances/projet_25_30_6.dat,16,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456996809,../instances/projet_25_30_6.dat,2,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456996830,../instances/projet_25_30_6.dat,161,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456996862,../instances/projet_25_30_6.dat,173,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996886,../instances/projet_25_30_7.dat,164,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996910,../instances/projet_25_30_7.dat,168,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456996927,../instances/projet_25_30_7.dat,174,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997044,../instances/projet_25_30_8.dat,284,17,Solving using Annealing Solver : Solve using Annealing Solver
+1456997058,../instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456997131,../instances/projet_25_30_8.dat,320,14,Solving using Annealing Solver : Solve using Annealing Solver
+1456997173,../instances/projet_25_30_8.dat,282,19,Solving using Annealing Solver : Solve using Annealing Solver
+1456997191,../instances/projet_25_30_8.dat,281,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456997289,../instances/projet_25_30_8.dat,320,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456997332,../instances/projet_25_30_8.dat,320,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997354,../instances/projet_25_30_8.dat,320,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456997455,instances/projet_12_10_10.dat,115,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997456,instances/projet_12_10_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997458,instances/projet_12_10_3.dat,65,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997465,instances/projet_12_10_5.dat,107,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997476,instances/projet_12_10_8.dat,78,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997489,instances/projet_15_17_10.dat,242,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997494,instances/projet_15_17_3.dat,120,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997511,instances/projet_15_17_5.dat,215,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997551,instances/projet_12_10_1.dat,39,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997553,instances/projet_12_10_10.dat,115,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997553,instances/projet_12_10_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997555,instances/projet_12_10_3.dat,65,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997556,instances/projet_12_10_4.dat,62,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997559,instances/projet_12_10_5.dat,107,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997560,instances/projet_12_10_6.dat,50,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997561,instances/projet_12_10_7.dat,50,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997562,instances/projet_12_10_8.dat,78,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997563,instances/projet_12_10_9.dat,44,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997564,instances/projet_15_17_1.dat,39,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997571,instances/projet_15_17_10.dat,242,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997571,instances/projet_15_17_2.dat,5,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997575,instances/projet_15_17_3.dat,120,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997577,instances/projet_15_17_4.dat,104,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997582,instances/projet_15_17_5.dat,215,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456997584,instances/projet_15_17_6.dat,91,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997586,instances/projet_15_17_7.dat,88,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997590,instances/projet_15_17_8.dat,139,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997593,instances/projet_15_17_9.dat,101,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997595,instances/projet_20_25_1.dat,53,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997608,instances/projet_20_25_10.dat,427,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997609,instances/projet_20_25_2.dat,20,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997615,instances/projet_20_25_3.dat,167,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997619,instances/projet_20_25_4.dat,131,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997631,instances/projet_20_25_5.dat,389,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456997634,instances/projet_20_25_6.dat,142,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997640,instances/projet_20_25_7.dat,155,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997649,instances/projet_20_25_8.dat,222,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456997657,instances/projet_20_25_9.dat,199,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456997660,instances/projet_25_30_1.dat,88,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997678,instances/projet_25_30_10.dat,557,18,Solving using Annealing Solver : Solve using Annealing Solver
+1456997678,instances/projet_25_30_2.dat,10,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997688,instances/projet_25_30_3.dat,239,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456997693,instances/projet_25_30_4.dat,145,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456997709,instances/projet_25_30_5.dat,513,16,Solving using Annealing Solver : Solve using Annealing Solver
+1456997713,instances/projet_25_30_6.dat,133,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997720,instances/projet_25_30_7.dat,161,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997730,instances/projet_25_30_8.dat,287,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456997741,instances/projet_25_30_9.dat,286,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456997741,instances/projet_5_8_1.dat,22,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997742,instances/projet_5_8_10.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997742,instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997743,instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997743,instances/projet_5_8_4.dat,18,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997744,instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997744,instances/projet_5_8_6.dat,23,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997745,instances/projet_5_8_7.dat,29,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997745,instances/projet_5_8_8.dat,28,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997746,instances/projet_5_8_9.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver

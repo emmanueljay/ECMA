@@ -120,6 +120,20 @@ public:
     }
   ~AnnealingSolver() {} ;
 
+  bool solve(bool use_sol = false);
+};
+
+/**
+ * Sixth Solver : Ant Solver (Colonie de fourmis)
+ */
+class AntSolver : public Solver {
+public:
+  AntSolver(const Data& data): Solver(data) {
+      name("Solving using Ant Solver");
+      description("Solve using Ant Solver");
+    }
+  ~AntSolver() {} ;
+
   bool solve();
 };
 #endif // SOLVER_H

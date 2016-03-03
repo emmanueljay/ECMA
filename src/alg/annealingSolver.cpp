@@ -114,7 +114,7 @@ double get_next_temperature(double old_temp, double lambda, int version) {
 
 }  // namepace
 
-bool AnnealingSolver::solve() {
+bool AnnealingSolver::solve(bool use_sol) {
   LOG(INFO) << "Using : " << name_ << " :: " << description_;
   LOG(INFO) << "The simulation will run for " << FLAGS_maxTime << " seconds"
             << " (change with flag --maxTime=20)";
@@ -122,16 +122,18 @@ bool AnnealingSolver::solve() {
   // Seed initialisation
   srand(time(NULL));
 
-  // 0. (May be changed) Starting from a sol with one 1
-  double cp_val = 0.0;
-  int i_init, j_init;
-  while (cp_val == 0) {
-    i_init = rand() % sol_.data_.m;
-    j_init = rand() % sol_.data_.n;
-    cp_val = data_.Cp[i_init][j_init];
+  if (not(use_sol)) {
+    // 0. (May be changed) Starting from a sol with one 1
+    double cp_val = 0.0;
+    int i_init, j_init;
+    while (cp_val == 0) {
+      i_init = rand() % sol_.data_.m;
+      j_init = rand() % sol_.data_.n;
+      cp_val = data_.Cp[i_init][j_init];
+    }
+    sol_.x_[i_init][j_init] = 1;
+    LOG(INFO) << "Starting from point " << i_init << "," << j_init;
   }
-  sol_.x_[i_init][j_init] = 1;
-  LOG(INFO) << "Starting from point " << i_init << "," << j_init;
 
   // At this point, the solution inside the current sol should be admissible
   // We create a temporary solution with the same data.
@@ -157,7 +159,7 @@ bool AnnealingSolver::solve() {
   std::string status("");
 
   // Annealing Iterations
-  while (diff < FLAGS_maxTime && temperature > 0.0000001) {
+  while (diff < FLAGS_maxTime && temperature > 0.0001) {
     // 1. Select a point of the selected point, or the border. If the point is
     // inside the convex selected point, the idea is to remove the point. If the
     // point is in the border, the idea is to add it to the solution.

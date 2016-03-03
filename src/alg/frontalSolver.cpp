@@ -186,9 +186,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
     cplex.addMIPStart(startVar, startVal);
     startVal.end();
     startVar.end();
-    
   }
-
 
 
   //Solve

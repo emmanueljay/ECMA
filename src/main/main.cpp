@@ -172,6 +172,14 @@ int main(int argc, char* argv[])
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
     }
+    else if (FLAGS_solver == "ant") {
+      // Solve via Ant Solver
+      AntSolver ant_solver(data);
+      description = ant_solver.name() + " : " + ant_solver.description(); 
+      LOG(INFO) << description;
+      ant_solver.solve();
+      sol.fill_sol(ant_solver.sol());
+    }
     else if (FLAGS_solver == "mix") {
       // Solve via Annealing Solver
       GreedySolver greedy_solver(data);
