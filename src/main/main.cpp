@@ -191,6 +191,14 @@ int main(int argc, char* argv[])
       annealing_solver.solve();
       sol.fill_sol(annealing_solver.sol());
     }
+    else if (FLAGS_solver == "test") {
+      // Solve via Test Solver
+      TestSolver test_solver(data);
+      description = test_solver.name() + " : " + test_solver.description(); 
+      LOG(INFO) << description;
+      test_solver.solve();
+      sol.fill_sol(test_solver.sol());
+    }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";
     }

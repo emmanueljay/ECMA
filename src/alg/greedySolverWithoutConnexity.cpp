@@ -10,14 +10,16 @@ Point max_HaHp(const Data& data, const std::set<Point>& to_check){
   double max_val = 0;
   double current_val;
   for (const Point& current_pt : to_check) {
-    current_val = data.Hp[current_pt.first][current_pt.second] *
-      data.Cp[current_pt.first][current_pt.second] +
-      data.Ha[current_pt.first][current_pt.second] *
-      data.Ca[current_pt.first][current_pt.second];
-    if (current_val > max_val){
-      max_val = current_val;
-      max_pt = current_pt;
-    } 
+    if (data.Ca[current_pt.first][current_pt.second]>0) {
+      current_val = data.Hp[current_pt.first][current_pt.second] *
+        data.Cp[current_pt.first][current_pt.second] +
+        data.Ha[current_pt.first][current_pt.second] *
+        data.Ca[current_pt.first][current_pt.second];
+      if (current_val > max_val){
+        max_val = current_val;
+        max_pt = current_pt;
+      } 
+    }
   }
   return max_pt;
 }

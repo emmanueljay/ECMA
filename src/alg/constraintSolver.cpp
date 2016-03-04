@@ -86,7 +86,7 @@ bool ConstraintSolver::solve(int borne) {
     // }
 
     VLOG(3) << "Constraint 4. Objective value";
-    model.add(sum_x <= borne);
+    model.add(sum_x >= borne);
 
     IloObjective objective = IloMaximize(env,sum_x);
     model.add(objective);

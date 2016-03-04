@@ -136,5 +136,20 @@ public:
 
   bool solve();
 };
+
+/**
+ * Senventh Solver : Test Solver (Greedy and some other things)
+ */
+class TestSolver : public Solver {
+public:
+  TestSolver(const Data& data): Solver(data) {
+      name("Solving using Test Solver");
+      description("Solve using Test Solver");
+    }
+  ~TestSolver() {} ;
+
+  bool solve();
+};
+
 #endif // SOLVER_H
  
