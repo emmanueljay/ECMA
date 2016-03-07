@@ -211,7 +211,7 @@ int main(int argc, char* argv[])
       AnnealingSolver annealing_solver(data);
       LOG(INFO) << description;
       annealing_solver.sol_ptr()->fill_sol(test_solver.sol());
-      annealing_solver.solve(100);
+      annealing_solver.solve(FLAGS_tempInit);
       sol.fill_sol(annealing_solver.sol());      
     }
     else {

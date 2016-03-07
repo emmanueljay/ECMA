@@ -122,6 +122,9 @@ bool TestSolver::solve() {
   
 
   // Rendu final
+  if (not(sol_.is_connex()))
+    LOG(FATAL) << "Algo non fonctionel !";
+
   if (sol_.ratio() >= 2)
     return true;
   else

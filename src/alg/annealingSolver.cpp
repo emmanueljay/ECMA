@@ -158,7 +158,7 @@ bool AnnealingSolver::solve(double init_temp, bool use_sol) {
   std::string status("");
 
   // Annealing Iterations
-  while (diff < FLAGS_maxTime && temperature > 0.0001) {
+  while (diff < FLAGS_maxTime && temperature > 0.01) {
     // 1. Select a point of the selected point, or the border. If the point is
     // inside the convex selected point, the idea is to remove the point. If the
     // point is in the border, the idea is to add it to the solution.

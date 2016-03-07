@@ -12,5 +12,5 @@ fi
 for instance in `ls instances/*.dat`
 do 
   echo "$instance"
-  build/ecma_launcher --instance=$instance --solver=$1 -v=1 --logFile="logs" --synRes=res/ --solDir=solutions/
+  build/ecma_launcher --instance=$instance --solver=$1 -v=1 --logFile="logs" --synRes=res/ --solDir=solutions/ --sizePalier=100 --ratio=18 --maxTime=500 --tempInit=1000
 done

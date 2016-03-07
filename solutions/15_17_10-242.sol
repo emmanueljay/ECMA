@@ -1,12 +1,12 @@
 Solution file for instance 15_17_10
 Cost of the solution 242
-Time of the simulation 0 seconds 
-Ratio of the solution 2.00831
+Time of the simulation 20 seconds 
+Ratio of the solution 2.00198
 Detail of the solution :
-1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 1 0 0 0 1 1 1 0 1 1 0 0 0 0 0 0 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
