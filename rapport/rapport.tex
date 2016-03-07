@@ -1,0 +1,348 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage[utf8]{inputenc}  
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+\usepackage[a4paper, margin={3cm, 3cm}]{geometry}
+
+\usepackage{mathenv}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{layout}
+\usepackage{verbatim}
+
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\usepackage{listings} % Pour ajouter du code
+\usepackage{xcolor}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{30pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{20pt} % Some vertical space between the author block and abstract
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+% TITLE
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Rapport du projet ECMA}} % Subtitle
+
+\author{\textsc{Dufour Maxime, Jay Emmanuel} % Author
+\\{\textit{ENSTA ParisTech - CNAM}}} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\vspace{200pt}
+
+\maketitle % Print the title section
+
+\section*{Introduction}
+
+\paragraph*{}
+Afin de résoudre le problème posé dans le cadre de ce projet, nous avons implémenté plusieurs algorithmes pour chaque type de méthode (approché ou exacte) et avons essayé de comparer leurs avantages et leurs inconvénients respectifs. Ces algorithmes ont été réalisés afin de résoudre les modèles proposés dans le corrigé de la partie 1 du projet. Cela correspond soit au modèle de l'exercice 1 ignorant la connexité soit à la formulation 1 du modèle avec connexité de l'exercice 2.
+
+\paragraph*{}
+Dans un premier temps, nous présenterons les résultats obtenus par la résolution frontale des deux modèles cités plus haut au moyen de CPLEX. Ensuite, nous présenterons les métaheuristiques que nous avons implémenté. Nous avons réalisé un algorithme Glouton pour résoudre le problème sans connexité. Pour le problème avec connexité nous avons testé plusieurs méthodes:
+
+\begin{itemize}
+\item Un Recuit Simulé
+\item Un algorithme Glouton
+\item A VOIR AVEC MANU
+\end{itemize}
+
+Enfin, nous avons mis en œuvre deux méthodes de résolutions exactes:
+\begin{itemize}
+\item La Programmation par contrainte
+\item Le branchement de CPLEX sur la solution donnée par une métaheuristique
+\end{itemize}
+
+\paragraph*{}
+A la fin de chaque résolution, la connexité de la solution obtenue est vérifiée par un algorithme de parcours en largeur (BFS). Partant d'un point source (maille sélectionnée dans la solution) il permet de vérifier que le graphe des mailles sélectionnées est connexe. Cette vérification est instantanée pour toutes les instances.
+
+
+\section{Résolution du problème par la méthode Frontal (Cplex)}
+
+\paragraph*{}
+Les deux méthodes présentées dans cette partie portent sur l'implémentation des deux modèles proposées en C++ avec l'API de CPLEX. Le premier ne comprend que la linéarisation de la contrainte fractionnaire et le second inclut également la connexité de la zone sélectionnée.
+
+\subsection{Résolution du problème sans connexité}
+
+Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est en $O(n*m)$ où n et m représentent les dimensions de l'instance étudiée. Au niveau du code, l'algorithme correspondant est celui nommé "frontalSolverWithoutConnexity". Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants:
+\begin{comment}
+\begin{center}
+\begin{figure}
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+  		\hline 
+  		Instance & Solution & Temps \\ \hline
+  		$5\_8\_1$ &  &   \\ \hline 
+  		$5\_8\_2$ &  &   \\ \hline 
+  		$5\_8\_3$ &  &   \\ \hline 
+  		$5\_8\_4$ &  &   \\ \hline 
+  		$5\_8\_5$ &  &   \\ \hline 
+  		$5\_8\_6$ &  &   \\ \hline 
+  		$5\_8\_7$ &  &   \\ \hline 
+  		$5\_8\_8$ &  &   \\ \hline 
+  		$5\_8\_9$ &  &   \\ \hline 
+  		$5\_8\_10$ &  &   \\ \hline 
+  	  \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+  		\hline 
+  		Instance & Solution & Temps \\ \hline
+  		$12\_10\_1$ &  &   \\ \hline
+  		$12\_10\_2$ &  &   \\ \hline
+  		$12\_10\_3$ &  &   \\ \hline
+  		$12\_10\_4$ &  &   \\ \hline
+  		$12\_10\_5$ &  &   \\ \hline
+  		$12\_10\_6$ &  &   \\ \hline
+  		$12\_10\_7$ &  &   \\ \hline
+  		$12\_10\_8$ &  &   \\ \hline
+  		$12\_10\_9$ &  &   \\ \hline
+  		$12\_10\_10$ &  &   \\ \hline 
+  	  \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+  		\hline 
+  		Instance & Solution & Temps \\ \hline
+  		$15\_17\_1$ &  &   \\ \hline
+  		$15\_17\_2$ &  &   \\ \hline
+  		$15\_17\_3$ &  &   \\ \hline
+  		$15\_17\_4$ &  &   \\ \hline
+  		$15\_17\_5$ &  &   \\ \hline
+  		$15\_17\_6$ &  &   \\ \hline
+  		$15\_17\_7$ &  &   \\ \hline
+  		$15\_17\_8$ &  &   \\ \hline
+  		$15\_17\_9$ &  &   \\ \hline
+  		$15\_17\_10$ &  &   \\ \hline
+  	  \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+  		\hline 
+  		Instance & Solution & Temps \\ \hline
+  		$20\_25\_1$ &  &   \\ \hline 
+  		$20\_25\_2$ &  &   \\ \hline
+  		$20\_25\_3$ &  &   \\ \hline
+  		$20\_25\_4$ &  &   \\ \hline
+  		$20\_25\_5$ &  &   \\ \hline
+  		$20\_25\_6$ &  &   \\ \hline
+  		$20\_25\_7$ &  &   \\ \hline
+  		$20\_25\_8$ &  &   \\ \hline
+  		$20\_25\_9$ &  &   \\ \hline
+  		$20\_25\_10$ &  &   \\ \hline
+  	  \end{tabular}
+   \end{minipage}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline 
+  Instance & Solution & Temps \\ \hline
+  $25\_30\_1$ &  &   \\ \hline
+  $25\_30\_2$ &  &   \\ \hline 
+  $25\_30\_3$ &  &   \\ \hline 
+  $25\_30\_4$ &  &   \\ \hline 
+  $25\_30\_5$ &  &   \\ \hline 
+  $25\_30\_6$ &  &   \\ \hline 
+  $25\_30\_7$ &  &   \\ \hline 
+  $25\_30\_8$ &  &   \\ \hline 
+  $25\_30\_9$ &  &   \\ \hline 
+  $25\_30\_10$ &  &   \\ \hline 
+ 
+\end{tabular}
+\end{center}
+\end{comment}
+
+\paragraph*{}
+ANALYSE DES TEMPS DE CALCUL
+
+\begin{comment}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+  \hline 
+  Instance & Glouton & Recuit & Fourmis \\ \hline
+  $5\_8\_1$ &  & &  \\ \hline 
+  $5\_8\_2$ &  & &  \\ \hline 
+  $5\_8\_3$ &  & &  \\ \hline 
+  $5\_8\_4$ &  & &  \\ \hline 
+  $5\_8\_5$ &  & &  \\ \hline 
+  $5\_8\_6$ &  & &  \\ \hline 
+  $5\_8\_7$ &  & &  \\ \hline 
+  $5\_8\_8$ &  & &  \\ \hline 
+  $5\_8\_9$ &  & &  \\ \hline 
+  $5\_8\_10$ &  & &  \\ \hline 
+  
+  $12\_10\_1$ &  & &  \\ \hline
+  $12\_10\_2$ &  & & \\ \hline
+  $12\_10\_3$ &  & &  \\ \hline
+  $12\_10\_4$ &  & &  \\ \hline
+  $12\_10\_5$ &  & &  \\ \hline
+  $12\_10\_6$ &  & &  \\ \hline
+  $12\_10\_7$ &  & &  \\ \hline
+  $12\_10\_8$ &  & &  \\ \hline
+  $12\_10\_9$ &  & &  \\ \hline
+  $12\_10\_10$ &  & &  \\ \hline
+  
+  $15\_17\_1$ &  & &  \\ \hline
+  $15\_17\_2$ &  & &  \\ \hline
+  $15\_17\_3$ &  & &  \\ \hline
+  $15\_17\_4$ &  & &  \\ \hline
+  $15\_17\_5$ &  & &  \\ \hline
+  $15\_17\_6$ &  & &  \\ \hline
+  $15\_17\_7$ &  & &  \\ \hline
+  $15\_17\_8$ &  & &  \\ \hline
+  $15\_17\_9$ &  & & \\ \hline
+  $15\_17\_10$ &  & &  \\ \hline
+   
+  $20\_25\_1$ &  & &  \\ \hline 
+  $20\_25\_2$ &  & &  \\ \hline
+  $20\_25\_3$ &  & &  \\ \hline
+  $20\_25\_4$ &  & &  \\ \hline
+  $20\_25\_5$ &  & &  \\ \hline
+  $20\_25\_6$ &  & &  \\ \hline
+  $20\_25\_7$ &  & &  \\ \hline
+  $20\_25\_8$ &  & &  \\ \hline
+  $20\_25\_9$ &  & &  \\ \hline
+  $20\_25\_10$ &  & &  \\ \hline
+  
+  $25\_30\_1$ &  & &  \\ \hline
+  $25\_30\_2$ &  & &  \\ \hline 
+  $25\_30\_3$ &  & &  \\ \hline 
+  $25\_30\_4$ &  & &  \\ \hline 
+  $25\_30\_5$ &  & &  \\ \hline 
+  $25\_30\_6$ &  & &  \\ \hline 
+  $25\_30\_7$ &  & &  \\ \hline 
+  $25\_30\_8$ &  & &  \\ \hline 
+  $25\_30\_9$ &  & &  \\ \hline 
+  $25\_30\_10$ &  & &  \\ \hline 
+ 
+\end{tabular}
+\end{center}
+\end{comment}
+
+
+\subsection{Résolution du problème avec connexité}
+
+Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est bien supérieur au modèle précédent puisque l'on ajoute une dimension qui es la distance à l'origine. Au niveau du code, l'algorithme correspondant est celui nommé "frontalSolver". Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants:
+
+
+\paragraph*{}
+ANALYSE DES TEMPS DE CALCUL ET COMPARAISON AVEC LE FRONTAL SANS CONNEXITE
+
+\section{Métaheuristiques implémentées}
+
+\paragraph*{}
+Dans cette partie nous présentons une série d'heuristiques que nous avons implémenté parce qu'elles nous semblaient adaptées à la structure du problème étudié. Dans un premier temps, nous avons réalisé un Glouton qui n'assure pas la connexité ce qui permet d'avoir une borne supérieure à notre problème. Ensuite nous avons essayé de gérer directement la connexité à l'intérieur des heuristiques pour obtenir une solution admissible en sortie d'algorithme.
+
+\subsection{Algorithme Glouton sans connexité}
+
+\paragraph*{}
+Le principe est simple, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$. On s'arrête quand le fait de rajouter une case fait passer la contrainte fractionnaire en dessous de la valeur autorisée. A priori, sauf coup de chance la solution obtenue ne sera pas connexe puisque rien ne l'y oblige lorsque l'on sélectionne la maille à ajouter à la zone sélectionnée. L'intérêt a priori de cet algorithme est d'obtenir une borne supérieure extrêmement du problème connexe en un temps quasi instantannée puisque le nombre de calculs nécessaires est minime. Les résultats sont présentés dans les tableaux suivants pour chaque instance avec le temps de calcul:
+
+\paragraph*{}
+VÉRIFIER QUE CELA CONCORDE NIVEAU TEMPS 
+
+
+\subsection{Algorithme Glouton avec connexité}
+
+\paragraph*{}
+Le principe est similaire au Glouton précédent, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. Simplement on s'assure à chaque itération que la zone sélectionnée reste connexe. Pour cela, à partir d'une solution donnée à un instant t, on calcule l'ensemble des mailles voisines non encore sélectionnée. C'est dans cet ensemble de mailles voisines que sera choisie la prochaine maille qui sera ajoutée à la solution pour former la solution de l'itération t+1. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$ dans l'ensemble des voisins possibles. On s'arrête quand le fait de rajouter une maille voisine fait passer la contrainte fractionnaire en dessous de la valeur autorisée.
+
+\paragraph*{}
+Comme précédemment on obtient ici une solution du problème extrêmement rapidement (on a tout de même le calcul de l'ensemble des mailles voisines à chaque itération). En revanche, il semblerait a priori que l'efficacité ne soit pas aussi bonne que pour le glouton sans connexité. En effet, si une maille fait passer le ratio en dessous de sa valeur limite mais qu'un de ses voisins puisse le faire repasser au-dessus à l'itération d'après, l'algorithme s'arrêtera de toute façon sans essayer de traiter ce cas là. Le fait de se restreindre aux voisins pour garantir la connexité à un coût sur la quelité de la solution (que l'on peut considérer comme contrebalancé par le fait que l'on soit connexe). Les résultats sont présentés ci-dessous:
+ 
+\paragraph*{}
+VÉRIFIER QUE CELA CONCORDE 
+
+
+\subsection{Algorithme du Recuit simulé}
+
+\paragraph{}
+Dans cette partie, nous résolvons le problème posé au moment d'un recuit simulé. Cette métaheuristique semble être adaptée au problème posé car sa structure de voisinage est très simple. Pour une zone sélectionnée donnée, on peut soit lui ajouter une case soit lui retirer une case et obtenir un voisin. De la même manière que pour le glouton avec connexité on peut choisir définir un ensemble de cases sélectionnables à chaque itération pour garder une solution connexe tout au long de la résolution. En revanche, la conservation du ratio n'est pas garantie tout au long de la résolution afin de pouvoir parcourir des voisinages plus vastes et ne pas avoir la même faiblesse que l'algorithme du Glouton avec connexité. Le problème qui peut se poser serait le fait que l'on retire une maille de la zone sélectionnée et que cela rende la solution non connexe, il faut donc à chaque itération vérifier si la solution est toujours connexe ou alors choisir "intelligemment" les mailles qui peuvent être retirées de la solution courante sans en affecter sa connexité.
+
+\paragraph*{}
+L'inconvénient du recuit simulé par rapport à l'algorithme Glouton est qu'il nécessite un paramétrage important pour pouvoir fonctionner correctement sur un problème donnée. Par ailleurs, il peut s'avérer qu'un paramétrage donné fonctionne très bien sur une instance et très mal sur une autre instance. Il est assez complexe de réussir à obtenir un recuit simulé qui soit performant sur chacune des instances sans en affecter sa performance en terme de temps de calcul.
+
+
+\subsection{Algorithme de Colonies de fourmis}
+
+\paragraph*{}
+VISIBLEMENT TU AS FAIS AUTRE CHOSE
+
+\section{Méthodes exactes de résolution du problème avec connexité}
+
+\paragraph*{}
+Afin de créer une méthode de résolution exacte qui soit efficace, nous avons essayé différentes méthodes. Nous avons essayé la Programmation Par Contrainte qui peut s'avérer très performante sur certains types de problèmes et dans un second temps, nous avons essayer des méthodes hybrides mélangeant les différents algorithmes nous avons présentés précédemment.
+
+\subsection{Programmation par contraintes}
+
+\paragraph*{}
+Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes "globales" qui sont des contraintes "usuelles" sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Voici les résultats obtenus:
+
+RESULTATS ET AJOUTER LA CONNEXITE
+
+\subsection{Branchement de Cplex sur la solution d'une Métaheuristique}
+
+\paragraph*{}
+Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un "warmstart" dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Cela devrait améliorer la performance de CPLEX lors de la résolution. Les résultats sont présentés ci-dessous:
+
+
+
+
+
+\end{document}
+
