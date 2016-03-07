@@ -26,9 +26,11 @@
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
 DEFINE_string(instance, "", "Path to instance to solve");
-DEFINE_string(synRes, "../res/synthetic_res_file.csv", "Path to the synthetic result file");
+DEFINE_string(synRes, "../res/", "Path to the synthetic result file");
 DEFINE_string(logFile, "../logs", "Logging files");
 DEFINE_string(solDir, "../solutions/", "Directory where to put solution files");
+DEFINE_double(tempInit, 10000.0, "AS::Initial temperature");
+
 // DEFINE_bool(h, false, "Show help");
 
 
@@ -124,7 +126,7 @@ int main(int argc, char* argv[])
     }
     else if (FLAGS_solver == "warmAnnealingFrontal") {
       AnnealingSolver annealing_solver(data);
-      if (not(annealing_solver.solve())) LOG(FATAL) << "Greedy solver failed !";
+      if (not(annealing_solver.solve(FLAGS_tempInit))) LOG(FATAL) << "Greedy solver failed !";
       
       // Solve via Frontal Solver
       FrontalSolver frontal_solver(data);
@@ -166,7 +168,7 @@ int main(int argc, char* argv[])
       description = annealing_solver.name() + " : " + annealing_solver.description(); 
       LOG(INFO) << description;
       // annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
-      annealing_solver.solve();
+      annealing_solver.solve(FLAGS_tempInit);
       sol.fill_sol(annealing_solver.sol());
     }
     else if (FLAGS_solver == "annealing1") {
@@ -177,7 +179,7 @@ int main(int argc, char* argv[])
       for (int i = 0; i < sol_i->x_.size(); ++i)
       for (int j = 0; j < sol_i->x_[i].size(); ++j)    
         sol_i->x_[i][j] = 1;
-      annealing_solver.solve();
+      annealing_solver.solve(FLAGS_tempInit);
       sol.fill_sol(annealing_solver.sol());
     }
     else if (FLAGS_solver == "ant") {
@@ -196,7 +198,7 @@ int main(int argc, char* argv[])
       description = annealing_solver.name() + " : " + annealing_solver.description(); 
       LOG(INFO) << description;
       annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
-      annealing_solver.solve();
+      annealing_solver.solve(FLAGS_tempInit);
       sol.fill_sol(annealing_solver.sol());
     }
     else if (FLAGS_solver == "test") {
@@ -206,6 +208,11 @@ int main(int argc, char* argv[])
       LOG(INFO) << description;
       test_solver.solve();
       sol.fill_sol(test_solver.sol());
+      AnnealingSolver annealing_solver(data);
+      LOG(INFO) << description;
+      annealing_solver.sol_ptr()->fill_sol(test_solver.sol());
+      annealing_solver.solve(100);
+      sol.fill_sol(annealing_solver.sol());      
     }
     else {
       LOG(FATAL) << "Wrong solver id, use the --solver tag, with stupid, frontal, or constraint";

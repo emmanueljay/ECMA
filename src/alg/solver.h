@@ -133,7 +133,7 @@ public:
     }
   ~AnnealingSolver() {} ;
 
-  bool solve(bool use_sol = false);
+  bool solve(double init_temp, bool use_sol = false);
 };
 
 /**

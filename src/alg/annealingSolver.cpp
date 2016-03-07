@@ -23,7 +23,6 @@ DEFINE_int32(maxTime, 20, "AS::Maximal time in second to let the solver run");
 DEFINE_int32(ratio, 15,
              "AS::Ratio on how to chose removed points from added points");
 DEFINE_int32(variant, 0, "AS::Variant of the annealing solver");
-DEFINE_double(tempInit, 10000.0, "AS::Initial temperature");
 DEFINE_double(lambda, 0.99,
               "AS::Lambda : for a decroissance of temp T <- T*lambda");
 DEFINE_int64(sizePalier, 20, "AS::Size of constant temperature pallier");
@@ -114,7 +113,7 @@ double get_next_temperature(double old_temp, double lambda, int version) {
 
 }  // namepace
 
-bool AnnealingSolver::solve(bool use_sol) {
+bool AnnealingSolver::solve(double init_temp, bool use_sol) {
   LOG(INFO) << "Using : " << name_ << " :: " << description_;
   LOG(INFO) << "The simulation will run for " << FLAGS_maxTime << " seconds"
             << " (change with flag --maxTime=20)";
@@ -149,7 +148,7 @@ bool AnnealingSolver::solve(bool use_sol) {
   double taux_acceptation_min = 0.000001;
   double taux_acceptation = 1.0;
   double nb_accepted = 0;
-  double temperature = FLAGS_tempInit;  // Initial temperature (default)
+  double temperature = init_temp;  // Initial temperature (default)
   double energy = get_energy(sol_, FLAGS_variant);
   double energy_max = energy;  // Energy maximum of acceptation
   double energy_neighbour;
