@@ -16,8 +16,11 @@
 #include <string>
 
 #include <glog/logging.h>
+#include <gflags/gflags.h>
 
 #include "utils/helpers.h"
+
+DECLARE_string(solver);
 
 using namespace std;
 
@@ -28,14 +31,21 @@ namespace {}  // namespace
 
 void write_in_synthetic_res_file(double cost, std::string solver_name,
                                  std::string instance_name, double time_s,
-                                 std::string file_name) {
+                                 std::string path_name) {
   time_t date;
   time(&date);
 
   ofstream temp_file;
+  string file_name(path_name+ "synthetic_res_file.csv");
   temp_file.open(file_name.c_str(), ios::app);
-  temp_file << date << "," << instance_name << "," << cost << "," << time_s 
-            << "," << solver_name << "\n"; 
+  temp_file << date << "," << instance_name.substr(instance_name.find("projet")) << "," << cost << "," << time_s 
+            << "," << FLAGS_solver << "\n"; 
+  temp_file.close();
+
+  string solv_name(path_name+FLAGS_solver+".csv");
+  temp_file.open(solv_name.c_str(), ios::app);
+  temp_file << date << "," << instance_name.substr(instance_name.find("projet")) << "," << cost << "," << time_s 
+            << "," << FLAGS_solver << "\n"; 
   temp_file.close();
 }
 

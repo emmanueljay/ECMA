@@ -18,6 +18,7 @@
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
+#include "alg/connexification.h"
 #include "alg/bricks.h"
 
 // DEFINE_int32(maxTime, 20, "AS::Maximal time in second to let the solver run");
@@ -25,8 +26,7 @@
 //              "AS::Ratio on how to chose removed points from added points");
 // DEFINE_int32(variant, 0, "AS::Variant of the annealing solver");
 // DEFINE_double(tempInit, 10000.0, "AS::Initial temperature");
-// DEFINE_double(lambda, 0.99,
-//               "AS::Lambda : for a decroissance of temp T <- T*lambda");
+DEFINE_double(limit, 1.0, "Limit where the first greedy select the cases");
 // DEFINE_int64(sizePalier, 20, "AS::Size of constant temperature pallier");
 
 namespace {
@@ -95,24 +95,31 @@ bool TestSolver::solve() {
     value = data_.Ha[best_pt.first][best_pt.second] + data_.Hp[best_pt.first][best_pt.second];
     VLOG(3) << "Value of point :" << value;
     // 2'. If the point is no use, we stop there
-    if (value < 2)
+    if (value < FLAGS_limit)
       break;
 
     // 3. Add the point to the solution
     sol_.x_[best_pt.first][best_pt.second] = 1;
     fixed[best_pt.first][best_pt.second] = true;
 
-    // 4. Check the ratio
-    if (sol_.ratio() < 2) {
-      LOG(FATAL) << "Problem with the idea";
-      // sol_.x_[best_pt.first][best_pt.second] = 0;
-      break;
-    }
+    // // 4. Check the ratio
+    // if (sol_.ratio() < 2) {
+    //   LOG(FATAL) << "Problem with the idea";
+    //   // sol_.x_[best_pt.first][best_pt.second] = 0;
+    //   break;
+    // }
 
     // 5. Sinon, on continue
     itt++;
   }
- 
+
+  /**
+   * STEP 2 : We connexify the solution
+   */
+  
+  ecma::connexification::connexify(&sol_);
+
+  
 
   // Rendu final
   if (sol_.ratio() >= 2)

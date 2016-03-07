@@ -1,489 +1,790 @@
-1456308285,../instances/projet_12_10_7.dat,18,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456308854,instances/projet_5_8_1.dat,22,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456308987,instances/projet_5_8_1.dat,22,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309538,instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_10.dat,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_3.dat,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_4.dat,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_5.dat,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_7.dat,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_8.dat,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_12_10_9.dat,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_10.dat,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_2.dat,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_3.dat,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_4.dat,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_5.dat,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_7.dat,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_8.dat,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_15_17_9.dat,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_1.dat,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_10.dat,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_2.dat,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_3.dat,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_4.dat,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_5.dat,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_6.dat,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_7.dat,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_8.dat,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_20_25_9.dat,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_2.dat,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_3.dat,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_5.dat,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_6.dat,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_7.dat,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_25_30_9.dat,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_1.dat,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_10.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_3.dat,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_4.dat,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309538,instances/projet_5_8_5.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309539,instances/projet_5_8_6.dat,23,1,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309539,instances/projet_5_8_7.dat,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309539,instances/projet_5_8_8.dat,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309539,instances/projet_5_8_9.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456309590,instances/projet_12_10_10.dat,115,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456309590,instances/projet_12_10_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456309592,instances/projet_12_10_3.dat,62,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456309596,instances/projet_12_10_5.dat,107,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456309598,instances/projet_12_10_6.dat,49,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456309599,instances/projet_12_10_7.dat,49,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309602,instances/projet_12_10_8.dat,75,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456309602,instances/projet_12_10_9.dat,11,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456309612,instances/projet_15_17_10.dat,241,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456309622,instances/projet_15_17_5.dat,215,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456309625,instances/projet_15_17_6.dat,92,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456309627,instances/projet_15_17_7.dat,38,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456309632,instances/projet_15_17_8.dat,124,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456309633,instances/projet_15_17_9.dat,11,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309649,instances/projet_20_25_10.dat,423,14,Solving using Annealing Solver : Solve using Annealing Solver
-1456309661,instances/projet_20_25_3.dat,170,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456309665,instances/projet_20_25_4.dat,131,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456309680,instances/projet_20_25_5.dat,389,15,Solving using Annealing Solver : Solve using Annealing Solver
-1456309685,instances/projet_20_25_6.dat,145,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456309690,instances/projet_20_25_7.dat,153,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456309698,instances/projet_20_25_8.dat,224,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456309705,instances/projet_20_25_9.dat,199,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456309728,instances/projet_25_30_10.dat,554,20,Solving using Annealing Solver : Solve using Annealing Solver
-1456309729,instances/projet_25_30_2.dat,10,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309742,instances/projet_25_30_3.dat,219,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456309766,instances/projet_25_30_5.dat,513,19,Solving using Annealing Solver : Solve using Annealing Solver
-1456309771,instances/projet_25_30_6.dat,152,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456309775,instances/projet_25_30_7.dat,83,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456309788,instances/projet_25_30_8.dat,279,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456309790,instances/projet_25_30_9.dat,32,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456309791,instances/projet_5_8_1.dat,22,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309792,instances/projet_5_8_10.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309792,instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456309793,instances/projet_5_8_4.dat,18,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456309794,instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309795,instances/projet_5_8_6.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309795,instances/projet_5_8_7.dat,9,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456309796,instances/projet_5_8_8.dat,28,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456309797,instances/projet_5_8_9.dat,9,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456310087,../instances/projet_12_10_7.dat,18,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456310477,../instances/projet_5_8_1.dat,24,6,Solving using Frontal Solver : Solve using Cplex
-1456310514,../instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456310605,../instances/projet_5_8_3.dat,30,59,Solving using Frontal Solver : Solve using Cplex
-1456310780,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456329899,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456330849,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456330878,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456330882,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331009,instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_10.dat,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_3.dat,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_4.dat,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_5.dat,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_7.dat,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_8.dat,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_12_10_9.dat,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_10.dat,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_2.dat,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_3.dat,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_4.dat,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_5.dat,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_7.dat,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331009,instances/projet_15_17_8.dat,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_15_17_9.dat,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_1.dat,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_10.dat,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_2.dat,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_3.dat,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_4.dat,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_5.dat,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_6.dat,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_7.dat,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_8.dat,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_20_25_9.dat,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_2.dat,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_3.dat,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_5.dat,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_6.dat,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_7.dat,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331010,instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_25_30_9.dat,254,1,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_1.dat,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_10.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_3.dat,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_4.dat,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_5.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_6.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_7.dat,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331011,instances/projet_5_8_8.dat,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331012,instances/projet_5_8_9.dat,23,1,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_10.dat,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_3.dat,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_4.dat,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_5.dat,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_7.dat,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_8.dat,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_12_10_9.dat,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_10.dat,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_2.dat,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_3.dat,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_4.dat,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_5.dat,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_7.dat,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_8.dat,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_15_17_9.dat,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_1.dat,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_10.dat,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_2.dat,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_3.dat,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_4.dat,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_5.dat,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_6.dat,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_7.dat,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_8.dat,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_20_25_9.dat,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_2.dat,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_3.dat,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331067,instances/projet_25_30_5.dat,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_25_30_6.dat,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_25_30_7.dat,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_25_30_9.dat,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_1.dat,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_10.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_3.dat,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_4.dat,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_5.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_6.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_7.dat,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_8.dat,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331068,instances/projet_5_8_9.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331095,instances/projet_12_10_10.dat,115,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456331096,instances/projet_12_10_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331098,instances/projet_12_10_3.dat,65,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456331099,instances/projet_12_10_4.dat,37,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331103,instances/projet_12_10_5.dat,107,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456331105,instances/projet_12_10_6.dat,49,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456331106,instances/projet_12_10_7.dat,51,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331109,instances/projet_12_10_8.dat,74,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456331109,instances/projet_12_10_9.dat,11,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456331119,instances/projet_15_17_10.dat,241,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456331125,instances/projet_15_17_3.dat,111,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456331128,instances/projet_15_17_4.dat,104,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456331137,instances/projet_15_17_5.dat,215,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456331140,instances/projet_15_17_6.dat,91,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456331141,instances/projet_15_17_7.dat,50,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331147,instances/projet_15_17_8.dat,122,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456331147,instances/projet_15_17_9.dat,11,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456331164,instances/projet_20_25_10.dat,424,14,Solving using Annealing Solver : Solve using Annealing Solver
-1456331176,instances/projet_20_25_3.dat,171,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456331177,instances/projet_20_25_4.dat,42,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331192,instances/projet_20_25_5.dat,389,15,Solving using Annealing Solver : Solve using Annealing Solver
-1456331197,instances/projet_20_25_6.dat,141,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456331208,instances/projet_20_25_8.dat,227,10,Solving using Annealing Solver : Solve using Annealing Solver
-1456331232,instances/projet_25_30_10.dat,554,20,Solving using Annealing Solver : Solve using Annealing Solver
-1456331233,instances/projet_25_30_2.dat,10,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331246,instances/projet_25_30_3.dat,220,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456331253,instances/projet_25_30_4.dat,160,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456331273,instances/projet_25_30_5.dat,513,19,Solving using Annealing Solver : Solve using Annealing Solver
-1456331278,instances/projet_25_30_6.dat,91,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456331283,instances/projet_25_30_7.dat,93,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456331299,instances/projet_25_30_8.dat,279,16,Solving using Annealing Solver : Solve using Annealing Solver
-1456331312,instances/projet_25_30_9.dat,286,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456331312,instances/projet_5_8_1.dat,23,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456331313,instances/projet_5_8_10.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331314,instances/projet_5_8_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331315,instances/projet_5_8_4.dat,18,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331316,instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331317,instances/projet_5_8_6.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331317,instances/projet_5_8_7.dat,9,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456331318,instances/projet_5_8_8.dat,28,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331319,instances/projet_5_8_9.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331380,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456331433,instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_10.dat,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_3.dat,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_4.dat,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_5.dat,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_7.dat,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_8.dat,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_12_10_9.dat,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_15_17_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_15_17_10.dat,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_15_17_2.dat,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331433,instances/projet_15_17_3.dat,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_4.dat,74,1,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_5.dat,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_6.dat,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_7.dat,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_8.dat,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_15_17_9.dat,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_1.dat,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_10.dat,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_2.dat,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_3.dat,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_4.dat,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_5.dat,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_6.dat,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_7.dat,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_8.dat,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331434,instances/projet_20_25_9.dat,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_1.dat,112,1,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_2.dat,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_3.dat,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_5.dat,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_6.dat,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_7.dat,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_25_30_9.dat,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_1.dat,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_10.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_2.dat,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_3.dat,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_4.dat,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_5.dat,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_6.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_7.dat,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_8.dat,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456331435,instances/projet_5_8_9.dat,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456396328,../instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456396342,../instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456396446,instances/projet_12_10_10.dat,115,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396446,instances/projet_12_10_2.dat,4,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396446,instances/projet_12_10_3.dat,65,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396446,instances/projet_12_10_5.dat,107,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396446,instances/projet_12_10_8.dat,78,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_15_17_10.dat,242,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_15_17_3.dat,120,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_15_17_5.dat,215,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_20_25_10.dat,427,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_20_25_2.dat,20,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_20_25_3.dat,176,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_20_25_5.dat,389,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396447,instances/projet_20_25_8.dat,253,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_25_30_5.dat,513,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_1.dat,24,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_10.dat,40,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_2.dat,4,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_3.dat,30,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_4.dat,18,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_5.dat,40,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_6.dat,23,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456396448,instances/projet_5_8_8.dat,28,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
-1456937761,../instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456937799,../instances/projet_25_30_4.dat,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456937822,../instances/projet_25_30_4.dat,102,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456937835,../instances/projet_25_30_4.dat,63,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456937841,../instances/projet_25_30_4.dat,102,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456937916,../instances/projet_25_30_4.dat,63,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456937934,../instances/projet_25_30_4.dat,218,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456937968,../instances/projet_25_30_5.dat,513,20,Solving using Annealing Solver : Solve using Annealing Solver
-1456938051,../instances/projet_25_30_6.dat,151,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456938076,../instances/projet_25_30_6.dat,136,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456938087,../instances/projet_25_30_6.dat,159,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456938596,../instances/projet_25_30_6.dat,137,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456938606,../instances/projet_25_30_6.dat,136,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456938644,../instances/projet_25_30_7.dat,161,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456939056,../instances/projet_25_30_7.dat,157,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456939185,../instances/projet_25_30_7.dat,157,10,Solving using Annealing Solver : Solve using Annealing Solver
-1456939206,../instances/projet_25_30_7.dat,83,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456939220,../instances/projet_25_30_7.dat,89,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456939226,../instances/projet_25_30_7.dat,83,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456939232,../instances/projet_25_30_7.dat,77,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456940428,../instances/projet_25_30_7.dat,171,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456940473,../instances/projet_25_30_7.dat,169,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456940498,../instances/projet_25_30_6.dat,158,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456940515,../instances/projet_25_30_6.dat,163,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456940553,../instances/projet_25_30_10.dat,552,20,Solving using Annealing Solver : Solve using Annealing Solver
-1456940566,../instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456946227,../instances/projet_25_30_10.dat,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456946247,../instances/projet_5_8_1.dat,24,7,Solving using Frontal Solver : Solve using Cplex
-1456946273,../instances/projet_5_8_1.dat,24,8,Solving using Frontal Solver : Solve using Cplex
-1456946303,../instances/projet_5_8_2.dat,4,1,Solving using Frontal Solver : Solve using Cplex
-1456946320,../instances/projet_5_8_3.dat,30,13,Solving using Frontal Solver : Solve using Cplex
-1456946583,../instances/projet_5_8_1.dat,24,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946588,../instances/projet_5_8_2.dat,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946592,../instances/projet_5_8_3.dat,30,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946596,../instances/projet_5_8_5.dat,40,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946600,../instances/projet_5_8_6.dat,23,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946699,../instances/projet_12_10_2.dat,4,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456946715,../instances/projet_12_10_3.dat,65,10,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456947185,../instances/projet_5_8_1.dat,24,4,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456947190,../instances/projet_5_8_2.dat,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
-1456947247,../instances/projet_12_10_4.dat,62,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456949232,../instances/projet_5_8_1.dat,24,0,Solving using Frontal Solver : Solve using Cplex
-1456949240,../instances/projet_5_8_2.dat,4,0,Solving using Frontal Solver : Solve using Cplex
-1456949244,../instances/projet_5_8_3.dat,30,0,Solving using Frontal Solver : Solve using Cplex
-1456949250,../instances/projet_5_8_4.dat,18,0,Solving using Frontal Solver : Solve using Cplex
-1456949254,../instances/projet_5_8_5.dat,40,0,Solving using Frontal Solver : Solve using Cplex
-1456949263,../instances/projet_5_8_6.dat,23,0,Solving using Frontal Solver : Solve using Cplex
-1456949493,../instances/projet_5_8_7.dat,30,226,Solving using Frontal Solver : Solve using Cplex
-1456949542,../instances/projet_5_8_8.dat,28,0,Solving using Frontal Solver : Solve using Cplex
-1456949549,../instances/projet_5_8_9.dat,23,0,Solving using Frontal Solver : Solve using Cplex
-1456949553,../instances/projet_5_8_10.dat,40,0,Solving using Frontal Solver : Solve using Cplex
-1456949860,../instances/projet_12_10_1.dat,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456995180,../instances/projet_5_8_1.dat,24,0,Solving using Frontal Solver : Solve using Cplex
-1456995186,../instances/projet_5_8_2.dat,4,1,Solving using Frontal Solver : Solve using Cplex
-1456995189,../instances/projet_5_8_3.dat,30,1,Solving using Frontal Solver : Solve using Cplex
-1456995193,../instances/projet_5_8_4.dat,18,0,Solving using Frontal Solver : Solve using Cplex
-1456995200,../instances/projet_5_8_5.dat,40,0,Solving using Frontal Solver : Solve using Cplex
-1456995204,../instances/projet_5_8_6.dat,23,0,Solving using Frontal Solver : Solve using Cplex
-1456995231,../instances/projet_5_8_6.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995239,../instances/projet_5_8_1.dat,22,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995247,../instances/projet_5_8_1.dat,24,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995266,../instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456995268,../instances/projet_5_8_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995272,../instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995276,../instances/projet_5_8_4.dat,18,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456995289,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456995300,../instances/projet_25_30_1.dat,97,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456995314,../instances/projet_25_30_1.dat,97,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456995325,../instances/projet_25_30_1.dat,99,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456995658,../instances/projet_25_30_1.dat,88,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456995669,../instances/projet_25_30_1.dat,106,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456995915,../instances/projet_25_30_1.dat,31,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456995926,../instances/projet_25_30_1.dat,40,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456995945,../instances/projet_25_30_1.dat,35,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456995978,../instances/projet_25_30_1.dat,95,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456995996,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456996003,../instances/projet_25_30_1.dat,88,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456996010,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456996015,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456996044,../instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456996057,../instances/projet_25_30_1.dat,88,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456996070,../instances/projet_25_30_1.dat,106,9,Solving using Annealing Solver : Solve using Annealing Solver
-1456996078,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456996589,../instances/projet_25_30_1.dat,112,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456996608,../instances/projet_25_30_1.dat,112,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456996617,../instances/projet_25_30_1.dat,112,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456996634,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456996643,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456996652,../instances/projet_25_30_1.dat,112,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456996672,../instances/projet_25_30_4.dat,160,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456996683,../instances/projet_25_30_6.dat,138,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456996755,../instances/projet_25_30_7.dat,158,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456996800,../instances/projet_25_30_6.dat,16,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456996809,../instances/projet_25_30_6.dat,2,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456996830,../instances/projet_25_30_6.dat,161,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456996862,../instances/projet_25_30_6.dat,173,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456996886,../instances/projet_25_30_7.dat,164,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456996910,../instances/projet_25_30_7.dat,168,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456996927,../instances/projet_25_30_7.dat,174,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456997044,../instances/projet_25_30_8.dat,284,17,Solving using Annealing Solver : Solve using Annealing Solver
-1456997058,../instances/projet_25_30_8.dat,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
-1456997131,../instances/projet_25_30_8.dat,320,14,Solving using Annealing Solver : Solve using Annealing Solver
-1456997173,../instances/projet_25_30_8.dat,282,19,Solving using Annealing Solver : Solve using Annealing Solver
-1456997191,../instances/projet_25_30_8.dat,281,15,Solving using Annealing Solver : Solve using Annealing Solver
-1456997289,../instances/projet_25_30_8.dat,320,15,Solving using Annealing Solver : Solve using Annealing Solver
-1456997332,../instances/projet_25_30_8.dat,320,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456997354,../instances/projet_25_30_8.dat,320,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456997455,instances/projet_12_10_10.dat,115,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997456,instances/projet_12_10_2.dat,4,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997458,instances/projet_12_10_3.dat,65,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997465,instances/projet_12_10_5.dat,107,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997476,instances/projet_12_10_8.dat,78,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997489,instances/projet_15_17_10.dat,242,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456997494,instances/projet_15_17_3.dat,120,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456997511,instances/projet_15_17_5.dat,215,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456997551,instances/projet_12_10_1.dat,39,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997553,instances/projet_12_10_10.dat,115,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997553,instances/projet_12_10_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997555,instances/projet_12_10_3.dat,65,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997556,instances/projet_12_10_4.dat,62,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997559,instances/projet_12_10_5.dat,107,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456997560,instances/projet_12_10_6.dat,50,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997561,instances/projet_12_10_7.dat,50,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997562,instances/projet_12_10_8.dat,78,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997563,instances/projet_12_10_9.dat,44,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997564,instances/projet_15_17_1.dat,39,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997571,instances/projet_15_17_10.dat,242,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456997571,instances/projet_15_17_2.dat,5,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997575,instances/projet_15_17_3.dat,120,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456997577,instances/projet_15_17_4.dat,104,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997582,instances/projet_15_17_5.dat,215,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456997584,instances/projet_15_17_6.dat,91,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997586,instances/projet_15_17_7.dat,88,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997590,instances/projet_15_17_8.dat,139,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456997593,instances/projet_15_17_9.dat,101,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456997595,instances/projet_20_25_1.dat,53,2,Solving using Annealing Solver : Solve using Annealing Solver
-1456997608,instances/projet_20_25_10.dat,427,13,Solving using Annealing Solver : Solve using Annealing Solver
-1456997609,instances/projet_20_25_2.dat,20,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997615,instances/projet_20_25_3.dat,167,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456997619,instances/projet_20_25_4.dat,131,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456997631,instances/projet_20_25_5.dat,389,12,Solving using Annealing Solver : Solve using Annealing Solver
-1456997634,instances/projet_20_25_6.dat,142,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456997640,instances/projet_20_25_7.dat,155,6,Solving using Annealing Solver : Solve using Annealing Solver
-1456997649,instances/projet_20_25_8.dat,222,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456997657,instances/projet_20_25_9.dat,199,8,Solving using Annealing Solver : Solve using Annealing Solver
-1456997660,instances/projet_25_30_1.dat,88,3,Solving using Annealing Solver : Solve using Annealing Solver
-1456997678,instances/projet_25_30_10.dat,557,18,Solving using Annealing Solver : Solve using Annealing Solver
-1456997678,instances/projet_25_30_2.dat,10,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997688,instances/projet_25_30_3.dat,239,10,Solving using Annealing Solver : Solve using Annealing Solver
-1456997693,instances/projet_25_30_4.dat,145,5,Solving using Annealing Solver : Solve using Annealing Solver
-1456997709,instances/projet_25_30_5.dat,513,16,Solving using Annealing Solver : Solve using Annealing Solver
-1456997713,instances/projet_25_30_6.dat,133,4,Solving using Annealing Solver : Solve using Annealing Solver
-1456997720,instances/projet_25_30_7.dat,161,7,Solving using Annealing Solver : Solve using Annealing Solver
-1456997730,instances/projet_25_30_8.dat,287,10,Solving using Annealing Solver : Solve using Annealing Solver
-1456997741,instances/projet_25_30_9.dat,286,11,Solving using Annealing Solver : Solve using Annealing Solver
-1456997741,instances/projet_5_8_1.dat,22,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997742,instances/projet_5_8_10.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997742,instances/projet_5_8_2.dat,4,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997743,instances/projet_5_8_3.dat,30,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997743,instances/projet_5_8_4.dat,18,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997744,instances/projet_5_8_5.dat,40,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997744,instances/projet_5_8_6.dat,23,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997745,instances/projet_5_8_7.dat,29,1,Solving using Annealing Solver : Solve using Annealing Solver
-1456997745,instances/projet_5_8_8.dat,28,0,Solving using Annealing Solver : Solve using Annealing Solver
-1456997746,instances/projet_5_8_9.dat,23,1,Solving using Annealing Solver : Solve using Annealing Solver
-1457083776,../instances/projet_5_8_1.dat,1,0,Solving using Test Solver : Solve using Test Solver
-1457083872,../instances/projet_5_8_1.dat,1,0,Solving using Test Solver : Solve using Test Solver
-1457084021,../instances/projet_5_8_1.dat,12,0,Solving using Test Solver : Solve using Test Solver
-1457084041,../instances/projet_25_30_1.dat,60,0,Solving using Test Solver : Solve using Test Solver
-1457084127,../instances/projet_25_30_5.dat,513,0,Solving using Test Solver : Solve using Test Solver
+1456308285,projet_12_10_7,18,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456308854,projet_5_8_1,22,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456308987,projet_5_8_1,22,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309538,projet_12_10_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_10,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_3,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_4,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_5,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_7,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_8,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_12_10_9,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_10,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_2,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_3,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_4,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_5,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_7,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_8,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_15_17_9,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_1,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_10,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_2,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_3,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_4,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_5,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_6,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_7,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_8,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_20_25_9,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_2,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_3,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_5,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_6,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_7,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_8,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_25_30_9,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_1,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_10,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_3,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_4,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309538,projet_5_8_5,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309539,projet_5_8_6,23,1,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309539,projet_5_8_7,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309539,projet_5_8_8,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309539,projet_5_8_9,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456309590,projet_12_10_10,115,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456309590,projet_12_10_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456309592,projet_12_10_3,62,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456309596,projet_12_10_5,107,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456309598,projet_12_10_6,49,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456309599,projet_12_10_7,49,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309602,projet_12_10_8,75,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456309602,projet_12_10_9,11,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456309612,projet_15_17_10,241,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456309622,projet_15_17_5,215,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456309625,projet_15_17_6,92,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456309627,projet_15_17_7,38,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456309632,projet_15_17_8,124,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456309633,projet_15_17_9,11,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309649,projet_20_25_10,423,14,Solving using Annealing Solver : Solve using Annealing Solver
+1456309661,projet_20_25_3,170,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456309665,projet_20_25_4,131,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456309680,projet_20_25_5,389,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456309685,projet_20_25_6,145,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456309690,projet_20_25_7,153,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456309698,projet_20_25_8,224,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456309705,projet_20_25_9,199,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456309728,projet_25_30_10,554,20,Solving using Annealing Solver : Solve using Annealing Solver
+1456309729,projet_25_30_2,10,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309742,projet_25_30_3,219,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456309766,projet_25_30_5,513,19,Solving using Annealing Solver : Solve using Annealing Solver
+1456309771,projet_25_30_6,152,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456309775,projet_25_30_7,83,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456309788,projet_25_30_8,279,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456309790,projet_25_30_9,32,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456309791,projet_5_8_1,22,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309792,projet_5_8_10,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309792,projet_5_8_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456309793,projet_5_8_4,18,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456309794,projet_5_8_5,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309795,projet_5_8_6,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309795,projet_5_8_7,9,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456309796,projet_5_8_8,28,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456309797,projet_5_8_9,9,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456310087,projet_12_10_7,18,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456310477,projet_5_8_1,24,6,Solving using Frontal Solver : Solve using Cplex
+1456310514,projet_5_8_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456310605,projet_5_8_3,30,59,Solving using Frontal Solver : Solve using Cplex
+1456310780,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456329899,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456330849,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456330878,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456330882,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331009,projet_12_10_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_10,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_3,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_4,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_5,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_7,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_8,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_12_10_9,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_10,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_2,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_3,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_4,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_5,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_7,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331009,projet_15_17_8,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_15_17_9,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_1,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_10,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_2,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_3,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_4,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_5,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_6,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_7,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_8,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_20_25_9,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_2,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_3,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_5,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_6,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_7,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331010,projet_25_30_8,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_25_30_9,254,1,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_1,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_10,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_3,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_4,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_5,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_6,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_7,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331011,projet_5_8_8,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331012,projet_5_8_9,23,1,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_10,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_3,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_4,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_5,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_7,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_8,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_12_10_9,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_10,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_2,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_3,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_4,74,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_5,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_7,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_8,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_15_17_9,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_1,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_10,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_2,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_3,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_4,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_5,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_6,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_7,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_8,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_20_25_9,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_2,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_3,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331067,projet_25_30_5,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_25_30_6,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_25_30_7,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_25_30_8,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_25_30_9,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_1,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_10,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_3,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_4,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_5,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_6,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_7,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_8,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331068,projet_5_8_9,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331095,projet_12_10_10,115,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456331096,projet_12_10_2,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331098,projet_12_10_3,65,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456331099,projet_12_10_4,37,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331103,projet_12_10_5,107,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456331105,projet_12_10_6,49,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456331106,projet_12_10_7,51,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331109,projet_12_10_8,74,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456331109,projet_12_10_9,11,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456331119,projet_15_17_10,241,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456331125,projet_15_17_3,111,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456331128,projet_15_17_4,104,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456331137,projet_15_17_5,215,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456331140,projet_15_17_6,91,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456331141,projet_15_17_7,50,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331147,projet_15_17_8,122,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456331147,projet_15_17_9,11,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456331164,projet_20_25_10,424,14,Solving using Annealing Solver : Solve using Annealing Solver
+1456331176,projet_20_25_3,171,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456331177,projet_20_25_4,42,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331192,projet_20_25_5,389,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456331197,projet_20_25_6,141,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456331208,projet_20_25_8,227,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456331232,projet_25_30_10,554,20,Solving using Annealing Solver : Solve using Annealing Solver
+1456331233,projet_25_30_2,10,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331246,projet_25_30_3,220,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456331253,projet_25_30_4,160,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456331273,projet_25_30_5,513,19,Solving using Annealing Solver : Solve using Annealing Solver
+1456331278,projet_25_30_6,91,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456331283,projet_25_30_7,93,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456331299,projet_25_30_8,279,16,Solving using Annealing Solver : Solve using Annealing Solver
+1456331312,projet_25_30_9,286,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456331312,projet_5_8_1,23,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456331313,projet_5_8_10,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331314,projet_5_8_2,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331315,projet_5_8_4,18,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331316,projet_5_8_5,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331317,projet_5_8_6,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331317,projet_5_8_7,9,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456331318,projet_5_8_8,28,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331319,projet_5_8_9,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331380,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456331433,projet_12_10_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_10,115,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_3,65,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_4,37,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_5,107,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_7,45,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_8,78,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_12_10_9,32,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_15_17_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_15_17_10,242,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_15_17_2,5,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331433,projet_15_17_3,120,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_4,74,1,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_5,215,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_6,50,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_7,36,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_8,139,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_15_17_9,87,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_1,66,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_10,427,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_2,20,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_3,176,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_4,131,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_5,389,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_6,69,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_7,148,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_8,253,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331434,projet_20_25_9,189,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_1,112,1,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_2,10,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_3,229,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_5,513,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_6,137,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_7,158,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_8,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_25_30_9,254,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_1,24,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_10,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_2,4,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_3,30,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_4,18,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_5,40,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_6,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_7,29,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_8,28,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456331435,projet_5_8_9,23,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456396328,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456396342,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456396446,projet_12_10_10,115,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396446,projet_12_10_2,4,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396446,projet_12_10_3,65,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396446,projet_12_10_5,107,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396446,projet_12_10_8,78,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_15_17_10,242,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_15_17_3,120,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_15_17_5,215,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_20_25_10,427,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_20_25_2,20,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_20_25_3,176,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_20_25_5,389,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396447,projet_20_25_8,253,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_25_30_10,557,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_25_30_5,513,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_25_30_8,320,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_1,24,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_10,40,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_2,4,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_3,30,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_4,18,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_5,40,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_6,23,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456396448,projet_5_8_8,28,0,Solving using Greedy Solver without connexity : Solve without connexity problem with a greedy algorithm
+1456937761,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456937799,projet_25_30_4,160,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456937822,projet_25_30_4,102,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456937835,projet_25_30_4,63,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456937841,projet_25_30_4,102,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456937916,projet_25_30_4,63,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456937934,projet_25_30_4,218,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456937968,projet_25_30_5,513,20,Solving using Annealing Solver : Solve using Annealing Solver
+1456938051,projet_25_30_6,151,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456938076,projet_25_30_6,136,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456938087,projet_25_30_6,159,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456938596,projet_25_30_6,137,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456938606,projet_25_30_6,136,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456938644,projet_25_30_7,161,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456939056,projet_25_30_7,157,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456939185,projet_25_30_7,157,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456939206,projet_25_30_7,83,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456939220,projet_25_30_7,89,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456939226,projet_25_30_7,83,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456939232,projet_25_30_7,77,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456940428,projet_25_30_7,171,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456940473,projet_25_30_7,169,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456940498,projet_25_30_6,158,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456940515,projet_25_30_6,163,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456940553,projet_25_30_10,552,20,Solving using Annealing Solver : Solve using Annealing Solver
+1456940566,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456946227,projet_25_30_10,557,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456946247,projet_5_8_1,24,7,Solving using Frontal Solver : Solve using Cplex
+1456946273,projet_5_8_1,24,8,Solving using Frontal Solver : Solve using Cplex
+1456946303,projet_5_8_2,4,1,Solving using Frontal Solver : Solve using Cplex
+1456946320,projet_5_8_3,30,13,Solving using Frontal Solver : Solve using Cplex
+1456946583,projet_5_8_1,24,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946588,projet_5_8_2,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946592,projet_5_8_3,30,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946596,projet_5_8_5,40,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946600,projet_5_8_6,23,1,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946699,projet_12_10_2,4,3,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456946715,projet_12_10_3,65,10,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947185,projet_5_8_1,24,4,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947190,projet_5_8_2,4,0,Solving using Constraint Solver : Solve using constraint programming of Cplex
+1456947247,projet_12_10_4,62,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456949232,projet_5_8_1,24,0,Solving using Frontal Solver : Solve using Cplex
+1456949240,projet_5_8_2,4,0,Solving using Frontal Solver : Solve using Cplex
+1456949244,projet_5_8_3,30,0,Solving using Frontal Solver : Solve using Cplex
+1456949250,projet_5_8_4,18,0,Solving using Frontal Solver : Solve using Cplex
+1456949254,projet_5_8_5,40,0,Solving using Frontal Solver : Solve using Cplex
+1456949263,projet_5_8_6,23,0,Solving using Frontal Solver : Solve using Cplex
+1456949493,projet_5_8_7,30,226,Solving using Frontal Solver : Solve using Cplex
+1456949542,projet_5_8_8,28,0,Solving using Frontal Solver : Solve using Cplex
+1456949549,projet_5_8_9,23,0,Solving using Frontal Solver : Solve using Cplex
+1456949553,projet_5_8_10,40,0,Solving using Frontal Solver : Solve using Cplex
+1456949860,projet_12_10_1,39,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456995180,projet_5_8_1,24,0,Solving using Frontal Solver : Solve using Cplex
+1456995186,projet_5_8_2,4,1,Solving using Frontal Solver : Solve using Cplex
+1456995189,projet_5_8_3,30,1,Solving using Frontal Solver : Solve using Cplex
+1456995193,projet_5_8_4,18,0,Solving using Frontal Solver : Solve using Cplex
+1456995200,projet_5_8_5,40,0,Solving using Frontal Solver : Solve using Cplex
+1456995204,projet_5_8_6,23,0,Solving using Frontal Solver : Solve using Cplex
+1456995231,projet_5_8_6,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995239,projet_5_8_1,22,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995247,projet_5_8_1,24,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995266,projet_5_8_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456995268,projet_5_8_2,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995272,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995276,projet_5_8_4,18,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456995289,projet_25_30_1,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456995300,projet_25_30_1,97,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995314,projet_25_30_1,97,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456995325,projet_25_30_1,99,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995658,projet_25_30_1,88,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995669,projet_25_30_1,106,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456995915,projet_25_30_1,31,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995926,projet_25_30_1,40,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995945,projet_25_30_1,35,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456995978,projet_25_30_1,95,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456995996,projet_25_30_1,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456996003,projet_25_30_1,88,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996010,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996015,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996044,projet_5_8_5,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456996057,projet_25_30_1,88,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456996070,projet_25_30_1,106,9,Solving using Annealing Solver : Solve using Annealing Solver
+1456996078,projet_25_30_1,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456996589,projet_25_30_1,112,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456996608,projet_25_30_1,112,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996617,projet_25_30_1,112,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996634,projet_25_30_1,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996643,projet_25_30_1,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996652,projet_25_30_1,112,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456996672,projet_25_30_4,160,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456996683,projet_25_30_6,138,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456996755,projet_25_30_7,158,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996800,projet_25_30_6,16,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456996809,projet_25_30_6,2,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456996830,projet_25_30_6,161,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456996862,projet_25_30_6,173,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996886,projet_25_30_7,164,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456996910,projet_25_30_7,168,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456996927,projet_25_30_7,174,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997044,projet_25_30_8,284,17,Solving using Annealing Solver : Solve using Annealing Solver
+1456997058,projet_25_30_8,320,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1456997131,projet_25_30_8,320,14,Solving using Annealing Solver : Solve using Annealing Solver
+1456997173,projet_25_30_8,282,19,Solving using Annealing Solver : Solve using Annealing Solver
+1456997191,projet_25_30_8,281,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456997289,projet_25_30_8,320,15,Solving using Annealing Solver : Solve using Annealing Solver
+1456997332,projet_25_30_8,320,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997354,projet_25_30_8,320,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456997455,projet_12_10_10,115,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997456,projet_12_10_2,4,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997458,projet_12_10_3,65,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997465,projet_12_10_5,107,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997476,projet_12_10_8,78,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997489,projet_15_17_10,242,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997494,projet_15_17_3,120,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997511,projet_15_17_5,215,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997551,projet_12_10_1,39,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997553,projet_12_10_10,115,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997553,projet_12_10_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997555,projet_12_10_3,65,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997556,projet_12_10_4,62,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997559,projet_12_10_5,107,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997560,projet_12_10_6,50,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997561,projet_12_10_7,50,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997562,projet_12_10_8,78,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997563,projet_12_10_9,44,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997564,projet_15_17_1,39,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997571,projet_15_17_10,242,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997571,projet_15_17_2,5,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997575,projet_15_17_3,120,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997577,projet_15_17_4,104,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997582,projet_15_17_5,215,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456997584,projet_15_17_6,91,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997586,projet_15_17_7,88,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997590,projet_15_17_8,139,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997593,projet_15_17_9,101,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997595,projet_20_25_1,53,2,Solving using Annealing Solver : Solve using Annealing Solver
+1456997608,projet_20_25_10,427,13,Solving using Annealing Solver : Solve using Annealing Solver
+1456997609,projet_20_25_2,20,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997615,projet_20_25_3,167,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997619,projet_20_25_4,131,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997631,projet_20_25_5,389,12,Solving using Annealing Solver : Solve using Annealing Solver
+1456997634,projet_20_25_6,142,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997640,projet_20_25_7,155,6,Solving using Annealing Solver : Solve using Annealing Solver
+1456997649,projet_20_25_8,222,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456997657,projet_20_25_9,199,8,Solving using Annealing Solver : Solve using Annealing Solver
+1456997660,projet_25_30_1,88,3,Solving using Annealing Solver : Solve using Annealing Solver
+1456997678,projet_25_30_10,557,18,Solving using Annealing Solver : Solve using Annealing Solver
+1456997678,projet_25_30_2,10,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997688,projet_25_30_3,239,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456997693,projet_25_30_4,145,5,Solving using Annealing Solver : Solve using Annealing Solver
+1456997709,projet_25_30_5,513,16,Solving using Annealing Solver : Solve using Annealing Solver
+1456997713,projet_25_30_6,133,4,Solving using Annealing Solver : Solve using Annealing Solver
+1456997720,projet_25_30_7,161,7,Solving using Annealing Solver : Solve using Annealing Solver
+1456997730,projet_25_30_8,287,10,Solving using Annealing Solver : Solve using Annealing Solver
+1456997741,projet_25_30_9,286,11,Solving using Annealing Solver : Solve using Annealing Solver
+1456997741,projet_5_8_1,22,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997742,projet_5_8_10,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997742,projet_5_8_2,4,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997743,projet_5_8_3,30,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997743,projet_5_8_4,18,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997744,projet_5_8_5,40,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997744,projet_5_8_6,23,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997745,projet_5_8_7,29,1,Solving using Annealing Solver : Solve using Annealing Solver
+1456997745,projet_5_8_8,28,0,Solving using Annealing Solver : Solve using Annealing Solver
+1456997746,projet_5_8_9,23,1,Solving using Annealing Solver : Solve using Annealing Solver
+1457083776,projet_5_8_1,1,0,Solving using Test Solver : Solve using Test Solver
+1457083872,projet_5_8_1,1,0,Solving using Test Solver : Solve using Test Solver
+1457084021,projet_5_8_1,12,0,Solving using Test Solver : Solve using Test Solver
+1457084041,projet_25_30_1,60,0,Solving using Test Solver : Solve using Test Solver
+1457084127,projet_25_30_5,513,0,Solving using Test Solver : Solve using Test Solver
+1457345395,projet_25_30_6,130,0,Solving using Test Solver : Solve using Test Solver
+1457345435,projet_25_30_8,105,0,Solving using Test Solver : Solve using Test Solver
+1457345440,projet_25_30_9,174,0,Solving using Test Solver : Solve using Test Solver
+1457345446,projet_25_30_10,499,0,Solving using Test Solver : Solve using Test Solver
+1457345499,projet_25_30_7,119,0,Solving using Test Solver : Solve using Test Solver
+1457345752,projet_25_30_7,174,8,Solving using Test Solver : Solve using Test Solver
+1457345765,projet_25_30_7,172,8,Solving using Test Solver : Solve using Test Solver
+1457345809,projet_25_30_3,240,10,Solving using Test Solver : Solve using Test Solver
+1457345827,projet_12_10_1,38,1,Solving using Test Solver : Solve using Test Solver
+1457345829,projet_12_10_10,115,2,Solving using Test Solver : Solve using Test Solver
+1457345829,projet_12_10_2,4,0,Solving using Test Solver : Solve using Test Solver
+1457345831,projet_12_10_3,65,2,Solving using Test Solver : Solve using Test Solver
+1457345832,projet_12_10_4,62,1,Solving using Test Solver : Solve using Test Solver
+1457345834,projet_12_10_5,107,2,Solving using Test Solver : Solve using Test Solver
+1457345835,projet_12_10_6,50,1,Solving using Test Solver : Solve using Test Solver
+1457345836,projet_12_10_7,49,1,Solving using Test Solver : Solve using Test Solver
+1457345838,projet_12_10_8,72,2,Solving using Test Solver : Solve using Test Solver
+1457345839,projet_12_10_9,44,1,Solving using Test Solver : Solve using Test Solver
+1457345849,projet_15_17_10,240,7,Solving using Test Solver : Solve using Test Solver
+1457345849,projet_15_17_2,8,0,Solving using Test Solver : Solve using Test Solver
+1457345861,projet_15_17_4,104,2,Solving using Test Solver : Solve using Test Solver
+1457345867,projet_15_17_5,215,6,Solving using Test Solver : Solve using Test Solver
+1457345870,projet_15_17_6,92,3,Solving using Test Solver : Solve using Test Solver
+1457345879,projet_15_17_8,126,4,Solving using Test Solver : Solve using Test Solver
+1457345882,projet_15_17_9,101,3,Solving using Test Solver : Solve using Test Solver
+1457345901,projet_20_25_10,422,13,Solving using Test Solver : Solve using Test Solver
+1457345901,projet_20_25_2,20,0,Solving using Test Solver : Solve using Test Solver
+1457345908,projet_20_25_3,166,6,Solving using Test Solver : Solve using Test Solver
+1457345913,projet_20_25_4,165,5,Solving using Test Solver : Solve using Test Solver
+1457345925,projet_20_25_5,389,12,Solving using Test Solver : Solve using Test Solver
+1457345938,projet_20_25_7,158,6,Solving using Test Solver : Solve using Test Solver
+1457345946,projet_20_25_8,225,8,Solving using Test Solver : Solve using Test Solver
+1457345953,projet_20_25_9,200,7,Solving using Test Solver : Solve using Test Solver
+1457345977,projet_25_30_10,551,18,Solving using Test Solver : Solve using Test Solver
+1457345989,projet_25_30_3,227,9,Solving using Test Solver : Solve using Test Solver
+1457346018,projet_25_30_5,513,17,Solving using Test Solver : Solve using Test Solver
+1457346023,projet_25_30_6,160,5,Solving using Test Solver : Solve using Test Solver
+1457346031,projet_25_30_7,167,7,Solving using Test Solver : Solve using Test Solver
+1457346041,projet_25_30_8,278,10,Solving using Test Solver : Solve using Test Solver
+1457346059,projet_5_8_1,22,0,Solving using Test Solver : Solve using Test Solver
+1457346060,projet_5_8_10,40,1,Solving using Test Solver : Solve using Test Solver
+1457346060,projet_5_8_2,4,0,Solving using Test Solver : Solve using Test Solver
+1457346061,projet_5_8_3,30,1,Solving using Test Solver : Solve using Test Solver
+1457346061,projet_5_8_4,18,0,Solving using Test Solver : Solve using Test Solver
+1457346062,projet_5_8_5,40,1,Solving using Test Solver : Solve using Test Solver
+1457346063,projet_5_8_6,23,1,Solving using Test Solver : Solve using Test Solver
+1457346063,projet_5_8_7,30,0,Solving using Test Solver : Solve using Test Solver
+1457346064,projet_5_8_8,28,1,Solving using Test Solver : Solve using Test Solver
+1457346065,projet_5_8_9,23,1,Solving using Test Solver : Solve using Test Solver
+1457346862,../instances/projet_25_30_1.dat,88,6,Solving using Test Solver : Solve using Test Solver
+1457347121,../instances/projet_25_30_1.dat,88,4,Solving using Test Solver : Solve using Test Solver
+1457347168,../instances/projet_25_30_1.dat,88,4,Solving using Test Solver : Solve using Test Solver
+1457347186,../instances/projet_25_30_1.dat,112,0,Solving using Greedy Solver : Solve with a greedy algorithm
+1457347365,../instances/projet_25_30_1.dat,88,4,Solving using Test Solver : Solve using Test Solver
+1457347383,../instances/projet_25_30_1.dat,88,3,Solving using Test Solver : Solve using Test Solver
+1457347521,../instances/projet_25_30_1.dat,113,3,Solving using Test Solver : Solve using Test Solver
+1457347559,../instances/projet_25_30_3.dat,235,9,Solving using Test Solver : Solve using Test Solver
+1457347584,../instances/projet_25_30_3.dat,241,10,Solving using Test Solver : Solve using Test Solver
+1457347648,../instances/projet_25_30_3.dat,238,10,Solving using Test Solver : Solve using Test Solver
+1457347660,../instances/projet_25_30_3.dat,240,9,Solving using Test Solver : Solve using Test Solver
+1457347722,../instances/projet_25_30_3.dat,238,16,Solving using Test Solver : Solve using Test Solver
+1457348182,../instances/projet_25_30_3.dat,237,8,Solving using Test Solver : Solve using Test Solver
+1457348208,../instances/projet_25_30_4.dat,210,6,Solving using Test Solver : Solve using Test Solver
+1457348258,../instances/projet_25_30_5.dat,513,12,Solving using Test Solver : Solve using Test Solver
+1457348267,../instances/projet_25_30_6.dat,174,4,Solving using Test Solver : Solve using Test Solver
+1457348315,../instances/projet_25_30_6.dat,173,6,Solving using Test Solver : Solve using Test Solver
+1457348349,../instances/projet_25_30_6.dat,160,5,Solving using Test Solver : Solve using Test Solver
+1457348379,../instances/projet_25_30_6.dat,156,5,Solving using Test Solver : Solve using Test Solver
+1457348401,../instances/projet_25_30_6.dat,164,7,Solving using Test Solver : Solve using Test Solver
+1457348438,../instances/projet_25_30_6.dat,159,6,Solving using Test Solver : Solve using Test Solver
+1457348450,../instances/projet_25_30_6.dat,173,5,Solving using Test Solver : Solve using Test Solver
+1457348473,../instances/projet_25_30_6.dat,172,7,Solving using Test Solver : Solve using Test Solver
+1457348494,instances/projet_12_10_1.dat,41,1,Solving using Test Solver : Solve using Test Solver
+1457348496,instances/projet_12_10_10.dat,115,2,Solving using Test Solver : Solve using Test Solver
+1457348498,instances/projet_12_10_3.dat,64,1,Solving using Test Solver : Solve using Test Solver
+1457348500,instances/projet_12_10_4.dat,51,2,Solving using Test Solver : Solve using Test Solver
+1457348502,instances/projet_12_10_5.dat,107,2,Solving using Test Solver : Solve using Test Solver
+1457348504,instances/projet_12_10_6.dat,49,2,Solving using Test Solver : Solve using Test Solver
+1457348505,instances/projet_12_10_7.dat,51,1,Solving using Test Solver : Solve using Test Solver
+1457348507,instances/projet_12_10_8.dat,72,2,Solving using Test Solver : Solve using Test Solver
+1457348511,instances/projet_15_17_1.dat,40,1,Solving using Test Solver : Solve using Test Solver
+1457348516,instances/projet_15_17_10.dat,240,5,Solving using Test Solver : Solve using Test Solver
+1457348540,instances/projet_15_17_5.dat,215,5,Solving using Test Solver : Solve using Test Solver
+1457348542,instances/projet_15_17_6.dat,92,2,Solving using Test Solver : Solve using Test Solver
+1457348544,instances/projet_15_17_7.dat,91,2,Solving using Test Solver : Solve using Test Solver
+1457348548,instances/projet_15_17_8.dat,129,4,Solving using Test Solver : Solve using Test Solver
+1457348550,instances/projet_15_17_9.dat,101,2,Solving using Test Solver : Solve using Test Solver
+1457348552,instances/projet_20_25_1.dat,67,2,Solving using Test Solver : Solve using Test Solver
+1457348562,instances/projet_20_25_10.dat,422,10,Solving using Test Solver : Solve using Test Solver
+1457348569,instances/projet_20_25_3.dat,170,6,Solving using Test Solver : Solve using Test Solver
+1457348574,instances/projet_20_25_4.dat,167,5,Solving using Test Solver : Solve using Test Solver
+1457348583,instances/projet_20_25_5.dat,389,9,Solving using Test Solver : Solve using Test Solver
+1457348587,instances/projet_20_25_6.dat,142,4,Solving using Test Solver : Solve using Test Solver
+1457348592,instances/projet_20_25_7.dat,161,5,Solving using Test Solver : Solve using Test Solver
+1457348598,instances/projet_20_25_8.dat,224,6,Solving using Test Solver : Solve using Test Solver
+1457348604,instances/projet_20_25_9.dat,200,6,Solving using Test Solver : Solve using Test Solver
+1457348607,instances/projet_25_30_1.dat,113,3,Solving using Test Solver : Solve using Test Solver
+1457348621,instances/projet_25_30_10.dat,551,14,Solving using Test Solver : Solve using Test Solver
+1457348632,instances/projet_25_30_3.dat,240,9,Solving using Test Solver : Solve using Test Solver
+1457348638,instances/projet_25_30_4.dat,218,6,Solving using Test Solver : Solve using Test Solver
+1457348651,instances/projet_25_30_5.dat,513,13,Solving using Test Solver : Solve using Test Solver
+1457348662,instances/projet_25_30_7.dat,176,6,Solving using Test Solver : Solve using Test Solver
+1457348690,instances/projet_25_30_9.dat,286,8,Solving using Test Solver : Solve using Test Solver
+1457348690,instances/projet_5_8_1.dat,24,0,Solving using Test Solver : Solve using Test Solver
+1457348691,instances/projet_5_8_10.dat,40,1,Solving using Test Solver : Solve using Test Solver
+1457348692,instances/projet_5_8_3.dat,30,1,Solving using Test Solver : Solve using Test Solver
+1457348692,instances/projet_5_8_4.dat,18,0,Solving using Test Solver : Solve using Test Solver
+1457348693,instances/projet_5_8_5.dat,40,1,Solving using Test Solver : Solve using Test Solver
+1457348694,instances/projet_5_8_6.dat,23,1,Solving using Test Solver : Solve using Test Solver
+1457348694,instances/projet_5_8_7.dat,30,0,Solving using Test Solver : Solve using Test Solver
+1457348695,instances/projet_5_8_8.dat,28,1,Solving using Test Solver : Solve using Test Solver
+1457349181,projet_25_30_6.dat,172,5,test
+1457349196,projet_12_10_1.dat,41,1,test
+1457349198,projet_12_10_10.dat,115,2,test
+1457349201,projet_12_10_3.dat,65,2,test
+1457349210,projet_12_10_5.dat,107,3,test
+1457349211,projet_12_10_6.dat,49,1,test
+1457349212,projet_12_10_7.dat,51,1,test
+1457349213,projet_12_10_1.dat,39,0,greedy
+1457349213,projet_12_10_10.dat,115,0,greedy
+1457349213,projet_12_10_2.dat,4,0,greedy
+1457349213,projet_12_10_3.dat,65,0,greedy
+1457349213,projet_12_10_4.dat,37,0,greedy
+1457349213,projet_12_10_5.dat,107,0,greedy
+1457349213,projet_12_10_6.dat,50,0,greedy
+1457349213,projet_12_10_7.dat,45,0,greedy
+1457349213,projet_12_10_8.dat,78,0,greedy
+1457349213,projet_12_10_9.dat,32,0,greedy
+1457349213,projet_15_17_1.dat,39,0,greedy
+1457349213,projet_15_17_10.dat,242,0,greedy
+1457349213,projet_15_17_2.dat,5,0,greedy
+1457349213,projet_15_17_3.dat,120,0,greedy
+1457349213,projet_15_17_4.dat,74,0,greedy
+1457349213,projet_15_17_5.dat,215,0,greedy
+1457349213,projet_15_17_6.dat,50,0,greedy
+1457349213,projet_15_17_7.dat,36,0,greedy
+1457349213,projet_15_17_8.dat,139,0,greedy
+1457349213,projet_15_17_9.dat,87,0,greedy
+1457349213,projet_20_25_1.dat,66,0,greedy
+1457349213,projet_20_25_10.dat,427,0,greedy
+1457349213,projet_20_25_2.dat,20,0,greedy
+1457349214,projet_20_25_3.dat,176,0,greedy
+1457349214,projet_20_25_4.dat,131,0,greedy
+1457349214,projet_20_25_5.dat,389,0,greedy
+1457349214,projet_20_25_6.dat,69,0,greedy
+1457349214,projet_20_25_7.dat,148,0,greedy
+1457349214,projet_20_25_8.dat,253,0,greedy
+1457349214,projet_20_25_9.dat,189,0,greedy
+1457349214,projet_25_30_1.dat,112,0,greedy
+1457349214,projet_25_30_10.dat,557,0,greedy
+1457349214,projet_25_30_2.dat,10,0,greedy
+1457349214,projet_25_30_3.dat,229,0,greedy
+1457349214,projet_25_30_4.dat,160,0,greedy
+1457349214,projet_25_30_5.dat,513,0,greedy
+1457349214,projet_25_30_6.dat,137,0,greedy
+1457349215,projet_25_30_7.dat,158,0,greedy
+1457349215,projet_25_30_8.dat,320,0,greedy
+1457349215,projet_25_30_9.dat,254,0,greedy
+1457349215,projet_5_8_1.dat,24,0,greedy
+1457349215,projet_5_8_10.dat,40,0,greedy
+1457349215,projet_5_8_2.dat,4,0,greedy
+1457349215,projet_5_8_3.dat,30,0,greedy
+1457349215,projet_5_8_4.dat,18,0,greedy
+1457349215,projet_5_8_5.dat,40,0,greedy
+1457349215,projet_5_8_6.dat,23,0,greedy
+1457349215,projet_5_8_7.dat,29,0,greedy
+1457349215,projet_5_8_8.dat,28,0,greedy
+1457349215,projet_5_8_9.dat,23,0,greedy
+1457349216,projet_12_10_9.dat,44,2,test
+1457349217,projet_15_17_1.dat,40,1,test
+1457349219,projet_12_10_10.dat,115,0,greedyWconnexity
+1457349219,projet_12_10_2.dat,4,0,greedyWconnexity
+1457349219,projet_12_10_3.dat,65,0,greedyWconnexity
+1457349220,projet_12_10_5.dat,107,0,greedyWconnexity
+1457349220,projet_12_10_8.dat,78,0,greedyWconnexity
+1457349220,projet_15_17_10.dat,242,0,greedyWconnexity
+1457349220,projet_15_17_3.dat,120,0,greedyWconnexity
+1457349220,projet_15_17_5.dat,215,0,greedyWconnexity
+1457349220,projet_20_25_10.dat,427,0,greedyWconnexity
+1457349220,projet_20_25_2.dat,20,0,greedyWconnexity
+1457349220,projet_20_25_3.dat,176,0,greedyWconnexity
+1457349220,projet_20_25_5.dat,389,0,greedyWconnexity
+1457349220,projet_20_25_8.dat,253,0,greedyWconnexity
+1457349220,projet_25_30_10.dat,557,0,greedyWconnexity
+1457349220,projet_25_30_5.dat,513,0,greedyWconnexity
+1457349220,projet_25_30_8.dat,320,0,greedyWconnexity
+1457349221,projet_5_8_1.dat,24,0,greedyWconnexity
+1457349221,projet_5_8_10.dat,40,0,greedyWconnexity
+1457349221,projet_5_8_2.dat,4,0,greedyWconnexity
+1457349221,projet_5_8_3.dat,30,0,greedyWconnexity
+1457349221,projet_5_8_4.dat,18,0,greedyWconnexity
+1457349221,projet_5_8_5.dat,40,0,greedyWconnexity
+1457349221,projet_5_8_6.dat,23,0,greedyWconnexity
+1457349221,projet_5_8_8.dat,28,0,greedyWconnexity
+1457349223,projet_15_17_10.dat,241,6,test
+1457349228,projet_15_17_3.dat,114,3,test
+1457349231,projet_15_17_4.dat,104,3,test
+1457349237,projet_15_17_5.dat,215,5,test
+1457349247,projet_15_17_7.dat,92,3,test
+1457349247,projet_12_10_10.dat,115,2,annealing
+1457349250,projet_12_10_4.dat,62,1,annealing
+1457349251,projet_15_17_8.dat,131,4,test
+1457349254,projet_12_10_5.dat,107,4,annealing
+1457349255,projet_15_17_9.dat,101,4,test
+1457349256,projet_12_10_6.dat,50,2,annealing
+1457349256,projet_12_10_7.dat,18,0,annealing
+1457349257,projet_20_25_1.dat,67,2,test
+1457349258,projet_12_10_8.dat,73,2,annealing
+1457349260,projet_12_10_9.dat,44,2,annealing
+1457349268,projet_15_17_10.dat,241,7,annealing
+1457349269,projet_15_17_2.dat,8,1,annealing
+1457349269,projet_20_25_10.dat,423,12,test
+1457349273,projet_15_17_4.dat,104,2,annealing
+1457349277,projet_20_25_3.dat,169,6,test
+1457349279,projet_15_17_5.dat,215,6,annealing
+1457349281,projet_15_17_6.dat,91,2,annealing
+1457349282,projet_20_25_4.dat,156,5,test
+1457349283,projet_15_17_7.dat,51,2,annealing
+1457349288,projet_15_17_8.dat,126,5,annealing
+1457349289,projet_15_17_9.dat,11,1,annealing
+1457349294,projet_20_25_5.dat,389,12,test
+1457349299,projet_20_25_6.dat,144,5,test
+1457349303,projet_20_25_10.dat,423,12,annealing
+1457349306,projet_20_25_7.dat,159,7,test
+1457349308,projet_20_25_4.dat,42,1,annealing
+1457349314,projet_20_25_8.dat,241,8,test
+1457349318,projet_12_10_1.dat,40,2,test
+1457349323,projet_12_10_10.dat,115,5,test
+1457349323,projet_20_25_5.dat,389,15,annealing
+1457349324,projet_20_25_9.dat,200,10,test
+1457349327,projet_12_10_3.dat,65,3,test
+1457349329,projet_12_10_4.dat,62,2,test
+1457349330,projet_25_30_1.dat,113,6,test
+1457349330,projet_20_25_6.dat,144,7,annealing
+1457349334,projet_20_25_7.dat,74,4,annealing
+1457349334,projet_12_10_5.dat,107,5,test
+1457349343,projet_12_10_7.dat,50,3,test
+1457349347,projet_12_10_8.dat,73,4,test
+1457349347,projet_20_25_8.dat,230,13,annealing
+1457349350,projet_25_30_10.dat,554,20,test
+1457349352,projet_15_17_1.dat,40,2,test
+1457349362,projet_15_17_10.dat,238,10,test
+1457349370,projet_25_30_3.dat,235,15,test
+1457349371,projet_15_17_3.dat,114,6,test
+1457349374,projet_25_30_10.dat,552,20,annealing
+1457349384,projet_25_30_4.dat,197,14,test
+1457349385,projet_25_30_4.dat,63,5,annealing
+1457349399,projet_15_17_5.dat,215,8,test
+1457349403,projet_15_17_6.dat,89,4,test
+1457349404,projet_25_30_5.dat,513,20,test
+1457349405,projet_25_30_5.dat,513,20,annealing
+1457349407,projet_25_30_6.dat,16,2,annealing
+1457349409,projet_15_17_7.dat,91,5,test
+1457349412,projet_25_30_7.dat,86,5,annealing
+1457349416,projet_15_17_8.dat,133,7,test
+1457349421,projet_15_17_9.dat,101,5,test
+1457349424,projet_20_25_1.dat,67,3,test
+1457349424,projet_25_30_7.dat,174,10,test
+1457349429,projet_25_30_8.dat,282,17,annealing
+1457349438,projet_25_30_9.dat,285,9,annealing
+1457349438,projet_25_30_8.dat,289,14,test
+1457349438,projet_5_8_1.dat,24,0,annealing
+1457349439,projet_20_25_10.dat,422,15,test
+1457349440,projet_5_8_10.dat,40,2,annealing
+1457349440,projet_5_8_2.dat,4,0,annealing
+1457349441,projet_5_8_4.dat,18,0,annealing
+1457349443,projet_5_8_5.dat,40,2,annealing
+1457349444,projet_5_8_6.dat,23,1,annealing
+1457349444,projet_5_8_7.dat,9,0,annealing
+1457349445,projet_5_8_8.dat,28,1,annealing
+1457349446,projet_5_8_9.dat,23,1,annealing
+1457349451,projet_25_30_9.dat,286,13,test
+1457349452,projet_5_8_1.dat,24,1,test
+1457349453,projet_5_8_10.dat,40,1,test
+1457349455,projet_5_8_3.dat,30,1,test
+1457349456,projet_5_8_4.dat,18,1,test
+1457349457,projet_5_8_5.dat,40,1,test
+1457349458,projet_5_8_6.dat,23,1,test
+1457349459,projet_5_8_7.dat,30,1,test
+1457349462,projet_5_8_9.dat,23,0,test
+1457349475,projet_20_25_5.dat,389,9,test
+1457349493,projet_20_25_7.dat,164,5,test
+1457349500,projet_20_25_8.dat,232,7,test
+1457349506,projet_20_25_9.dat,200,6,test
+1457349509,projet_25_30_1.dat,113,3,test
+1457349523,projet_25_30_10.dat,554,14,test
+1457349534,projet_25_30_3.dat,241,9,test
+1457349540,projet_25_30_4.dat,199,6,test
+1457349554,projet_25_30_5.dat,513,14,test
+1457349579,projet_25_30_7.dat,172,7,test
+1457349587,projet_25_30_8.dat,291,8,test
+1457349596,projet_25_30_9.dat,286,9,test
+1457349596,projet_5_8_1.dat,24,0,test
+1457349597,projet_5_8_10.dat,40,1,test
+1457349598,projet_5_8_3.dat,30,0,test
+1457349598,projet_5_8_4.dat,18,0,test
+1457349599,projet_5_8_5.dat,40,1,test
+1457349600,projet_5_8_6.dat,23,1,test
+1457349600,projet_5_8_7.dat,29,0,test
+1457349601,projet_5_8_8.dat,28,1,test
+1457349601,projet_5_8_9.dat,23,0,test
