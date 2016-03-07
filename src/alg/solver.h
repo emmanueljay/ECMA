@@ -68,7 +68,21 @@ public:
 };
 
 /**
- * Third Solver : solve using a greedy algorithm
+ * Third Solver : solve using Cplex without connexity
+ */
+class FrontalSolverWithoutConnexity : public Solver {
+public:
+  FrontalSolverWithoutConnexity(const Data& data): Solver(data) {
+      name("Solving using Frontal Solver without connexity");
+      description("Solve using Cplex without connexity");
+    }
+  ~FrontalSolverWithoutConnexity() {} ;
+
+  bool solve(int borne_max, bool warmstart = false);
+};
+
+/**
+ * Fourth Solver : solve using a greedy algorithm
  */
 class GreedySolver : public Solver {
 public:
@@ -81,8 +95,7 @@ public:
   bool solve();
 };
 
-/**
- * Third Solver (Without connexity) : solve using a greedy algorithm
+/**Fifth Solver (Without connexity) : solve using a greedy algorithm
  */
 class GreedySolverWithoutConnexity : public Solver {
 public:
@@ -96,7 +109,7 @@ public:
 };
 
 /**
- * Fourth Solver : solve using a constraint programming solver
+ * Sixth Solver : solve using a constraint programming solver
  */
 class ConstraintSolver : public Solver {
 public:
@@ -110,7 +123,7 @@ public:
 };
 
 /**
- * Fifth Solver : Annealing Solver (recuit simulé)
+ * Seventh Solver : Annealing Solver (recuit simulé)
  */
 class AnnealingSolver : public Solver {
 public:
@@ -124,7 +137,7 @@ public:
 };
 
 /**
- * Sixth Solver : Ant Solver (Colonie de fourmis)
+ *Eighth Solver : Ant Solver (Colonie de fourmis)
  */
 class AntSolver : public Solver {
 public:
@@ -138,7 +151,7 @@ public:
 };
 
 /**
- * Senventh Solver : Test Solver (Greedy and some other things)
+ * Nineth Solver : Test Solver (Greedy and some other things)
  */
 class TestSolver : public Solver {
 public:

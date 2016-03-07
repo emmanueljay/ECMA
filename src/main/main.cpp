@@ -74,15 +74,15 @@ int main(int argc, char* argv[])
     double cost;
     bool is_admissible;
     std::string description;
-    int borne;
+    int borne = 10000;
 
     // Computation of the born in any cases.
-    GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
-    description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
-    LOG(INFO) << description;
-    greedy_solver_without_connexity.solve();
-    borne = greedy_solver_without_connexity.sol().compute_cost();    
-    LOG(INFO) << "Borne :\t" << borne;
+     GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
+     description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
+    // LOG(INFO) << description;
+     greedy_solver_without_connexity.solve();
+     borne = greedy_solver_without_connexity.sol().compute_cost();    
+     LOG(INFO) << "Borne :\t" << borne;
 
     // Solving this instance using "Solver"
     if (FLAGS_solver == "stupid") {
@@ -100,6 +100,14 @@ int main(int argc, char* argv[])
       LOG(INFO) << description;
       frontal_solver.solve(borne);
       sol.fill_sol(frontal_solver.sol());
+    }
+    else if (FLAGS_solver == "frontalWconnexity") {
+      // Solve via Frontal Solver without connexity
+      FrontalSolverWithoutConnexity frontal_solver_without_connexity(data);
+      description = frontal_solver_without_connexity.name() + " : " + frontal_solver_without_connexity.description(); 
+      LOG(INFO) << description;
+      frontal_solver_without_connexity.solve(borne);
+      sol.fill_sol(frontal_solver_without_connexity.sol());
     }
     else if (FLAGS_solver == "warmGreedyFrontal") {
       // Solve via greedy Solver

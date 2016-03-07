@@ -15,16 +15,13 @@ typedef IloArray<IloNumVarArray>  NumVarMatrix;
 typedef IloArray<IloIntArray>     IntMatrix;
 typedef IloArray<IloExprArray>     ExprMatrix;
 
-bool FrontalSolver::solve(int borne_max, bool warmstart) {
-  LOG(INFO) << name_ << " :: " << description_; 
+bool FrontalSolverWithoutConnexity::solve(int borne_max, bool warmstart) {
+  LOG(INFO) << name_ << " :: " << description_;
 
   //Extracting data
   VLOG(2) << "Extracting data";
   int n = data_.n;
   int m = data_.m;
-  int h1 = m*((n+1)/2 + n/2)/2 + 1;
-  int h2 = n*((m+1)/2 + m/2)/2 + 1;
-  int hmax = max(h1,h2);
   double Ba = data_.Ba;
   double Bp = data_.Bp;
   const vector<vector<double> >& Ha = data_.Ha;
@@ -43,20 +40,12 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   BoolVarMatrix x(env); 
   NumVarMatrix y(env);
   NumVarMatrix z(env);
-  BoolVar3DMatrix s(env);
 
   VLOG(2) << "Creating variables";
    for (int i = 0; i < m ; ++i) {
      x.add(IloBoolVarArray(env,n));
      y.add(IloNumVarArray(env,n,0,Bp));
      z.add(IloNumVarArray(env,n,0,Ba));
-   }
-
-   for (int h = 0; h < hmax ; ++h) {
-    s.add(BoolVarMatrix(env));
-    for (int i = 0; i < m ; ++i) {
-      s[h].add(IloBoolVarArray(env,n));
-    }
    }
 
 
@@ -77,7 +66,7 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
   model.add(IloMaximize(env, objective ));
 
   //Constraints
-  VLOG(2) << "Maximal born constraint";
+  VLOG(2) << "Maxmial born constraint";
   model.add(objective <= borne_max);
 
   VLOG(2) << "Creating constraint expressions";
@@ -127,54 +116,6 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
     }
   }
 
-  VLOG(2) << "Handling connexity";
-  //Base of the connected area
-
-  VLOG(2) << "Connected area base";
-  IloExpr base_connected_area(env,0);
-  for (int i = 0; i < m ; ++i) {
-    for (int j = 0; j < n ; ++j) {
-      base_connected_area += s[0][i][j];
-    }
-  }
-  model.add(base_connected_area == 1);
-
-  VLOG(2) << "Linking x and s";
-  for (int i = 0; i < m ; ++i) {
-    for (int j = 0; j < n ; ++j) {
-      IloExpr expression(env,0);
-      for (int h = 0; h < hmax ; ++h) {
-        expression += s[h][i][j];
-      }
-      VLOG(5) << "Adding constraint linking x_ij and sum_s_ij";
-      model.add(x[i][j] == expression);
-    }
-  }
-
-
-  VLOG(2) << "Linking one case and its neighbour";
-  for (int h = 1; h < hmax; ++h) {
-    for (int i = 0; i < m; ++i) {
-      for (int j = 0; j < n; ++j) {
-        if (i==0) {
-          if (j==0)  model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j+1]);
-          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j-1]);
-          else model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);
-        }
-        else if (i==(data_.m-1)) {
-          if (j==0)  model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j+1]);
-          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j-1]);
-          else model.add(s[h][i][j] <= s[h-1][i-1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);
-        }
-        else {
-          if (j==0)  model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j+1]);
-          else if (j==(data_.n-1)) model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j-1]);
-          else model.add(s[h][i][j] <= s[h-1][i+1][j] + s[h-1][i-1][j] + s[h-1][i][j-1] + s[h-1][i][j+1]);      
-        }
-      }
-    }
-  }
-
   // Warmstart
   if (warmstart) {
     // Setting Warmstart from solution
@@ -185,19 +126,6 @@ bool FrontalSolver::solve(int borne_max, bool warmstart) {
     for (int j = 0; j < n; ++j) {
       startVar.add(x[i][j]);
       startVal.add(sol_.x_[i][j]);
-
-      if (sol_.x_[i][j] == 0){
-        startVar.add(y[i][j]);
-        startVal.add(sol_.x_[i][j]);
-
-        startVar.add(z[i][j]);
-        startVal.add(sol_.x_[i][j]);
-        
-        for (int h = 0; h < hmax; ++h) {
-        startVar.add(s[h][i][j]);
-        startVal.add(sol_.x_[i][j]);
-        }
-      }
     }
     cplex.addMIPStart(startVar, startVal);
     startVal.end();

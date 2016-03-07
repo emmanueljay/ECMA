@@ -1,6 +1,6 @@
 Solution file for instance 5_8_1
 Cost of the solution 24
-Time of the simulation 1 seconds 
+Time of the simulation 2 seconds 
 Ratio of the solution 2.00423
 Detail of the solution :
 0 0 0 1 1 1 1 1 
