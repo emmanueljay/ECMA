@@ -495,11 +495,203 @@ Dans cette partie, nous résolvons le problème posé au moment d'un recuit simu
 \paragraph*{}
 L'inconvénient du recuit simulé par rapport à l'algorithme Glouton est qu'il nécessite un paramétrage important pour pouvoir fonctionner correctement sur un problème donnée. Par ailleurs, il peut s'avérer qu'un paramétrage donné fonctionne très bien sur une instance et très mal sur une autre instance. Il est assez complexe de réussir à obtenir un recuit simulé qui soit performant sur chacune des instances sans en affecter sa performance en terme de temps de calcul.
 
+\begin{center}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$5\_8\_1$ &  24 &  24 &  0,00\% \\ \hline
+$5\_8\_2$ &  4 & 4 & 0,00\% \\ \hline
+$5\_8\_3$ &  30 &  30 &  0,00\% \\ \hline
+$5\_8\_4$ &  18 &  18 &  0,00\% \\ \hline
+$5\_8\_5$ &  40 &  40 &  0,00\% \\ \hline
+$5\_8\_6$ &  23 &  23 &  0,00\% \\ \hline
+$5\_8\_7$ &  30 &  30 &  0,00\% \\ \hline
+$5\_8\_8$ &  28 &  28 &  0,00\% \\ \hline
+$5\_8\_9$ &  23 &  23 &  0,00\% \\ \hline
+$5\_8\_10$ & 40 &  40 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$12\_10\_1$ &  41 &  42 &  2,38\% \\ \hline
+$12\_10\_2$ &  4 & 4 & 0,00\% \\ \hline
+$12\_10\_3$ &  65 &  65 &  0,00\% \\ \hline
+$12\_10\_4$ &  62 &  62 &  0,00\% \\ \hline
+$12\_10\_5$ &  107 & 107 & 0,00\% \\ \hline
+$12\_10\_6$ &  50 &  51 &  1,96\% \\ \hline
+$12\_10\_7$ &  53 &  56 &  5,36\% \\ \hline
+$12\_10\_8$ &  78 &  78 &  0,00\% \\ \hline
+$12\_10\_9$ &  44 &  44 &  0,00\% \\ \hline
+$12\_10\_10$ & 115 & 115 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
 
-\subsection{Algorithme de Colonies de fourmis}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ &  40 &  42 &  4,76\% \\ \hline
+$15\_17\_2$ &  8 & 13 &  38,46\% \\ \hline
+$15\_17\_3$ &  116 & 120 & 3,33\% \\ \hline
+$15\_17\_4$ &  104 & 104 & 0,00\% \\ \hline
+$15\_17\_5$ &  215 & 215 & 0,00\% \\ \hline
+$15\_17\_6$ &  93 &  94 &  1,06\% \\ \hline
+$15\_17\_7$ &  94 &  99 &  5,05\% \\ \hline
+$15\_17\_8$ &  133 & 139 & 4,32\% \\ \hline
+$15\_17\_9$ &  11 &  101 & 89,11\% \\ \hline
+$15\_17\_10$ & 241 & 242 & 0,41\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$20\_25\_1$ &  67 &  72 &  6,94\% \\ \hline
+$20\_25\_2$ &  20 &  20 &  0,00\% \\ \hline
+$20\_25\_3$ &  162 & 176 & 7,95\% \\ \hline
+$20\_25\_4$ &  165 & 170 & 2,94\% \\ \hline
+$20\_25\_5$ &  389 & 389 & 0,00\% \\ \hline
+$20\_25\_6$ &  145 & 148 & 2,03\% \\ \hline
+$20\_25\_7$ &  77 &  171 & 54,97\% \\ \hline
+$20\_25\_8$ &  230 & 253 & 9,09\% \\ \hline
+$20\_25\_9$ &  183 & 201 & 8,96\% \\ \hline
+$20\_25\_10$ & 423 & 427 & 0,94\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$25\_30\_1$ &  101 & 120 & 15,83\% \\ \hline
+$25\_30\_2$ &  10 &  61 &  83,61\% \\ \hline
+$25\_30\_3$ &  219 & 254 & 13,78\% \\ \hline
+$25\_30\_4$ &  166 & 218 & 23,85\% \\ \hline
+$25\_30\_5$ &  513 & 513 & 0,00\% \\ \hline
+$25\_30\_6$ &  94 &  184 & 48,91\% \\ \hline
+$25\_30\_7$ &  157 & 188 & 16,49\% \\ \hline
+$25\_30\_8$ &  282 & 320 & 11,88\% \\ \hline
+$25\_30\_9$ &  285 & 276 & -3,26\% \\ \hline
+$25\_30\_10$ & 552 & 557 & 0,90\% \\ \hline
+      \end{tabular}
+\end{figure}
+\end{center}
 
 \paragraph*{}
-VISIBLEMENT TU AS FAIS AUTRE CHOSE
+
+Tous les recuits ont été fait pour tourner 15 secondes au maximum. On remarque que les solution obtenues sont très bonnes, à part certaines instances ou la différence de gap peut être grande (Attention, le gap est calculé à partir de la solution NON connexe, et donc peut être très grand, même si la solution est optimale avec connexité, et c'est pour cela que les gaps peuvent être négatif pour les instances 25-30)
+
+
+\subsection{Algorithme associé au problème}
+
+\paragraph*{}
+Nous nous sommes dit qu'il pouvait être interessant d'aider le recuit simulé à aller chercher les endroits ``interessants''. Du coup, nous avons dévellopé un algorithme qui cherche une solution connexe qui relierais tous les endroits interessants. L'algorithme fonctionne en 3 parties :
+\begin{itemize}
+\item La première est de lancer un glouton sans connexité, en ne le poussant pas jusqu'au bout, s'arrentant par exemple quand les cases ajoutées commencent à trop peser sur le ratio. On obtient une solution non connexe mais ``très riche'' dans le sens ou elle contient que des cases avec un fort handicap.
+\item La deuxième étape consiste à connexifier la solution. Pour cela, nous avons implémenté un algorithme simple, qui va repérer les composantes connexes, puis les relier en faisant commme suit : On choisis une composante, on la fait ``grossir'' étape par étape en ajoutant les voisins, et si un des voisins est dans une autre composante connexe, on relie les deux composantes en remontant les parents sucessifs. On fait cela jusqu'a que toutes les composantes soient reliées.
+\item La dernière consiste à lancer un recuit à partir de cette solution pour la réparer, comme le ratio n'est pas forcément plus grand que 2.
+\end{itemize}
+Cette méthode donne de bons résultats en très peu de temps : 
+
+
+\begin{center}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$5\_8\_1$ & 24 &  24 &  0,00\% \\ \hline
+$5\_8\_2$ & 4 & 4 & 0,00\% \\ \hline
+$5\_8\_3$ & 30 &  30 &  0,00\% \\ \hline
+$5\_8\_4$ & 18 &  18 &  0,00\% \\ \hline
+$5\_8\_5$ & 40 &  40 &  0,00\% \\ \hline
+$5\_8\_6$ & 23 &  23 &  0,00\% \\ \hline
+$5\_8\_7$ & 30 &  30 &  0,00\% \\ \hline
+$5\_8\_8$ & 28 &  28 &  0,00\% \\ \hline
+$5\_8\_9$ & 23 &  23 &  0,00\% \\ \hline
+$5\_8\_10$ & 40 &  40 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$12\_10\_1$ & 41 &  42 &  2,38\% \\ \hline
+$12\_10\_2$ & 4 & 4 & 0,00\% \\ \hline
+$12\_10\_3$ & 65 &  65 &  0,00\% \\ \hline
+$12\_10\_4$ & 62 &  62 &  0,00\% \\ \hline
+$12\_10\_5$ & 107 & 107 & 0,00\% \\ \hline
+$12\_10\_6$ & 51 &  51 &  0,00\% \\ \hline
+$12\_10\_7$ & 53 &  56 &  5,36\% \\ \hline
+$12\_10\_8$ & 77 &  78 &  1,28\% \\ \hline
+$12\_10\_9$ & 44 &  44 &  0,00\% \\ \hline
+$12\_10\_10$ & 115 & 115 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ & 40 &  42 &  4,76\% \\ \hline
+$15\_17\_2$ & 8 & 13 &  38,46\% \\ \hline
+$15\_17\_3$ & 118 & 120 & 1,67\% \\ \hline
+$15\_17\_4$ & 104 & 104 & 0,00\% \\ \hline
+$15\_17\_5$ & 215 & 215 & 0,00\% \\ \hline
+$15\_17\_6$ & 92 &  94 &  2,13\% \\ \hline
+$15\_17\_7$ & 94 &  99 &  5,05\% \\ \hline
+$15\_17\_8$ & 135 & 139 & 2,88\% \\ \hline
+$15\_17\_9$ & 101 & 101 & 0,00\% \\ \hline
+$15\_17\_10$ & 242 & 242 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$20\_25\_1$ & 67 &  72 &  6,94\% \\ \hline
+$20\_25\_2$ & 20 &  20 &  0,00\% \\ \hline
+$20\_25\_3$ & 172 & 176 & 2,27\% \\ \hline
+$20\_25\_4$ & 170 & 170 & 0,00\% \\ \hline
+$20\_25\_5$ & 389 & 389 & 0,00\% \\ \hline
+$20\_25\_6$ & 144 & 148 & 2,70\% \\ \hline
+$20\_25\_7$ & 164 & 171 & 4,09\% \\ \hline
+$20\_25\_8$ & 241 & 253 & 4,74\% \\ \hline
+$20\_25\_9$ & 201 & 201 & 0,00\% \\ \hline
+$20\_25\_10$ & 424 & 427 & 0,70\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$25\_30\_1$ & 113 & 120 & 5,83\% \\ \hline
+$25\_30\_2$ & 10 &  61 &  83,61\% \\ \hline
+$25\_30\_3$ & 244 & 254 & 3,94\% \\ \hline
+$25\_30\_4$ & 218 & 218 & 0,00\% \\ \hline
+$25\_30\_5$ & 513 & 513 & 0,00\% \\ \hline
+$25\_30\_6$ & 174 & 184 & 5,43\% \\ \hline
+$25\_30\_7$ & 179 & 188 & 4,79\% \\ \hline
+$25\_30\_8$ & 317 & 320 & 0,94\% \\ \hline
+$25\_30\_9$ & 286 & 276 & -3,62\% \\ \hline
+$25\_30\_10$ & 554 & 557 & 0,54\% \\ \hline
+      \end{tabular}
+\end{figure}
+\end{center}
+
+\paragraph*{}
+On peut donc remarquer que les résultats sont bien meilleurs que le recuit simulés, et presque (mis à part quelques exceptions où la solution connexe est très loin de la solution non connexe) tous les gaps sont en dessous de 10\%. Cette méthode est une de nos meilleur car elle guide le recuit en lui donnant la ``structure'' qu'une solution doit avoir, et il se charge ensuite d'aller explorer les dérivées de cette structure
 
 \section{Méthodes exactes de résolution du problème avec connexité}
 
@@ -509,15 +701,105 @@ Afin de créer une méthode de résolution exacte qui soit efficace, nous avons 
 \subsection{Programmation par contraintes}
 
 \paragraph*{}
-Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes ``globales'' qui sont des contraintes ``usuelles'' sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Voici les résultats obtenus:
-
-RESULTATS ET AJOUTER LA CONNEXITE
+Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes ``globales'' qui sont des contraintes ``usuelles'' sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Les résultats, utilisant le solver par contrainte de CPLEX, CP, sont décevant, car il faut énormément de temps pour ne serais-ce que trouver une solution admissible... Et trouver l'optimum n'est pas envisageable dans les grosses instances
 
 \subsection{Branchement de Cplex sur la solution d'une Métaheuristique}
 
 \paragraph*{}
-Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un ``warmstart'' dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Cela devrait améliorer la performance de CPLEX lors de la résolution. Les résultats sont présentés ci-dessous:
+Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un ``warmstart'' dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Les résultats (donnés plus haut dans le rapport) sont corrects dans le cas non convexe, mais insufisant dans le cas convexe, le problème étant beaucoup trop complexe.
 
+
+\section{Résultats finaux}
+Voici les meilleures solutions que nous avons pu trouver, tous solveurs confondus :
+
+\begin{center}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$5\_8\_1$ & 24 &  24 &  0,00\% \\ \hline
+$5\_8\_2$ & 4 & 4 & 0,00\% \\ \hline
+$5\_8\_3$ & 30 &  30 &  0,00\% \\ \hline
+$5\_8\_4$ & 18 &  18 &  0,00\% \\ \hline
+$5\_8\_5$ & 40 &  40 &  0,00\% \\ \hline
+$5\_8\_6$ & 23 &  23 &  0,00\% \\ \hline
+$5\_8\_7$ & 30 &  30 &  0,00\% \\ \hline
+$5\_8\_8$ & 28 &  28 &  0,00\% \\ \hline
+$5\_8\_9$ & 23 &  23 &  0,00\% \\ \hline
+$5\_8\_10$ & 40 &  40 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$12\_10\_1$ & 41 &  42 &  2,38\% \\ \hline
+$12\_10\_2$ & 4 & 4 & 0,00\% \\ \hline
+$12\_10\_3$ & 65 &  65 &  0,00\% \\ \hline
+$12\_10\_4$ & 62 &  62 &  0,00\% \\ \hline
+$12\_10\_5$ & 107 & 107 & 0,00\% \\ \hline
+$12\_10\_6$ & 51 &  51 &  0,00\% \\ \hline
+$12\_10\_7$ & 53 &  56 &  5,36\% \\ \hline
+$12\_10\_8$ & 78 &  78 &  0,00\% \\ \hline
+$12\_10\_9$ & 44 &  44 &  0,00\% \\ \hline
+$12\_10\_10$ & 115 & 115 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ & 40 &  42 &  4,76\% \\ \hline
+$15\_17\_2$ & 8 & 13 &  38,46\% \\ \hline
+$15\_17\_3$ & 120 & 120 & 0,00\% \\ \hline
+$15\_17\_4$ & 104 & 104 & 0,00\% \\ \hline
+$15\_17\_5$ & 215 & 215 & 0,00\% \\ \hline
+$15\_17\_6$ & 93 &  94 &  1,06\% \\ \hline
+$15\_17\_7$ & 94 &  99 &  5,05\% \\ \hline
+$15\_17\_8$ & 139 & 139 & 0,00\% \\ \hline
+$15\_17\_9$ & 101 & 101 & 0,00\% \\ \hline
+$15\_17\_10$ & 242 & 242 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$20\_25\_1$ & 67 &  72 &  6,94\% \\ \hline
+$20\_25\_2$ & 20 &  20 &  0,00\% \\ \hline
+$20\_25\_3$ & 176 & 176 & 0,00\% \\ \hline
+$20\_25\_4$ & 170 & 170 & 0,00\% \\ \hline
+$20\_25\_5$ & 389 & 389 & 0,00\% \\ \hline
+$20\_25\_6$ & 145 & 148 & 2,03\% \\ \hline
+$20\_25\_7$ & 164 & 171 & 4,09\% \\ \hline
+$20\_25\_8$ & 253 & 253 & 0,00\% \\ \hline
+$20\_25\_9$ & 201 & 201 & 0,00\% \\ \hline
+$20\_25\_10$ & 427 & 427 & 0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$25\_30\_1$ & 113 & 120 & 5,83\% \\ \hline
+$25\_30\_2$ & 10 &  61 &  83,61\% \\ \hline
+$25\_30\_3$ & 244 & 254 & 3,94\% \\ \hline
+$25\_30\_4$ & 218 & 218 & 0,00\% \\ \hline
+$25\_30\_5$ & 513 & 513 & 0,00\% \\ \hline
+$25\_30\_6$ & 174 & 184 & 5,43\% \\ \hline
+$25\_30\_7$ & 179 & 188 & 4,79\% \\ \hline
+$25\_30\_8$ & 320 & 320 & 0,00\% \\ \hline
+$25\_30\_9$ & 286 & 276 & -3,62\% \\ \hline
+$25\_30\_10$ & 557 & 557 & 0,00\% \\ \hline
+      \end{tabular}
+\end{figure}
+\end{center}
 
 
 
