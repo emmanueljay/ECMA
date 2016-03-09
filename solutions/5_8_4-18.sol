@@ -1,18 +1,10 @@
 Solution file for instance 5_8_4
 Cost of the solution 18
-Time of the simulation 14 seconds 
+Time of the simulation 0 seconds 
 Ratio of the solution 2.05273
 Detail of the solution :
-<<<<<<< HEAD
-0 0 0 0 0 0 0 0 
-1 1 0 1 1 1 0 0 
+1 1 1 1 1 1 0 0 
+1 1 1 0 0 0 0 0 
+1 1 0 0 0 0 0 0 
 1 1 1 1 0 0 0 0 
-1 1 1 1 1 0 0 0 
-0 1 1 1 1 0 0 0 
-=======
-1 1 1 0 0 0 0 0 
-1 1 1 0 0 0 0 0 
-1 1 1 0 0 0 0 0 
-1 1 1 1 0 0 0 0 
-0 1 1 1 1 1 0 0 
->>>>>>> New method, and a lot of simulations
+0 1 1 1 0 0 0 0 

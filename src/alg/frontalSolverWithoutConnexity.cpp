@@ -65,10 +65,6 @@ bool FrontalSolverWithoutConnexity::solve(int borne_max, bool warmstart) {
   }
   model.add(IloMaximize(env, objective ));
 
-  //Constraints
-  VLOG(2) << "Maxmial born constraint";
-  model.add(objective <= borne_max);
-
   VLOG(2) << "Creating constraint expressions";
   IloExpr sum_Cy(env,0);
   IloExpr sum_HCPx(env,0);
@@ -126,11 +122,21 @@ bool FrontalSolverWithoutConnexity::solve(int borne_max, bool warmstart) {
     for (int j = 0; j < n; ++j) {
       startVar.add(x[i][j]);
       startVal.add(sol_.x_[i][j]);
+
+      if (sol_.x_[i][j] == 0){
+        startVar.add(y[i][j]);
+        startVal.add(sol_.x_[i][j]);
+
+        startVar.add(z[i][j]);
+        startVal.add(sol_.x_[i][j]);
+      }
     }
     cplex.addMIPStart(startVar, startVal);
     startVal.end();
     startVar.end();
   }
+
+
 
 
   //Solve

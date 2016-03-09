@@ -35,6 +35,8 @@
 \usepackage{layout}
 \usepackage{verbatim}
 
+\usepackage{float}
+
 \usepackage{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Required for accented characters
 \linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
@@ -114,101 +116,82 @@ Les deux méthodes présentées dans cette partie portent sur l'implémentation 
 
 \subsection{Résolution du problème sans connexité}
 
-Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est en $O(n*m)$ où n et m représentent les dimensions de l'instance étudiée. Au niveau du code, l'algorithme correspondant est celui nommé "frontalSolverWithoutConnexity". Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants:
-\begin{comment}
+Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est en $O(n*m)$ où n et m représentent les dimensions de l'instance étudiée. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolverWithoutConnexity''. Il prend également en entrée une borne inférieur (warmstart) qui a été préalablement calculée par l'algorithme Glouton sans connexité. Ce solver est très important, car malgré le temps qu'il prend pour résoudre les instances, il donne des bornes supérieurs pour le problème avec connexité pour les instances qu'il résoud. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants, le solver n'étant pas arrivé à résoudre les 10 instances (25-30) les plus grosses:
+
 \begin{center}
-\begin{figure}
+\begin{figure}[H]
    \begin{minipage}[c]{.46\linewidth}
       \begin{tabular}{|c|c|c|}
   		\hline 
-  		Instance & Solution & Temps \\ \hline
-  		$5\_8\_1$ &  &   \\ \hline 
-  		$5\_8\_2$ &  &   \\ \hline 
-  		$5\_8\_3$ &  &   \\ \hline 
-  		$5\_8\_4$ &  &   \\ \hline 
-  		$5\_8\_5$ &  &   \\ \hline 
-  		$5\_8\_6$ &  &   \\ \hline 
-  		$5\_8\_7$ &  &   \\ \hline 
-  		$5\_8\_8$ &  &   \\ \hline 
-  		$5\_8\_9$ &  &   \\ \hline 
-  		$5\_8\_10$ &  &   \\ \hline 
+  		  Instance & Solution & Temps(s) \\ \hline
+        $5\_8\_1$   & 24 &  1 \\ \hline
+        $5\_8\_2$   & 4 & 0 \\ \hline
+        $5\_8\_3$   & 30 &  1 \\ \hline
+        $5\_8\_4$   & 18 &  0 \\ \hline
+        $5\_8\_5$   & 40 &  0 \\ \hline
+        $5\_8\_6$   & 23 &  0 \\ \hline
+        $5\_8\_7$   & 30 &  0 \\ \hline
+        $5\_8\_8$   & 28 &  1 \\ \hline
+        $5\_8\_9$   & 23 &  1 \\ \hline
+        $5\_8\_10$  & 40 &  0 \\ \hline
   	  \end{tabular}
    \end{minipage} \hfill
    \begin{minipage}[c]{.46\linewidth}
       \begin{tabular}{|c|c|c|}
   		\hline 
-  		Instance & Solution & Temps \\ \hline
-  		$12\_10\_1$ &  &   \\ \hline
-  		$12\_10\_2$ &  &   \\ \hline
-  		$12\_10\_3$ &  &   \\ \hline
-  		$12\_10\_4$ &  &   \\ \hline
-  		$12\_10\_5$ &  &   \\ \hline
-  		$12\_10\_6$ &  &   \\ \hline
-  		$12\_10\_7$ &  &   \\ \hline
-  		$12\_10\_8$ &  &   \\ \hline
-  		$12\_10\_9$ &  &   \\ \hline
-  		$12\_10\_10$ &  &   \\ \hline 
+  	    Instance & Solution & Temps(s) \\ \hline
+        $12\_10\_1$   & 42 &  25 \\ \hline
+        $12\_10\_2$   & 4 & 0 \\ \hline
+        $12\_10\_3$   & 65 &  16 \\ \hline
+        $12\_10\_4$   & 62 &  1 \\ \hline
+        $12\_10\_5$   & 107 & 0 \\ \hline
+        $12\_10\_6$   & 51 &  3 \\ \hline
+        $12\_10\_7$   & 56 &  21 \\ \hline
+        $12\_10\_8$   & 78 &  8 \\ \hline
+        $12\_10\_9$   & 44 &  9 \\ \hline
+        $12\_10\_10$  & 115 & 1 \\ \hline
   	  \end{tabular}
    \end{minipage}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
    \begin{minipage}[c]{.46\linewidth}
       \begin{tabular}{|c|c|c|}
   		\hline 
-  		Instance & Solution & Temps \\ \hline
-  		$15\_17\_1$ &  &   \\ \hline
-  		$15\_17\_2$ &  &   \\ \hline
-  		$15\_17\_3$ &  &   \\ \hline
-  		$15\_17\_4$ &  &   \\ \hline
-  		$15\_17\_5$ &  &   \\ \hline
-  		$15\_17\_6$ &  &   \\ \hline
-  		$15\_17\_7$ &  &   \\ \hline
-  		$15\_17\_8$ &  &   \\ \hline
-  		$15\_17\_9$ &  &   \\ \hline
-  		$15\_17\_10$ &  &   \\ \hline
+  		  Instance & Solution & Temps(s) \\ \hline
+        $15\_17\_1$   & 42 &  115 \\ \hline
+        $15\_17\_2$   & 13 &  1 \\ \hline
+        $15\_17\_3$   & 120 & 105 \\ \hline
+        $15\_17\_4$   & 104 & 4 \\ \hline
+        $15\_17\_5$   & 215 & 1 \\ \hline
+        $15\_17\_6$   & 94 &  96 \\ \hline
+        $15\_17\_7$   & 99 &  264 \\ \hline
+        $15\_17\_8$   & 139 & 15 \\ \hline
+        $15\_17\_9$   & 101 & 106 \\ \hline
+        $15\_17\_10$  & 242 & 2 \\ \hline
   	  \end{tabular}
    \end{minipage} \hfill
    \begin{minipage}[c]{.46\linewidth}
       \begin{tabular}{|c|c|c|}
   		\hline 
-  		Instance & Solution & Temps \\ \hline
-  		$20\_25\_1$ &  &   \\ \hline 
-  		$20\_25\_2$ &  &   \\ \hline
-  		$20\_25\_3$ &  &   \\ \hline
-  		$20\_25\_4$ &  &   \\ \hline
-  		$20\_25\_5$ &  &   \\ \hline
-  		$20\_25\_6$ &  &   \\ \hline
-  		$20\_25\_7$ &  &   \\ \hline
-  		$20\_25\_8$ &  &   \\ \hline
-  		$20\_25\_9$ &  &   \\ \hline
-  		$20\_25\_10$ &  &   \\ \hline
+  		  Instance & Solution & Temps(s) \\ \hline
+        $20\_25\_1$   & 72 &  205 \\ \hline
+        $20\_25\_2$   & 20 &  1 \\ \hline
+        $20\_25\_3$   & 176 & 440 \\ \hline
+        $20\_25\_4$   & 170 & 18 \\ \hline
+        $20\_25\_5$   & 389 & 0 \\ \hline
+        $20\_25\_6$   & 148 & 581 \\ \hline
+        $20\_25\_7$   & 171 & 28912 \\ \hline
+        $20\_25\_8$   & 253 & 96 \\ \hline
+        $20\_25\_9$   & 201 & 3229 \\ \hline
+        $20\_25\_10$  & 427 & 63 \\ \hline
   	  \end{tabular}
    \end{minipage}
 \end{figure}
 \end{center}
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline 
-  Instance & Solution & Temps \\ \hline
-  $25\_30\_1$ &  &   \\ \hline
-  $25\_30\_2$ &  &   \\ \hline 
-  $25\_30\_3$ &  &   \\ \hline 
-  $25\_30\_4$ &  &   \\ \hline 
-  $25\_30\_5$ &  &   \\ \hline 
-  $25\_30\_6$ &  &   \\ \hline 
-  $25\_30\_7$ &  &   \\ \hline 
-  $25\_30\_8$ &  &   \\ \hline 
-  $25\_30\_9$ &  &   \\ \hline 
-  $25\_30\_10$ &  &   \\ \hline 
- 
-\end{tabular}
-\end{center}
-\end{comment}
 
 \paragraph*{}
-ANALYSE DES TEMPS DE CALCUL
+On remarque que bien que certaines instances peuvent être très longues à résoudre (plusieurs heures), d'autres de tailles importantes sont résolues instantanéments. Le fait de donner une borne inf à CPLEX permet d'améliorer énormément les temps de calculs.
 
 \begin{comment}
 \begin{center}
@@ -277,11 +260,30 @@ ANALYSE DES TEMPS DE CALCUL
 
 \subsection{Résolution du problème avec connexité}
 
-Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est bien supérieur au modèle précédent puisque l'on ajoute une dimension qui es la distance à l'origine. Au niveau du code, l'algorithme correspondant est celui nommé "frontalSolver". Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants:
+Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est bien supérieur au modèle précédent puisque l'on ajoute une dimension qui es la distance à l'origine. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolver'', ou encore ``warmGreedyFrontal'' si l'on veut lui donner une borne inf en plus plus de la borne sup calculée précédement. Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Le problème est que même avec une borne sup et une borne inf très proche, le problème n'arrive pas à résoudre en temps acceptable les instances. Voici les résultats correspondant à son exécution pour les instances faciles:
+
+\begin{center}
+  \begin{figure}[H]
+    \begin{tabular}{|c|c|c|}
+      \hline 
+      Instance & Solution & Temps(s) \\ \hline
+      $5\_8\_1$ & 24 & 0 \\ \hline
+      $5\_8\_2$ & 4 & 0 \\ \hline
+      $5\_8\_3$ & 30 & 1 \\ \hline
+      $5\_8\_4$ & 18 & 0 \\ \hline
+      $5\_8\_5$ & 40 & 0 \\ \hline
+      $5\_8\_6$ & 23 & 0 \\ \hline
+      $5\_8\_7$ & 30 & 28 \\ \hline
+      $5\_8\_8$ & 28 & 1 \\ \hline
+      $5\_8\_9$ & 23 & 0 \\ \hline
+      $5\_8\_10$  & 40 & 0 \\ \hline
+      \end{tabular}
+    \end{figure}
+\end{center}
 
 
 \paragraph*{}
-ANALYSE DES TEMPS DE CALCUL ET COMPARAISON AVEC LE FRONTAL SANS CONNEXITE
+Avec notre méthode d'ajouter une borne inf et une borne sup à CPLEX, nous arrivons à trouver l'optimimum uniquement si la borne inf est égale à la borne sup. La difficulté du problème est telle que si l'écart est au moins égal à un, CPLEX à besoin d'un temps incroyablement long pour résoudre les instances... Nous avons donc décidé de se concentrer sur des métaheuristiques :
 
 \section{Métaheuristiques implémentées}
 
@@ -293,9 +295,97 @@ Dans cette partie nous présentons une série d'heuristiques que nous avons impl
 \paragraph*{}
 Le principe est simple, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$. On s'arrête quand le fait de rajouter une case fait passer la contrainte fractionnaire en dessous de la valeur autorisée. A priori, sauf coup de chance la solution obtenue ne sera pas connexe puisque rien ne l'y oblige lorsque l'on sélectionne la maille à ajouter à la zone sélectionnée. L'intérêt a priori de cet algorithme est d'obtenir une borne supérieure extrêmement du problème connexe en un temps quasi instantannée puisque le nombre de calculs nécessaires est minime. Les résultats sont présentés dans les tableaux suivants pour chaque instance avec le temps de calcul:
 
-\paragraph*{}
-VÉRIFIER QUE CELA CONCORDE NIVEAU TEMPS 
+\begin{center}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $5\_8\_1$ & 24  & 24  \\ \hline
+        $5\_8\_2$ & 4  & 4  \\ \hline
+        $5\_8\_3$ & 30  & 30  \\ \hline
+        $5\_8\_4$ & 18  & 18  \\ \hline
+        $5\_8\_5$ & 40  & 40  \\ \hline
+        $5\_8\_6$ & 23  & 23  \\ \hline
+        $5\_8\_7$ & 30  & 30  \\ \hline
+        $5\_8\_8$ & 28  & 28  \\ \hline
+        $5\_8\_9$ & 23  & 23  \\ \hline
+        $5\_8\_10$ & 40 & 40  \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $12\_10\_1$ & 42  & 42  \\ \hline
+        $12\_10\_2$ & 4  & 4  \\ \hline
+        $12\_10\_3$ & 65  & 65  \\ \hline
+        $12\_10\_4$ & 62  & 62  \\ \hline
+        $12\_10\_5$ & 107  & 107  \\ \hline
+        $12\_10\_6$ & 51  & 51  \\ \hline
+        $12\_10\_7$ & 56  & 56  \\ \hline
+        $12\_10\_8$ & 78  & 78  \\ \hline
+        $12\_10\_9$ & \textbf{43}  & \textbf{44}  \\ \hline
+        $12\_10\_10$ & 115 & 115  \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
 
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $15\_17\_1$ & 42  & 42  \\ \hline
+        $15\_17\_2$ & 13  & 13  \\ \hline
+        $15\_17\_3$ & 120  & 120  \\ \hline
+        $15\_17\_4$ & 104  & 104  \\ \hline
+        $15\_17\_5$ & 215  & 215  \\ \hline
+        $15\_17\_6$ & 94  & 94  \\ \hline
+        $15\_17\_7$ & 99  & 99  \\ \hline
+        $15\_17\_8$ & 139  & 139  \\ \hline
+        $15\_17\_9$ & \textbf{98}  & \textbf{101}  \\ \hline
+        $15\_17\_10$ & 242 & 242  \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $20\_25\_1$ & 72  & 72  \\ \hline
+        $20\_25\_2$ & 20  & 20  \\ \hline
+        $20\_25\_3$ & 176  & 176  \\ \hline
+        $20\_25\_4$ & 170  & 170  \\ \hline
+        $20\_25\_5$ & 389  & 389  \\ \hline
+        $20\_25\_6$ & 148  & 148  \\ \hline
+        $20\_25\_7$ & 171  & 171  \\ \hline
+        $20\_25\_8$ & 253  & 253  \\ \hline
+        $20\_25\_9$ & \textbf{193}  & \textbf{201}  \\ \hline
+        $20\_25\_10$ & 427 & 427  \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $25\_30\_1$ & 120  & .  \\ \hline
+        $25\_30\_2$ & 61  & .  \\ \hline
+        $25\_30\_3$ & 254  & .  \\ \hline
+        $25\_30\_4$ & 218  & .  \\ \hline
+        $25\_30\_5$ & 513  & .  \\ \hline
+        $25\_30\_6$ & 184  & .  \\ \hline
+        $25\_30\_7$ & 188  & .  \\ \hline
+        $25\_30\_8$ & 320  & .  \\ \hline
+        $25\_30\_9$ & 276  & .  \\ \hline
+        $25\_30\_10$ & 557 & .  \\ \hline
+      \end{tabular}
+\end{figure}
+\end{center}
+
+\paragraph*{}
+On peut véfier sur instances ou le frontal à tourné que le greedy est généralement l'optimal, sauf dans quelques contre exemples. Quand nous calculerons le gap pour les instances 25-30 des autres métaheuristiques, nous prendrons la valeur de ce greedy comme repère/borne sup (La valeur optimale pour les autres)
 
 \subsection{Algorithme Glouton avec connexité}
 
@@ -303,16 +393,104 @@ VÉRIFIER QUE CELA CONCORDE NIVEAU TEMPS
 Le principe est similaire au Glouton précédent, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. Simplement on s'assure à chaque itération que la zone sélectionnée reste connexe. Pour cela, à partir d'une solution donnée à un instant t, on calcule l'ensemble des mailles voisines non encore sélectionnée. C'est dans cet ensemble de mailles voisines que sera choisie la prochaine maille qui sera ajoutée à la solution pour former la solution de l'itération t+1. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$ dans l'ensemble des voisins possibles. On s'arrête quand le fait de rajouter une maille voisine fait passer la contrainte fractionnaire en dessous de la valeur autorisée.
 
 \paragraph*{}
-Comme précédemment on obtient ici une solution du problème extrêmement rapidement (on a tout de même le calcul de l'ensemble des mailles voisines à chaque itération). En revanche, il semblerait a priori que l'efficacité ne soit pas aussi bonne que pour le glouton sans connexité. En effet, si une maille fait passer le ratio en dessous de sa valeur limite mais qu'un de ses voisins puisse le faire repasser au-dessus à l'itération d'après, l'algorithme s'arrêtera de toute façon sans essayer de traiter ce cas là. Le fait de se restreindre aux voisins pour garantir la connexité à un coût sur la quelité de la solution (que l'on peut considérer comme contrebalancé par le fait que l'on soit connexe). Les résultats sont présentés ci-dessous:
+Comme précédemment on obtient ici une solution du problème extrêmement rapidement (moins de 1s) (on a tout de même le calcul de l'ensemble des mailles voisines à chaque itération). En revanche, il semblerait a priori que l'efficacité ne soit pas aussi bonne que pour le glouton sans connexité. En effet, si une maille fait passer le ratio en dessous de sa valeur limite mais qu'un de ses voisins puisse le faire repasser au-dessus à l'itération d'après, l'algorithme s'arrêtera de toute façon sans essayer de traiter ce cas là. Le fait de se restreindre aux voisins pour garantir la connexité à un coût sur la quelité de la solution (que l'on peut considérer comme contrebalancé par le fait que l'on soit connexe). Les résultats sont présentés ci-dessous:
  
-\paragraph*{}
-VÉRIFIER QUE CELA CONCORDE 
+\begin{center}
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$5\_8\_1$ & 24 &   24 &   0,00\% \\ \hline
+$5\_8\_2$ & 4 &  4 &  0,00\% \\ \hline
+$5\_8\_3$ & 30 &   30 &   0,00\% \\ \hline
+$5\_8\_4$ & 18 &   18 &   0,00\% \\ \hline
+$5\_8\_5$ & 40 &   40 &   0,00\% \\ \hline
+$5\_8\_6$ & 23 &   23 &   0,00\% \\ \hline
+$5\_8\_7$ & 29 &   30 &   3,33\% \\ \hline
+$5\_8\_8$ & 28 &   28 &   0,00\% \\ \hline
+$5\_8\_9$ & 23 &   23 &   0,00\% \\ \hline
+$5\_8\_10$ &40 &   40 &   0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$12\_10\_1$ & 39 &   42 &   7,14\% \\ \hline
+$12\_10\_2$ & 4 &  4 &  0,00\% \\ \hline
+$12\_10\_3$ & 65 &   65 &   0,00\% \\ \hline
+$12\_10\_4$ & 37 &   62 &   40,32\% \\ \hline
+$12\_10\_5$ & 107 &  107 &  0,00\% \\ \hline
+$12\_10\_6$ & 50 &   51 &   1,96\% \\ \hline
+$12\_10\_7$ & 45 &   56 &   19,64\% \\ \hline
+$12\_10\_8$ & 78 &   78 &   0,00\% \\ \hline
+$12\_10\_9$ & 32 &   44 &   27,27\% \\ \hline
+$12\_10\_10$ &115 &  115 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
 
+\begin{figure}[H]
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ & 39 &   42 &   7,14\% \\ \hline
+$15\_17\_2$ & 5 &  13 &   61,54\% \\ \hline
+$15\_17\_3$ & 120 &  120 &  0,00\% \\ \hline
+$15\_17\_4$ & 74 &   104 &  28,85\% \\ \hline
+$15\_17\_5$ & 215 &  215 &  0,00\% \\ \hline
+$15\_17\_6$ & 50 &   94 &   46,81\% \\ \hline
+$15\_17\_7$ & 36 &   99 &   63,64\% \\ \hline
+$15\_17\_8$ & 139 &  139 &  0,00\% \\ \hline
+$15\_17\_9$ & 87 &   101 &  13,86\% \\ \hline
+$15\_17\_10$ &242 &  242 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$20\_25\_1$ & 66 &   72 &   8,33\% \\ \hline
+$20\_25\_2$ & 20 &   20 &   0,00\% \\ \hline
+$20\_25\_3$ & 176 &  176 &  0,00\% \\ \hline
+$20\_25\_4$ & 131 &  170 &  22,94\% \\ \hline
+$20\_25\_5$ & 389 &  389 &  0,00\% \\ \hline
+$20\_25\_6$ & 69 &   148 &  53,38\% \\ \hline
+$20\_25\_7$ & 148 &  171 &  13,45\% \\ \hline
+$20\_25\_8$ & 253 &  253 &  0,00\% \\ \hline
+$20\_25\_9$ & 189 &  201 &  5,97\% \\ \hline
+$20\_25\_10$ &427 &  427 &  0,00\% \\ \hline
+      \end{tabular}
+   \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$25\_30\_1$ & 112 &  120 &  6,67\% \\ \hline
+$25\_30\_2$ & 10 &   61 &   83,61\% \\ \hline
+$25\_30\_3$ & 229 &  254 &  9,84\% \\ \hline
+$25\_30\_4$ & 160 &  218 &  26,61\% \\ \hline
+$25\_30\_5$ & 513 &  513 &  0,00\% \\ \hline
+$25\_30\_6$ & 137 &  184 &  25,54\% \\ \hline
+$25\_30\_7$ & 158 &  188 &  15,96\% \\ \hline
+$25\_30\_8$ & 320 &  320 &  0,00\% \\ \hline
+$25\_30\_9$ & 254 &  276 &  7,97\% \\ \hline
+$25\_30\_10$ &557 &  557 &  0,00\% \\ \hline
+      \end{tabular}
+\end{figure}
+\end{center}
+
+\paragraph*{}
+On remarque que le glouton est optimal sur beaucoup d'instances, mais qu'il est très mauvais sur certaines. Il est donc important de lancer le glouton dans tous les cas (au cas ou il serait meilleur), mais pas de se fier uniquement à lui. Son temps de calcul est presque nul (moins de 1s)
 
 \subsection{Algorithme du Recuit simulé}
 
 \paragraph{}
-Dans cette partie, nous résolvons le problème posé au moment d'un recuit simulé. Cette métaheuristique semble être adaptée au problème posé car sa structure de voisinage est très simple. Pour une zone sélectionnée donnée, on peut soit lui ajouter une case soit lui retirer une case et obtenir un voisin. De la même manière que pour le glouton avec connexité on peut choisir définir un ensemble de cases sélectionnables à chaque itération pour garder une solution connexe tout au long de la résolution. En revanche, la conservation du ratio n'est pas garantie tout au long de la résolution afin de pouvoir parcourir des voisinages plus vastes et ne pas avoir la même faiblesse que l'algorithme du Glouton avec connexité. Le problème qui peut se poser serait le fait que l'on retire une maille de la zone sélectionnée et que cela rende la solution non connexe, il faut donc à chaque itération vérifier si la solution est toujours connexe ou alors choisir "intelligemment" les mailles qui peuvent être retirées de la solution courante sans en affecter sa connexité.
+Dans cette partie, nous résolvons le problème posé au moment d'un recuit simulé. Cette métaheuristique semble être adaptée au problème posé car sa structure de voisinage est très simple. Pour une zone sélectionnée donnée, on peut soit lui ajouter une case soit lui retirer une case et obtenir un voisin. De la même manière que pour le glouton avec connexité on peut choisir définir un ensemble de cases sélectionnables à chaque itération pour garder une solution connexe tout au long de la résolution. En revanche, la conservation du ratio n'est pas garantie tout au long de la résolution afin de pouvoir parcourir des voisinages plus vastes et ne pas avoir la même faiblesse que l'algorithme du Glouton avec connexité. Le problème qui peut se poser serait le fait que l'on retire une maille de la zone sélectionnée et que cela rende la solution non connexe, il faut donc à chaque itération vérifier si la solution est toujours connexe ou alors choisir ``intelligemment'' les mailles qui peuvent être retirées de la solution courante sans en affecter sa connexité.
 
 \paragraph*{}
 L'inconvénient du recuit simulé par rapport à l'algorithme Glouton est qu'il nécessite un paramétrage important pour pouvoir fonctionner correctement sur un problème donnée. Par ailleurs, il peut s'avérer qu'un paramétrage donné fonctionne très bien sur une instance et très mal sur une autre instance. Il est assez complexe de réussir à obtenir un recuit simulé qui soit performant sur chacune des instances sans en affecter sa performance en terme de temps de calcul.
@@ -331,14 +509,14 @@ Afin de créer une méthode de résolution exacte qui soit efficace, nous avons 
 \subsection{Programmation par contraintes}
 
 \paragraph*{}
-Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes "globales" qui sont des contraintes "usuelles" sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Voici les résultats obtenus:
+Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes ``globales'' qui sont des contraintes ``usuelles'' sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Voici les résultats obtenus:
 
 RESULTATS ET AJOUTER LA CONNEXITE
 
 \subsection{Branchement de Cplex sur la solution d'une Métaheuristique}
 
 \paragraph*{}
-Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un "warmstart" dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Cela devrait améliorer la performance de CPLEX lors de la résolution. Les résultats sont présentés ci-dessous:
+Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un ``warmstart'' dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Cela devrait améliorer la performance de CPLEX lors de la résolution. Les résultats sont présentés ci-dessous:
 
 
 

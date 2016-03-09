@@ -22,6 +22,7 @@
 #include "input/instance_reader.h"
 #include "output/solution_writer.h"
 #include "utils/helpers.h"
+#include "main/borne.h"
 
 /** FLAGS */
 DEFINE_string(solver, "stupid", "Solver id to use : stupid // frontal // greedy // constraint // annealing ... ");
@@ -79,11 +80,17 @@ int main(int argc, char* argv[])
     int borne = 10000;
 
     // Computation of the born in any cases.
-     GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
-     description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
-    // LOG(INFO) << description;
-     greedy_solver_without_connexity.solve();
-     borne = greedy_solver_without_connexity.sol().compute_cost();    
+    std::string tag = std::string(FLAGS_instance).substr(std::string(FLAGS_instance).find("projet"));
+    ecma::constants::init();
+    // Si la borne est dans la map de donnée, load it
+    if (ecma::constants::bornes.find(tag) != ecma::constants::bornes.end()) {
+      borne = ecma::constants::bornes[tag];
+    }
+    //  GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
+    //  description = greedy_solver_without_connexity.name() + " : " + greedy_solver_without_connexity.description(); 
+    // // LOG(INFO) << description;
+    //  greedy_solver_without_connexity.solve();
+    //  borne = greedy_solver_without_connexity.sol().compute_cost();    
      LOG(INFO) << "Borne :\t" << borne;
 
     // Solving this instance using "Solver"
@@ -104,11 +111,16 @@ int main(int argc, char* argv[])
       sol.fill_sol(frontal_solver.sol());
     }
     else if (FLAGS_solver == "frontalWconnexity") {
-      // Solve via Frontal Solver without connexity
+      // Solve via greedy Solver
+      GreedySolverWithoutConnexity greedy_solver_without_connexity(data);
+      if (not(greedy_solver_without_connexity.solve())) LOG(FATAL) << "Greedy solver failed !";
+      
+      // Solve via Frontal Solver
       FrontalSolverWithoutConnexity frontal_solver_without_connexity(data);
       description = frontal_solver_without_connexity.name() + " : " + frontal_solver_without_connexity.description(); 
       LOG(INFO) << description;
-      frontal_solver_without_connexity.solve(borne);
+      frontal_solver_without_connexity.sol_ptr()->fill_sol(greedy_solver_without_connexity.sol());
+      frontal_solver_without_connexity.solve(borne,true);
       sol.fill_sol(frontal_solver_without_connexity.sol());
     }
     else if (FLAGS_solver == "warmGreedyFrontal") {
@@ -231,12 +243,12 @@ int main(int argc, char* argv[])
     LOG(INFO) << "Temps de calcul:\t" << diff << " seconds";
     LOG(INFO) << "Borne :\t" << borne;
 
-    if (is_admissible) {
+    if (is_admissible || FLAGS_solver == "frontalWconnexity" ||
+        FLAGS_solver == "greedyWconnexity") {
       ecma::writer::write_in_synthetic_res_file(
           cost, description, FLAGS_instance, diff, FLAGS_synRes);
       ecma::writer::export_solution(sol, FLAGS_solDir, diff);
-    }
-    else
+    } else
       LOG(ERROR) << "The solution is not admissible";
   }
   return 0;

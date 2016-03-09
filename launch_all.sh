@@ -9,7 +9,7 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-for instance in `ls instances/*.dat`
+for instance in `ls instances/projet*.dat`
 do 
   echo "$instance"
   build/ecma_launcher --instance=$instance --solver=$1 -v=1 --logFile="logs" --synRes=res/ --solDir=solutions/ --sizePalier=100 --ratio=18 --maxTime=500 --tempInit=1000
