@@ -28,7 +28,7 @@ and then, compile :
 
 and then, to launch a simulation you can for example launch from the build/ dir : 
 
-    ./ecma_launcher --instance=../instances/projet_5_8_8.dat --solver=frontal -v=5
+    ./ecma_launcher --instance=../instances/projet_5_8_8.dat --solver=frontal -v=4
 
 You can also find more help with :
 
@@ -36,5 +36,16 @@ You can also find more help with :
 
 ## Type of solve available
 
+The list of available solver is the following : 
+- frontal               : Launch CPLEX with connexity
+- frontalWconnexity     : Launch CPLEX without connexity
+- warmGreedyFrontal     : Greedy Solver + Frontal
+- warmAnnealingFrontal  : Annealing Solver + Frontal
+- greedy                : Greedy Solver
+- greedyWconnexity      : Greedy Solver without connexity
+- constraint            : Constraint Solver (CP)
+- annealing             : Annealing solver starting with one 1 somewhere
+- annealing1            : Annealing solver starting with full 1
+- test                  : Algorthm for this porblem GreedyWconnexity + Connexification + Annealing
 
 
