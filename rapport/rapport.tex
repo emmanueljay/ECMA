@@ -96,7 +96,7 @@ Dans un premier temps, nous présenterons les résultats obtenus par la résolut
 \begin{itemize}
 \item Un Recuit Simulé
 \item Un algorithme Glouton
-\item A VOIR AVEC MANU
+\item Heuristique propre au problème
 \end{itemize}
 
 Enfin, nous avons mis en œuvre deux méthodes de résolutions exactes:
@@ -116,7 +116,7 @@ Les deux méthodes présentées dans cette partie portent sur l'implémentation 
 
 \subsection{Résolution du problème sans connexité}
 
-Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est en $O(n*m)$ où n et m représentent les dimensions de l'instance étudiée. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolverWithoutConnexity''. Il prend également en entrée une borne inférieur (warmstart) qui a été préalablement calculée par l'algorithme Glouton sans connexité. Ce solver est très important, car malgré le temps qu'il prend pour résoudre les instances, il donne des bornes supérieurs pour le problème avec connexité pour les instances qu'il résoud. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants, le solver n'étant pas arrivé à résoudre les 10 instances (25-30) les plus grosses:
+Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est en $O(n*m)$ où n et m représentent les dimensions de l'instance étudiée. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolverWithoutConnexity''. Il prend également en entrée une borne inférieur (warmstart) qui a été préalablement calculée par l'algorithme Glouton sans connexité. Ce solveur est très important, car malgré le temps qu'il prend pour résoudre les instances, il donne des bornes supérieurs pour le problème avec connexité pour les instances qu'il résout. Les résultats correspondant à son exécution son regroupés dans les tableaux suivants, le solver n'étant pas arrivé à résoudre les 10 instances (25-30) les plus grosses:
 
 \begin{center}
 \begin{figure}[H]
@@ -191,7 +191,7 @@ Dans cette partie, le modèle ne prend pas en compte la connexité. Dans ce mod�
 \end{center}
 
 \paragraph*{}
-On remarque que bien que certaines instances peuvent être très longues à résoudre (plusieurs heures), d'autres de tailles importantes sont résolues instantanéments. Le fait de donner une borne inf à CPLEX permet d'améliorer énormément les temps de calculs.
+On remarque que bien que certaines instances peuvent être très longues à résoudre (plusieurs heures), d'autres de tailles importantes sont résolues instantanément. Le fait de donner une borne inf à CPLEX permet d'améliorer énormément les temps de calculs.
 
 \begin{comment}
 \begin{center}
@@ -260,7 +260,7 @@ On remarque que bien que certaines instances peuvent être très longues à rés
 
 \subsection{Résolution du problème avec connexité}
 
-Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est bien supérieur au modèle précédent puisque l'on ajoute une dimension qui es la distance à l'origine. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolver'', ou encore ``warmGreedyFrontal'' si l'on veut lui donner une borne inf en plus plus de la borne sup calculée précédement. Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Le problème est que même avec une borne sup et une borne inf très proche, le problème n'arrive pas à résoudre en temps acceptable les instances. Voici les résultats correspondant à son exécution pour les instances faciles:
+Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le nombre de contraintes et de variables est bien supérieur au modèle précédent puisque l'on ajoute une dimension qui est la distance à l'origine. Au niveau du code, l'algorithme correspondant est celui nommé ``frontalSolver'', ou encore ``warmGreedyFrontal'' si l'on veut lui donner une borne inf en plus plus de la borne sup calculée précédemment. Il prend également en entrée une borne supérieure qui a été préalablement calculée par l'algorithme Glouton sans connexité. Le problème est que même avec une borne sup et une borne inf très proche, le problème n'arrive pas à résoudre en temps acceptable les instances. Voici les résultats correspondant à son exécution pour les instances faciles:
 
 \begin{center}
   \begin{figure}[H]
@@ -283,17 +283,17 @@ Dans cette partie, le modèle prend en compte la connexité. Dans ce modèle le 
 
 
 \paragraph*{}
-Avec notre méthode d'ajouter une borne inf et une borne sup à CPLEX, nous arrivons à trouver l'optimimum uniquement si la borne inf est égale à la borne sup. La difficulté du problème est telle que si l'écart est au moins égal à un, CPLEX à besoin d'un temps incroyablement long pour résoudre les instances... Nous avons donc décidé de se concentrer sur des métaheuristiques :
+Avec notre méthode d'ajouter une borne inf et une borne sup à CPLEX, nous arrivons à trouver l'optimimum uniquement si la borne inf est égale à la borne sup. La difficulté du problème est telle que si l'écart est au moins égal à un, CPLEX à besoin d'un temps incroyablement long pour résoudre les instances... Nous avons donc décidé de nous concentrer sur des métaheuristiques.
 
 \section{Métaheuristiques implémentées}
 
 \paragraph*{}
-Dans cette partie nous présentons une série d'heuristiques que nous avons implémenté parce qu'elles nous semblaient adaptées à la structure du problème étudié. Dans un premier temps, nous avons réalisé un Glouton qui n'assure pas la connexité ce qui permet d'avoir une borne supérieure à notre problème. Ensuite nous avons essayé de gérer directement la connexité à l'intérieur des heuristiques pour obtenir une solution admissible en sortie d'algorithme.
+Dans cette partie nous présentons une série d'heuristiques que nous avons implémenté parce qu'elles nous semblaient adaptées à la structure du problème étudié. Dans un premier temps, nous avons réalisé un Glouton qui n'assure pas la connexité ce qui permet d'avoir une borne supérieure à notre problème (ce n'est pas exactement vrai, il nous a permis de calculer une borne supérieur en aidant à la résolution du problème sans connexité avec CPLEX). Ensuite nous avons essayé de gérer directement la connexité à l'intérieur des heuristiques pour obtenir une solution admissible en sortie d'algorithme.
 
 \subsection{Algorithme Glouton sans connexité}
 
 \paragraph*{}
-Le principe est simple, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$. On s'arrête quand le fait de rajouter une case fait passer la contrainte fractionnaire en dessous de la valeur autorisée. A priori, sauf coup de chance la solution obtenue ne sera pas connexe puisque rien ne l'y oblige lorsque l'on sélectionne la maille à ajouter à la zone sélectionnée. L'intérêt a priori de cet algorithme est d'obtenir une borne supérieure extrêmement du problème connexe en un temps quasi instantannée puisque le nombre de calculs nécessaires est minime. Les résultats sont présentés dans les tableaux suivants pour chaque instance avec le temps de calcul:
+Le principe est simple, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$. On s'arrête quand le fait de rajouter une case fait passer la contrainte fractionnaire en dessous de la valeur autorisée. A priori, sauf coup de chance la solution obtenue ne sera pas connexe puisque rien ne l'y oblige lorsque l'on sélectionne la maille à ajouter à la zone sélectionnée. L'intérêt a priori de cet algorithme est d'obtenir une borne supérieure extrêmement du problème connexe en un temps quasi instantanée puisque le nombre de calculs nécessaires est minime. Les résultats sont présentés dans les tableaux suivants pour chaque instance avec le temps de calcul:
 
 \begin{center}
 \begin{figure}[H]
@@ -385,7 +385,7 @@ Le principe est simple, on part d'un ensemble vide de mailles sélectionnées et
 \end{center}
 
 \paragraph*{}
-On peut véfier sur instances ou le frontal à tourné que le greedy est généralement l'optimal, sauf dans quelques contre exemples. Quand nous calculerons le gap pour les instances 25-30 des autres métaheuristiques, nous prendrons la valeur de ce greedy comme repère/borne sup (La valeur optimale pour les autres)
+On peut vérifier sur instances ou le frontal à tourné que le greedy est généralement l'optimal, sauf dans quelques contre exemples. Quand nous calculerons le gap pour les instances 25-30 des autres métaheuristiques, nous prendrons la valeur de ce greedy comme repère/borne sup (La valeur optimale pour les autres).
 
 \subsection{Algorithme Glouton avec connexité}
 
@@ -393,7 +393,7 @@ On peut véfier sur instances ou le frontal à tourné que le greedy est génér
 Le principe est similaire au Glouton précédent, on part d'un ensemble vide de mailles sélectionnées et on rajoute itérativement une maille à la zone. Simplement on s'assure à chaque itération que la zone sélectionnée reste connexe. Pour cela, à partir d'une solution donnée à un instant t, on calcule l'ensemble des mailles voisines non encore sélectionnée. C'est dans cet ensemble de mailles voisines que sera choisie la prochaine maille qui sera ajoutée à la solution pour former la solution de l'itération t+1. A chaque étape on sélectionne la case qui maximise l'expression $H^a*C^a+H^p*C^p$ dans l'ensemble des voisins possibles. On s'arrête quand le fait de rajouter une maille voisine fait passer la contrainte fractionnaire en dessous de la valeur autorisée.
 
 \paragraph*{}
-Comme précédemment on obtient ici une solution du problème extrêmement rapidement (moins de 1s) (on a tout de même le calcul de l'ensemble des mailles voisines à chaque itération). En revanche, il semblerait a priori que l'efficacité ne soit pas aussi bonne que pour le glouton sans connexité. En effet, si une maille fait passer le ratio en dessous de sa valeur limite mais qu'un de ses voisins puisse le faire repasser au-dessus à l'itération d'après, l'algorithme s'arrêtera de toute façon sans essayer de traiter ce cas là. Le fait de se restreindre aux voisins pour garantir la connexité à un coût sur la quelité de la solution (que l'on peut considérer comme contrebalancé par le fait que l'on soit connexe). Les résultats sont présentés ci-dessous:
+Comme précédemment on obtient ici une solution du problème extrêmement rapidement (moins de 1s) (on a tout de même le calcul de l'ensemble des mailles voisines à chaque itération). En revanche, il semblerait a priori que l'efficacité ne soit pas aussi bonne que pour le glouton sans connexité. En effet, si une maille fait passer le ratio en dessous de sa valeur limite mais qu'un de ses voisins puisse le faire repasser au-dessus à l'itération d'après, l'algorithme s'arrêtera de toute façon sans essayer de traiter ce cas là. Le fait de se restreindre aux voisins pour garantir la connexité à un coût sur la qualité de la solution (que l'on peut considérer comme contrebalancé par le fait que l'on soit connexe). Les résultats sont présentés ci-dessous:
  
 \begin{center}
 \begin{figure}[H]
@@ -485,7 +485,7 @@ $25\_30\_10$ &557 &  557 &  0,00\% \\ \hline
 \end{center}
 
 \paragraph*{}
-On remarque que le glouton est optimal sur beaucoup d'instances, mais qu'il est très mauvais sur certaines. Il est donc important de lancer le glouton dans tous les cas (au cas ou il serait meilleur), mais pas de se fier uniquement à lui. Son temps de calcul est presque nul (moins de 1s)
+On remarque que le glouton est optimal sur beaucoup d'instances, mais qu'il est très mauvais sur certaines. Il est donc important de lancer le glouton dans tous les cas (au cas ou il serait meilleur), mais pas de se fier uniquement à lui. Son temps de calcul est presque nul (moins de 1s).
 
 \subsection{Algorithme du Recuit simulé}
 
@@ -586,16 +586,16 @@ $25\_30\_10$ & 552 & 557 & 0,90\% \\ \hline
 
 \paragraph*{}
 
-Tous les recuits ont été fait pour tourner 15 secondes au maximum. On remarque que les solution obtenues sont très bonnes, à part certaines instances ou la différence de gap peut être grande (Attention, le gap est calculé à partir de la solution NON connexe, et donc peut être très grand, même si la solution est optimale avec connexité, et c'est pour cela que les gaps peuvent être négatif pour les instances 25-30)
+Tous les recuits ont été fait pour tourner 15 secondes au maximum. On remarque que les solutions obtenues sont très bonnes, à part certaines instances où la différence de gap peut être grande (Attention, le gap est calculé à partir de la solution NON connexe, et donc peut être très grand, même si la solution est optimale avec connexité, et c'est pour cela que les gaps peuvent être négatif pour les instances 25-30).
 
 
 \subsection{Algorithme associé au problème}
 
 \paragraph*{}
-Nous nous sommes dit qu'il pouvait être interessant d'aider le recuit simulé à aller chercher les endroits ``interessants''. Du coup, nous avons dévellopé un algorithme qui cherche une solution connexe qui relierais tous les endroits interessants. L'algorithme fonctionne en 3 parties :
+Nous nous sommes dit qu'il pouvait être intéressant d'aider le recuit simulé à aller chercher les endroits ``intéressants''. Du coup, nous avons développé un algorithme qui cherche une solution connexe qui relierait tous les endroits intéressants. L'algorithme fonctionne en 3 parties :
 \begin{itemize}
-\item La première est de lancer un glouton sans connexité, en ne le poussant pas jusqu'au bout, s'arrentant par exemple quand les cases ajoutées commencent à trop peser sur le ratio. On obtient une solution non connexe mais ``très riche'' dans le sens ou elle contient que des cases avec un fort handicap.
-\item La deuxième étape consiste à connexifier la solution. Pour cela, nous avons implémenté un algorithme simple, qui va repérer les composantes connexes, puis les relier en faisant commme suit : On choisis une composante, on la fait ``grossir'' étape par étape en ajoutant les voisins, et si un des voisins est dans une autre composante connexe, on relie les deux composantes en remontant les parents sucessifs. On fait cela jusqu'a que toutes les composantes soient reliées.
+\item La première est de lancer un glouton sans connexité, en ne le poussant pas jusqu'au bout, s'arrêtant par exemple quand les cases ajoutées commencent à trop peser sur le ratio. On obtient une solution non connexe mais ``très riche'' dans le sens ou elle contient que des cases avec un fort handicap.
+\item La deuxième étape consiste à connexifier la solution. Pour cela, nous avons implémenté un algorithme simple, qui va repérer les composantes connexes, puis les relier en faisant comme suit : On choisis une composante, on la fait ``grossir'' étape par étape en ajoutant les voisins, et si un des voisins est dans une autre composante connexe, on relie les deux composantes en remontant les parents successifs. On fait cela jusqu'à que toutes les composantes soient reliées.
 \item La dernière consiste à lancer un recuit à partir de cette solution pour la réparer, comme le ratio n'est pas forcément plus grand que 2.
 \end{itemize}
 Cette méthode donne de bons résultats en très peu de temps : 
@@ -691,7 +691,7 @@ $25\_30\_10$ & 554 & 557 & 0,54\% \\ \hline
 \end{center}
 
 \paragraph*{}
-On peut donc remarquer que les résultats sont bien meilleurs que le recuit simulés, et presque (mis à part quelques exceptions où la solution connexe est très loin de la solution non connexe) tous les gaps sont en dessous de 10\%. Cette méthode est une de nos meilleur car elle guide le recuit en lui donnant la ``structure'' qu'une solution doit avoir, et il se charge ensuite d'aller explorer les dérivées de cette structure
+On peut donc remarquer que les résultats sont bien meilleurs que le recuit simulés, et presque (mis à part quelques exceptions où la solution connexe est très loin de la solution non connexe) tous les gaps sont en dessous de 10\%. Cette méthode est une de nos meilleur car elle guide le recuit en lui donnant la ``structure'' qu'une solution doit avoir, et il se charge ensuite d'aller explorer les dérivées de cette structure. On obtient avec un temps de calcul de l'ordre de celui du recuit (maximum 15s) des solutions bien meilleures.
 
 \section{Méthodes exactes de résolution du problème avec connexité}
 
@@ -701,12 +701,17 @@ Afin de créer une méthode de résolution exacte qui soit efficace, nous avons 
 \subsection{Programmation par contraintes}
 
 \paragraph*{}
-Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes ``globales'' qui sont des contraintes ``usuelles'' sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas unz solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Les résultats, utilisant le solver par contrainte de CPLEX, CP, sont décevant, car il faut énormément de temps pour ne serais-ce que trouver une solution admissible... Et trouver l'optimum n'est pas envisageable dans les grosses instances
+Nous avons voulu tester la Programmation Par Contraintes sur le problème étudié pour se faire une idée de ses performances et les comparer à celles de CPLEX. L'avantage de la Programmation Par Contraintes est la gain de liberté au niveau de l'écriture des contraintes. Elle possède de nombreuses contraintes ``globales'' qui sont des contraintes ``usuelles'' sur lesquelles beaucoup de recherche ont été effectuées pour en améliorer les performances. Ainsi leur utilisation optimisée peu permettre d'améliorer grandement le temps de résolution. Dans notre cas, nous avons utilisée le modèle présenté dans le corrigé pour la résolution par Programmation Par Contraintes mais n'avons pas réussi à exploiter pleinement les contraintes globales proposées par l'optimiseur puisque le problème ne s'y prêtait pas vraiment. Il faut rappeler que l'objectif de la programmation par contrainte est de trouver une solution admissible et non pas une solution optimale. Il faut donc résoudre le problème plusieurs fois en imposant un nombre de mailles sélectionnées qui augmente. Les résultats, utilisant le solver par contrainte de CPLEX, CP, sont décevant, car il faut énormément de temps pour ne serait-ce que trouver une solution admissible... Et trouver l'optimum n'est pas envisageable dans les grosses instances.
 
 \subsection{Branchement de Cplex sur la solution d'une Métaheuristique}
 
 \paragraph*{}
-Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un ``warmstart'' dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Les résultats (donnés plus haut dans le rapport) sont corrects dans le cas non convexe, mais insufisant dans le cas convexe, le problème étant beaucoup trop complexe.
+Dans cette approche nous avons essayé de coupler plusieurs méthodes pour exploiter les avantages de chacune d'entre elles. Le principal intérêt de CPLEX est la garantie d'optimalité, ce que nous voulons pour une méthode exacte. C'est pourquoi nous avons essayé de le coupler aux différentes métaheuristiques que nous avons implémenté. L'avantage des métaheuristiques est de trouver une bonne solution faisable en très peu de temps (compromis entre le temps de la qualité de la solution selon que l'on utilise l'algorithme Glouton ou le recuit simulé). C'est pourquoi nous avons réalisé un ``warmstart'' dans CPLEX en le faisant démarrer à partir d'une solution donnée soit par le Glouton avec connexité, soit par le recuit simulé. On a donc une borne inférieure de la valeur possible pour la solution optimale (car on a une solution réalisable donnée par le Glouton avec connexité ou le recuit simulé) et une borne supérieure donnée par le Glouton sans connexité. Les résultats (donnés plus haut dans le rapport) sont corrects dans le cas non connexe, mais insuffisant dans le cas connexe, le problème étant beaucoup trop complexe.
+
+\paragraph*{}
+A noter que le ``warmstart'' de CPLEX a énormément de mal à redémarrer sur la solution que peut lui donner une métaheuristique. En effet, les métaheuristiques traitent explusivement les variables $x_{ij}$ qui décident de la sélection d'une case mais CPLEX nécessite aussi les valeurs des variables y,z et s pour démarrer en warmstart. La solution pour pouvoir réellement utiliser le warmstart est de lancer CPLEX une première fois en fixant la valeur des variables $x_{ij}$ à celles trouver par la métaheuristique pour reconstruire une solution ``complète'' (quasi instantanément) où l'on connaitrait la valeur de toutes les variables. Dans un second temps, on utilise cette solution complète pour réaliser un ``warmstart''. Cette technique est utile dans le cas connexe où les variables $s_{ij}$ non données par la métaheuristique représentent une grande partie des variables.
+
+
 
 
 \section{Résultats finaux}
