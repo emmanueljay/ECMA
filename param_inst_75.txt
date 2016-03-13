@@ -1,0 +1,1 @@
+ ./ecma_launcher --instance=../instances/projet_75_90_0.dat --solver=test -v=4 --limit=0.57 --ratio=500 --tempInit=1000

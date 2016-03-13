@@ -35,16 +35,16 @@ void print_table(const std::vector<std::vector<double> >& table, double max) {
     std::string tmp("");
     for (double elem : line) {
       if (elem < 0.25 * max) {
-        tmp += ". ";
+        tmp += ".";
       }
       else if (elem < 0.5 * max) {
-        tmp += "- ";
+        tmp += "-";
       }
       else if (elem < 0.75 * max) {
-        tmp += "+ ";
+        tmp += "+";
       }
       else if (elem >= 0.75 * max) {
-        tmp += "* ";
+        tmp += "*";
       }
     }
     VLOG(1) << tmp;

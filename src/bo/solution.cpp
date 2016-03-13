@@ -66,7 +66,7 @@ void Solution::print(int tag) const{
   for (auto line : x_) {
     std::string line_str("");
     for (int elem : line)
-      line_str += ecma::helpers::to_string(elem) + " ";
+      line_str += ecma::helpers::to_string(elem);// + " ";
     VLOG(tag) << line_str;
   }
   VLOG(tag) << "Cost of solution : " << compute_cost();

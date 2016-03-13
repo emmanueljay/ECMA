@@ -191,7 +191,7 @@ int main(int argc, char* argv[])
       for (int i = 0; i < sol_i->x_.size(); ++i)
       for (int j = 0; j < sol_i->x_[i].size(); ++j)    
         sol_i->x_[i][j] = 1;
-      annealing_solver.solve(FLAGS_tempInit);
+      annealing_solver.solve(FLAGS_tempInit,true);
       sol.fill_sol(annealing_solver.sol());
     }
     else if (FLAGS_solver == "ant") {
@@ -210,7 +210,7 @@ int main(int argc, char* argv[])
       description = annealing_solver.name() + " : " + annealing_solver.description(); 
       LOG(INFO) << description;
       annealing_solver.sol_ptr()->fill_sol(greedy_solver.sol());
-      annealing_solver.solve(FLAGS_tempInit);
+      annealing_solver.solve(FLAGS_tempInit,true);
       sol.fill_sol(annealing_solver.sol());
     }
     else if (FLAGS_solver == "test") {
@@ -223,7 +223,7 @@ int main(int argc, char* argv[])
       AnnealingSolver annealing_solver(data);
       LOG(INFO) << description;
       annealing_solver.sol_ptr()->fill_sol(test_solver.sol());
-      annealing_solver.solve(FLAGS_tempInit);
+      annealing_solver.solve(FLAGS_tempInit,true);
       sol.fill_sol(annealing_solver.sol());      
     }
     else {
