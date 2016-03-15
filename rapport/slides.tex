@@ -1,0 +1,384 @@
+\documentclass[10pt]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+
+% Change the bar colors:
+%\setbeamercolor{Feather}{fg=red!20,bg=red}
+
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
+
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+% \usepackage{epsf}
+% \usepackage{minipage-marginpar}
+% \usepackage{fullminipage}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{Présentation ECMA}
+}
+
+\subtitle[Présentation ECMA]
+{
+      \textbf{}
+}
+
+\author[Emmanuel Jay \& Maxime Dufour]
+{      
+    Emmanuel Jay \& Maxime Dufour \\ 
+    {\ttfamily }
+}
+
+\institute[]
+{
+    MPRO \\ 
+      
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{\today}
+
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+
+\begin{frame}{Table des matières}{}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+\section{Solveurs}
+%-------------------------------------------------------
+\subsection{CPLEX sans connexité}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{CPLEX sans connexité}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+  \hline 
+    Instance & Solution & Temps(s) \\ \hline
+    $15\_17\_1$   & 42 &  115 \\ \hline
+    $15\_17\_2$   & 13 &  1 \\ \hline
+    $15\_17\_3$   & 120 & 105 \\ \hline
+    $15\_17\_4$   & 104 & 4 \\ \hline
+    $15\_17\_5$   & 215 & 1 \\ \hline
+    $15\_17\_6$   & 94 &  96 \\ \hline
+    $15\_17\_7$   & 99 &  264 \\ \hline
+    $15\_17\_8$   & 139 & 15 \\ \hline
+    $15\_17\_9$   & 101 & 106 \\ \hline
+    $15\_17\_10$  & 242 & 2 \\ \hline
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+%-------------------------------------------------------
+\subsection{CPLEX avec connexité}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{CPLEX avec connexité}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline 
+      Instance & Solution & Temps(s) \\ \hline
+      $5\_8\_1$ & 24 & 0 \\ \hline
+      $5\_8\_2$ & 4 & 0 \\ \hline
+      $5\_8\_3$ & 30 & 1 \\ \hline
+      $5\_8\_4$ & 18 & 0 \\ \hline
+      $5\_8\_5$ & 40 & 0 \\ \hline
+      $5\_8\_6$ & 23 & 0 \\ \hline
+      $5\_8\_7$ & 30 & 28 \\ \hline
+      $5\_8\_8$ & 28 & 1 \\ \hline
+      $5\_8\_9$ & 23 & 0 \\ \hline
+      $5\_8\_10$  & 40 & 0 \\ \hline
+      \end{tabular}
+      \end{center}
+\end{frame}
+
+%-------------------------------------------------------
+\subsection{Glouton sans connexité}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{Glouton sans connexité}
+\begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline 
+        Instance & Solution & Optimal  \\ \hline
+        $15\_17\_1$ & 42  & 42  \\ \hline
+        $15\_17\_2$ & 13  & 13  \\ \hline
+        $15\_17\_3$ & 120  & 120  \\ \hline
+        $15\_17\_4$ & 104  & 104  \\ \hline
+        $15\_17\_5$ & 215  & 215  \\ \hline
+        $15\_17\_6$ & 94  & 94  \\ \hline
+        $15\_17\_7$ & 99  & 99  \\ \hline
+        $15\_17\_8$ & 139  & 139  \\ \hline
+        $15\_17\_9$ & \textbf{98}  & \textbf{101}  \\ \hline
+        $15\_17\_10$ & 242 & 242  \\ \hline
+      \end{tabular}
+      \end{center}
+\end{frame}
+
+%-------------------------------------------------------
+\subsection{Glouton avec connexité}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{Glouton sans connexité}
+\begin{center}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ & 39 &   42 &   7,14\% \\ \hline
+$15\_17\_2$ & 5 &  13 &   61,54\% \\ \hline
+$15\_17\_3$ & 120 &  120 &  0,00\% \\ \hline
+$15\_17\_4$ & 74 &   104 &  28,85\% \\ \hline
+$15\_17\_5$ & 215 &  215 &  0,00\% \\ \hline
+$15\_17\_6$ & 50 &   94 &   46,81\% \\ \hline
+$15\_17\_7$ & 36 &   99 &   63,64\% \\ \hline
+$15\_17\_8$ & 139 &  139 &  0,00\% \\ \hline
+$15\_17\_9$ & 87 &   101 &  13,86\% \\ \hline
+$15\_17\_10$ &242 &  242 &  0,00\% \\ \hline
+      \end{tabular}
+      \end{center}
+\end{frame}
+
+%-------------------------------------------------------
+\subsection{Un Recuit Simulé}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{Un Recuit Simulé}
+\begin{center}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ &  40 &  42 &  4,76\% \\ \hline
+$15\_17\_2$ &  8 & 13 &  38,46\% \\ \hline
+$15\_17\_3$ &  116 & 120 & 3,33\% \\ \hline
+$15\_17\_4$ &  104 & 104 & 0,00\% \\ \hline
+$15\_17\_5$ &  215 & 215 & 0,00\% \\ \hline
+$15\_17\_6$ &  93 &  94 &  1,06\% \\ \hline
+$15\_17\_7$ &  94 &  99 &  5,05\% \\ \hline
+$15\_17\_8$ &  133 & 139 & 4,32\% \\ \hline
+$15\_17\_9$ &  11 &  101 & 89,11\% \\ \hline
+$15\_17\_10$ & 241 & 242 & 0,41\% \\ \hline
+      \end{tabular}
+      \end{center}
+\end{frame}
+
+
+%-------------------------------------------------------
+\subsection{Heuristique propre au problème}
+%-------------------------------------------------------
+\begin{frame}{Solveurs}{Heuristique propre au problème}
+
+\begin{center}
+      \begin{tabular}{|c|c|c|c|}
+      \hline 
+        Instance & Solution & Borne Sup & Brn Gap  \\ \hline
+$15\_17\_1$ & 40 &  42 &  4,76\% \\ \hline
+$15\_17\_2$ & 8 & 13 &  38,46\% \\ \hline
+$15\_17\_3$ & 118 & 120 & 1,67\% \\ \hline
+$15\_17\_4$ & 104 & 104 & 0,00\% \\ \hline
+$15\_17\_5$ & 215 & 215 & 0,00\% \\ \hline
+$15\_17\_6$ & 92 &  94 &  2,13\% \\ \hline
+$15\_17\_7$ & 94 &  99 &  5,05\% \\ \hline
+$15\_17\_8$ & 135 & 139 & 2,88\% \\ \hline
+$15\_17\_9$ & 101 & 101 & 0,00\% \\ \hline
+$15\_17\_10$ & 242 & 242 & 0,00\% \\ \hline
+      \end{tabular}
+      \end{center}
+\end{frame}
+
+
+\end{document}
+
+% %-------------------------------------------------------
+% \section{Introduction}
+% %-------------------------------------------------------
+% \subsection{License}
+% \begin{frame}{Introduction}{License}
+% %-------------------------------------------------------
+
+%   \begin{itemize}
+%     \item<1-> The Feather image is not covered by copyright rules. I have used the image from \chref{http://www.vectors-free.com/}{http://www.vectors-free.com/}. You are allowed to use the Feather image for any purposes.
+%     \item<2-> The rest of the theme is provided under the GNU General Public License v. 3 (GPLv3) \chref{http://www.gnu.org/licenses/}{http://www.gnu.org/licenses/}. This means that you can redistribute it and/or modify it under the same license. 
+%   \end{itemize}
+% \end{frame}
+
+% %-------------------------------------------------------
+% \section{Installation}
+% %-------------------------------------------------------
+% \subsection{Source files}
+% \begin{frame}{Installation}{Source files}
+% %-------------------------------------------------------
+
+% \begin{block}{}
+% The theme contains 4 source files:
+%   \begin{itemize}
+%     \item {\tt beamercolorthemeFeather.sty}
+%     \item {\tt beamerouterthemeFeather.sty}
+%     \item {\tt beamerinnerthemeFeather.sty}
+%     \item {\tt beamerthemeFeather.sty}
+%   \end{itemize}
+% \end{block}
+% \end{frame}
+
+% %-------------------------------------------------------
+% \subsection{Local and Global installation}
+% \begin{frame}{Installation}{Local and Global installation}
+% %-------------------------------------------------------
+%   The theme can be installed for \textbf{local} or \textbf{global} use.
+%   \pause
+%   \begin{block}{Local Installation}
+%   \begin{itemize}    
+%     \item Local installation is the simplest way of installing the theme. 
+%     \item You need to placing the 4 source files in the same folder as your presentation. When you download the theme, the 4 theme files are located in the {\tt local} folder.
+%   \end{itemize}
+%   \end{block}
+
+%   \begin{block}{Global Installation}
+%   \begin{itemize}
+%      \item If you wish to make the theme globally available, you must put the files in your local latex directory tree. The location of the root of the local directory tree depends on your operating system and the latex distribution. 
+%      \item Detailed steps on how to proceed installation under various operating systems can be found at Beamer documentation.
+%   \end{itemize}
+%   \end{block}
+% \end{frame}
+     
+
+% %-------------------------------------------------------
+% \subsection{Required Packages}
+% \begin{frame}{Installation}{Required Packages}
+% %-------------------------------------------------------
+
+%   For using the Feather Theme you will need the Bemaer class installed and the following 2 packages
+%   \begin{itemize}
+%     \item TikZ\footnote{TikZ is a package for creating beautiful graphics. Have a look at these \chref{http://www.texample.net/tikz/examples/}{online examples} or the \chref{http://tug.ctan.org/tex-archive/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf}{pgf user manual}.}
+%     \item calc
+%   \end{itemize}
+%   Due to the fact that the packages are very common they should be included in your latex distribution in the first place.
+% \end{frame}
+
+% %-------------------------------------------------------
+% \section{User Interface}
+% \subsection{Loading the Theme and Theme Options}
+% \begin{frame}{User Interface}{Loading the Theme and Theme Options}
+% %-------------------------------------------------------
+
+%   \begin{block}{The Presentation Theme}
+%     The Feather Theme can be loaded in a familiar way. In the reamble of your {\tt tex} file you must type\\ \vspace{5pt} 
+%     {\tt \textbackslash usetheme[<options>]\{Feather\}}\\ \vspace{5pt} 
+%     The presentation theme loads the inner, outer and color Feather theme files and passes the {\tt <options>} on to these files.
+%   \end{block}
+%   \begin{block}{The Inner and Outher Themes}
+%     If you wish you can load only the inner, or the outher theme directly by\\ \vspace{5pt} 
+%     {\tt \textbackslash useinnertheme\{Feather\}} (and it has no options)\\ \vspace{5pt} 
+%     {\tt \textbackslash useoutertheme[<options>]\{Feather\}} (it has one option)\\
+%     \hspace{20pt}{\tt progressstyle=\{fixedCircCnt or movingCircCnt\}} \\
+%     \begin{itemize}
+%     \item which set how the progress is illustrated;
+%     \item the value {\tt movingCircCnt} is the default.
+%     \end{itemize}
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}{User Interface}{Loading the Theme and Theme Options}
+
+%   \begin{block}{The Color Theme}
+%     Also you can load only the color theme by writing in the preamble of the {\tt tex} file 
+    
+%     \vspace{5pt} 
+    
+%     \begin{itemize}
+%     \item {\tt \textbackslash usecolortheme\{Feather\}}
+%     \end{itemize}
+    
+%     \vspace{5pt}
+    
+%     ...or to change the colors of the various elements in the theme
+    
+%     \vspace{5pt} 
+%     \begin{itemize}
+%     \item Change the bar colors: \\    
+%     {\tt \textbackslash setbeamercolor \{Feather\}\{fg=<color>, bg=<color>\}}
+    
+%     \vspace{2pt} 
+    
+%     \item Change the color of the structural elements: \\    
+%     {\tt \textbackslash setbeamercolor\{structure\}\{fg=<color>\}}
+    
+%     \vspace{2pt} 
+    
+%     \item Change the frame title text color:\\
+%     {\tt \textbackslash setbeamercolor\{frametitle\}\{fg=<color>\}}
+    
+%     \vspace{2pt} 
+    
+%     \item Change the normal text color background:    
+%     {\tt \textbackslash setbeamercolor\{normal text\}\{fg=<color>, bg=<color>\}}
+%     \end{itemize}
+%   \end{block}
+% \end{frame}
+
+
+% %-------------------------------------------------------
+% \subsection{Feather image}
+% \begin{frame}{User Interface}{The Feather Background Image}
+% %-------------------------------------------------------
+
+% \begin{block}{The Feather Background Image}
+%     \begin{itemize}
+%     \item In Feather theme, the title page frame and the last frame have the Feather image as the background image. 
+%     \item The Feather background image can be produced to any frame by wrating on the begining at the choosen frame the following
+%     \end{itemize} 
+    
+%     \vspace{5pt} 
+    
+%   {\tt \{\textbackslash 1bg\\
+%     \textbackslash begin\{frame\}[<options>]\{Frame Title\}\{Frame Subtitle\}\\
+%     \ldots\\
+%     \textbackslash end\{frame\}\}}
+% \end{block}
+% \end{frame}
+
+
+% {\1
+% \begin{frame}[plain,noframenumbering]
+%   \finalpage{Thank you for using Feather Beamer Theme!}
+% \end{frame}}
+
